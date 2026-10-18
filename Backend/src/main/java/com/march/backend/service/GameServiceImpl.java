@@ -26,6 +26,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -133,6 +134,30 @@ public class GameServiceImpl implements GameService {
 
         broadcast(saved);
         return GameSummary.from(saved);
+    }
+
+    @Override
+    public RoundResponse rematch(Long gameId, Long playerId) {
+        Game game = getForUpdate(gameId);
+        requireParticipant(game, playerId);
+
+        if (game.getStatus() == GameStatus.IN_PROGRESS) {
+            throw new IllegalStateException("Finish the current game before starting a rematch");
+        }
+        if (game.getStatus() == GameStatus.FINISHED) {
+            resetForRematch(game);
+            // A game with a single player has nobody to wait for, so it restarts
+            // right away; a multiplayer room waits in the lobby for the host.
+            if (game.getPlayers().size() == 1) {
+                game.setStatus(GameStatus.IN_PROGRESS);
+                startRound(game);
+            }
+            gameRepo.save(game);
+            broadcast(game);
+        }
+        // A room that is already WAITING is left untouched, so several players
+        // hitting "rematch" at once all end up in the same room.
+        return buildRound(game, playerId);
     }
 
     @Override
@@ -436,6 +461,25 @@ public class GameServiceImpl implements GameService {
         game.getScores().remove(playerId);
         game.getCorrectAnswers().remove(playerId);
         game.getAnsweredPlayerIds().remove(playerId);
+    }
+
+    /**
+     * Clear a finished game back to a fresh, waiting room while keeping its
+     * players, host and question filters. Used by {@link #rematch}.
+     */
+    private void resetForRematch(Game game) {
+        game.setStatus(GameStatus.WAITING);
+        game.setCurrentRound(0);
+        game.setCurrentQuestionId(null);
+        game.setRoundStartedAt(0L);
+        game.setUsedQuestionIds(new ArrayList<>());
+        game.setAnsweredPlayerIds(new ArrayList<>());
+        game.setScores(new HashMap<>());
+        game.setCorrectAnswers(new HashMap<>());
+        game.setWinnerId(null);
+        // Refresh the creation time so the stale-waiting-room sweeper does not
+        // treat a freshly rematched room as abandoned.
+        game.setCreatedAt(System.currentTimeMillis());
     }
 
     private RoundResponse buildRound(Game game, Long playerId) {

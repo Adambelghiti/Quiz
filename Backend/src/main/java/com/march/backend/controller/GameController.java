@@ -90,6 +90,12 @@ public class GameController {
         return gameService.joinGame(id, resolvePlayer(authentication).getId());
     }
 
+    /** Restart a finished game in place with the same players and settings. */
+    @PostMapping("/{id}/rematch")
+    public RoundResponse rematch(@PathVariable Long id, Authentication authentication) {
+        return gameService.rematch(id, existingPlayer(authentication).getId());
+    }
+
     /** Current round (question without the answer) plus the running scores. */
     @GetMapping("/{id}/round")
     public RoundResponse getRound(@PathVariable Long id, Authentication authentication) {

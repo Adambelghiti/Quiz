@@ -37,8 +37,15 @@
     </table>
 
     <div class="actions-container">
-      <button (click)="playAgain()" class="primary-button">Play Again</button>
+      <button (click)="rematch()" class="primary-button" [disabled]="rematching">
+        {{ rematching ? 'Starting…' : 'Rematch' }}
+      </button>
+      <button (click)="newGame()" class="secondary-button">New Game</button>
       <button (click)="backToLobby()" class="secondary-button">Back to Lobby</button>
     </div>
+
+    <p class="rematch-hint">
+      Rematch keeps the same players in the same room – the host starts the next game.
+    </p>
   </ng-container>
 </div>

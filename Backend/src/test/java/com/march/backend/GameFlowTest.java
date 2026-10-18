@@ -15,11 +15,13 @@ import com.march.backend.service.GameService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.test.context.ActiveProfiles;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
@@ -141,6 +143,63 @@ class GameFlowTest {
         RoundResponse afterLeave = gameService.leaveGame(room.getGameId(), host.getId());
         assertEquals(1, afterLeave.getPlayers().size(), "the leaving player should be removed");
         assertEquals(guest.getId(), afterLeave.getHostPlayerId(), "host should pass to the remaining player");
+    }
+
+    @Test
+    void rematchReusesTheRoomAndResetsScoresForSolo() {
+        Player player = newPlayer("rematch-solo");
+
+        GameStartRequest request = new GameStartRequest();
+        request.setPlayerId(player.getId());
+        request.setDifficulty(1);
+        request.setRounds(1);
+
+        RoundResponse round = gameService.startGame(request);
+        Question question = questionRepository.findById(round.getQuestion().getId()).orElseThrow();
+        gameService.submitAnswer(round.getGameId(), player.getId(), question.getId(), question.getCorrectAnswer());
+        assertTrue(gameService.nextRound(round.getGameId(), player.getId()).isFinished());
+
+        RoundResponse rematch = gameService.rematch(round.getGameId(), player.getId());
+
+        assertEquals(round.getGameId(), rematch.getGameId(), "a rematch must reuse the same room");
+        assertEquals("IN_PROGRESS", rematch.getStatus(), "a solo rematch restarts immediately");
+        assertEquals(1, rematch.getRound(), "the rematch starts again at round 1");
+        assertNotNull(rematch.getQuestion(), "the rematch deals a fresh question");
+        assertEquals(1, rematch.getPlayers().size());
+        assertEquals(0, rematch.getPlayers().get(0).getScore(), "the previous scores are cleared");
+    }
+
+    @Test
+    void rematchKeepsThePlayersAndWaitsForTheHost() {
+        Player host = newPlayer("rematch-host");
+        Player guest = newPlayer("rematch-guest");
+        Player outsider = newPlayer("rematch-outsider");
+
+        GameStartRequest request = new GameStartRequest();
+        request.setPlayerId(host.getId());
+        request.setDifficulty(1);
+        request.setRounds(2);
+
+        RoundResponse room = gameService.createRoom(request);
+        gameService.joinGame(room.getGameId(), guest.getId());
+        gameService.startRoom(room.getGameId(), host.getId());
+        assertEquals("FINISHED", gameService.finishGame(room.getGameId()).getStatus());
+
+        assertThrows(AccessDeniedException.class,
+                () -> gameService.rematch(room.getGameId(), outsider.getId()),
+                "only participants may rematch");
+
+        RoundResponse rematch = gameService.rematch(room.getGameId(), guest.getId());
+        assertEquals("WAITING", rematch.getStatus(), "a multiplayer rematch waits for the host");
+        assertEquals(room.getGameId(), rematch.getGameId());
+        assertEquals(2, rematch.getPlayers().size(), "every player is kept in the room");
+        assertEquals(host.getId(), rematch.getHostPlayerId(), "the host is unchanged");
+        assertTrue(rematch.getPlayers().stream().allMatch(p -> p.getScore() == 0), "scores are reset");
+
+        // Calling it again while the room is already waiting changes nothing.
+        RoundResponse again = gameService.rematch(room.getGameId(), host.getId());
+        assertEquals("WAITING", again.getStatus());
+        assertEquals(2, again.getPlayers().size());
     }
 
     private Player newPlayer(String name) {

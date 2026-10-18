@@ -124,6 +124,15 @@ export class LobbyService {
     return this.http.put<void>(`${this.apiUrl}/${gameId}/join`, {});
   }
 
+  /**
+   * Rematch: restart a finished game in place with the same players and
+   * settings. The room keeps its id (so the invite link stays valid) and is
+   * reset to the waiting state; a single-player game restarts immediately.
+   */
+  rematch(gameId: number): Observable<RoundResponse> {
+    return this.http.post<RoundResponse>(`${this.apiUrl}/${gameId}/rematch`, {});
+  }
+
   /** Leave the current game; closes the room if it becomes empty. */
   leaveGame(gameId: number): Observable<RoundResponse> {
     return this.http.post<RoundResponse>(`${this.apiUrl}/${gameId}/leave`, {});

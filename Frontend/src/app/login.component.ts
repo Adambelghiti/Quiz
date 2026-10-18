@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from './auth.service';
 
 type AuthMode = 'login' | 'register';
@@ -21,7 +21,7 @@ export class LoginComponent {
   error: string | null = null;
   loading = false;
 
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(private auth: AuthService, private router: Router, private route: ActivatedRoute) {}
 
   get isRegister(): boolean {
     return this.mode === 'register';
@@ -54,12 +54,25 @@ export class LoginComponent {
       : this.auth.login(username, this.password);
 
     request$.subscribe({
-      next: () => this.router.navigateByUrl('/lobby'),
+      next: () => this.router.navigateByUrl(this.redirectTarget()),
       error: (err: HttpErrorResponse) => {
         this.loading = false;
         this.error = this.messageFor(err);
       },
     });
+  }
+
+  /**
+   * Where to go after a successful login. The auth guard stores the attempted
+   * URL (for example an invite link like {@code /room/7}) so invited players
+   * land straight in the room. Only same-app paths are accepted.
+   */
+  private redirectTarget(): string {
+    const target = this.route.snapshot.queryParamMap.get('redirectTo');
+    if (target && target.startsWith('/') && !target.startsWith('//')) {
+      return target;
+    }
+    return '/lobby';
   }
 
   private messageFor(err: HttpErrorResponse): string {

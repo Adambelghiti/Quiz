@@ -21,9 +21,36 @@
       </li>
     </ul>
 
-    <p class="hint">
-      Share <code>/room/{{ r.gameId }}</code> with other players, then the host starts the game.
-    </p>
+    <section class="invite-panel">
+      <h3>Invite players</h3>
+      <p class="invite-lead">
+        Share this link or let players scan the QR code to join room #{{ r.gameId }}.
+      </p>
+      <div class="invite-link-row">
+        <input
+          class="invite-link"
+          type="text"
+          [value]="inviteUrl"
+          readonly
+          aria-label="Invite link"
+          (focus)="selectInvite($event)"
+        />
+        <button class="secondary-button" (click)="copyInvite()">
+          {{ copied ? 'Copied!' : 'Copy link' }}
+        </button>
+      </div>
+      <div class="qr-wrapper">
+        <qrcode
+          [qrdata]="inviteUrl"
+          [width]="180"
+          [margin]="1"
+          [errorCorrectionLevel]="'M'"
+          [elementType]="'img'"
+          alt="Invite QR code"
+          ariaLabel="Scan to join the room"
+        ></qrcode>
+      </div>
+    </section>
 
     <div class="room-actions">
       <button *ngIf="isHost" class="primary-button" [disabled]="!canStart" (click)="start()">

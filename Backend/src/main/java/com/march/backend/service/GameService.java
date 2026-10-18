@@ -26,6 +26,17 @@ public interface GameService {
     /** Add a player to a game that has not finished yet. */
     GameSummary joinGame(Long gameId, Long playerId);
 
+    /**
+     * Restart a finished game in place as a rematch: the same players and
+     * settings are kept, but rounds, scores and the winner are reset and the
+     * room returns to {@code WAITING} for the host to start again. A game with a
+     * single player restarts immediately.
+     * <p>
+     * Calling it on a room that is already waiting is a no-op, so repeated
+     * "rematch" presses from several players converge on the same room.
+     */
+    RoundResponse rematch(Long gameId, Long playerId);
+
     /** Remove the current player from a game; closes the room if it becomes empty. */
     RoundResponse leaveGame(Long gameId, Long playerId);
 
