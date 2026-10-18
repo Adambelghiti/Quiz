@@ -12,7 +12,7 @@ import java.util.List;
 public interface GameService {
 
     /** Create an empty game in the {@code WAITING} state. */
-    Game createGame();
+    GameSummary createGame();
 
     /** Create and immediately start a solo game, returning its first round. */
     RoundResponse startGame(GameStartRequest request);
@@ -24,7 +24,7 @@ public interface GameService {
     RoundResponse startRoom(Long gameId, Long playerId);
 
     /** Add a player to a game that has not finished yet. */
-    Game joinGame(Long gameId, Long playerId);
+    GameSummary joinGame(Long gameId, Long playerId);
 
     /** Remove the current player from a game; closes the room if it becomes empty. */
     RoundResponse leaveGame(Long gameId, Long playerId);
@@ -39,7 +39,7 @@ public interface GameService {
     RoundResponse getRound(Long gameId, Long playerId);
 
     /** Submit an answer for the current round and return the outcome. */
-    AnswerResult submitAnswer(Long gameId, Long playerId, Long questionId, String answer, long elapsedMs);
+    AnswerResult submitAnswer(Long gameId, Long playerId, Long questionId, String answer);
 
     /**
      * Advance to the next round. Allowed once every player has answered, or at
@@ -64,6 +64,15 @@ public interface GameService {
 
     /** Find a game by id or throw {@code EntityNotFoundException}. */
     Game getById(Long id);
+
+    /**
+     * Lightweight summary of a game (id, status, round and player count).
+     * <p>
+     * Mapped while the transaction is still open so the lazy player collection
+     * is initialised before the response is serialised with
+     * {@code spring.jpa.open-in-view} disabled.
+     */
+    GameSummary getSummary(Long id);
 
     /**
      * Ensure the given player is part of the game; throws

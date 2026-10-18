@@ -1,7 +1,8 @@
 package com.march.backend.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -13,7 +14,8 @@ import java.util.Collections;
 
 @Entity
 @Table(name = "auth_users")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class AuthUser implements UserDetails {

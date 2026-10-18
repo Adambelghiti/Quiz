@@ -39,7 +39,7 @@ public class QuestionController {
             @RequestParam Optional<Language> language) {
         return questionService.getAllQuestions().stream()
                 .filter(q -> category.isEmpty() || q.getCategory() == category.get())
-                .filter(q -> difficulty.isEmpty() || q.getDifficulty() == difficulty.get())
+                .filter(q -> difficulty.isEmpty() || difficulty.get().equals(q.getDifficulty()))
                 .filter(q -> language.isEmpty() || q.getLanguage() == language.get())
                 .map(QuestionResponse::from)
                 .toList();
@@ -64,6 +64,7 @@ public class QuestionController {
                 .toList();
         List<Integer> difficulties = all.stream()
                 .map(Question::getDifficulty)
+                .filter(Objects::nonNull)
                 .distinct()
                 .sorted(Comparator.naturalOrder())
                 .toList();

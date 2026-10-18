@@ -5,7 +5,6 @@ import com.march.backend.dto.AnswerSubmission;
 import com.march.backend.dto.GameResults;
 import com.march.backend.dto.GameSummary;
 import com.march.backend.dto.RoundResponse;
-import com.march.backend.model.Game;
 import com.march.backend.model.GameStartRequest;
 import com.march.backend.model.Player;
 import com.march.backend.service.GameService;
@@ -54,14 +53,14 @@ public class GameController {
 
     /** Retrieve a single game; only its participants may read it. */
     @GetMapping("/{id}")
-    public Game getGameById(@PathVariable Long id, Authentication authentication) {
+    public GameSummary getGameById(@PathVariable Long id, Authentication authentication) {
         gameService.requireParticipant(id, existingPlayer(authentication).getId());
-        return gameService.getById(id);
+        return gameService.getSummary(id);
     }
 
     /** Create an empty waiting game (rarely needed). */
     @PostMapping
-    public Game createGame() {
+    public GameSummary createGame() {
         return gameService.createGame();
     }
 
@@ -87,7 +86,7 @@ public class GameController {
 
     /** Join an existing game before it finishes. */
     @PutMapping("/{id}/join")
-    public Game joinGame(@PathVariable Long id, Authentication authentication) {
+    public GameSummary joinGame(@PathVariable Long id, Authentication authentication) {
         return gameService.joinGame(id, resolvePlayer(authentication).getId());
     }
 
@@ -106,8 +105,7 @@ public class GameController {
                 id,
                 existingPlayer(authentication).getId(),
                 submission.getQuestionId(),
-                submission.getAnswer(),
-                submission.getElapsedMs());
+                submission.getAnswer());
     }
 
     /** Advance to the next round; finishes the game after the last round. */

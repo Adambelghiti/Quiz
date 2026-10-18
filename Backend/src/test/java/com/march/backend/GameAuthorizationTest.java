@@ -130,7 +130,7 @@ class GameAuthorizationTest {
         mvc.perform(post("/api/games/{id}/answer", gameId)
                         .header(AUTH, stranger)
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"questionId\":" + questionId + ",\"answer\":\"whatever\",\"elapsedMs\":0}"))
+                        .content("{\"questionId\":" + questionId + ",\"answer\":\"whatever\"}"))
                 .andExpect(status().isForbidden());
     }
 

@@ -68,10 +68,10 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public Game createGame() {
+    public GameSummary createGame() {
         Game game = new Game();
         game.setStatus(GameStatus.WAITING);
-        return gameRepo.save(game);
+        return GameSummary.from(gameRepo.save(game));
     }
 
     @Override
@@ -117,7 +117,7 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public Game joinGame(Long gameId, Long playerId) {
+    public GameSummary joinGame(Long gameId, Long playerId) {
         Game game = getForUpdate(gameId);
         if (game.getStatus() == GameStatus.FINISHED) {
             throw new IllegalStateException("Cannot join a game that has already finished");
@@ -132,7 +132,7 @@ public class GameServiceImpl implements GameService {
         Game saved = gameRepo.save(game);
 
         broadcast(saved);
-        return saved;
+        return GameSummary.from(saved);
     }
 
     @Override
@@ -195,7 +195,7 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public AnswerResult submitAnswer(Long gameId, Long playerId, Long questionId, String answer, long elapsedMs) {
+    public AnswerResult submitAnswer(Long gameId, Long playerId, Long questionId, String answer) {
         Game game = getForUpdate(gameId);
         requireParticipant(game, playerId);
         if (game.getStatus() != GameStatus.IN_PROGRESS) {
@@ -212,8 +212,12 @@ public class GameServiceImpl implements GameService {
                 .orElseThrow(() -> new EntityNotFoundException("Question not found: " + questionId));
 
         boolean correct = isCorrect(question.getCorrectAnswer(), answer);
+        // The round deadline is enforced on the server clock. An answer that
+        // arrives after the round has expired never scores, even when correct,
+        // so a slow client cannot keep earning points past the deadline.
+        boolean late = roundExpired(game, System.currentTimeMillis());
         int delta = 0;
-        if (correct) {
+        if (correct && !late) {
             // Time is measured on the server from when the round started; the
             // client-supplied value is ignored so it cannot be gamed.
             delta = scoringService.calculateScore(BASE_POINTS, question.getDifficulty(), serverElapsedMs(game));
@@ -235,7 +239,6 @@ public class GameServiceImpl implements GameService {
         result.setRound(game.getCurrentRound());
         result.setTotalRounds(game.getTotalRounds());
         result.setRoundComplete(game.getAnsweredPlayerIds().containsAll(playerIds(game)));
-        result.setFinished(game.getStatus() == GameStatus.FINISHED);
         return result;
     }
 
@@ -283,6 +286,11 @@ public class GameServiceImpl implements GameService {
     public Game getById(Long id) {
         return gameRepo.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Game not found: " + id));
+    }
+
+    @Override
+    public GameSummary getSummary(Long id) {
+        return GameSummary.from(getById(id));
     }
 
     @Override
@@ -478,7 +486,7 @@ public class GameServiceImpl implements GameService {
     private List<Question> questionPool(Category category, Integer difficulty, Language language) {
         return questionRepo.findAll().stream()
                 .filter(q -> category == null || q.getCategory() == category)
-                .filter(q -> difficulty == null || q.getDifficulty() == difficulty)
+                .filter(q -> difficulty == null || difficulty.equals(q.getDifficulty()))
                 .filter(q -> language == null || q.getLanguage() == language)
                 .toList();
     }

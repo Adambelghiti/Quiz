@@ -66,7 +66,7 @@ public class PlayerServiceImpl implements PlayerService {
     @Override
     @Transactional(readOnly = true)
     public Optional<Player> findForUser(String username) {
-        AuthUser user = authUserRepository.findByUsername(username);
+        AuthUser user = authUserRepository.findByUsernameIgnoreCase(username);
         if (user == null) {
             return Optional.empty();
         }
@@ -76,7 +76,7 @@ public class PlayerServiceImpl implements PlayerService {
     @Override
     public Player resolveForUser(String username) {
         return findForUser(username).orElseGet(() -> {
-            AuthUser user = authUserRepository.findByUsername(username);
+            AuthUser user = authUserRepository.findByUsernameIgnoreCase(username);
             if (user == null) {
                 throw new EntityNotFoundException("User not found: " + username);
             }

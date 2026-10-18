@@ -58,7 +58,6 @@ export interface AnswerResult {
   round: number;
   totalRounds: number;
   roundComplete: boolean;
-  finished: boolean;
 }
 
 /** Final standings of a game. */
@@ -154,14 +153,12 @@ export class LobbyService {
     gameId: number,
     playerId: number,
     questionId: number,
-    answer: string,
-    elapsedMs: number
+    answer: string
   ): Observable<AnswerResult> {
     return this.http.post<AnswerResult>(`${this.apiUrl}/${gameId}/answer`, {
       playerId,
       questionId,
       answer,
-      elapsedMs,
     });
   }
 

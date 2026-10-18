@@ -31,7 +31,7 @@ public class QuestionResponse {
         response.hint = question.getHint();
         response.options = question.getOptions();
         response.category = question.getCategory() != null ? question.getCategory().name() : null;
-        response.difficulty = question.getDifficulty();
+        response.difficulty = question.getDifficulty() != null ? question.getDifficulty() : 0;
         response.language = question.getLanguage() != null ? question.getLanguage().name() : null;
         return response;
     }

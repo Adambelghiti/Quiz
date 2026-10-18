@@ -10,8 +10,7 @@ import lombok.Setter;
  * Body of a {@code POST /api/games/{id}/answer} request.
  * <p>
  * The acting player is taken from the authenticated principal, so no player id
- * is accepted here. Elapsed time is measured on the server and the client value
- * is ignored.
+ * is accepted here. Elapsed time is measured on the server clock.
  */
 @Getter
 @Setter
@@ -23,7 +22,4 @@ public class AnswerSubmission {
 
     @NotBlank(message = "answer is required")
     private String answer;
-
-    /** Retained for compatibility; ignored in favour of the server clock. */
-    private long elapsedMs;
 }

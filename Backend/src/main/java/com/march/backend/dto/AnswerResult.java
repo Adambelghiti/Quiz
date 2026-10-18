@@ -22,7 +22,4 @@ public class AnswerResult {
 
     /** True once every player in the game has answered the current round. */
     private boolean roundComplete;
-
-    /** True when this answer ended the game. */
-    private boolean finished;
 }

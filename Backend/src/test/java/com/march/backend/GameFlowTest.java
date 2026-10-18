@@ -3,10 +3,12 @@ package com.march.backend;
 import com.march.backend.dto.AnswerResult;
 import com.march.backend.dto.GameResults;
 import com.march.backend.dto.RoundResponse;
+import com.march.backend.model.Game;
 import com.march.backend.model.GameStartRequest;
 import com.march.backend.model.Player;
 import com.march.backend.model.Question;
 import com.march.backend.repository.GameHistoryRepository;
+import com.march.backend.repository.GameRepository;
 import com.march.backend.repository.PlayerRepository;
 import com.march.backend.repository.QuestionRepository;
 import com.march.backend.service.GameService;
@@ -36,6 +38,8 @@ class GameFlowTest {
     private QuestionRepository questionRepository;
     @Autowired
     private GameHistoryRepository gameHistoryRepository;
+    @Autowired
+    private GameRepository gameRepository;
 
     @Test
     void soloGameRunsToCompletionAndRecordsHistory() {
@@ -54,7 +58,7 @@ class GameFlowTest {
         while (!round.isFinished() && guard++ < 20) {
             Question question = questionRepository.findById(round.getQuestion().getId()).orElseThrow();
             AnswerResult result = gameService.submitAnswer(
-                    round.getGameId(), player.getId(), question.getId(), question.getCorrectAnswer(), 0);
+                    round.getGameId(), player.getId(), question.getId(), question.getCorrectAnswer());
             assertTrue(result.isCorrect(), "submitting the stored answer should be correct");
             round = gameService.nextRound(round.getGameId(), player.getId());
         }
@@ -82,7 +86,7 @@ class GameFlowTest {
 
         RoundResponse round = gameService.startGame(request);
         gameService.submitAnswer(round.getGameId(), player.getId(),
-                round.getQuestion().getId(), "not-the-answer", 0);
+                round.getQuestion().getId(), "not-the-answer");
 
         RoundResponse afterRound = gameService.nextRound(round.getGameId(), player.getId());
         assertTrue(afterRound.isFinished());
@@ -90,6 +94,33 @@ class GameFlowTest {
         var history = gameHistoryRepository.findByPlayerId(player.getId());
         assertFalse(history.isEmpty(), "even a zero-score player must appear in history");
         assertEquals(0, history.get(0).getFinalScore());
+    }
+
+    @Test
+    void aLateCorrectAnswerScoresNothing() {
+        Player player = newPlayer("late-answerer");
+
+        GameStartRequest request = new GameStartRequest();
+        request.setPlayerId(player.getId());
+        request.setDifficulty(1);
+        request.setRounds(1);
+
+        RoundResponse round = gameService.startGame(request);
+        Question question = questionRepository.findById(round.getQuestion().getId()).orElseThrow();
+
+        // Push the round start into the past so the answer arrives after the
+        // 30 second deadline (as if it were submitted ~40s into the round).
+        Game game = gameRepository.findById(round.getGameId()).orElseThrow();
+        game.setRoundStartedAt(System.currentTimeMillis() - 40_000L);
+        gameRepository.save(game);
+
+        AnswerResult result = gameService.submitAnswer(
+                round.getGameId(), player.getId(), question.getId(), question.getCorrectAnswer());
+
+        assertTrue(result.isCorrect(), "the submitted answer is still the correct one");
+        assertEquals(0, result.getScoreDelta(), "a late answer must not award points");
+        assertEquals(0, result.getTotalScore(), "a late answer must not change the total score");
+        assertEquals(0, result.getCorrectAnswers(), "a late answer must not count as correct");
     }
 
     @Test

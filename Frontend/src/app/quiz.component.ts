@@ -143,7 +143,7 @@ export class QuizComponent implements OnInit, OnDestroy {
 
     // Elapsed time is measured on the server; the client sends 0.
     this.lobby
-      .submitAnswer(this.gameId, this.playerId, this.round.question.id, this.selectedAnswer, 0)
+      .submitAnswer(this.gameId, this.playerId, this.round.question.id, this.selectedAnswer)
       .subscribe({
         next: (result) => {
           this.result = result;

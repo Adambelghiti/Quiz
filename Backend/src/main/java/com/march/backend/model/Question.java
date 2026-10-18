@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.EnumType;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
@@ -18,7 +19,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import java.util.List;
@@ -34,7 +36,8 @@ import java.util.List;
  */
 @Entity
 @Table(name = "questions")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Question {
@@ -49,9 +52,10 @@ public class Question {
     @Enumerated(EnumType.STRING)
     private Category category;
 
+    @NotNull(message = "Difficulty is required")
     @Min(value = 1, message = "Difficulty must be between 1 and 3")
     @Max(value = 3, message = "Difficulty must be between 1 and 3")
-    private int difficulty; // 1-3
+    private Integer difficulty; // 1-3
 
     @NotNull(message = "Language is required")
     @Enumerated(EnumType.STRING)
@@ -62,7 +66,10 @@ public class Question {
 
     @NotEmpty(message = "At least two answer options are required")
     @Size(min = 2, message = "At least two answer options are required")
-    @ElementCollection
+    // Eagerly loaded: a question is only ever shown with its options, and with
+    // spring.jpa.open-in-view disabled the collection must be initialised while
+    // the repository transaction is still open.
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "question_options", joinColumns = @JoinColumn(name = "question_id"))
     @Column(name = "option_text")
     private List<String> options;
