@@ -1,6 +1,5 @@
 package com.march.backend.security;
 
-import com.march.backend.model.Game;
 import com.march.backend.model.Player;
 import com.march.backend.repository.GameRepository;
 import com.march.backend.service.PlayerService;
@@ -20,9 +19,11 @@ import java.util.List;
  * Authenticates STOMP connections and scopes subscriptions.
  * <p>
  * On {@code CONNECT} the JWT from the {@code Authorization} native header is
- * validated and attached as the session principal. On {@code SUBSCRIBE} to a
- * specific game topic ({@code /topic/game/{id}}) the principal must be a player
- * in that game, so nobody can watch another game's live state.
+ * validated and attached as the session principal. Every {@code SUBSCRIBE} then
+ * requires an authenticated principal, and subscriptions to a specific game
+ * topic ({@code /topic/game/{id}}) additionally require the principal to be a
+ * player in that game, so anonymous clients or outsiders can never watch live
+ * game state.
  */
 @Component
 public class StompAuthChannelInterceptor implements ChannelInterceptor {
@@ -76,14 +77,18 @@ public class StompAuthChannelInterceptor implements ChannelInterceptor {
         }
     }
 
-    /** Reject subscriptions to game topics the principal is not part of. */
+    /**
+     * Reject subscriptions from anonymous sessions, and game-topic
+     * subscriptions from principals that are not part of that game.
+     */
     private void authorizeSubscription(StompHeaderAccessor accessor) {
+        if (accessor.getUser() == null || accessor.getUser().getName() == null) {
+            throw new MessagingException("Authentication required to subscribe to topics");
+        }
+
         String destination = accessor.getDestination();
         if (destination == null || !destination.startsWith(GAME_TOPIC_PREFIX)) {
             return;
-        }
-        if (accessor.getUser() == null || accessor.getUser().getName() == null) {
-            throw new MessagingException("Authentication required to subscribe to game topics");
         }
 
         Long gameId = parseGameId(destination);
@@ -91,12 +96,12 @@ public class StompAuthChannelInterceptor implements ChannelInterceptor {
             throw new MessagingException("Invalid game topic: " + destination);
         }
 
-        Long playerId = playerService.resolveForUser(accessor.getUser().getName()).getId();
-        Game game = gameRepository.findById(gameId)
-                .orElseThrow(() -> new MessagingException("Game not found: " + gameId));
-        boolean participant = game.getPlayers().stream()
-                .anyMatch(p -> p.getId().equals(playerId));
-        if (!participant) {
+        Long playerId = playerService.findForUser(accessor.getUser().getName())
+                .map(Player::getId)
+                .orElseThrow(() -> new MessagingException("You are not a player in game " + gameId));
+        // Count query instead of loading the game: this runs outside a
+        // transaction, so the lazy `players` collection cannot be initialised.
+        if (gameRepository.countPlayersInGame(gameId, playerId) == 0) {
             throw new MessagingException("You are not a player in game " + gameId);
         }
     }

@@ -21,4 +21,15 @@ public interface GameRepository extends JpaRepository<Game, Long> {
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("select g from Game g where g.id = :id")
     Optional<Game> findByIdForUpdate(@Param("id") Long id);
+
+    /**
+     * Number of times the given player appears in the given game.
+     * <p>
+     * Used for authorization checks (e.g. STOMP subscriptions) where the caller
+     * is not inside a transaction: loading the game and touching its lazy
+     * {@code players} collection would fail with a {@code LazyInitializationException}.
+     * A count query needs no session and no lazy initialisation.
+     */
+    @Query("select count(p) from Game g join g.players p where g.id = :gameId and p.id = :playerId")
+    long countPlayersInGame(@Param("gameId") Long gameId, @Param("playerId") Long playerId);
 }

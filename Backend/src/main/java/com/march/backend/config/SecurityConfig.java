@@ -5,7 +5,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.security.config.Customizer;
@@ -24,10 +23,12 @@ import java.io.IOException;
  * {@code /api/auth/**} is public; every other endpoint requires a valid
  * {@code Authorization: Bearer <token>} header. Missing/invalid tokens result in
  * a JSON 401 response produced by {@link #unauthorized}.
+ * <p>
+ * This chain is active in every profile, including {@code test}, so integration
+ * tests exercise exactly the same authorization rules as production.
  */
 @Configuration
 @EnableWebSecurity
-@Profile("!test") // Disable during unit tests to avoid pulling in full security stack
 public class SecurityConfig {
 
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
@@ -54,6 +55,10 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.POST, "/api/questions/**").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.PUT, "/api/questions/**").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.DELETE, "/api/questions/**").hasRole("ADMIN")
+                // Self-service player endpoints stay open to any authenticated user.
+                .requestMatchers(HttpMethod.GET, "/api/players/me", "/api/players/me/**").authenticated()
+                // The remaining (legacy) player CRUD is administrative.
+                .requestMatchers("/api/players", "/api/players/*").hasRole("ADMIN")
                 .anyRequest().authenticated())
             .exceptionHandling(ex -> ex.authenticationEntryPoint(this::unauthorized))
             .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);

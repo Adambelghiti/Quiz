@@ -20,6 +20,14 @@ public interface PlayerService {
      */
     Player resolveForUser(String username);
 
+    /**
+     * Look up the in-game player bound to the given username <em>without</em>
+     * creating one. Returns {@code Optional.empty()} when the user is unknown or
+     * has never entered a game, so read/probe paths cannot leave stray player
+     * rows behind.
+     */
+    Optional<Player> findForUser(String username);
+
     /** Finished games for the given user, newest first. */
     List<GameHistoryEntry> historyForUser(String username);
 

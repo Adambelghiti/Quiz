@@ -7,8 +7,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
  * Password encoder used by both the auth controller and the data seeder.
- * Kept in its own configuration so it is available even when the full
- * {@link SecurityConfig} filter chain is disabled (e.g. under the {@code test} profile).
+ * Kept in its own configuration so it is available independently of the
+ * {@link com.march.backend.config.SecurityConfig} filter chain (for example in
+ * slice tests that only load part of the context).
  */
 @Configuration
 public class PasswordConfig {

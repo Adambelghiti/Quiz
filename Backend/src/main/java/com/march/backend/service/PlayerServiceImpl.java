@@ -64,12 +64,22 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
-    public Player resolveForUser(String username) {
+    @Transactional(readOnly = true)
+    public Optional<Player> findForUser(String username) {
         AuthUser user = authUserRepository.findByUsername(username);
         if (user == null) {
-            throw new EntityNotFoundException("User not found: " + username);
+            return Optional.empty();
         }
-        return playerRepository.findByAuthUserId(user.getId()).orElseGet(() -> {
+        return playerRepository.findByAuthUserId(user.getId());
+    }
+
+    @Override
+    public Player resolveForUser(String username) {
+        return findForUser(username).orElseGet(() -> {
+            AuthUser user = authUserRepository.findByUsername(username);
+            if (user == null) {
+                throw new EntityNotFoundException("User not found: " + username);
+            }
             Player player = new Player();
             player.setName(user.getUsername());
             player.setAuthUserId(user.getId());

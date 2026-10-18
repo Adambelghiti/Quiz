@@ -191,22 +191,20 @@ public class GameServiceImpl implements GameService {
     @Override
     public RoundResponse getRound(Long gameId, Long playerId) {
         Game game = getById(gameId);
-        if (playerId == null || game.getPlayers().stream().noneMatch(p -> p.getId().equals(playerId))) {
-            throw new AccessDeniedException("You are not a player in this game");
-        }
+        requireParticipant(game, playerId);
         return buildRound(game, playerId);
     }
 
     @Override
     public AnswerResult submitAnswer(Long gameId, Long playerId, Long questionId, String answer, long elapsedMs) {
         Game game = getForUpdate(gameId);
+        requireParticipant(game, playerId);
         if (game.getStatus() != GameStatus.IN_PROGRESS) {
             throw new IllegalStateException("Game is not in progress");
         }
         if (game.getCurrentQuestionId() == null || !game.getCurrentQuestionId().equals(questionId)) {
             throw new IllegalStateException("That is not the question for the current round");
         }
-        requirePlayer(game, playerId);
         if (game.getAnsweredPlayerIds().contains(playerId)) {
             throw new IllegalStateException("You have already answered this round");
         }
@@ -245,6 +243,7 @@ public class GameServiceImpl implements GameService {
     @Override
     public RoundResponse nextRound(Long gameId, Long playerId) {
         Game game = getForUpdate(gameId);
+        requireParticipant(game, playerId);
         if (game.getStatus() == GameStatus.FINISHED) {
             return buildRound(game, playerId);
         }
@@ -289,10 +288,7 @@ public class GameServiceImpl implements GameService {
 
     @Override
     public void requireParticipant(Long gameId, Long playerId) {
-        Game game = getById(gameId);
-        if (playerId == null || game.getPlayers().stream().noneMatch(p -> p.getId().equals(playerId))) {
-            throw new AccessDeniedException("You are not a player in this game");
-        }
+        requireParticipant(getById(gameId), playerId);
     }
 
     @Override
@@ -503,6 +499,17 @@ public class GameServiceImpl implements GameService {
     private void requirePlayer(Game game, Long playerId) {
         if (playerId == null || game.getPlayers().stream().noneMatch(p -> p.getId().equals(playerId))) {
             throw new IllegalArgumentException("Player is not part of this game");
+        }
+    }
+
+    /**
+     * Ensure the given player takes part in the game; throws
+     * {@code AccessDeniedException} (rendered as HTTP 403) otherwise. Used by
+     * every operation that must not be available to non-participants.
+     */
+    private void requireParticipant(Game game, Long playerId) {
+        if (playerId == null || game.getPlayers().stream().noneMatch(p -> p.getId().equals(playerId))) {
+            throw new AccessDeniedException("You are not a player in this game");
         }
     }
 
