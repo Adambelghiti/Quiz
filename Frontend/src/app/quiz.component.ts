@@ -84,6 +84,20 @@ export class QuizComponent implements OnInit, OnDestroy {
     return !!this.round && this.round.round >= this.round.totalRounds;
   }
 
+  /**
+   * Text direction of the question's own content. The application shell stays
+   * in English, so only the question card is flipped (Arabic is read right to
+   * left).
+   */
+  get questionDirection(): 'rtl' | 'ltr' {
+    return this.question?.language === 'AR' ? 'rtl' : 'ltr';
+  }
+
+  /** BCP-47 tag of the question's language, so assistive tech reads it correctly. */
+  get questionLang(): string {
+    return (this.question?.language ?? 'EN').toLowerCase();
+  }
+
   get iAmHost(): boolean {
     return this.playerId !== null && this.round?.hostPlayerId === this.playerId;
   }

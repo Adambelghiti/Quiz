@@ -3,9 +3,9 @@ package com.march.backend.model;
 /**
  * Payload for starting a new game.
  * <p>
- * All filters are optional; a {@code null}/blank value means "any". Unknown
- * values (e.g. a category that does not exist) are treated as "any" rather than
- * causing an error.
+ * All filters are optional; a {@code null}/blank value means "any". A non-blank
+ * value that does not name a real category or language is rejected with a 400
+ * response rather than silently being treated as "any".
  */
 public class GameStartRequest {
 

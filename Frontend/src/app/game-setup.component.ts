@@ -17,6 +17,13 @@ interface LanguageOption {
   label: string;
 }
 
+/**
+ * "Any" language means no filter at all, so a single game can deal questions
+ * from several languages. The label says so, because a mixed-language game
+ * otherwise looks like a bug.
+ */
+const ANY_LANGUAGE_LABEL = 'Any language (questions may mix languages)';
+
 @Component({
   selector: 'app-game-setup',
   templateUrl: './game-setup.component.html',
@@ -27,7 +34,7 @@ interface LanguageOption {
 export class GameSetupComponent implements OnInit {
   categories: string[] = [];
   difficulties: DifficultyOption[] = [{ value: null, label: 'Any difficulty' }];
-  languages: LanguageOption[] = [{ value: null, label: 'Any language' }];
+  languages: LanguageOption[] = [{ value: null, label: ANY_LANGUAGE_LABEL }];
 
   category: string | null = null;
   difficulty: number | null = null;
@@ -69,7 +76,7 @@ export class GameSetupComponent implements OnInit {
           })),
         ];
         this.languages = [
-          { value: null, label: 'Any language' },
+          { value: null, label: ANY_LANGUAGE_LABEL },
           ...(facets.languages ?? []).map((l) => ({
             value: l,
             label: GameSetupComponent.languageLabels[l] ?? l,

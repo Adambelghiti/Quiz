@@ -28,7 +28,6 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Random;
@@ -548,12 +547,28 @@ public class GameServiceImpl implements GameService {
 
     private <E extends Enum<E>> E parseEnum(Class<E> type, String value) {
         if (value == null || value.isBlank()) {
-            return null;
+            return null; // no filter -> "any"
         }
-        try {
-            return Enum.valueOf(type, value.trim().toUpperCase(Locale.ROOT));
-        } catch (IllegalArgumentException ex) {
-            return null; // unknown value -> "any"
+
+        String requested = value.trim();
+        E match = null;
+        StringBuilder valid = new StringBuilder();
+        for (E candidate : type.getEnumConstants()) {
+            if (candidate.name().equalsIgnoreCase(requested)) {
+                match = candidate;
+            }
+            if (valid.length() > 0) {
+                valid.append(", ");
+            }
+            valid.append(candidate.name());
         }
+
+        if (match == null) {
+            // Reject rather than falling back to "any": silently widening a
+            // filter is how a game ends up mixing languages or categories.
+            throw new IllegalArgumentException("Unknown " + type.getSimpleName().toLowerCase()
+                    + " '" + requested + "'. Valid values are: " + valid);
+        }
+        return match;
     }
 }

@@ -56,7 +56,9 @@
 }
 
 .option {
-  text-align: left;
+  /* Logical alignment so Arabic options follow the card's right-to-left
+     direction instead of staying pinned to the physical left edge. */
+  text-align: start;
   padding: 0.75rem 0.9rem;
   border: 1px solid #d1d5db;
   border-radius: 10px;

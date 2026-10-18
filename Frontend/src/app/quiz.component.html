@@ -29,7 +29,12 @@
       </div>
     </div>
 
-    <div class="question-card" *ngIf="r.question as q">
+    <div
+      class="question-card"
+      *ngIf="r.question as q"
+      [attr.dir]="questionDirection"
+      [attr.lang]="questionLang"
+    >
       <p class="question-text">{{ q.text }}</p>
 
       <div class="options-container">
@@ -60,7 +65,8 @@
     >
       <strong>{{ res.correct ? 'Correct!' : 'Not quite.' }}</strong>
       <span *ngIf="res.correct"> +{{ res.scoreDelta }} points.</span>
-      <span *ngIf="!res.correct"> The answer was “{{ res.correctAnswer }}”.</span>
+      <span *ngIf="!res.correct">
+        The answer was “<span dir="auto">{{ res.correctAnswer }}</span>”.</span>
     </div>
 
     <div class="actions">

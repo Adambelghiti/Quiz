@@ -87,11 +87,11 @@
     <tbody>
       <tr *ngFor="let q of questions">
         <td>{{ q.id }}</td>
-        <td>{{ q.text }}</td>
+        <td dir="auto">{{ q.text }}</td>
         <td>{{ q.category }}</td>
         <td>{{ q.difficulty }}</td>
         <td>{{ q.language }}</td>
-        <td>{{ q.correctAnswer }}</td>
+        <td dir="auto">{{ q.correctAnswer }}</td>
         <td class="row-actions">
           <button type="button" class="link-button" (click)="edit(q)">Edit</button>
           <button type="button" class="link-button danger" (click)="remove(q)">Delete</button>
