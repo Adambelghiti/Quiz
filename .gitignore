@@ -1,0 +1,28 @@
+﻿# Dependencies and generated frontend output
+Frontend/node_modules/
+Frontend/dist/
+Frontend/tmp/
+Frontend/out-tsc/
+Frontend/.angular/cache/
+Frontend/coverage/
+
+# Backend build output and local database files
+Backend/target/
+Backend/data/
+Backend/*.mv.db
+Backend/*.trace.db
+
+# Downloaded Maven distribution and archives
+Backend/apache-maven-*/
+Backend/*.tar.gz
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# IDE and operating-system files
+.idea/
+*.iml
+.DS_Store
+Thumbs.db

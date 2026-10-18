@@ -1,0 +1,102 @@
+<div class="quiz-container">
+  <div class="quiz-header">
+    <h1>Quiz Game</h1>
+    <div class="quiz-meta" *ngIf="round">
+      <span class="badge">Round {{ round.round }} / {{ round.totalRounds }}</span>
+      <span class="badge">Score: {{ myScore }}</span>
+      <span class="badge timer" [class.low]="!result && timeLeft <= 5" *ngIf="round.question">
+        ⏱ {{ timeLeft }}s
+      </span>
+      <span class="badge live" *ngIf="iAmHost">host</span>
+      <button type="button" class="secondary-button" (click)="quit()">Quit</button>
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    <p>Loading question…</p>
+  </div>
+
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+
+  <ng-container *ngIf="round as r">
+    <div class="scoreboard" *ngIf="r.players.length > 1">
+      <div class="score-row" *ngFor="let p of r.players">
+        <span class="player-name">
+          {{ p.name }}
+          <span class="answered-dot" *ngIf="hasAnswered(p.playerId)" title="answered">✓</span>
+        </span>
+        <strong>{{ p.score }}</strong>
+      </div>
+    </div>
+
+    <div class="question-card" *ngIf="r.question as q">
+      <p class="question-text">{{ q.text }}</p>
+
+      <div class="options-container">
+        <button
+          type="button"
+          *ngFor="let option of q.options"
+          class="option"
+          [class.selected]="selectedAnswer === option"
+          [class.correct]="result && option === result.correctAnswer"
+          [class.incorrect]="result && selectedAnswer === option && !result.correct"
+          [disabled]="!!result || timeExpired"
+          (click)="selectAnswer(option)"
+        >
+          {{ option }}
+        </button>
+      </div>
+
+      <div *ngIf="q.hint && !result" class="hint">
+        <small>HINT: {{ q.hint }}</small>
+      </div>
+    </div>
+
+    <div
+      *ngIf="result as res"
+      class="feedback"
+      [class.correct]="res.correct"
+      [class.incorrect]="!res.correct"
+    >
+      <strong>{{ res.correct ? 'Correct!' : 'Not quite.' }}</strong>
+      <span *ngIf="res.correct"> +{{ res.scoreDelta }} points.</span>
+      <span *ngIf="!res.correct"> The answer was “{{ res.correctAnswer }}”.</span>
+    </div>
+
+    <div class="actions">
+      <button
+        *ngIf="!result"
+        type="button"
+        class="primary-button"
+        [disabled]="!selectedAnswer || submitting"
+        (click)="submit()"
+      >
+        {{ submitting ? 'Submitting…' : 'Submit Answer' }}
+      </button>
+
+      <button
+        *ngIf="result && canAdvance"
+        type="button"
+        class="primary-button"
+        [disabled]="advancing"
+        (click)="next()"
+      >
+        {{ advancing ? 'Loading…' : (isLastRound ? 'See Results' : 'Next Question') }}
+      </button>
+
+      <button
+        *ngIf="result && !canAdvance && iAmHost"
+        type="button"
+        class="secondary-button"
+        [disabled]="advancing"
+        (click)="next()"
+      >
+        Skip ahead
+      </button>
+
+      <p *ngIf="result && !canAdvance" class="waiting-text">
+        Waiting for the other players to answer…
+      </p>
+    </div>
+  </ng-container>
+</div>

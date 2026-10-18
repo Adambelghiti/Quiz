@@ -1,0 +1,49 @@
+<div class="auth-page">
+  <div class="auth-card">
+    <h1 class="brand">QuizGame</h1>
+    <h2 class="title">{{ isRegister ? 'Create your account' : 'Welcome back' }}</h2>
+    <p class="subtitle">
+      {{ isRegister ? 'Sign up to start playing.' : 'Sign in to continue.' }}
+    </p>
+
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+
+    <form (ngSubmit)="submit()">
+      <label for="username">Username</label>
+      <input
+        id="username"
+        name="username"
+        [(ngModel)]="username"
+        autocomplete="username"
+        placeholder="e.g. demo"
+        required
+      />
+
+      <label for="password">Password</label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        [(ngModel)]="password"
+        [attr.autocomplete]="isRegister ? 'new-password' : 'current-password'"
+        placeholder="••••••"
+        required
+      />
+
+      <button type="submit" class="primary-button" [disabled]="loading">
+        {{ loading ? 'Please wait…' : (isRegister ? 'Create account' : 'Sign in') }}
+      </button>
+    </form>
+
+    <p class="switch-mode">
+      {{ isRegister ? 'Already have an account?' : 'New here?' }}
+      <button type="button" class="link-button" (click)="toggleMode()">
+        {{ isRegister ? 'Sign in' : 'Create an account' }}
+      </button>
+    </p>
+
+    <p class="demo-hint" *ngIf="!isRegister">
+      Demo account: <code>demo</code> / <code>demo123</code>
+    </p>
+  </div>
+</div>

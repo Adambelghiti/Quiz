@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="room-header">
+    <h2>Waiting Room</h2>
+    <button (click)="leave()" class="secondary-button">Leave</button>
+  </div>
+
+  <div *ngIf="loading">Loading room…</div>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+
+  <ng-container *ngIf="!loading && room as r">
+    <p class="room-meta">
+      Room <strong>#{{ r.gameId }}</strong> · {{ r.totalRounds }} rounds ·
+      {{ r.players.length }} player(s)
+    </p>
+
+    <ul class="player-list">
+      <li *ngFor="let p of r.players">
+        <span class="avatar">{{ p.name.charAt(0).toUpperCase() }}</span>
+        <span class="name">{{ p.name }}</span>
+        <span class="host-tag" *ngIf="p.playerId === r.hostPlayerId">host</span>
+      </li>
+    </ul>
+
+    <p class="hint">
+      Share <code>/room/{{ r.gameId }}</code> with other players, then the host starts the game.
+    </p>
+
+    <div class="room-actions">
+      <button *ngIf="isHost" class="primary-button" [disabled]="!canStart" (click)="start()">
+        {{ starting ? 'Starting…' : 'Start Game' }}
+      </button>
+      <button *ngIf="isHost" class="secondary-button" (click)="cancel()">Cancel Room</button>
+      <p *ngIf="!isHost" class="waiting-text">Waiting for the host to start…</p>
+    </div>
+  </ng-container>
+</div>

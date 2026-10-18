@@ -1,0 +1,36 @@
+<div class="container">
+  <h2>New Game</h2>
+
+  <div *ngIf="errorMsg" class="error-message">{{ errorMsg }}</div>
+
+  <form (ngSubmit)="createRoom()">
+    <label for="category">Category</label>
+    <select id="category" name="category" [(ngModel)]="category">
+      <option [ngValue]="null">Any category</option>
+      <option *ngFor="let cat of categories" [ngValue]="cat">{{ cat }}</option>
+    </select>
+
+    <label for="difficulty">Difficulty</label>
+    <select id="difficulty" name="difficulty" [(ngModel)]="difficulty">
+      <option *ngFor="let diff of difficulties" [ngValue]="diff.value">{{ diff.label }}</option>
+    </select>
+
+    <label for="language">Language</label>
+    <select id="language" name="language" [(ngModel)]="language">
+      <option *ngFor="let lang of languages" [ngValue]="lang.value">{{ lang.label }}</option>
+    </select>
+
+    <label for="rounds">Number of rounds</label>
+    <input id="rounds" name="rounds" type="number" min="1" max="20" [(ngModel)]="rounds" />
+
+    <div class="form-actions">
+      <button type="submit" class="primary-button" [disabled]="loading">
+        {{ loading ? 'Creating…' : 'Create Multiplayer Room' }}
+      </button>
+      <button type="button" class="secondary-button" [disabled]="loading" (click)="playSolo()">
+        Play Solo
+      </button>
+      <button type="button" class="link-button" (click)="cancel()">Back to lobby</button>
+    </div>
+  </form>
+</div>

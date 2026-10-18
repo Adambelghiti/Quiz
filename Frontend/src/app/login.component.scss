@@ -1,0 +1,109 @@
+:host {
+  display: block;
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background:
+    radial-gradient(circle at 15% 15%, #6366f1 0%, transparent 45%),
+    radial-gradient(circle at 85% 0%, #8b5cf6 0%, transparent 40%),
+    linear-gradient(160deg, #1e1b4b 0%, #312e81 55%, #4338ca 100%);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.35);
+}
+
+.brand {
+  margin: 0 0 1.25rem;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #4f46e5;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #111827;
+}
+
+.subtitle {
+  margin: 0.25rem 0 1.25rem;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.3rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  background: #ffffff;
+  color: #111827;
+
+  &:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
+  }
+}
+
+.primary-button {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.25rem;
+}
+
+.switch-mode {
+  margin: 1.25rem 0 0;
+  font-size: 0.875rem;
+  color: #4b5563;
+  text-align: center;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #4f46e5;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.demo-hint {
+  margin: 1rem 0 0;
+  font-size: 0.8rem;
+  color: #6b7280;
+  text-align: center;
+
+  code {
+    background: #f3f4f6;
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    color: #111827;
+  }
+}

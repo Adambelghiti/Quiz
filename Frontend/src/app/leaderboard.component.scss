@@ -1,0 +1,59 @@
+.container {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.leaderboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  margin-top: 20px;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: left;
+}
+
+.leaderboard-table tr.top {
+  background: #fff8e1;
+  font-weight: 600;
+}
+
+.error-message {
+  margin: 12px 0;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #fdecea;
+  color: #b3261e;
+}
+
+.empty {
+  color: #888;
+}
+
+.secondary-button {
+  padding: 8px 16px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font: inherit;
+}

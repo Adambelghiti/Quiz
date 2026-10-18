@@ -1,0 +1,63 @@
+:host {
+  display: block;
+}
+
+.lobby-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.live-indicator {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #9ca3af;
+
+  &::before {
+    content: '●';
+    margin-right: 0.3rem;
+  }
+
+  &.online {
+    color: #16a34a;
+  }
+}
+
+.game-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  li.empty {
+    justify-content: flex-start;
+    color: #6b7280;
+  }
+}
+
+.game-info {
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.leaderboard {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.35rem 0;
+    border-bottom: 1px dashed #e5e7eb;
+  }
+}

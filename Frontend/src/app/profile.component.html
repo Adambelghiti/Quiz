@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="profile-header">
+    <h2>{{ stats?.name || 'Your Profile' }}</h2>
+    <button type="button" class="secondary-button" (click)="backToLobby()">Back to Lobby</button>
+  </div>
+
+  <div *ngIf="loading">Loading…</div>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+
+  <ng-container *ngIf="!loading && stats as s">
+    <div class="stat-grid">
+      <div class="stat-card">
+        <span class="stat-value">{{ s.gamesPlayed }}</span>
+        <span class="stat-label">Games played</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value">{{ s.wins }}</span>
+        <span class="stat-label">Wins</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value">{{ s.totalScore }}</span>
+        <span class="stat-label">Total score</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value">{{ s.bestScore }}</span>
+        <span class="stat-label">Best game</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value">{{ accuracyPercent() }}</span>
+        <span class="stat-label">Accuracy</span>
+      </div>
+    </div>
+
+    <h3>Match history</h3>
+    <table class="history-table" *ngIf="history.length > 0; else noHistory">
+      <thead>
+        <tr>
+          <th>Game</th>
+          <th>Played</th>
+          <th>Rank</th>
+          <th>Correct</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let h of history" [class.win]="h.rank === 1">
+          <td>#{{ h.gameId }}</td>
+          <td>{{ h.playedAt | date: 'short' }}</td>
+          <td>{{ h.rank }}</td>
+          <td>{{ h.correctAnswers }} / {{ h.totalRounds }}</td>
+          <td>{{ h.finalScore }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <ng-template #noHistory>
+      <p class="empty">No games played yet — jump into a quiz!</p>
+    </ng-template>
+  </ng-container>
+</div>

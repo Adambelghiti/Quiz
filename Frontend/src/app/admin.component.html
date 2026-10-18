@@ -1,0 +1,105 @@
+<div class="container">
+  <div class="admin-header">
+    <h2>Question Admin</h2>
+    <div class="admin-actions">
+      <button type="button" class="secondary-button" (click)="newQuestion()">New Question</button>
+      <button type="button" class="secondary-button" (click)="backToLobby()">Back to Lobby</button>
+    </div>
+  </div>
+
+  <div *ngIf="notice" class="notice">{{ notice }}</div>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+
+  <form class="question-form" (ngSubmit)="save()">
+    <h3>{{ editingId != null ? 'Edit question #' + editingId : 'New question' }}</h3>
+
+    <label for="text">Question</label>
+    <textarea id="text" name="text" rows="2" [(ngModel)]="draft.text" required></textarea>
+
+    <div class="row">
+      <div>
+        <label for="category">Category</label>
+        <select id="category" name="category" [(ngModel)]="draft.category">
+          <option *ngFor="let c of categories" [ngValue]="c">{{ c }}</option>
+        </select>
+      </div>
+      <div>
+        <label for="difficulty">Difficulty</label>
+        <select id="difficulty" name="difficulty" [(ngModel)]="draft.difficulty">
+          <option [ngValue]="1">Easy</option>
+          <option [ngValue]="2">Medium</option>
+          <option [ngValue]="3">Hard</option>
+        </select>
+      </div>
+      <div>
+        <label for="language">Language</label>
+        <select id="language" name="language" [(ngModel)]="draft.language">
+          <option *ngFor="let l of languages" [ngValue]="l">{{ l }}</option>
+        </select>
+      </div>
+    </div>
+
+    <label>Options</label>
+    <div class="options-grid">
+      <input
+        *ngFor="let option of draft.options; let i = index; trackBy: trackOption"
+        [name]="'option' + i"
+        type="text"
+        [placeholder]="'Option ' + (i + 1)"
+        [(ngModel)]="draft.options[i]"
+      />
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="correctAnswer">Correct answer (must match an option)</label>
+        <input id="correctAnswer" name="correctAnswer" type="text" [(ngModel)]="draft.correctAnswer" />
+      </div>
+      <div>
+        <label for="hint">Hint (optional)</label>
+        <input id="hint" name="hint" type="text" [(ngModel)]="draft.hint" />
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="primary-button" [disabled]="saving">
+        {{ saving ? 'Saving…' : editingId != null ? 'Update Question' : 'Create Question' }}
+      </button>
+      <button type="button" class="secondary-button" (click)="newQuestion()">Clear</button>
+    </div>
+  </form>
+
+  <h3>Question bank ({{ questions.length }})</h3>
+  <div *ngIf="loading">Loading questions…</div>
+
+  <table class="question-table" *ngIf="!loading">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Question</th>
+        <th>Category</th>
+        <th>Diff.</th>
+        <th>Lang.</th>
+        <th>Answer</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let q of questions">
+        <td>{{ q.id }}</td>
+        <td>{{ q.text }}</td>
+        <td>{{ q.category }}</td>
+        <td>{{ q.difficulty }}</td>
+        <td>{{ q.language }}</td>
+        <td>{{ q.correctAnswer }}</td>
+        <td class="row-actions">
+          <button type="button" class="link-button" (click)="edit(q)">Edit</button>
+          <button type="button" class="link-button danger" (click)="remove(q)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="questions.length === 0">
+        <td colspan="7" class="empty">No questions yet.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="lobby-header">
+    <div>
+      <h2>Lobby</h2>
+      <p class="signed-in">Signed in as <strong>{{ username }}</strong></p>
+    </div>
+    <div class="header-actions">
+      <button (click)="openProfile()" class="secondary-button">Profile</button>
+      <button (click)="openLeaderboard()" class="secondary-button">Leaderboard</button>
+      <button *ngIf="isAdmin" (click)="openAdmin()" class="secondary-button">Admin</button>
+      <button (click)="logout()" class="secondary-button">Log out</button>
+    </div>
+  </div>
+
+  <div class="lobby-actions">
+    <button (click)="newGame()" class="primary-button">Create New Game</button>
+    <button (click)="refresh()" class="secondary-button">Refresh</button>
+    <span class="live-indicator" [class.online]="live">
+      {{ live ? 'Live updates on' : 'Live updates offline' }}
+    </span>
+  </div>
+
+  <h3>Open Games</h3>
+  <div *ngIf="loading">Loading games…</div>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+
+  <ul class="game-list" *ngIf="!loading && !error">
+    <li *ngFor="let g of games">
+      <span class="game-info">
+        Game {{ g.id }} · {{ g.status }} · round {{ g.currentRound }}/{{ g.totalRounds }} ·
+        {{ g.playerCount }} player(s)
+      </span>
+      <button *ngIf="canJoin(g)" (click)="joinGame(g)" class="secondary-button">
+        {{ g.status === 'WAITING' ? 'Join Room' : 'Join Game' }}
+      </button>
+    </li>
+    <li *ngIf="games.length === 0" class="empty">No games yet — create one to get started!</li>
+  </ul>
+
+  <ng-container *ngIf="leaderboard.length > 0">
+    <h3>Top Players</h3>
+    <ol class="leaderboard">
+      <li *ngFor="let entry of leaderboard">
+        <span>{{ entry.name }}</span>
+        <strong>{{ entry.totalScore }}</strong>
+      </li>
+    </ol>
+  </ng-container>
+</div>
