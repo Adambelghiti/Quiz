@@ -7,12 +7,14 @@ import com.march.backend.model.Language;
 import com.march.backend.model.Question;
 import com.march.backend.service.QuestionService;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -46,12 +48,17 @@ public class QuestionController {
     /**
      * The filter values that actually have questions. Used by the setup screen so
      * it never offers a combination that would return an empty pool.
+     * <p>
+     * Legacy rows without a category or language are skipped rather than thrown
+     * on, so one incomplete question cannot break the whole setup screen.
      */
     @GetMapping("/facets")
     public QuizFacets getFacets() {
         List<Question> all = questionService.getAllQuestions();
         List<String> categories = all.stream()
-                .map(q -> q.getCategory().name())
+                .map(Question::getCategory)
+                .filter(Objects::nonNull)
+                .map(Category::name)
                 .distinct()
                 .sorted()
                 .toList();
@@ -61,7 +68,9 @@ public class QuestionController {
                 .sorted(Comparator.naturalOrder())
                 .toList();
         List<String> languages = all.stream()
-                .map(q -> q.getLanguage().name())
+                .map(Question::getLanguage)
+                .filter(Objects::nonNull)
+                .map(Language::name)
                 .distinct()
                 .sorted()
                 .toList();
@@ -85,13 +94,13 @@ public class QuestionController {
 
     /** Create a new question; administrators only. */
     @PostMapping
-    public ResponseEntity<Question> create(@RequestBody Question question) {
+    public ResponseEntity<Question> create(@Valid @RequestBody Question question) {
         return ResponseEntity.ok(questionService.createQuestion(question));
     }
 
     /** Update an existing question; administrators only. */
     @PutMapping("/{id}")
-    public ResponseEntity<Question> update(@PathVariable Long id, @RequestBody Question question) {
+    public ResponseEntity<Question> update(@PathVariable Long id, @Valid @RequestBody Question question) {
         Question existing = questionService.getQuestionById(id);
         if (existing == null) {
             throw new EntityNotFoundException("Question not found: " + id);
