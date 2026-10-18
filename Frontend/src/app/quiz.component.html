@@ -8,6 +8,15 @@
         ⏱ {{ timeLeft }}s
       </span>
       <span class="badge live" *ngIf="iAmHost">host</span>
+      <button
+        type="button"
+        class="sound-toggle"
+        (click)="effects.toggleMuted()"
+        [attr.aria-pressed]="effects.muted"
+        [title]="effects.muted ? 'Unmute sounds' : 'Mute sounds'"
+      >
+        {{ effects.muted ? '🔇' : '🔊' }}
+      </button>
       <button type="button" class="secondary-button" (click)="quit()">Quit</button>
     </div>
   </div>

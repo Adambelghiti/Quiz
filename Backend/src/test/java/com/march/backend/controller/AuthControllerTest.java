@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -84,10 +85,37 @@ class AuthControllerTest {
                 .andExpect(jsonPath("$.token").isNotEmpty());
     }
 
+    @Test
+    void repeatedFailedLoginsLockThePairOut() throws Exception {
+        mvc.perform(register("lockout-user", "secret")).andExpect(status().isCreated());
+
+        // Five bad passwords are refused as usual (401) but counted.
+        for (int attempt = 1; attempt <= 5; attempt++) {
+            mvc.perform(login("lockout-user", "wrong-password"))
+                    .andExpect(status().isUnauthorized());
+        }
+
+        // The sixth attempt is blocked before the password is even checked.
+        mvc.perform(login("lockout-user", "wrong-password"))
+                .andExpect(status().isTooManyRequests())
+                .andExpect(header().exists("Retry-After"))
+                .andExpect(jsonPath("$.message").value(containsString("Too many")));
+
+        // Even the correct password stays locked out during the cooldown.
+        mvc.perform(login("lockout-user", "secret"))
+                .andExpect(status().isTooManyRequests());
+    }
+
     /* ------------------------------------------------------------------ */
 
     private RequestBuilder register(String username, String password) {
         return post("/api/auth/register")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"username\":\"" + username + "\",\"password\":\"" + password + "\"}");
+    }
+
+    private RequestBuilder login(String username, String password) {
+        return post("/api/auth/login")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content("{\"username\":\"" + username + "\",\"password\":\"" + password + "\"}");
     }

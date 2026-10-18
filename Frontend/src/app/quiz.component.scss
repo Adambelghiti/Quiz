@@ -108,6 +108,7 @@
   padding: 0.75rem 1rem;
   border-radius: 10px;
   font-size: 0.95rem;
+  animation: feedback-pop 0.25s ease-out;
 
   &.correct {
     background: #f0fdf4;
@@ -125,6 +126,56 @@
 .badge.live {
   background: #fef3c7;
   color: #92400e;
+}
+
+/* The timer pulses during the last five seconds. */
+.badge.timer.low {
+  background: #fee2e2;
+  color: #b91c1c;
+  animation: timer-pulse 1s ease-in-out infinite;
+}
+
+@keyframes timer-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes feedback-pop {
+  from {
+    transform: scale(0.96);
+    opacity: 0.4;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.sound-toggle {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  background: #ffffff;
+  line-height: 1;
+  font-size: 0.95rem;
+
+  &:hover {
+    background: #f3f4f6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .badge.timer.low,
+  .feedback {
+    animation: none;
+  }
 }
 
 .scoreboard {

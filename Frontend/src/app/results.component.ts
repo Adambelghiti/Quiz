@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { GameResults, LobbyService, RoundResponse } from './lobby.service';
 import { CurrentGameService } from './current-game.service';
+import { EffectsService } from './effects.service';
+import { PlayerService } from './player.service';
 import { WebSocketService } from './websocket.service';
 
 @Component({
@@ -27,7 +29,9 @@ export class ResultsComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private router: Router,
     private currentGame: CurrentGameService,
-    private ws: WebSocketService
+    private ws: WebSocketService,
+    private playerService: PlayerService,
+    public effects: EffectsService
   ) {}
 
   ngOnInit(): void {
@@ -90,12 +94,26 @@ export class ResultsComponent implements OnInit, OnDestroy {
       next: (results) => {
         this.results = results;
         this.loading = false;
+        this.celebrate(results);
       },
       error: (err) => {
         this.error = err?.error?.message ?? 'Could not load the results.';
         this.loading = false;
       },
     });
+  }
+
+  /** Confetti for the winner, with an extra fanfare when the local player won. */
+  private celebrate(results: GameResults): void {
+    if (results.winnerId == null) {
+      return;
+    }
+    const me = this.playerService.getPlayerId();
+    if (me !== null && results.winnerId === me) {
+      this.effects.celebrate();
+    } else {
+      this.effects.confetti();
+    }
   }
 
   /**

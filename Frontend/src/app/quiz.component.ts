@@ -8,6 +8,7 @@ import {
   RoundResponse,
 } from './lobby.service';
 import { CurrentGameService } from './current-game.service';
+import { EffectsService } from './effects.service';
 import { PlayerService } from './player.service';
 import { WebSocketService } from './websocket.service';
 
@@ -36,6 +37,7 @@ export class QuizComponent implements OnInit, OnDestroy {
   private unsubscribe?: () => void;
   private timer?: ReturnType<typeof setInterval>;
   private lastTick = 0;
+  private lastTickSound = -1;
 
   constructor(
     private lobby: LobbyService,
@@ -43,7 +45,8 @@ export class QuizComponent implements OnInit, OnDestroy {
     private router: Router,
     private currentGame: CurrentGameService,
     private playerService: PlayerService,
-    private ws: WebSocketService
+    private ws: WebSocketService,
+    public effects: EffectsService
   ) {}
 
   ngOnInit(): void {
@@ -150,6 +153,11 @@ export class QuizComponent implements OnInit, OnDestroy {
           this.submitting = false;
           this.markSelfAnswered();
           this.refreshScores();
+          if (result.correct) {
+            this.effects.answerCorrect();
+          } else {
+            this.effects.answerWrong();
+          }
         },
         error: (err) => {
           this.submitting = false;
@@ -313,6 +321,7 @@ export class QuizComponent implements OnInit, OnDestroy {
   private startTimer(): void {
     this.clearTimer();
     this.lastTick = 0;
+    this.lastTickSound = -1;
     this.tick();
     this.timer = setInterval(() => this.tick(), 250);
   }
@@ -328,6 +337,12 @@ export class QuizComponent implements OnInit, OnDestroy {
     const wasPositive = this.lastTick > 0;
     this.lastTick = remaining;
     this.timeLeft = remaining;
+
+    // One tick per second for the final five seconds of the round.
+    if (!this.result && remaining > 0 && remaining <= 5 && remaining !== this.lastTickSound) {
+      this.lastTickSound = remaining;
+      this.effects.tick();
+    }
 
     if (remaining <= 0) {
       this.clearTimer();

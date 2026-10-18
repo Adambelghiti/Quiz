@@ -6,7 +6,7 @@ import { RoundResponse } from './lobby.service';
  * so the injected services are not needed.
  */
 function componentWith(questionLanguage?: string): QuizComponent {
-  const component = new QuizComponent(null!, null!, null!, null!, null!, null!);
+  const component = new QuizComponent(null!, null!, null!, null!, null!, null!, null!);
   component.round = {
     gameId: 1,
     status: 'IN_PROGRESS',

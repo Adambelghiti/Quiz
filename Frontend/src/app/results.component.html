@@ -1,6 +1,15 @@
 <div class="results-container">
   <div class="results-header">
     <h1>Quiz Results</h1>
+    <button
+      type="button"
+      class="sound-toggle"
+      (click)="effects.toggleMuted()"
+      [attr.aria-pressed]="effects.muted"
+      [title]="effects.muted ? 'Unmute sounds' : 'Mute sounds'"
+    >
+      {{ effects.muted ? '🔇' : '🔊' }}
+    </button>
   </div>
 
   <div *ngIf="loading" class="loading">

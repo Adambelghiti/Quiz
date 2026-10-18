@@ -5,6 +5,8 @@ import com.march.backend.dto.AuthResponse;
 import com.march.backend.model.AuthUser;
 import com.march.backend.repository.AuthUserRepository;
 import com.march.backend.security.JwtService;
+import com.march.backend.security.LoginRateLimiter;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,13 +33,16 @@ public class AuthController {
     private final AuthUserRepository authUserRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
+    private final LoginRateLimiter loginRateLimiter;
 
     public AuthController(AuthUserRepository authUserRepository,
                           PasswordEncoder passwordEncoder,
-                          JwtService jwtService) {
+                          JwtService jwtService,
+                          LoginRateLimiter loginRateLimiter) {
         this.authUserRepository = authUserRepository;
         this.passwordEncoder = passwordEncoder;
         this.jwtService = jwtService;
+        this.loginRateLimiter = loginRateLimiter;
     }
 
     /** Register a new user and immediately return a token (auto-login). */
@@ -76,17 +81,29 @@ public class AuthController {
         }
     }
 
-    /** Authenticate an existing user and return a fresh token. */
+    /**
+     * Authenticate an existing user and return a fresh token.
+     * <p>
+     * Repeated failures for the same (IP, username) pair are throttled: once the
+     * limit is reached the pair is locked out and this endpoint answers with
+     * {@code 429 Too Many Requests} until the cooldown expires.
+     */
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody AuthRequest request) {
+    public ResponseEntity<?> login(@RequestBody AuthRequest request, HttpServletRequest http) {
         String username = normalizeUsername(request.getUsername());
         String password = request.getPassword() == null ? "" : request.getPassword();
+        String ip = clientIp(http);
+
+        // Refuse before touching the database or the password encoder while locked.
+        loginRateLimiter.checkAllowed(ip, username);
 
         AuthUser user = username.isEmpty() ? null : authUserRepository.findByUsernameIgnoreCase(username);
         if (user == null || !passwordEncoder.matches(password, user.getPassword())) {
+            loginRateLimiter.recordFailure(ip, username);
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                     .body(Map.of("message", "Invalid username or password"));
         }
+        loginRateLimiter.recordSuccess(ip, username);
         return ResponseEntity.ok(buildResponse(user));
     }
 
@@ -111,6 +128,15 @@ public class AuthController {
     /** Trim a raw username; never returns {@code null}. */
     private String normalizeUsername(String raw) {
         return raw == null ? "" : raw.trim();
+    }
+
+    /**
+     * Client address used to key the rate limiter. Only the transport-level
+     * address is trusted; {@code X-Forwarded-For} is deliberately ignored because
+     * a client could otherwise rotate the header to dodge the lockout.
+     */
+    private String clientIp(HttpServletRequest request) {
+        return request == null || request.getRemoteAddr() == null ? "unknown" : request.getRemoteAddr();
     }
 
     /** Return a human-readable problem with the username, or {@code null} when it is valid. */
