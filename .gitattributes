@@ -1,0 +1,5 @@
+# Maven wrapper scripts.
+# The POSIX shell script must keep LF endings so its shebang stays valid on
+# Linux/macOS; the Windows batch script is most reliable with CRLF.
+mvnw text eol=lf
+mvnw.cmd text eol=crlf
