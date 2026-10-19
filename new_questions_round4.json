@@ -1,0 +1,2538 @@
+{
+  "description": "Round 4 content expansion: 60 questions covering Europe history and scientists/innovations, plus a second set of questions for the four Moroccan, Arabic and Islamic culture categories.",
+  "categories": [
+    "EUROPEAN_HISTORY",
+    "SCIENTISTS_AND_INNOVATIONS",
+    "MOROCCAN_HISTORY",
+    "MOROCCAN_CULTURE",
+    "ARABIC_CULTURE",
+    "ISLAMIC_CULTURE"
+  ],
+  "languages": [
+    "EN",
+    "FR",
+    "AR"
+  ],
+  "questions": [
+    {
+      "category": "EUROPEAN_HISTORY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which empire was ruled from Rome in antiquity?",
+          "hint": "Its emperors included Augustus and Trajan.",
+          "options": [
+            "Roman Empire",
+            "Ottoman Empire",
+            "British Empire",
+            "Russian Empire"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Roman Empire was ruled from Rome and later from Constantinople."
+        },
+        "FR": {
+          "text": "Quel empire était dirigé depuis Rome dans l'Antiquité ?",
+          "hint": "Ses empereurs incluaient Auguste et Trajan.",
+          "options": [
+            "Empire romain",
+            "Empire ottoman",
+            "Empire britannique",
+            "Empire russe"
+          ],
+          "correctIndex": 0,
+          "explanation": "L'Empire romain était dirigé depuis Rome, puis depuis Constantinople."
+        },
+        "AR": {
+          "text": "أي إمبراطورية كانت تُحكم من روما في العصور القديمة؟",
+          "hint": "من أباطرتها أغسطس وتراجان.",
+          "options": [
+            "الإمبراطورية الرومانية",
+            "الإمبراطورية العثمانية",
+            "الإمبراطورية البريطانية",
+            "الإمبراطورية الروسية"
+          ],
+          "correctIndex": 0,
+          "explanation": "كانت الإمبراطورية الرومانية تُحكم من روما، ثم من القسطنطينية لاحقاً."
+        }
+      }
+    },
+    {
+      "category": "EUROPEAN_HISTORY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "In which year did the French Revolution begin?",
+          "hint": "It started with the storming of the Bastille.",
+          "options": [
+            "1789",
+            "1776",
+            "1815",
+            "1848"
+          ],
+          "correctIndex": 0,
+          "explanation": "The French Revolution began in 1789 with the storming of the Bastille on 14 July."
+        },
+        "FR": {
+          "text": "En quelle année la Révolution française a-t-elle commencé ?",
+          "hint": "Elle a commencé avec la prise de la Bastille.",
+          "options": [
+            "1789",
+            "1776",
+            "1815",
+            "1848"
+          ],
+          "correctIndex": 0,
+          "explanation": "La Révolution française a commencé en 1789 avec la prise de la Bastille le 14 juillet."
+        },
+        "AR": {
+          "text": "في أي سنة بدأت الثورة الفرنسية؟",
+          "hint": "بدأت باقتحام سجن الباستيل.",
+          "options": [
+            "1789",
+            "1776",
+            "1815",
+            "1848"
+          ],
+          "correctIndex": 0,
+          "explanation": "بدأت الثورة الفرنسية عام 1789 باقتحام الباستيل في 14 يوليو."
+        }
+      }
+    },
+    {
+      "category": "EUROPEAN_HISTORY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Who was the first Emperor of France?",
+          "hint": "He crowned himself in 1804.",
+          "options": [
+            "Napoleon Bonaparte",
+            "Louis XVI",
+            "Charles de Gaulle",
+            "Charlemagne"
+          ],
+          "correctIndex": 0,
+          "explanation": "Napoleon Bonaparte crowned himself Emperor of the French in 1804."
+        },
+        "FR": {
+          "text": "Qui a été le premier empereur des Français ?",
+          "hint": "Il s'est couronné en 1804.",
+          "options": [
+            "Napoléon Bonaparte",
+            "Louis XVI",
+            "Charles de Gaulle",
+            "Charlemagne"
+          ],
+          "correctIndex": 0,
+          "explanation": "Napoléon Bonaparte s'est couronné empereur des Français en 1804."
+        },
+        "AR": {
+          "text": "من كان أول إمبراطور لفرنسا؟",
+          "hint": "توّج نفسه عام 1804.",
+          "options": [
+            "نابليون بونابرت",
+            "لويس السادس عشر",
+            "شارل ديغول",
+            "شارلمان"
+          ],
+          "correctIndex": 0,
+          "explanation": "توّج نابليون بونابرت نفسه إمبراطوراً للفرنسيين عام 1804."
+        }
+      }
+    },
+    {
+      "category": "EUROPEAN_HISTORY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which wall divided Berlin from 1961 to 1989?",
+          "hint": "It fell in November 1989.",
+          "options": [
+            "Berlin Wall",
+            "Hadrian's Wall",
+            "Great Wall",
+            "Iron Curtain"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Berlin Wall divided East and West Berlin from 1961 until it fell in 1989."
+        },
+        "FR": {
+          "text": "Quel mur a divisé Berlin de 1961 à 1989 ?",
+          "hint": "Il est tombé en novembre 1989.",
+          "options": [
+            "Mur de Berlin",
+            "Mur d'Hadrien",
+            "Grande Muraille",
+            "Rideau de fer"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le mur de Berlin a divisé Berlin-Est et Berlin-Ouest de 1961 à sa chute en 1989."
+        },
+        "AR": {
+          "text": "أي جدار قسم برلين من 1961 إلى 1989؟",
+          "hint": "سقط في نوفمبر 1989.",
+          "options": [
+            "جدار برلين",
+            "سور هادريان",
+            "سور الصين العظيم",
+            "الستار الحديدي"
+          ],
+          "correctIndex": 0,
+          "explanation": "قسم جدار برلين بين برلين الشرقية والغربية من 1961 حتى سقوطه عام 1989."
+        }
+      }
+    },
+    {
+      "category": "EUROPEAN_HISTORY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which war was fought between 1914 and 1918?",
+          "hint": "It was triggered by the assassination of Archduke Franz Ferdinand.",
+          "options": [
+            "World War I",
+            "World War II",
+            "Crimean War",
+            "Franco-Prussian War"
+          ],
+          "correctIndex": 0,
+          "explanation": "World War I was fought from 1914 to 1918."
+        },
+        "FR": {
+          "text": "Quelle guerre a été menée entre 1914 et 1918 ?",
+          "hint": "Elle a été déclenchée par l'assassinat de l'archiduc François-Ferdinand.",
+          "options": [
+            "Première Guerre mondiale",
+            "Seconde Guerre mondiale",
+            "Guerre de Crimée",
+            "Guerre franco-prussienne"
+          ],
+          "correctIndex": 0,
+          "explanation": "La Première Guerre mondiale s'est déroulée de 1914 à 1918."
+        },
+        "AR": {
+          "text": "أي حرب دارت بين 1914 و1918؟",
+          "hint": "أُشعلت باغتيال الأرشيدوق فرانز فرديناند.",
+          "options": [
+            "الحرب العالمية الأولى",
+            "الحرب العالمية الثانية",
+            "حرب القرم",
+            "الحرب الفرنسية-البروسية"
+          ],
+          "correctIndex": 0,
+          "explanation": "دارت الحرب العالمية الأولى بين عامي 1914 و1918."
+        }
+      }
+    },
+    {
+      "category": "EUROPEAN_HISTORY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "What was the Renaissance?",
+          "hint": "It revived classical art and learning.",
+          "options": [
+            "A cultural and intellectual movement",
+            "A religious war",
+            "A political treaty",
+            "An economic depression"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Renaissance was a cultural and intellectual movement that revived classical art and learning."
+        },
+        "FR": {
+          "text": "Qu'était la Renaissance ?",
+          "hint": "Elle a ravivé l'art et le savoir classiques.",
+          "options": [
+            "Un mouvement culturel et intellectuel",
+            "Une guerre de religion",
+            "Un traité politique",
+            "Une dépression économique"
+          ],
+          "correctIndex": 0,
+          "explanation": "La Renaissance était un mouvement culturel et intellectuel qui a ravivé l'art et le savoir classiques."
+        },
+        "AR": {
+          "text": "ما كانت عصر النهضة؟",
+          "hint": "أحيا الفن والمعرفة الكلاسيكية.",
+          "options": [
+            "حركة ثقافية وفكرية",
+            "حرب دينية",
+            "معاهدة سياسية",
+            "كساد اقتصادي"
+          ],
+          "correctIndex": 0,
+          "explanation": "كان عصر النهضة حركة ثقافية وفكرية أحيت الفن والمعرفة الكلاسيكية."
+        }
+      }
+    },
+    {
+      "category": "EUROPEAN_HISTORY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which queen ruled England for much of the 19th century?",
+          "hint": "The Victorian era is named after her.",
+          "options": [
+            "Queen Victoria",
+            "Elizabeth I",
+            "Mary Stuart",
+            "Anne Boleyn"
+          ],
+          "correctIndex": 0,
+          "explanation": "Queen Victoria reigned from 1837 to 1901, and the Victorian era is named after her."
+        },
+        "FR": {
+          "text": "Quelle reine a régné sur l'Angleterre pendant une grande partie du XIXe siècle ?",
+          "hint": "L'ère victorienne porte son nom.",
+          "options": [
+            "La reine Victoria",
+            "Élisabeth Ier",
+            "Marie Stuart",
+            "Anne Boleyn"
+          ],
+          "correctIndex": 0,
+          "explanation": "La reine Victoria a régné de 1837 à 1901, et l'ère victorienne porte son nom."
+        },
+        "AR": {
+          "text": "أي ملكة حكمت إنجلترا في معظم القرن التاسع عشر؟",
+          "hint": "سُمي العصر الفيكتوري باسمها.",
+          "options": [
+            "الملكة فيكتوريا",
+            "إليزابيث الأولى",
+            "ماري ستيوارت",
+            "آن بولين"
+          ],
+          "correctIndex": 0,
+          "explanation": "حكمت الملكة فيكتوريا من 1837 إلى 1901، وسُمي العصر الفيكتوري باسمها."
+        }
+      }
+    },
+    {
+      "category": "EUROPEAN_HISTORY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Who was the leader of Nazi Germany?",
+          "hint": "He was born in Austria.",
+          "options": [
+            "Adolf Hitler",
+            "Benito Mussolini",
+            "Joseph Stalin",
+            "Francisco Franco"
+          ],
+          "correctIndex": 0,
+          "explanation": "Adolf Hitler led Nazi Germany from 1933 to 1945."
+        },
+        "FR": {
+          "text": "Qui était le dirigeant de l'Allemagne nazie ?",
+          "hint": "Il est né en Autriche.",
+          "options": [
+            "Adolf Hitler",
+            "Benito Mussolini",
+            "Joseph Staline",
+            "Francisco Franco"
+          ],
+          "correctIndex": 0,
+          "explanation": "Adolf Hitler a dirigé l'Allemagne nazie de 1933 à 1945."
+        },
+        "AR": {
+          "text": "من كان زعيم ألمانيا النازية؟",
+          "hint": "وُلد في النمسا.",
+          "options": [
+            "أدولف هتلر",
+            "بينيتو موسوليني",
+            "جوزيف ستالين",
+            "فرانسيسكو فرانكو"
+          ],
+          "correctIndex": 0,
+          "explanation": "قاد أدولف هتلر ألمانيا النازية من 1933 إلى 1945."
+        }
+      }
+    },
+    {
+      "category": "EUROPEAN_HISTORY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which treaty ended World War I in 1919?",
+          "hint": "It was signed near Paris.",
+          "options": [
+            "Treaty of Versailles",
+            "Treaty of Rome",
+            "Treaty of Paris",
+            "Treaty of Utrecht"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Treaty of Versailles, signed in 1919, formally ended World War I."
+        },
+        "FR": {
+          "text": "Quel traité a mis fin à la Première Guerre mondiale en 1919 ?",
+          "hint": "Il a été signé près de Paris.",
+          "options": [
+            "Traité de Versailles",
+            "Traité de Rome",
+            "Traité de Paris",
+            "Traité d'Utrecht"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le traité de Versailles, signé en 1919, a mis fin officiellement à la Première Guerre mondiale."
+        },
+        "AR": {
+          "text": "أي معاهدة أنهت الحرب العالمية الأولى عام 1919؟",
+          "hint": "وُقعت قرب باريس.",
+          "options": [
+            "معاهدة فرساي",
+            "معاهدة روما",
+            "معاهدة باريس",
+            "معاهدة أوترخت"
+          ],
+          "correctIndex": 0,
+          "explanation": "أنهت معاهدة فرساي الموقعة عام 1919 الحرب العالمية الأولى رسمياً."
+        }
+      }
+    },
+    {
+      "category": "EUROPEAN_HISTORY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which city was the center of the Byzantine Empire?",
+          "hint": "It is now Istanbul.",
+          "options": [
+            "Constantinople",
+            "Athens",
+            "Rome",
+            "Vienna"
+          ],
+          "correctIndex": 0,
+          "explanation": "Constantinople, now Istanbul, was the capital of the Byzantine Empire."
+        },
+        "FR": {
+          "text": "Quelle ville était le centre de l'Empire byzantin ?",
+          "hint": "C'est aujourd'hui Istanbul.",
+          "options": [
+            "Constantinople",
+            "Athènes",
+            "Rome",
+            "Vienne"
+          ],
+          "correctIndex": 0,
+          "explanation": "Constantinople, aujourd'hui Istanbul, était la capitale de l'Empire byzantin."
+        },
+        "AR": {
+          "text": "أي مدينة كانت مركز الإمبراطورية البيزنطية؟",
+          "hint": "إنها إسطنبول اليوم.",
+          "options": [
+            "القسطنطينية",
+            "أثينا",
+            "روما",
+            "فيينا"
+          ],
+          "correctIndex": 0,
+          "explanation": "كانت القسطنطينية، إسطنبول اليوم، عاصمة الإمبراطورية البيزنطية."
+        }
+      }
+    },
+    {
+      "category": "SCIENTISTS_AND_INNOVATIONS",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Who formulated the laws of motion?",
+          "hint": "He also described universal gravitation.",
+          "options": [
+            "Isaac Newton",
+            "Albert Einstein",
+            "Galileo Galilei",
+            "Nikola Tesla"
+          ],
+          "correctIndex": 0,
+          "explanation": "Isaac Newton formulated the three laws of motion and the law of universal gravitation."
+        },
+        "FR": {
+          "text": "Qui a formulé les lois du mouvement ?",
+          "hint": "Il a aussi décrit la gravitation universelle.",
+          "options": [
+            "Isaac Newton",
+            "Albert Einstein",
+            "Galilée",
+            "Nikola Tesla"
+          ],
+          "correctIndex": 0,
+          "explanation": "Isaac Newton a formulé les trois lois du mouvement et la loi de la gravitation universelle."
+        },
+        "AR": {
+          "text": "من صاغ قوانين الحركة؟",
+          "hint": "وصف أيضاً الجاذبية الكونية.",
+          "options": [
+            "إسحاق نيوتن",
+            "ألبرت أينشتاين",
+            "غاليليو غاليلي",
+            "نيكولا تسلا"
+          ],
+          "correctIndex": 0,
+          "explanation": "صاغ إسحاق نيوتن قوانين الحركة الثلاثة وقانون الجاذبية الكونية."
+        }
+      }
+    },
+    {
+      "category": "SCIENTISTS_AND_INNOVATIONS",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Who proposed the theory of relativity?",
+          "hint": "His famous equation is E = mc².",
+          "options": [
+            "Albert Einstein",
+            "Isaac Newton",
+            "Niels Bohr",
+            "Max Planck"
+          ],
+          "correctIndex": 0,
+          "explanation": "Albert Einstein proposed the theory of relativity, including the equation E = mc²."
+        },
+        "FR": {
+          "text": "Qui a proposé la théorie de la relativité ?",
+          "hint": "Sa célèbre équation est E = mc².",
+          "options": [
+            "Albert Einstein",
+            "Isaac Newton",
+            "Niels Bohr",
+            "Max Planck"
+          ],
+          "correctIndex": 0,
+          "explanation": "Albert Einstein a proposé la théorie de la relativité, dont l'équation célèbre est E = mc²."
+        },
+        "AR": {
+          "text": "من اقترح نظرية النسبية؟",
+          "hint": "معادلته الشهيرة هي E = mc².",
+          "options": [
+            "ألبرت أينشتاين",
+            "إسحاق نيوتن",
+            "نيلز بور",
+            "ماكس بلانك"
+          ],
+          "correctIndex": 0,
+          "explanation": "اقترح ألبرت أينشتاين نظرية النسبية، ومنها معادلته الشهيرة E = mc²."
+        }
+      }
+    },
+    {
+      "category": "SCIENTISTS_AND_INNOVATIONS",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Who discovered penicillin?",
+          "hint": "It was an accidental discovery in 1928.",
+          "options": [
+            "Alexander Fleming",
+            "Louis Pasteur",
+            "Marie Curie",
+            "Joseph Lister"
+          ],
+          "correctIndex": 0,
+          "explanation": "Alexander Fleming discovered penicillin in 1928 when he noticed mould killing bacteria."
+        },
+        "FR": {
+          "text": "Qui a découvert la pénicilline ?",
+          "hint": "Ce fut une découverte accidentelle en 1928.",
+          "options": [
+            "Alexander Fleming",
+            "Louis Pasteur",
+            "Marie Curie",
+            "Joseph Lister"
+          ],
+          "correctIndex": 0,
+          "explanation": "Alexander Fleming a découvert la pénicilline en 1928 en remarquant qu'une moisissure tuait des bactéries."
+        },
+        "AR": {
+          "text": "من اكتشف البنسلين؟",
+          "hint": "كان اكتشافاً عرضياً عام 1928.",
+          "options": [
+            "ألكسندر فلمنغ",
+            "لويس باستور",
+            "ماري كوري",
+            "جوزيف ليستر"
+          ],
+          "correctIndex": 0,
+          "explanation": "اكتشف ألكسندر فلمنغ البنسلين عام 1928 عندما لاحظ أن العفن يقتل البكتيريا."
+        }
+      }
+    },
+    {
+      "category": "SCIENTISTS_AND_INNOVATIONS",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Who invented the telephone?",
+          "hint": "He patented it in 1876.",
+          "options": [
+            "Alexander Graham Bell",
+            "Thomas Edison",
+            "Nikola Tesla",
+            "Guglielmo Marconi"
+          ],
+          "correctIndex": 0,
+          "explanation": "Alexander Graham Bell patented the telephone in 1876."
+        },
+        "FR": {
+          "text": "Qui a inventé le téléphone ?",
+          "hint": "Il l'a breveté en 1876.",
+          "options": [
+            "Alexander Graham Bell",
+            "Thomas Edison",
+            "Nikola Tesla",
+            "Guglielmo Marconi"
+          ],
+          "correctIndex": 0,
+          "explanation": "Alexander Graham Bell a breveté le téléphone en 1876."
+        },
+        "AR": {
+          "text": "من اخترع الهاتف؟",
+          "hint": "سجّل براءة اختراعه عام 1876.",
+          "options": [
+            "ألكسندر غراهام بيل",
+            "توماس إديسون",
+            "نيكولا تسلا",
+            "غولييلمو ماركوني"
+          ],
+          "correctIndex": 0,
+          "explanation": "سجّل ألكسندر غراهام بيل براءة اختراع الهاتف عام 1876."
+        }
+      }
+    },
+    {
+      "category": "SCIENTISTS_AND_INNOVATIONS",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Who was the first woman to win a Nobel Prize?",
+          "hint": "She won in physics in 1903.",
+          "options": [
+            "Marie Curie",
+            "Rosalind Franklin",
+            "Ada Lovelace",
+            "Dorothy Hodgkin"
+          ],
+          "correctIndex": 0,
+          "explanation": "Marie Curie was the first woman to win a Nobel Prize, in physics in 1903."
+        },
+        "FR": {
+          "text": "Qui a été la première femme à recevoir un prix Nobel ?",
+          "hint": "Elle l'a reçu en physique en 1903.",
+          "options": [
+            "Marie Curie",
+            "Rosalind Franklin",
+            "Ada Lovelace",
+            "Dorothy Hodgkin"
+          ],
+          "correctIndex": 0,
+          "explanation": "Marie Curie a été la première femme à recevoir un prix Nobel, en physique en 1903."
+        },
+        "AR": {
+          "text": "من كانت أول امرأة تفوز بجائزة نوبل؟",
+          "hint": "فازت بها في الفيزياء عام 1903.",
+          "options": [
+            "ماري كوري",
+            "روزاليند فرانكلين",
+            "آدا لوفلايس",
+            "دوروثي هودجكين"
+          ],
+          "correctIndex": 0,
+          "explanation": "كانت ماري كوري أول امرأة تفوز بجائزة نوبل، في الفيزياء عام 1903."
+        }
+      }
+    },
+    {
+      "category": "SCIENTISTS_AND_INNOVATIONS",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Who developed the polio vaccine?",
+          "hint": "The vaccine was introduced in 1955.",
+          "options": [
+            "Jonas Salk",
+            "Edward Jenner",
+            "Louis Pasteur",
+            "Robert Koch"
+          ],
+          "correctIndex": 0,
+          "explanation": "Jonas Salk developed the first effective polio vaccine, introduced in 1955."
+        },
+        "FR": {
+          "text": "Qui a mis au point le vaccin contre la polio ?",
+          "hint": "Le vaccin a été introduit en 1955.",
+          "options": [
+            "Jonas Salk",
+            "Edward Jenner",
+            "Louis Pasteur",
+            "Robert Koch"
+          ],
+          "correctIndex": 0,
+          "explanation": "Jonas Salk a mis au point le premier vaccin efficace contre la polio, introduit en 1955."
+        },
+        "AR": {
+          "text": "من طوّر لقاح شلل الأطفال؟",
+          "hint": "أُدخل اللقاح عام 1955.",
+          "options": [
+            "جوناس سالك",
+            "إدوارد جينر",
+            "لويس باستور",
+            "روبرت كوخ"
+          ],
+          "correctIndex": 0,
+          "explanation": "طوّر جوناس سالك أول لقاح فعّال لشلل الأطفال، وأُدخل عام 1955."
+        }
+      }
+    },
+    {
+      "category": "SCIENTISTS_AND_INNOVATIONS",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Who wrote \"On the Origin of Species\"?",
+          "hint": "He sailed on HMS Beagle.",
+          "options": [
+            "Charles Darwin",
+            "Gregor Mendel",
+            "Carl Linnaeus",
+            "Alfred Wallace"
+          ],
+          "correctIndex": 0,
+          "explanation": "Charles Darwin wrote \"On the Origin of Species\", published in 1859."
+        },
+        "FR": {
+          "text": "Qui a écrit « L'Origine des espèces » ?",
+          "hint": "Il a navigué sur le HMS Beagle.",
+          "options": [
+            "Charles Darwin",
+            "Gregor Mendel",
+            "Carl Linné",
+            "Alfred Wallace"
+          ],
+          "correctIndex": 0,
+          "explanation": "Charles Darwin a écrit « L'Origine des espèces », publié en 1859."
+        },
+        "AR": {
+          "text": "من كتب \"أصل الأنواع\"؟",
+          "hint": "أبحر على متن سفينة البيغل.",
+          "options": [
+            "تشارلز داروين",
+            "غريغور مندل",
+            "كارل لينيوس",
+            "ألفريد والاس"
+          ],
+          "correctIndex": 0,
+          "explanation": "كتب تشارلز داروين \"أصل الأنواع\" الذي نُشر عام 1859."
+        }
+      }
+    },
+    {
+      "category": "SCIENTISTS_AND_INNOVATIONS",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Who is credited with inventing the practical incandescent light bulb?",
+          "hint": "He also founded a famous electric company.",
+          "options": [
+            "Thomas Edison",
+            "Alexander Graham Bell",
+            "James Watt",
+            "Michael Faraday"
+          ],
+          "correctIndex": 0,
+          "explanation": "Thomas Edison developed a practical, long-lasting incandescent light bulb in 1879."
+        },
+        "FR": {
+          "text": "Qui est crédité de l'invention de l'ampoule électrique pratique ?",
+          "hint": "Il a aussi fondé une célèbre entreprise d'électricité.",
+          "options": [
+            "Thomas Edison",
+            "Alexander Graham Bell",
+            "James Watt",
+            "Michael Faraday"
+          ],
+          "correctIndex": 0,
+          "explanation": "Thomas Edison a mis au point une ampoule à incandescence pratique et durable en 1879."
+        },
+        "AR": {
+          "text": "من يُنسب إليه اختراع المصباح الكهربائي العملي؟",
+          "hint": "أسس أيضاً شركة كهرباء شهيرة.",
+          "options": [
+            "توماس إديسون",
+            "ألكسندر غراهام بيل",
+            "جيمس واط",
+            "مايكل فاراداي"
+          ],
+          "correctIndex": 0,
+          "explanation": "طوّر توماس إديسون مصباحاً كهربائياً عملياً وطويل الأمد عام 1879."
+        }
+      }
+    },
+    {
+      "category": "SCIENTISTS_AND_INNOVATIONS",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Who discovered radioactivity with her husband Pierre?",
+          "hint": "She won Nobel Prizes in physics and chemistry.",
+          "options": [
+            "Marie Curie",
+            "Lise Meitner",
+            "Rosalind Franklin",
+            "Ada Lovelace"
+          ],
+          "correctIndex": 0,
+          "explanation": "Marie Curie discovered radioactivity with Pierre Curie and won Nobel Prizes in physics and chemistry."
+        },
+        "FR": {
+          "text": "Qui a découvert la radioactivité avec son mari Pierre ?",
+          "hint": "Elle a reçu des prix Nobel en physique et en chimie.",
+          "options": [
+            "Marie Curie",
+            "Lise Meitner",
+            "Rosalind Franklin",
+            "Ada Lovelace"
+          ],
+          "correctIndex": 0,
+          "explanation": "Marie Curie a découvert la radioactivité avec Pierre Curie et a reçu des prix Nobel en physique et en chimie."
+        },
+        "AR": {
+          "text": "من اكتشفت النشاط الإشعاعي مع زوجها بيير؟",
+          "hint": "فازت بجوائز نوبل في الفيزياء والكيمياء.",
+          "options": [
+            "ماري كوري",
+            "ليز مايتنر",
+            "روزاليند فرانكلين",
+            "آدا لوفلايس"
+          ],
+          "correctIndex": 0,
+          "explanation": "اكتشفت ماري كوري النشاط الإشعاعي مع زوجها بيير وفازت بجوائز نوبل في الفيزياء والكيمياء."
+        }
+      }
+    },
+    {
+      "category": "SCIENTISTS_AND_INNOVATIONS",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Who created the first successful smallpox vaccine?",
+          "hint": "He used cowpox in 1796.",
+          "options": [
+            "Edward Jenner",
+            "Louis Pasteur",
+            "Jonas Salk",
+            "Alexander Fleming"
+          ],
+          "correctIndex": 0,
+          "explanation": "Edward Jenner created the first successful smallpox vaccine using cowpox in 1796."
+        },
+        "FR": {
+          "text": "Qui a créé le premier vaccin efficace contre la variole ?",
+          "hint": "Il a utilisé la vaccine en 1796.",
+          "options": [
+            "Edward Jenner",
+            "Louis Pasteur",
+            "Jonas Salk",
+            "Alexander Fleming"
+          ],
+          "correctIndex": 0,
+          "explanation": "Edward Jenner a créé le premier vaccin efficace contre la variole en utilisant la vaccine en 1796."
+        },
+        "AR": {
+          "text": "من أنشأ أول لقاح ناجح للجدري؟",
+          "hint": "استخدم جدري البقر عام 1796.",
+          "options": [
+            "إدوارد جينر",
+            "لويس باستور",
+            "جوناس سالك",
+            "ألكسندر فلمنغ"
+          ],
+          "correctIndex": 0,
+          "explanation": "أنشأ إدوارد جينر أول لقاح ناجح للجدري باستخدام جدري البقر عام 1796."
+        }
+      }
+    },
+    {
+      "category": "MOROCCAN_HISTORY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which dynasty built the Koutoubia Mosque?",
+          "hint": "They also built the Hassan Tower.",
+          "options": [
+            "Almohads",
+            "Almoravids",
+            "Saadians",
+            "Alaouites"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Almohads built the Koutoubia Mosque in Marrakech in the 12th century."
+        },
+        "FR": {
+          "text": "Quelle dynastie a construit la mosquée Koutoubia ?",
+          "hint": "Ils ont aussi construit la tour Hassan.",
+          "options": [
+            "Almohades",
+            "Almoravides",
+            "Saadiens",
+            "Alaouites"
+          ],
+          "correctIndex": 0,
+          "explanation": "Les Almohades ont construit la mosquée Koutoubia à Marrakech au XIIe siècle."
+        },
+        "AR": {
+          "text": "أي سلالة بنت مسجد الكتبية؟",
+          "hint": "بنوا أيضاً صومعة حسان.",
+          "options": [
+            "الموحدون",
+            "المرابطون",
+            "السعديون",
+            "العلويون"
+          ],
+          "correctIndex": 0,
+          "explanation": "بنى الموحدون مسجد الكتبية في مراكش في القرن الثاني عشر."
+        }
+      }
+    },
+    {
+      "category": "MOROCCAN_HISTORY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which city was the capital of the Almoravid Empire?",
+          "hint": "It was founded in 1070.",
+          "options": [
+            "Marrakech",
+            "Fez",
+            "Rabat",
+            "Tangier"
+          ],
+          "correctIndex": 0,
+          "explanation": "Marrakech was founded in 1070 and became the capital of the Almoravid Empire."
+        },
+        "FR": {
+          "text": "Quelle ville était la capitale de l'Empire almoravide ?",
+          "hint": "Elle a été fondée en 1070.",
+          "options": [
+            "Marrakech",
+            "Fès",
+            "Rabat",
+            "Tanger"
+          ],
+          "correctIndex": 0,
+          "explanation": "Marrakech a été fondée en 1070 et est devenue la capitale de l'Empire almoravide."
+        },
+        "AR": {
+          "text": "أي مدينة كانت عاصمة الإمبراطورية المرابطية؟",
+          "hint": "أُسست عام 1070.",
+          "options": [
+            "مراكش",
+            "فاس",
+            "الرباط",
+            "طنجة"
+          ],
+          "correctIndex": 0,
+          "explanation": "أُسست مراكش عام 1070 وأصبحت عاصمة الإمبراطورية المرابطية."
+        }
+      }
+    },
+    {
+      "category": "MOROCCAN_HISTORY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Who was the first king of independent Morocco in 1956?",
+          "hint": "He returned from exile in 1955.",
+          "options": [
+            "Mohammed V",
+            "Hassan II",
+            "Mohammed VI",
+            "Moulay Youssef"
+          ],
+          "correctIndex": 0,
+          "explanation": "Mohammed V became king of independent Morocco in 1956 after returning from exile."
+        },
+        "FR": {
+          "text": "Qui a été le premier roi du Maroc indépendant en 1956 ?",
+          "hint": "Il est revenu d'exil en 1955.",
+          "options": [
+            "Mohammed V",
+            "Hassan II",
+            "Mohammed VI",
+            "Moulay Youssef"
+          ],
+          "correctIndex": 0,
+          "explanation": "Mohammed V est devenu roi du Maroc indépendant en 1956 après son retour d'exil."
+        },
+        "AR": {
+          "text": "من كان أول ملك للمغرب المستقل عام 1956؟",
+          "hint": "عاد من المنفى عام 1955.",
+          "options": [
+            "محمد الخامس",
+            "الحسن الثاني",
+            "محمد السادس",
+            "مولاي يوسف"
+          ],
+          "correctIndex": 0,
+          "explanation": "أصبح محمد الخامس ملك المغرب المستقل عام 1956 بعد عودته من المنفى."
+        }
+      }
+    },
+    {
+      "category": "MOROCCAN_HISTORY",
+      "difficulty": 3,
+      "translations": {
+        "EN": {
+          "text": "Which treaty established the French protectorate in Morocco in 1912?",
+          "hint": "It was signed in the royal palace of Fez.",
+          "options": [
+            "Treaty of Fez",
+            "Treaty of Versailles",
+            "Treaty of Algeciras",
+            "Treaty of Tangier"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Treaty of Fez, signed in 1912, established the French protectorate in Morocco."
+        },
+        "FR": {
+          "text": "Quel traité a établi le protectorat français au Maroc en 1912 ?",
+          "hint": "Il a été signé au palais royal de Fès.",
+          "options": [
+            "Traité de Fès",
+            "Traité de Versailles",
+            "Traité d'Algésiras",
+            "Traité de Tanger"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le traité de Fès, signé en 1912, a établi le protectorat français au Maroc."
+        },
+        "AR": {
+          "text": "أي معاهدة أقامت الحماية الفرنسية في المغرب عام 1912؟",
+          "hint": "وُقعت في القصر الملكي بفاس.",
+          "options": [
+            "معاهدة فاس",
+            "معاهدة فرساي",
+            "معاهدة الجزيرة الخضراء",
+            "معاهدة طنجة"
+          ],
+          "correctIndex": 0,
+          "explanation": "أقامت معاهدة فاس الموقعة عام 1912 الحماية الفرنسية في المغرب."
+        }
+      }
+    },
+    {
+      "category": "MOROCCAN_HISTORY",
+      "difficulty": 3,
+      "translations": {
+        "EN": {
+          "text": "Which Moroccan sultan led the Battle of the Three Kings in 1578?",
+          "hint": "He died during the battle, but his side won.",
+          "options": [
+            "Abd al-Malik",
+            "Ahmad al-Mansur",
+            "Mohammed V",
+            "Moulay Ismail"
+          ],
+          "correctIndex": 0,
+          "explanation": "Abd al-Malik led the Moroccan forces at the Battle of the Three Kings in 1578."
+        },
+        "FR": {
+          "text": "Quel sultan marocain a dirigé la bataille des Trois Rois en 1578 ?",
+          "hint": "Il est mort pendant la bataille, mais son camp a gagné.",
+          "options": [
+            "Abd al-Malik",
+            "Ahmad al-Mansur",
+            "Mohammed V",
+            "Moulay Ismail"
+          ],
+          "correctIndex": 0,
+          "explanation": "Abd al-Malik a dirigé les forces marocaines lors de la bataille des Trois Rois en 1578."
+        },
+        "AR": {
+          "text": "أي سلطان مغربي قاد معركة الملوك الثلاثة عام 1578؟",
+          "hint": "توفي أثناء المعركة، لكن جانبه انتصر.",
+          "options": [
+            "عبد الملك",
+            "أحمد المنصور",
+            "محمد الخامس",
+            "مولاي إسماعيل"
+          ],
+          "correctIndex": 0,
+          "explanation": "قاد عبد الملك القوات المغربية في معركة الملوك الثلاثة عام 1578."
+        }
+      }
+    },
+    {
+      "category": "MOROCCAN_HISTORY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which city was founded by the Idrisid dynasty?",
+          "hint": "It became a major center of learning.",
+          "options": [
+            "Fez",
+            "Marrakech",
+            "Casablanca",
+            "Agadir"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Idrisid dynasty founded Fez in 809, and it became a major center of learning."
+        },
+        "FR": {
+          "text": "Quelle ville a été fondée par la dynastie idrisside ?",
+          "hint": "Elle est devenue un grand centre intellectuel.",
+          "options": [
+            "Fès",
+            "Marrakech",
+            "Casablanca",
+            "Agadir"
+          ],
+          "correctIndex": 0,
+          "explanation": "La dynastie idrisside a fondé Fès en 809, qui est devenue un grand centre intellectuel."
+        },
+        "AR": {
+          "text": "أي مدينة أسستها الدولة الإدريسية؟",
+          "hint": "أصبحت مركزاً كبيراً للعلم.",
+          "options": [
+            "فاس",
+            "مراكش",
+            "الدار البيضاء",
+            "أكادير"
+          ],
+          "correctIndex": 0,
+          "explanation": "أسست الدولة الإدريسية فاس عام 809، وأصبحت مركزاً كبيراً للعلم."
+        }
+      }
+    },
+    {
+      "category": "MOROCCAN_HISTORY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which Moroccan ruler built the massive palace complex in Meknes?",
+          "hint": "He ruled in the 17th and 18th centuries.",
+          "options": [
+            "Moulay Ismail",
+            "Mohammed V",
+            "Ahmad al-Mansur",
+            "Abd al-Malik"
+          ],
+          "correctIndex": 0,
+          "explanation": "Moulay Ismail built the vast palace complex in Meknes, making it his capital."
+        },
+        "FR": {
+          "text": "Quel souverain marocain a construit le vaste palais de Meknès ?",
+          "hint": "Il a régné aux XVIIe et XVIIIe siècles.",
+          "options": [
+            "Moulay Ismail",
+            "Mohammed V",
+            "Ahmad al-Mansur",
+            "Abd al-Malik"
+          ],
+          "correctIndex": 0,
+          "explanation": "Moulay Ismail a construit le vaste palais de Meknès et en a fait sa capitale."
+        },
+        "AR": {
+          "text": "أي حاكم مغربي بنى القصر الكبير في مكناس؟",
+          "hint": "حكم في القرنين السابع عشر والثامن عشر.",
+          "options": [
+            "مولاي إسماعيل",
+            "محمد الخامس",
+            "أحمد المنصور",
+            "عبد الملك"
+          ],
+          "correctIndex": 0,
+          "explanation": "بنى مولاي إسماعيل القصر الكبير في مكناس وجعلها عاصمته."
+        }
+      }
+    },
+    {
+      "category": "MOROCCAN_HISTORY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "In which year did Morocco regain its independence from France?",
+          "hint": "It was the year the French protectorate ended.",
+          "options": [
+            "1956",
+            "1912",
+            "1961",
+            "1975"
+          ],
+          "correctIndex": 0,
+          "explanation": "Morocco regained independence from France in 1956."
+        },
+        "FR": {
+          "text": "En quelle année le Maroc a-t-il retrouvé son indépendance vis-à-vis de la France ?",
+          "hint": "C'est l'année de la fin du protectorat français.",
+          "options": [
+            "1956",
+            "1912",
+            "1961",
+            "1975"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le Maroc a retrouvé son indépendance vis-à-vis de la France en 1956."
+        },
+        "AR": {
+          "text": "في أي سنة استعاد المغرب استقلاله عن فرنسا؟",
+          "hint": "هي سنة انتهاء الحماية الفرنسية.",
+          "options": [
+            "1956",
+            "1912",
+            "1961",
+            "1975"
+          ],
+          "correctIndex": 0,
+          "explanation": "استعاد المغرب استقلاله عن فرنسا عام 1956."
+        }
+      }
+    },
+    {
+      "category": "MOROCCAN_HISTORY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which political party led Morocco's independence movement?",
+          "hint": "Its name means \"independence\".",
+          "options": [
+            "Istiqlal Party",
+            "Muslim Brotherhood",
+            "FLN",
+            "Ba'ath Party"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Istiqlal Party, whose name means independence, led Morocco's independence movement."
+        },
+        "FR": {
+          "text": "Quel parti politique a dirigé le mouvement d'indépendance du Maroc ?",
+          "hint": "Son nom signifie « indépendance ».",
+          "options": [
+            "Parti de l'Istiqlal",
+            "Frères musulmans",
+            "FLN",
+            "Parti Baas"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le Parti de l'Istiqlal, dont le nom signifie indépendance, a dirigé le mouvement d'indépendance du Maroc."
+        },
+        "AR": {
+          "text": "أي حزب سياسي قاد حركة استقلال المغرب؟",
+          "hint": "اسمه يعني \"الاستقلال\".",
+          "options": [
+            "حزب الاستقلال",
+            "الإخوان المسلمون",
+            "جبهة التحرير الوطني",
+            "حزب البعث"
+          ],
+          "correctIndex": 0,
+          "explanation": "قاد حزب الاستقلال، الذي يعني اسمه الاستقلال، حركة استقلال المغرب."
+        }
+      }
+    },
+    {
+      "category": "MOROCCAN_HISTORY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which city was the capital of the Saadian dynasty?",
+          "hint": "It is home to the Saadian Tombs.",
+          "options": [
+            "Marrakech",
+            "Fez",
+            "Rabat",
+            "Meknes"
+          ],
+          "correctIndex": 0,
+          "explanation": "Marrakech was the capital of the Saadian dynasty, and the Saadian Tombs are there."
+        },
+        "FR": {
+          "text": "Quelle ville était la capitale de la dynastie saadienne ?",
+          "hint": "Elle abrite les tombeaux saadiens.",
+          "options": [
+            "Marrakech",
+            "Fès",
+            "Rabat",
+            "Meknès"
+          ],
+          "correctIndex": 0,
+          "explanation": "Marrakech était la capitale de la dynastie saadienne, et les tombeaux saadiens s'y trouvent."
+        },
+        "AR": {
+          "text": "أي مدينة كانت عاصمة الدولة السعدية؟",
+          "hint": "تضم قبور السعديين.",
+          "options": [
+            "مراكش",
+            "فاس",
+            "الرباط",
+            "مكناس"
+          ],
+          "correctIndex": 0,
+          "explanation": "كانت مراكش عاصمة الدولة السعدية، وفيها قبور السعديين."
+        }
+      }
+    },
+    {
+      "category": "MOROCCAN_CULTURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "What is the traditional Moroccan mint tea called?",
+          "hint": "It is usually served very sweet.",
+          "options": [
+            "Atay",
+            "Qahwa",
+            "Shai",
+            "Karak"
+          ],
+          "correctIndex": 0,
+          "explanation": "Atay is the Moroccan Arabic word for tea, especially the traditional mint tea."
+        },
+        "FR": {
+          "text": "Comment appelle-t-on le thé à la menthe marocain traditionnel ?",
+          "hint": "Il est généralement très sucré.",
+          "options": [
+            "Atay",
+            "Qahwa",
+            "Shai",
+            "Karak"
+          ],
+          "correctIndex": 0,
+          "explanation": "Atay est le mot arabe marocain pour le thé, en particulier le thé à la menthe traditionnel."
+        },
+        "AR": {
+          "text": "ماذا يُسمى الشاي المغربي التقليدي بالنعناع؟",
+          "hint": "عادةً ما يُقدّم حلواً جداً.",
+          "options": [
+            "أتاي",
+            "قهوة",
+            "شاي",
+            "كرك"
+          ],
+          "correctIndex": 0,
+          "explanation": "أتاي هو الاسم المغربي للشاي، وخاصة الشاي التقليدي بالنعناع."
+        }
+      }
+    },
+    {
+      "category": "MOROCCAN_CULTURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which Moroccan city is famous for its leather tanneries?",
+          "hint": "There are famous tanneries near the medina.",
+          "options": [
+            "Fez",
+            "Marrakech",
+            "Rabat",
+            "Tangier"
+          ],
+          "correctIndex": 0,
+          "explanation": "Fez is famous for its traditional leather tanneries, especially the Chouara tannery."
+        },
+        "FR": {
+          "text": "Quelle ville marocaine est célèbre pour ses tanneries ?",
+          "hint": "Il y a de célèbres tanneries près de la médina.",
+          "options": [
+            "Fès",
+            "Marrakech",
+            "Rabat",
+            "Tanger"
+          ],
+          "correctIndex": 0,
+          "explanation": "Fès est célèbre pour ses tanneries traditionnelles, notamment la tannerie Chouara."
+        },
+        "AR": {
+          "text": "أي مدينة مغربية تشتهر بمدابغ الجلود؟",
+          "hint": "توجد مدابغ شهيرة قرب المدينة القديمة.",
+          "options": [
+            "فاس",
+            "مراكش",
+            "الرباط",
+            "طنجة"
+          ],
+          "correctIndex": 0,
+          "explanation": "تشتهر فاس بمدابغ الجلود التقليدية، وخاصة دار دباغة الشوارة."
+        }
+      }
+    },
+    {
+      "category": "MOROCCAN_CULTURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "What is a riad in Morocco?",
+          "hint": "It often has a garden in the center.",
+          "options": [
+            "A traditional house with an interior courtyard",
+            "A market",
+            "A mosque",
+            "A desert tent"
+          ],
+          "correctIndex": 0,
+          "explanation": "A riad is a traditional Moroccan house built around an interior courtyard or garden."
+        },
+        "FR": {
+          "text": "Qu'est-ce qu'un riad au Maroc ?",
+          "hint": "Il a souvent un jardin au centre.",
+          "options": [
+            "Une maison traditionnelle avec une cour intérieure",
+            "Un marché",
+            "Une mosquée",
+            "Une tente du désert"
+          ],
+          "correctIndex": 0,
+          "explanation": "Un riad est une maison marocaine traditionnelle construite autour d'une cour ou d'un jardin intérieur."
+        },
+        "AR": {
+          "text": "ما هو الرياض في المغرب؟",
+          "hint": "غالباً ما يضم حديقة في الوسط.",
+          "options": [
+            "منزل تقليدي بفناء داخلي",
+            "سوق",
+            "مسجد",
+            "خيمة صحراوية"
+          ],
+          "correctIndex": 0,
+          "explanation": "الرياض منزل مغربي تقليدي يُبنى حول فناء أو حديقة داخلية."
+        }
+      }
+    },
+    {
+      "category": "MOROCCAN_CULTURE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which Moroccan equestrian tradition features a horse procession?",
+          "hint": "It is also called Tbourida.",
+          "options": [
+            "Fantasia (Tbourida)",
+            "Mawazine",
+            "Imilchil",
+            "Rose Festival"
+          ],
+          "correctIndex": 0,
+          "explanation": "Fantasia, also called Tbourida, is a Moroccan equestrian tradition featuring a procession and synchronized charge."
+        },
+        "FR": {
+          "text": "Quelle tradition équestre marocaine comprend un défilé de chevaux ?",
+          "hint": "On l'appelle aussi Tbourida.",
+          "options": [
+            "Fantasia (Tbourida)",
+            "Mawazine",
+            "Imilchil",
+            "Festival des roses"
+          ],
+          "correctIndex": 0,
+          "explanation": "La Fantasia, aussi appelée Tbourida, est une tradition équestre marocaine avec défilé et charge synchronisée."
+        },
+        "AR": {
+          "text": "أي تقليد فروسية مغربي يتضمن موكباً للخيول؟",
+          "hint": "تُسمى أيضاً التبوريدة.",
+          "options": [
+            "الفانتازيا (التبوريدة)",
+            "موازين",
+            "إميلشيل",
+            "مهرجان الورد"
+          ],
+          "correctIndex": 0,
+          "explanation": "الفانتازيا، أو التبوريدة، تقليد فروسية مغربي يتضمن موكباً وهجوماً متزامناً."
+        }
+      }
+    },
+    {
+      "category": "MOROCCAN_CULTURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "What is the traditional Berber language of Morocco called?",
+          "hint": "It is written with Tifinagh script.",
+          "options": [
+            "Tamazight",
+            "Arabic",
+            "French",
+            "Spanish"
+          ],
+          "correctIndex": 0,
+          "explanation": "Tamazight is the traditional Berber language of Morocco, written with Tifinagh script."
+        },
+        "FR": {
+          "text": "Comment appelle-t-on la langue berbère traditionnelle du Maroc ?",
+          "hint": "Elle s'écrit avec l'alphabet tifinagh.",
+          "options": [
+            "Tamazight",
+            "Arabe",
+            "Français",
+            "Espagnol"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le tamazight est la langue berbère traditionnelle du Maroc, écrite avec l'alphabet tifinagh."
+        },
+        "AR": {
+          "text": "ماذا تُسمى اللغة الأمازيغية التقليدية في المغرب؟",
+          "hint": "تُكتب بحروف تيفيناغ.",
+          "options": [
+            "تمازيغت",
+            "العربية",
+            "الفرنسية",
+            "الإسبانية"
+          ],
+          "correctIndex": 0,
+          "explanation": "تمازيغت هي اللغة الأمازيغية التقليدية في المغرب، وتُكتب بحروف تيفيناغ."
+        }
+      }
+    },
+    {
+      "category": "MOROCCAN_CULTURE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which Moroccan city is known for its pottery?",
+          "hint": "It is on the Atlantic coast.",
+          "options": [
+            "Safi",
+            "Tangier",
+            "Rabat",
+            "Agadir"
+          ],
+          "correctIndex": 0,
+          "explanation": "Safi is known for its colorful traditional pottery."
+        },
+        "FR": {
+          "text": "Quelle ville marocaine est connue pour sa poterie ?",
+          "hint": "Elle se trouve sur la côte atlantique.",
+          "options": [
+            "Safi",
+            "Tanger",
+            "Rabat",
+            "Agadir"
+          ],
+          "correctIndex": 0,
+          "explanation": "Safi est connue pour sa poterie traditionnelle colorée."
+        },
+        "AR": {
+          "text": "أي مدينة مغربية تشتهر بالفخار؟",
+          "hint": "تقع على ساحل المحيط الأطلسي.",
+          "options": [
+            "آسفي",
+            "طنجة",
+            "الرباط",
+            "أكادير"
+          ],
+          "correctIndex": 0,
+          "explanation": "تشتهر آسفي بفخارها التقليدي الملون."
+        }
+      }
+    },
+    {
+      "category": "MOROCCAN_CULTURE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "What is malhoun?",
+          "hint": "It is sung poetry in Moroccan Arabic.",
+          "options": [
+            "A Moroccan poetic and musical tradition",
+            "A type of bread",
+            "A dance",
+            "A garment"
+          ],
+          "correctIndex": 0,
+          "explanation": "Malhoun is a Moroccan tradition of sung poetry in Moroccan Arabic."
+        },
+        "FR": {
+          "text": "Qu'est-ce que le malhoun ?",
+          "hint": "C'est de la poésie chantée en arabe marocain.",
+          "options": [
+            "Une tradition poétique et musicale marocaine",
+            "Un type de pain",
+            "Une danse",
+            "Un vêtement"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le malhoun est une tradition marocaine de poésie chantée en arabe marocain."
+        },
+        "AR": {
+          "text": "ما هو الملحون؟",
+          "hint": "إنه شعر مغنى باللهجة المغربية.",
+          "options": [
+            "تقليد شعري وموسيقي مغربي",
+            "نوع من الخبز",
+            "رقصة",
+            "لباس"
+          ],
+          "correctIndex": 0,
+          "explanation": "الملحون تقليد مغربي للشعر المغنى باللهجة المغربية."
+        }
+      }
+    },
+    {
+      "category": "MOROCCAN_CULTURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "What are traditional Moroccan leather slippers called?",
+          "hint": "They are often yellow or white.",
+          "options": [
+            "Babouches",
+            "Djellaba",
+            "Kaftan",
+            "Haik"
+          ],
+          "correctIndex": 0,
+          "explanation": "Babouches are traditional Moroccan leather slippers, often yellow or white."
+        },
+        "FR": {
+          "text": "Comment appelle-t-on les pantoufles marocaines traditionnelles en cuir ?",
+          "hint": "Elles sont souvent jaunes ou blanches.",
+          "options": [
+            "Babouches",
+            "Djellaba",
+            "Caftan",
+            "Haïk"
+          ],
+          "correctIndex": 0,
+          "explanation": "Les babouches sont des pantoufles marocaines traditionnelles en cuir, souvent jaunes ou blanches."
+        },
+        "AR": {
+          "text": "ماذا تُسمى البلغة المغربية التقليدية من الجلد؟",
+          "hint": "غالباً ما تكون صفراء أو بيضاء.",
+          "options": [
+            "البلغة",
+            "الجلابة",
+            "القفطان",
+            "الحايك"
+          ],
+          "correctIndex": 0,
+          "explanation": "البلغة هي الحذاء المغربي التقليدي من الجلد، وغالباً ما تكون صفراء أو بيضاء."
+        }
+      }
+    },
+    {
+      "category": "MOROCCAN_CULTURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which Moroccan city hosts the Gnaoua World Music Festival?",
+          "hint": "It is a coastal city with a famous rampart.",
+          "options": [
+            "Essaouira",
+            "Marrakech",
+            "Fez",
+            "Tangier"
+          ],
+          "correctIndex": 0,
+          "explanation": "Essaouira hosts the annual Gnaoua World Music Festival."
+        },
+        "FR": {
+          "text": "Quelle ville marocaine accueille le Festival Gnaoua de musique mondiale ?",
+          "hint": "C'est une ville côtière avec une célèbre rempart.",
+          "options": [
+            "Essaouira",
+            "Marrakech",
+            "Fès",
+            "Tanger"
+          ],
+          "correctIndex": 0,
+          "explanation": "Essaouira accueille chaque année le Festival Gnaoua de musique mondiale."
+        },
+        "AR": {
+          "text": "أي مدينة مغربية تستضيف مهرجان كناوة للموسيقى العالمية؟",
+          "hint": "إنها مدينة ساحلية ذات سور شهير.",
+          "options": [
+            "الصويرة",
+            "مراكش",
+            "فاس",
+            "طنجة"
+          ],
+          "correctIndex": 0,
+          "explanation": "تستضيف الصويرة مهرجان كناوة للموسيقى العالمية سنوياً."
+        }
+      }
+    },
+    {
+      "category": "MOROCCAN_CULTURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "What is a hammam in Morocco?",
+          "hint": "It is a place for washing and relaxation.",
+          "options": [
+            "A public bathhouse",
+            "A market",
+            "A mosque",
+            "A school"
+          ],
+          "correctIndex": 0,
+          "explanation": "A hammam is a traditional public bathhouse used for washing and relaxation."
+        },
+        "FR": {
+          "text": "Qu'est-ce qu'un hammam au Maroc ?",
+          "hint": "C'est un lieu de toilette et de détente.",
+          "options": [
+            "Un bain public",
+            "Un marché",
+            "Une mosquée",
+            "Une école"
+          ],
+          "correctIndex": 0,
+          "explanation": "Un hammam est un bain public traditionnel utilisé pour la toilette et la détente."
+        },
+        "AR": {
+          "text": "ما هو الحمام في المغرب؟",
+          "hint": "إنه مكان للاغتسال والاسترخاء.",
+          "options": [
+            "حمام عام",
+            "سوق",
+            "مسجد",
+            "مدرسة"
+          ],
+          "correctIndex": 0,
+          "explanation": "الحمام هو حمام عام تقليدي يُستخدم للاغتسال والاسترخاء."
+        }
+      }
+    },
+    {
+      "category": "ARABIC_CULTURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which city is home to the Kaaba?",
+          "hint": "It is in Saudi Arabia.",
+          "options": [
+            "Mecca",
+            "Medina",
+            "Jerusalem",
+            "Cairo"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Kaaba is located in Mecca, in Saudi Arabia."
+        },
+        "FR": {
+          "text": "Quelle ville abrite la Kaaba ?",
+          "hint": "Elle se trouve en Arabie saoudite.",
+          "options": [
+            "La Mecque",
+            "Médine",
+            "Jérusalem",
+            "Le Caire"
+          ],
+          "correctIndex": 0,
+          "explanation": "La Kaaba se trouve à La Mecque, en Arabie saoudite."
+        },
+        "AR": {
+          "text": "أي مدينة تضم الكعبة؟",
+          "hint": "تقع في المملكة العربية السعودية.",
+          "options": [
+            "مكة",
+            "المدينة",
+            "القدس",
+            "القاهرة"
+          ],
+          "correctIndex": 0,
+          "explanation": "تقع الكعبة في مكة المكرمة في المملكة العربية السعودية."
+        }
+      }
+    },
+    {
+      "category": "ARABIC_CULTURE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which Arab philosopher from Cordoba is known for his commentaries on Aristotle?",
+          "hint": "His Latin name was Averroes.",
+          "options": [
+            "Averroes (Ibn Rushd)",
+            "Al-Farabi",
+            "Al-Kindi",
+            "Ibn Khaldun"
+          ],
+          "correctIndex": 0,
+          "explanation": "Averroes, or Ibn Rushd, was an Andalusian philosopher known for his commentaries on Aristotle."
+        },
+        "FR": {
+          "text": "Quel philosophe arabe de Cordoue est connu pour ses commentaires d'Aristote ?",
+          "hint": "Son nom latin était Averroès.",
+          "options": [
+            "Averroès (Ibn Rushd)",
+            "Al-Farabi",
+            "Al-Kindi",
+            "Ibn Khaldoun"
+          ],
+          "correctIndex": 0,
+          "explanation": "Averroès, ou Ibn Rushd, était un philosophe andalou connu pour ses commentaires d'Aristote."
+        },
+        "AR": {
+          "text": "أي فيلسوف عربي من قرطبة اشتهر بشرحه لأرسطو؟",
+          "hint": "اسمه اللاتيني ابن رشد.",
+          "options": [
+            "ابن رشد",
+            "الفارابي",
+            "الكندي",
+            "ابن خلدون"
+          ],
+          "correctIndex": 0,
+          "explanation": "ابن رشد فيلسوف أندلسي اشتهر بشرحه لأعمال أرسطو."
+        }
+      }
+    },
+    {
+      "category": "ARABIC_CULTURE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which Arab scholar is known as the father of algebra?",
+          "hint": "His name gave us the word \"algorithm\".",
+          "options": [
+            "Al-Khwarizmi",
+            "Ibn Sina",
+            "Al-Razi",
+            "Ibn al-Haytham"
+          ],
+          "correctIndex": 0,
+          "explanation": "Al-Khwarizmi is known as the father of algebra, and his name gave us the word algorithm."
+        },
+        "FR": {
+          "text": "Quel savant arabe est considéré comme le père de l'algèbre ?",
+          "hint": "Son nom a donné le mot « algorithme ».",
+          "options": [
+            "Al-Khwarizmi",
+            "Ibn Sina",
+            "Al-Razi",
+            "Ibn al-Haytham"
+          ],
+          "correctIndex": 0,
+          "explanation": "Al-Khwarizmi est considéré comme le père de l'algèbre, et son nom a donné le mot algorithme."
+        },
+        "AR": {
+          "text": "أي عالم عربي يُعرف بأبي الجبر؟",
+          "hint": "اسمه أصل كلمة \"خوارزمية\".",
+          "options": [
+            "الخوارزمي",
+            "ابن سينا",
+            "الرازي",
+            "ابن الهيثم"
+          ],
+          "correctIndex": 0,
+          "explanation": "يُعرف الخوارزمي بأبي الجبر، ومن اسمه جاءت كلمة خوارزمية."
+        }
+      }
+    },
+    {
+      "category": "ARABIC_CULTURE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which Arab country is home to the ancient city of Byblos?",
+          "hint": "It is on the eastern Mediterranean coast.",
+          "options": [
+            "Lebanon",
+            "Jordan",
+            "Egypt",
+            "Morocco"
+          ],
+          "correctIndex": 0,
+          "explanation": "Byblos, one of the world's oldest continuously inhabited cities, is in Lebanon."
+        },
+        "FR": {
+          "text": "Quel pays arabe abrite l'ancienne ville de Byblos ?",
+          "hint": "Elle se trouve sur la côte méditerranéenne orientale.",
+          "options": [
+            "Liban",
+            "Jordanie",
+            "Égypte",
+            "Maroc"
+          ],
+          "correctIndex": 0,
+          "explanation": "Byblos, l'une des plus anciennes villes habitées au monde, se trouve au Liban."
+        },
+        "AR": {
+          "text": "أي دولة عربية تضم مدينة جبيل القديمة؟",
+          "hint": "تقع على ساحل البحر المتوسط الشرقي.",
+          "options": [
+            "لبنان",
+            "الأردن",
+            "مصر",
+            "المغرب"
+          ],
+          "correctIndex": 0,
+          "explanation": "جبيل، من أقدم المدن المأهولة في العالم، تقع في لبنان."
+        }
+      }
+    },
+    {
+      "category": "ARABIC_CULTURE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which Arab city is known as \"the City of a Thousand Minarets\"?",
+          "hint": "It is the capital of Egypt.",
+          "options": [
+            "Cairo",
+            "Baghdad",
+            "Damascus",
+            "Aleppo"
+          ],
+          "correctIndex": 0,
+          "explanation": "Cairo is known as the City of a Thousand Minarets."
+        },
+        "FR": {
+          "text": "Quelle ville arabe est appelée « la ville aux mille minarets » ?",
+          "hint": "C'est la capitale de l'Égypte.",
+          "options": [
+            "Le Caire",
+            "Bagdad",
+            "Damas",
+            "Alep"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le Caire est appelée la ville aux mille minarets."
+        },
+        "AR": {
+          "text": "أي مدينة عربية تُعرف بـ\"مدينة الألف مئذنة\"؟",
+          "hint": "إنها عاصمة مصر.",
+          "options": [
+            "القاهرة",
+            "بغداد",
+            "دمشق",
+            "حلب"
+          ],
+          "correctIndex": 0,
+          "explanation": "تُعرف القاهرة بمدينة الألف مئذنة."
+        }
+      }
+    },
+    {
+      "category": "ARABIC_CULTURE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Who wrote the \"Muqaddimah\"?",
+          "hint": "He is considered a founder of sociology.",
+          "options": [
+            "Ibn Khaldun",
+            "Ibn Battuta",
+            "Al-Masudi",
+            "Al-Tabari"
+          ],
+          "correctIndex": 0,
+          "explanation": "Ibn Khaldun wrote the Muqaddimah and is considered a founder of sociology."
+        },
+        "FR": {
+          "text": "Qui a écrit la « Muqaddima » ?",
+          "hint": "Il est considéré comme un fondateur de la sociologie.",
+          "options": [
+            "Ibn Khaldoun",
+            "Ibn Battuta",
+            "Al-Masudi",
+            "Al-Tabari"
+          ],
+          "correctIndex": 0,
+          "explanation": "Ibn Khaldoun a écrit la Muqaddima et est considéré comme un fondateur de la sociologie."
+        },
+        "AR": {
+          "text": "من كتب \"المقدمة\"؟",
+          "hint": "يُعتبر من مؤسسي علم الاجتماع.",
+          "options": [
+            "ابن خلدون",
+            "ابن بطوطة",
+            "المسعودي",
+            "الطبري"
+          ],
+          "correctIndex": 0,
+          "explanation": "كتب ابن خلدون \"المقدمة\" ويُعتبر من مؤسسي علم الاجتماع."
+        }
+      }
+    },
+    {
+      "category": "ARABIC_CULTURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which Arab country is home to the ancient city of Petra?",
+          "hint": "Its buildings are carved into pink rock.",
+          "options": [
+            "Jordan",
+            "Egypt",
+            "Lebanon",
+            "Syria"
+          ],
+          "correctIndex": 0,
+          "explanation": "Petra, the ancient city carved into pink rock, is in Jordan."
+        },
+        "FR": {
+          "text": "Quel pays arabe abrite l'ancienne ville de Pétra ?",
+          "hint": "Ses bâtiments sont taillés dans la roche rose.",
+          "options": [
+            "Jordanie",
+            "Égypte",
+            "Liban",
+            "Syrie"
+          ],
+          "correctIndex": 0,
+          "explanation": "Pétra, l'ancienne ville taillée dans la roche rose, se trouve en Jordanie."
+        },
+        "AR": {
+          "text": "أي دولة عربية تضم مدينة البتراء القديمة؟",
+          "hint": "مبانيها منحوتة في الصخر الوردي.",
+          "options": [
+            "الأردن",
+            "مصر",
+            "لبنان",
+            "سوريا"
+          ],
+          "correctIndex": 0,
+          "explanation": "تقع البتراء، المدينة القديمة المنحوتة في الصخر الوردي، في الأردن."
+        }
+      }
+    },
+    {
+      "category": "ARABIC_CULTURE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "What is the traditional Arabic poetic form called?",
+          "hint": "It is a long monorhyme poem.",
+          "options": [
+            "Qasida",
+            "Haiku",
+            "Sonnet",
+            "Limerick"
+          ],
+          "correctIndex": 0,
+          "explanation": "The qasida is a traditional Arabic poetic form, often a long poem with a single rhyme."
+        },
+        "FR": {
+          "text": "Comment appelle-t-on la forme poétique arabe traditionnelle ?",
+          "hint": "C'est un long poème à rime unique.",
+          "options": [
+            "Qasida",
+            "Haïku",
+            "Sonnet",
+            "Limerick"
+          ],
+          "correctIndex": 0,
+          "explanation": "La qasida est une forme poétique arabe traditionnelle, souvent un long poème à rime unique."
+        },
+        "AR": {
+          "text": "ماذا تُسمى القصيدة العربية التقليدية؟",
+          "hint": "إنها قصيدة طويلة ذات قافية واحدة.",
+          "options": [
+            "القصيدة",
+            "الهايكو",
+            "السونيت",
+            "الليمريك"
+          ],
+          "correctIndex": 0,
+          "explanation": "القصيدة شكل شعري عربي تقليدي، وغالباً تكون قصيدة طويلة بقافية واحدة."
+        }
+      }
+    },
+    {
+      "category": "ARABIC_CULTURE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which Arab scientist is known for his work on optics?",
+          "hint": "He wrote the Book of Optics.",
+          "options": [
+            "Ibn al-Haytham",
+            "Al-Khwarizmi",
+            "Ibn Sina",
+            "Al-Razi"
+          ],
+          "correctIndex": 0,
+          "explanation": "Ibn al-Haytham is known for his Book of Optics and his work on vision."
+        },
+        "FR": {
+          "text": "Quel savant arabe est connu pour ses travaux sur l'optique ?",
+          "hint": "Il a écrit le Livre de l'optique.",
+          "options": [
+            "Ibn al-Haytham",
+            "Al-Khwarizmi",
+            "Ibn Sina",
+            "Al-Razi"
+          ],
+          "correctIndex": 0,
+          "explanation": "Ibn al-Haytham est connu pour son Livre de l'optique et ses travaux sur la vision."
+        },
+        "AR": {
+          "text": "أي عالم عربي اشتهر بأعماله في البصريات؟",
+          "hint": "كتب كتاب المناظر.",
+          "options": [
+            "ابن الهيثم",
+            "الخوارزمي",
+            "ابن سينا",
+            "الرازي"
+          ],
+          "correctIndex": 0,
+          "explanation": "اشتهر ابن الهيثم بكتاب المناظر وأعماله حول الرؤية."
+        }
+      }
+    },
+    {
+      "category": "ARABIC_CULTURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which city was the capital of the Abbasid Caliphate?",
+          "hint": "It was founded in 762.",
+          "options": [
+            "Baghdad",
+            "Damascus",
+            "Cairo",
+            "Cordoba"
+          ],
+          "correctIndex": 0,
+          "explanation": "Baghdad was founded in 762 and became the capital of the Abbasid Caliphate."
+        },
+        "FR": {
+          "text": "Quelle ville était la capitale du califat abbasside ?",
+          "hint": "Elle a été fondée en 762.",
+          "options": [
+            "Bagdad",
+            "Damas",
+            "Le Caire",
+            "Cordoue"
+          ],
+          "correctIndex": 0,
+          "explanation": "Bagdad a été fondée en 762 et est devenue la capitale du califat abbasside."
+        },
+        "AR": {
+          "text": "أي مدينة كانت عاصمة الخلافة العباسية؟",
+          "hint": "أُسست عام 762.",
+          "options": [
+            "بغداد",
+            "دمشق",
+            "القاهرة",
+            "قرطبة"
+          ],
+          "correctIndex": 0,
+          "explanation": "أُسست بغداد عام 762 وأصبحت عاصمة الخلافة العباسية."
+        }
+      }
+    },
+    {
+      "category": "ISLAMIC_CULTURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "What is the first month of the Islamic calendar?",
+          "hint": "It is when Ashura is observed.",
+          "options": [
+            "Muharram",
+            "Ramadan",
+            "Shawwal",
+            "Rajab"
+          ],
+          "correctIndex": 0,
+          "explanation": "Muharram is the first month of the Islamic lunar calendar."
+        },
+        "FR": {
+          "text": "Quel est le premier mois du calendrier islamique ?",
+          "hint": "C'est le mois où l'on observe Achoura.",
+          "options": [
+            "Mouharram",
+            "Ramadan",
+            "Chawwal",
+            "Rajab"
+          ],
+          "correctIndex": 0,
+          "explanation": "Mouharram est le premier mois du calendrier lunaire islamique."
+        },
+        "AR": {
+          "text": "ما هو الشهر الأول في التقويم الإسلامي؟",
+          "hint": "هو شهر إحياء عاشوراء.",
+          "options": [
+            "محرم",
+            "رمضان",
+            "شوال",
+            "رجب"
+          ],
+          "correctIndex": 0,
+          "explanation": "محرم هو الشهر الأول في التقويم الهجري الإسلامي."
+        }
+      }
+    },
+    {
+      "category": "ISLAMIC_CULTURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "How many times a day are Muslims required to pray?",
+          "hint": "They are spread from dawn to night.",
+          "options": [
+            "5",
+            "3",
+            "4",
+            "6"
+          ],
+          "correctIndex": 0,
+          "explanation": "Muslims are required to perform five daily prayers."
+        },
+        "FR": {
+          "text": "Combien de fois par jour les musulmans doivent-ils prier ?",
+          "hint": "Elles s'étendent de l'aube à la nuit.",
+          "options": [
+            "5",
+            "3",
+            "4",
+            "6"
+          ],
+          "correctIndex": 0,
+          "explanation": "Les musulmans doivent accomplir cinq prières quotidiennes."
+        },
+        "AR": {
+          "text": "كم مرة في اليوم يجب على المسلمين الصلاة؟",
+          "hint": "تمتد من الفجر إلى الليل.",
+          "options": [
+            "5",
+            "3",
+            "4",
+            "6"
+          ],
+          "correctIndex": 0,
+          "explanation": "يجب على المسلمين أداء خمس صلوات يومياً."
+        }
+      }
+    },
+    {
+      "category": "ISLAMIC_CULTURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "What is the holy book of Islam?",
+          "hint": "It is written in Arabic.",
+          "options": [
+            "Quran",
+            "Torah",
+            "Bible",
+            "Psalms"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Quran is the holy book of Islam."
+        },
+        "FR": {
+          "text": "Quel est le livre sacré de l'islam ?",
+          "hint": "Il est écrit en arabe.",
+          "options": [
+            "Coran",
+            "Torah",
+            "Bible",
+            "Psaumes"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le Coran est le livre sacré de l'islam."
+        },
+        "AR": {
+          "text": "ما هو الكتاب المقدس في الإسلام؟",
+          "hint": "إنه مكتوب باللغة العربية.",
+          "options": [
+            "القرآن",
+            "التوراة",
+            "الإنجيل",
+            "الزبور"
+          ],
+          "correctIndex": 0,
+          "explanation": "القرآن هو الكتاب المقدس في الإسلام."
+        }
+      }
+    },
+    {
+      "category": "ISLAMIC_CULTURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which city do Muslims face during prayer?",
+          "hint": "The Kaaba is there.",
+          "options": [
+            "Mecca",
+            "Medina",
+            "Jerusalem",
+            "Cairo"
+          ],
+          "correctIndex": 0,
+          "explanation": "Muslims face Mecca, where the Kaaba is located, during prayer."
+        },
+        "FR": {
+          "text": "Vers quelle ville les musulmans se tournent-ils pendant la prière ?",
+          "hint": "La Kaaba s'y trouve.",
+          "options": [
+            "La Mecque",
+            "Médine",
+            "Jérusalem",
+            "Le Caire"
+          ],
+          "correctIndex": 0,
+          "explanation": "Les musulmans se tournent vers La Mecque, où se trouve la Kaaba, pendant la prière."
+        },
+        "AR": {
+          "text": "أي مدينة يتجه إليها المسلمون في الصلاة؟",
+          "hint": "توجد الكعبة فيها.",
+          "options": [
+            "مكة",
+            "المدينة",
+            "القدس",
+            "القاهرة"
+          ],
+          "correctIndex": 0,
+          "explanation": "يتجه المسلمون إلى مكة، حيث توجد الكعبة، في الصلاة."
+        }
+      }
+    },
+    {
+      "category": "ISLAMIC_CULTURE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "What is the night journey of Prophet Muhammad called?",
+          "hint": "It is commemorated on 27 Rajab.",
+          "options": [
+            "Isra and Mi'raj",
+            "Hijra",
+            "Laylat al-Qadr",
+            "Eid al-Fitr"
+          ],
+          "correctIndex": 0,
+          "explanation": "The night journey and ascension of Prophet Muhammad is called Isra and Mi'raj."
+        },
+        "FR": {
+          "text": "Comment appelle-t-on le voyage nocturne du prophète Muhammad ?",
+          "hint": "Il est commémoré le 27 Rajab.",
+          "options": [
+            "Isra et Mi'raj",
+            "Hijra",
+            "Laylat al-Qadr",
+            "Aïd al-Fitr"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le voyage nocturne et l'ascension du prophète Muhammad s'appellent Isra et Mi'raj."
+        },
+        "AR": {
+          "text": "ماذا تُسمى رحلة الإسراء والمعراج؟",
+          "hint": "تُحيى في 27 رجب.",
+          "options": [
+            "الإسراء والمعراج",
+            "الهجرة",
+            "ليلة القدر",
+            "عيد الفطر"
+          ],
+          "correctIndex": 0,
+          "explanation": "رحلة الإسراء والمعراج هي الرحلة الليلية للنبي محمد وصعوده إلى السماء."
+        }
+      }
+    },
+    {
+      "category": "ISLAMIC_CULTURE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which pillar of Islam involves fasting during Ramadan?",
+          "hint": "It is the fourth pillar.",
+          "options": [
+            "Sawm",
+            "Shahada",
+            "Zakat",
+            "Hajj"
+          ],
+          "correctIndex": 0,
+          "explanation": "Sawm, fasting during Ramadan, is the fourth pillar of Islam."
+        },
+        "FR": {
+          "text": "Quel pilier de l'islam implique le jeûne pendant le Ramadan ?",
+          "hint": "C'est le quatrième pilier.",
+          "options": [
+            "Sawm",
+            "Shahada",
+            "Zakat",
+            "Hajj"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le sawm, le jeûne pendant le Ramadan, est le quatrième pilier de l'islam."
+        },
+        "AR": {
+          "text": "أي ركن من أركان الإسلام يتضمن الصيام في رمضان؟",
+          "hint": "إنه الركن الرابع.",
+          "options": [
+            "الصوم",
+            "الشهادة",
+            "الزكاة",
+            "الحج"
+          ],
+          "correctIndex": 0,
+          "explanation": "الصوم في رمضان هو الركن الرابع من أركان الإسلام."
+        }
+      }
+    },
+    {
+      "category": "ISLAMIC_CULTURE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "What is the migration of Prophet Muhammad to Medina called?",
+          "hint": "It marks the start of the Islamic calendar.",
+          "options": [
+            "Hijra",
+            "Isra",
+            "Mi'raj",
+            "Jihad"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Hijra is the migration of Prophet Muhammad from Mecca to Medina in 622 CE."
+        },
+        "FR": {
+          "text": "Comment appelle-t-on la migration du prophète Muhammad à Médine ?",
+          "hint": "Elle marque le début du calendrier islamique.",
+          "options": [
+            "Hijra",
+            "Isra",
+            "Mi'raj",
+            "Jihad"
+          ],
+          "correctIndex": 0,
+          "explanation": "La Hijra est la migration du prophète Muhammad de La Mecque à Médine en 622."
+        },
+        "AR": {
+          "text": "ماذا تُسمى هجرة النبي محمد إلى المدينة؟",
+          "hint": "تمثل بداية التقويم الإسلامي.",
+          "options": [
+            "الهجرة",
+            "الإسراء",
+            "المعراج",
+            "الجهاد"
+          ],
+          "correctIndex": 0,
+          "explanation": "الهجرة هي انتقال النبي محمد من مكة إلى المدينة عام 622 ميلادي."
+        }
+      }
+    },
+    {
+      "category": "ISLAMIC_CULTURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which festival marks the end of Ramadan?",
+          "hint": "It begins with the sighting of the new moon.",
+          "options": [
+            "Eid al-Fitr",
+            "Eid al-Adha",
+            "Mawlid",
+            "Ashura"
+          ],
+          "correctIndex": 0,
+          "explanation": "Eid al-Fitr marks the end of the month of Ramadan."
+        },
+        "FR": {
+          "text": "Quelle fête marque la fin du Ramadan ?",
+          "hint": "Elle commence avec l'observation de la nouvelle lune.",
+          "options": [
+            "Aïd al-Fitr",
+            "Aïd al-Adha",
+            "Mawlid",
+            "Achoura"
+          ],
+          "correctIndex": 0,
+          "explanation": "L'Aïd al-Fitr marque la fin du mois de Ramadan."
+        },
+        "AR": {
+          "text": "أي عيد يمثل نهاية رمضان؟",
+          "hint": "يبدأ برؤية الهلال الجديد.",
+          "options": [
+            "عيد الفطر",
+            "عيد الأضحى",
+            "المولد النبوي",
+            "عاشوراء"
+          ],
+          "correctIndex": 0,
+          "explanation": "عيد الفطر يمثل نهاية شهر رمضان."
+        }
+      }
+    },
+    {
+      "category": "ISLAMIC_CULTURE",
+      "difficulty": 3,
+      "translations": {
+        "EN": {
+          "text": "What is the Islamic legal framework called?",
+          "hint": "It is derived from the Quran and Sunnah.",
+          "options": [
+            "Sharia",
+            "Fiqh",
+            "Hadith",
+            "Tafsir"
+          ],
+          "correctIndex": 0,
+          "explanation": "Sharia is the Islamic legal and moral framework derived from the Quran and Sunnah."
+        },
+        "FR": {
+          "text": "Comment appelle-t-on le cadre juridique islamique ?",
+          "hint": "Il est dérivé du Coran et de la Sunna.",
+          "options": [
+            "Charia",
+            "Fiqh",
+            "Hadith",
+            "Tafsir"
+          ],
+          "correctIndex": 0,
+          "explanation": "La charia est le cadre juridique et moral islamique dérivé du Coran et de la Sunna."
+        },
+        "AR": {
+          "text": "ماذا يُسمى الإطار القانوني الإسلامي؟",
+          "hint": "مستمد من القرآن والسنة.",
+          "options": [
+            "الشريعة",
+            "الفقه",
+            "الحديث",
+            "التفسير"
+          ],
+          "correctIndex": 0,
+          "explanation": "الشريعة هي الإطار القانوني والأخلاقي الإسلامي المستمد من القرآن والسنة."
+        }
+      }
+    },
+    {
+      "category": "ISLAMIC_CULTURE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which caliph was the first after Prophet Muhammad?",
+          "hint": "He was the Prophet's father-in-law.",
+          "options": [
+            "Abu Bakr",
+            "Umar",
+            "Uthman",
+            "Ali"
+          ],
+          "correctIndex": 0,
+          "explanation": "Abu Bakr became the first caliph after the death of Prophet Muhammad."
+        },
+        "FR": {
+          "text": "Quel calife a succédé en premier au prophète Muhammad ?",
+          "hint": "Il était le beau-père du Prophète.",
+          "options": [
+            "Abou Bakr",
+            "Omar",
+            "Othman",
+            "Ali"
+          ],
+          "correctIndex": 0,
+          "explanation": "Abou Bakr est devenu le premier calife après la mort du prophète Muhammad."
+        },
+        "AR": {
+          "text": "أي خليفة كان الأول بعد النبي محمد؟",
+          "hint": "كان والد زوجة النبي.",
+          "options": [
+            "أبو بكر",
+            "عمر",
+            "عثمان",
+            "علي"
+          ],
+          "correctIndex": 0,
+          "explanation": "أصبح أبو بكر أول خليفة بعد وفاة النبي محمد."
+        }
+      }
+    }
+  ]
+}

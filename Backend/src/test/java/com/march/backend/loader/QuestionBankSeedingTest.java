@@ -105,10 +105,10 @@ class QuestionBankSeedingTest {
     }
 
     @Test
-    void theTwoNewCategoriesAreAvailableInEveryLanguage() {
+    void everyCategoryIsAvailableInEveryLanguage() {
         List<Question> all = repo.findAll();
 
-        for (Category category : List.of(Category.ARABIC_CULTURE, Category.ISLAMIC_CULTURE)) {
+        for (Category category : Category.values()) {
             Set<Language> languages = all.stream()
                     .filter(q -> q.getCategory() == category)
                     .map(Question::getLanguage)
@@ -122,14 +122,10 @@ class QuestionBankSeedingTest {
     }
 
     @Test
-    void theExpandedCategoriesHaveAtLeastTenQuestionsPerLanguage() {
+    void everyCategoryHasAtLeastTenQuestionsPerLanguage() {
         List<Question> all = repo.findAll();
 
-        for (Category category : List.of(
-                Category.MOROCCAN_HISTORY,
-                Category.MOROCCAN_CULTURE,
-                Category.ARABIC_CULTURE,
-                Category.ISLAMIC_CULTURE)) {
+        for (Category category : Category.values()) {
             for (Language language : Language.values()) {
                 long count = all.stream()
                         .filter(q -> q.getCategory() == category && q.getLanguage() == language)
@@ -141,13 +137,33 @@ class QuestionBankSeedingTest {
     }
 
     @Test
-    void theExpansionBankComesWithExplanations() {
+    void requestedCultureCategoriesHaveASecondSetOfQuestions() {
+        List<Question> all = repo.findAll();
+        List<Category> expanded = List.of(
+                Category.MOROCCAN_HISTORY,
+                Category.MOROCCAN_CULTURE,
+                Category.ARABIC_CULTURE,
+                Category.ISLAMIC_CULTURE);
+
+        for (Category category : expanded) {
+            for (Language language : Language.values()) {
+                long count = all.stream()
+                        .filter(q -> q.getCategory() == category && q.getLanguage() == language)
+                        .count();
+                assertTrue(count >= 20,
+                        category + " should have at least 20 " + language + " questions, found " + count);
+            }
+        }
+    }
+
+    @Test
+    void theExpansionBanksComeWithExplanations() {
         long explained = repo.findAll().stream()
                 .filter(q -> q.getExplanation() != null && !q.getExplanation().isBlank())
                 .count();
 
-        assertTrue(explained >= 120,
-                "the 40 new questions should provide an explanation in each of their three languages");
+        assertTrue(explained >= 630,
+                "every expansion translation should include an explanation");
     }
 
     @Test

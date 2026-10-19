@@ -6,7 +6,13 @@ import { LobbyService, StartGameRequest } from './lobby.service';
 import { CurrentGameService } from './current-game.service';
 import { PlayerService } from './player.service';
 import { QuizService } from './quiz.service';
+import { categoryLabel } from './category-label';
 import { FocusHeadingDirective } from './focus-heading.directive';
+
+interface CategoryOption {
+  value: string;
+  label: string;
+}
 
 interface DifficultyOption {
   value: number | null;
@@ -33,7 +39,7 @@ const ANY_LANGUAGE_LABEL = 'Any language (questions may mix languages)';
   standalone: true,
 })
 export class GameSetupComponent implements OnInit {
-  categories: string[] = [];
+  categories: CategoryOption[] = [];
   difficulties: DifficultyOption[] = [{ value: null, label: 'Any difficulty' }];
   languages: LanguageOption[] = [{ value: null, label: ANY_LANGUAGE_LABEL }];
 
@@ -75,7 +81,10 @@ export class GameSetupComponent implements OnInit {
     this.practiceMode = this.route.snapshot.queryParamMap.get('mode') === 'practice';
     this.quiz.getFacets().subscribe({
       next: (facets) => {
-        this.categories = Array.from(new Set(facets.categories ?? []));
+        this.categories = Array.from(new Set(facets.categories ?? [])).map((value) => ({
+          value,
+          label: categoryLabel(value),
+        }));
         this.difficulties = [
           { value: null, label: 'Any difficulty' },
           ...(facets.difficulties ?? []).map((d) => ({

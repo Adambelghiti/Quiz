@@ -20,7 +20,7 @@
       <div>
         <label for="category">Category</label>
         <select id="category" name="category" [(ngModel)]="draft.category">
-          <option *ngFor="let c of categories" [ngValue]="c">{{ c }}</option>
+          <option *ngFor="let c of categories" [ngValue]="c">{{ formatCategory(c) }}</option>
         </select>
       </div>
       <div>
@@ -107,7 +107,7 @@
       <tr *ngFor="let q of questions">
         <td>{{ q.id }}</td>
         <td dir="auto">{{ q.text }}</td>
-        <td>{{ q.category }}</td>
+        <td>{{ formatCategory(q.category) }}</td>
         <td>{{ q.difficulty }}</td>
         <td>{{ q.language }}</td>
         <td dir="auto">{{ q.correctAnswer }}</td>

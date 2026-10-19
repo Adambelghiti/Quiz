@@ -1,0 +1,2538 @@
+{
+  "description": "Round 2 content expansion: 60 questions across six new categories, each with EN/FR/AR translations and explanations.",
+  "categories": [
+    "TECHNOLOGY",
+    "LITERATURE",
+    "NATURE_AND_ANIMALS",
+    "FOOD_AND_CUISINE",
+    "HEALTH_AND_BODY",
+    "ART_AND_ARCHITECTURE"
+  ],
+  "languages": [
+    "EN",
+    "FR",
+    "AR"
+  ],
+  "questions": [
+    {
+      "category": "TECHNOLOGY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "What does \"CPU\" stand for?",
+          "hint": "It is often called the brain of the computer.",
+          "options": [
+            "Central Processing Unit",
+            "Computer Personal Unit",
+            "Central Program Utility",
+            "Control Processing Unit"
+          ],
+          "correctIndex": 0,
+          "explanation": "CPU stands for Central Processing Unit, the part of a computer that executes instructions."
+        },
+        "FR": {
+          "text": "Que signifie « CPU » ?",
+          "hint": "On l'appelle souvent le cerveau de l'ordinateur.",
+          "options": [
+            "Unité centrale de traitement",
+            "Unité personnelle d'ordinateur",
+            "Programme central utilitaire",
+            "Unité de contrôle de traitement"
+          ],
+          "correctIndex": 0,
+          "explanation": "CPU signifie Central Processing Unit (unité centrale de traitement), la partie de l'ordinateur qui exécute les instructions."
+        },
+        "AR": {
+          "text": "ماذا يعني \"CPU\"؟",
+          "hint": "غالباً ما يُسمى دماغ الحاسوب.",
+          "options": [
+            "وحدة المعالجة المركزية",
+            "وحدة الحاسوب الشخصية",
+            "برنامج مركزي مساعد",
+            "وحدة التحكم بالمعالجة"
+          ],
+          "correctIndex": 0,
+          "explanation": "CPU تعني وحدة المعالجة المركزية، وهي الجزء من الحاسوب الذي ينفذ التعليمات."
+        }
+      }
+    },
+    {
+      "category": "TECHNOLOGY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which company develops the Android operating system?",
+          "hint": "It also runs the Play Store.",
+          "options": [
+            "Google",
+            "Apple",
+            "Microsoft",
+            "Samsung"
+          ],
+          "correctIndex": 0,
+          "explanation": "Google develops Android, and the Play Store is Google's app marketplace."
+        },
+        "FR": {
+          "text": "Quelle entreprise développe le système d'exploitation Android ?",
+          "hint": "Elle gère aussi le Play Store.",
+          "options": [
+            "Google",
+            "Apple",
+            "Microsoft",
+            "Samsung"
+          ],
+          "correctIndex": 0,
+          "explanation": "Google développe Android, et le Play Store est sa boutique d'applications."
+        },
+        "AR": {
+          "text": "أي شركة تطوّر نظام التشغيل أندرويد؟",
+          "hint": "تدير أيضاً متجر Play.",
+          "options": [
+            "غوغل",
+            "آبل",
+            "مايكروسوفت",
+            "سامسونغ"
+          ],
+          "correctIndex": 0,
+          "explanation": "تطوّر شركة غوغل نظام أندرويد، ومتجر Play هو متجر تطبيقاتها."
+        }
+      }
+    },
+    {
+      "category": "TECHNOLOGY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "What does \"WWW\" stand for?",
+          "hint": "It was invented at CERN.",
+          "options": [
+            "World Wide Web",
+            "Web Wide World",
+            "World Wireless Web",
+            "Wide World Web"
+          ],
+          "correctIndex": 0,
+          "explanation": "WWW stands for World Wide Web, the system of linked pages accessed through the internet."
+        },
+        "FR": {
+          "text": "Que signifie « WWW » ?",
+          "hint": "Il a été inventé au CERN.",
+          "options": [
+            "World Wide Web",
+            "Web Wide World",
+            "World Wireless Web",
+            "Wide World Web"
+          ],
+          "correctIndex": 0,
+          "explanation": "WWW signifie World Wide Web, le système de pages liées accessible via Internet."
+        },
+        "AR": {
+          "text": "ماذا يعني \"WWW\"؟",
+          "hint": "اخترع في سيرن.",
+          "options": [
+            "الشبكة العنكبوتية العالمية",
+            "شبكة واسعة عالمية",
+            "شبكة لاسلكية عالمية",
+            "شبكة عالمية واسعة"
+          ],
+          "correctIndex": 0,
+          "explanation": "WWW تعني الشبكة العنكبوتية العالمية، وهي نظام الصفحات المترابطة التي تُفتح عبر الإنترنت."
+        }
+      }
+    },
+    {
+      "category": "TECHNOLOGY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "What is the main function of RAM?",
+          "hint": "Its contents disappear when the power is lost.",
+          "options": [
+            "Temporary working memory",
+            "Permanent storage",
+            "Display output",
+            "Network routing"
+          ],
+          "correctIndex": 0,
+          "explanation": "RAM is temporary working memory that holds data the computer is actively using."
+        },
+        "FR": {
+          "text": "Quelle est la fonction principale de la RAM ?",
+          "hint": "Son contenu disparaît lorsque l'alimentation est coupée.",
+          "options": [
+            "Mémoire de travail temporaire",
+            "Stockage permanent",
+            "Affichage",
+            "Routage réseau"
+          ],
+          "correctIndex": 0,
+          "explanation": "La RAM est une mémoire de travail temporaire qui contient les données utilisées activement par l'ordinateur."
+        },
+        "AR": {
+          "text": "ما الوظيفة الرئيسية لذاكرة الوصول العشوائي RAM؟",
+          "hint": "يختفي محتواها عند انقطاع الكهرباء.",
+          "options": [
+            "ذاكرة عمل مؤقتة",
+            "تخزين دائم",
+            "عرض الصور",
+            "توجيه الشبكة"
+          ],
+          "correctIndex": 0,
+          "explanation": "ذاكرة الوصول العشوائي RAM هي ذاكرة عمل مؤقتة تحتفظ بالبيانات التي يستخدمها الحاسوب حالياً."
+        }
+      }
+    },
+    {
+      "category": "TECHNOLOGY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Who is credited with inventing the World Wide Web?",
+          "hint": "He worked at CERN.",
+          "options": [
+            "Tim Berners-Lee",
+            "Bill Gates",
+            "Steve Jobs",
+            "Alan Turing"
+          ],
+          "correctIndex": 0,
+          "explanation": "Tim Berners-Lee invented the World Wide Web while working at CERN."
+        },
+        "FR": {
+          "text": "Qui est crédité de l'invention du World Wide Web ?",
+          "hint": "Il travaillait au CERN.",
+          "options": [
+            "Tim Berners-Lee",
+            "Bill Gates",
+            "Steve Jobs",
+            "Alan Turing"
+          ],
+          "correctIndex": 0,
+          "explanation": "Tim Berners-Lee a inventé le World Wide Web alors qu'il travaillait au CERN."
+        },
+        "AR": {
+          "text": "من يُنسب إليه اختراع الشبكة العنكبوتية العالمية؟",
+          "hint": "كان يعمل في سيرن.",
+          "options": [
+            "تيم بيرنرز-لي",
+            "بيل غيتس",
+            "ستيف جوبز",
+            "آلان تورينغ"
+          ],
+          "correctIndex": 0,
+          "explanation": "اخترع تيم بيرنرز-لي الشبكة العنكبوتية العالمية أثناء عمله في سيرن."
+        }
+      }
+    },
+    {
+      "category": "TECHNOLOGY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which protocol encrypts traffic between a browser and a website?",
+          "hint": "The S stands for secure.",
+          "options": [
+            "HTTPS",
+            "HTTP",
+            "FTP",
+            "SMTP"
+          ],
+          "correctIndex": 0,
+          "explanation": "HTTPS encrypts traffic between the browser and the website, protecting it from eavesdropping."
+        },
+        "FR": {
+          "text": "Quel protocole chiffre le trafic entre un navigateur et un site web ?",
+          "hint": "Le S signifie sécurisé.",
+          "options": [
+            "HTTPS",
+            "HTTP",
+            "FTP",
+            "SMTP"
+          ],
+          "correctIndex": 0,
+          "explanation": "HTTPS chiffre le trafic entre le navigateur et le site web, ce qui le protège contre l'interception."
+        },
+        "AR": {
+          "text": "أي بروتوكول يشفر الاتصال بين المتصفح والموقع؟",
+          "hint": "حرف S يعني آمناً.",
+          "options": [
+            "HTTPS",
+            "HTTP",
+            "FTP",
+            "SMTP"
+          ],
+          "correctIndex": 0,
+          "explanation": "يشفّر HTTPS الاتصال بين المتصفح والموقع، مما يحميه من التنصت."
+        }
+      }
+    },
+    {
+      "category": "TECHNOLOGY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "What is the binary representation of the decimal number 5?",
+          "hint": "It is 4 + 1.",
+          "options": [
+            "101",
+            "110",
+            "100",
+            "111"
+          ],
+          "correctIndex": 0,
+          "explanation": "The decimal number 5 is written as 101 in binary, because 4 + 0 + 1 = 5."
+        },
+        "FR": {
+          "text": "Quelle est la représentation binaire du nombre décimal 5 ?",
+          "hint": "C'est 4 + 1.",
+          "options": [
+            "101",
+            "110",
+            "100",
+            "111"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le nombre décimal 5 s'écrit 101 en binaire, car 4 + 0 + 1 = 5."
+        },
+        "AR": {
+          "text": "ما التمثيل الثنائي للعدد العشري 5؟",
+          "hint": "إنه 4 + 1.",
+          "options": [
+            "101",
+            "110",
+            "100",
+            "111"
+          ],
+          "correctIndex": 0,
+          "explanation": "يُكتب العدد العشري 5 بالصيغة الثنائية 101، لأن 4 + 0 + 1 = 5."
+        }
+      }
+    },
+    {
+      "category": "TECHNOLOGY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which storage device has no moving parts?",
+          "hint": "It uses flash memory.",
+          "options": [
+            "SSD",
+            "HDD",
+            "Floppy disk",
+            "CD-ROM"
+          ],
+          "correctIndex": 0,
+          "explanation": "An SSD (solid-state drive) uses flash memory and has no moving parts."
+        },
+        "FR": {
+          "text": "Quel support de stockage n'a pas de pièces mobiles ?",
+          "hint": "Il utilise de la mémoire flash.",
+          "options": [
+            "SSD",
+            "HDD",
+            "Disquette",
+            "CD-ROM"
+          ],
+          "correctIndex": 0,
+          "explanation": "Un SSD (solid-state drive) utilise de la mémoire flash et n'a aucune pièce mobile."
+        },
+        "AR": {
+          "text": "أي جهاز تخزين لا يحتوي على أجزاء متحركة؟",
+          "hint": "يستخدم ذاكرة فلاش.",
+          "options": [
+            "SSD",
+            "HDD",
+            "قرص مرن",
+            "CD-ROM"
+          ],
+          "correctIndex": 0,
+          "explanation": "يستخدم قرص SSD ذاكرة فلاش ولا يحتوي على أجزاء متحركة."
+        }
+      }
+    },
+    {
+      "category": "TECHNOLOGY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "What does \"AI\" stand for?",
+          "hint": "It includes machine learning.",
+          "options": [
+            "Artificial Intelligence",
+            "Automated Internet",
+            "Advanced Interface",
+            "Applied Informatics"
+          ],
+          "correctIndex": 0,
+          "explanation": "AI stands for Artificial Intelligence, the field of building systems that perform tasks requiring intelligence."
+        },
+        "FR": {
+          "text": "Que signifie « IA » ?",
+          "hint": "Cela inclut l'apprentissage automatique.",
+          "options": [
+            "Intelligence artificielle",
+            "Internet automatisé",
+            "Interface avancée",
+            "Informatique appliquée"
+          ],
+          "correctIndex": 0,
+          "explanation": "IA signifie intelligence artificielle, le domaine qui consiste à construire des systèmes capables d'accomplir des tâches intelligentes."
+        },
+        "AR": {
+          "text": "ماذا يعني \"AI\"؟",
+          "hint": "يشمل التعلم الآلي.",
+          "options": [
+            "الذكاء الاصطناعي",
+            "الإنترنت الآلي",
+            "الواجهة المتقدمة",
+            "المعلوماتية التطبيقية"
+          ],
+          "correctIndex": 0,
+          "explanation": "AI تعني الذكاء الاصطناعي، وهو مجال بناء أنظمة تؤدي مهام تتطلب ذكاءً."
+        }
+      }
+    },
+    {
+      "category": "TECHNOLOGY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which language is mainly used to style web pages?",
+          "hint": "It controls colors, spacing and layout.",
+          "options": [
+            "CSS",
+            "HTML",
+            "SQL",
+            "Python"
+          ],
+          "correctIndex": 0,
+          "explanation": "CSS (Cascading Style Sheets) is mainly used to style web pages."
+        },
+        "FR": {
+          "text": "Quel langage sert principalement à styliser les pages web ?",
+          "hint": "Il contrôle les couleurs, les espacements et la mise en page.",
+          "options": [
+            "CSS",
+            "HTML",
+            "SQL",
+            "Python"
+          ],
+          "correctIndex": 0,
+          "explanation": "CSS (Cascading Style Sheets) sert principalement à styliser les pages web."
+        },
+        "AR": {
+          "text": "أي لغة تُستخدم أساساً لتنسيق صفحات الويب؟",
+          "hint": "تتحكم في الألوان والمسافات والتخطيط.",
+          "options": [
+            "CSS",
+            "HTML",
+            "SQL",
+            "Python"
+          ],
+          "correctIndex": 0,
+          "explanation": "تُستخدم لغة CSS أساساً لتنسيق صفحات الويب."
+        }
+      }
+    },
+    {
+      "category": "LITERATURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Who wrote \"Pride and Prejudice\"?",
+          "hint": "The author also wrote \"Sense and Sensibility\".",
+          "options": [
+            "Jane Austen",
+            "Charlotte Brontë",
+            "Emily Dickinson",
+            "Virginia Woolf"
+          ],
+          "correctIndex": 0,
+          "explanation": "Jane Austen wrote \"Pride and Prejudice\", first published in 1813."
+        },
+        "FR": {
+          "text": "Qui a écrit « Orgueil et Préjugés » ?",
+          "hint": "L'auteure a aussi écrit « Raison et Sensibilité ».",
+          "options": [
+            "Jane Austen",
+            "Charlotte Brontë",
+            "Emily Dickinson",
+            "Virginia Woolf"
+          ],
+          "correctIndex": 0,
+          "explanation": "Jane Austen a écrit « Orgueil et Préjugés », publié pour la première fois en 1813."
+        },
+        "AR": {
+          "text": "من كتب رواية \"كبرياء وهوى\"؟",
+          "hint": "كتبت المؤلفة أيضاً رواية \"العقل والعاطفة\".",
+          "options": [
+            "جين أوستن",
+            "شارلوت برونتي",
+            "إميلي ديكنسون",
+            "فرجينيا وولف"
+          ],
+          "correctIndex": 0,
+          "explanation": "كتبت جين أوستن رواية \"كبرياء وهوى\" التي نُشرت أول مرة عام 1813."
+        }
+      }
+    },
+    {
+      "category": "LITERATURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Who wrote \"The Little Prince\"?",
+          "hint": "The author was a French aviator.",
+          "options": [
+            "Antoine de Saint-Exupéry",
+            "Victor Hugo",
+            "Albert Camus",
+            "Jules Verne"
+          ],
+          "correctIndex": 0,
+          "explanation": "Antoine de Saint-Exupéry wrote \"The Little Prince\", published in 1943."
+        },
+        "FR": {
+          "text": "Qui a écrit « Le Petit Prince » ?",
+          "hint": "L'auteur était un aviateur français.",
+          "options": [
+            "Antoine de Saint-Exupéry",
+            "Victor Hugo",
+            "Albert Camus",
+            "Jules Verne"
+          ],
+          "correctIndex": 0,
+          "explanation": "Antoine de Saint-Exupéry a écrit « Le Petit Prince », publié en 1943."
+        },
+        "AR": {
+          "text": "من كتب \"الأمير الصغير\"؟",
+          "hint": "كان المؤلف طياراً فرنسياً.",
+          "options": [
+            "أنطوان دو سانت-إكزوبيري",
+            "فيكتور هوغو",
+            "ألبير كامو",
+            "جول فيرن"
+          ],
+          "correctIndex": 0,
+          "explanation": "كتب أنطوان دو سانت-إكزوبيري \"الأمير الصغير\" الذي نُشر عام 1943."
+        }
+      }
+    },
+    {
+      "category": "LITERATURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which character tells stories in \"One Thousand and One Nights\"?",
+          "hint": "She tells them to delay her execution.",
+          "options": [
+            "Scheherazade",
+            "Aladdin",
+            "Sinbad",
+            "Ali Baba"
+          ],
+          "correctIndex": 0,
+          "explanation": "Scheherazade tells the stories in \"One Thousand and One Nights\" to delay her execution."
+        },
+        "FR": {
+          "text": "Quel personnage raconte des histoires dans « Les Mille et Une Nuits » ?",
+          "hint": "Elle les raconte pour retarder son exécution.",
+          "options": [
+            "Schéhérazade",
+            "Aladin",
+            "Sindbad",
+            "Ali Baba"
+          ],
+          "correctIndex": 0,
+          "explanation": "Schéhérazade raconte les histoires des « Mille et Une Nuits » pour retarder son exécution."
+        },
+        "AR": {
+          "text": "من هي الشخصية التي تروي القصص في \"ألف ليلة وليلة\"؟",
+          "hint": "ترويها لتأجيل إعدامها.",
+          "options": [
+            "شهرزاد",
+            "علاء الدين",
+            "السندباد",
+            "علي بابا"
+          ],
+          "correctIndex": 0,
+          "explanation": "تروي شهرزاد قصص \"ألف ليلة وليلة\" لتأجيل إعدامها."
+        }
+      }
+    },
+    {
+      "category": "LITERATURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Who wrote \"Les Misérables\"?",
+          "hint": "The author was a leading French Romantic writer.",
+          "options": [
+            "Victor Hugo",
+            "Alexandre Dumas",
+            "Émile Zola",
+            "Gustave Flaubert"
+          ],
+          "correctIndex": 0,
+          "explanation": "Victor Hugo wrote \"Les Misérables\", published in 1862."
+        },
+        "FR": {
+          "text": "Qui a écrit « Les Misérables » ?",
+          "hint": "L'auteur était un grand écrivain romantique français.",
+          "options": [
+            "Victor Hugo",
+            "Alexandre Dumas",
+            "Émile Zola",
+            "Gustave Flaubert"
+          ],
+          "correctIndex": 0,
+          "explanation": "Victor Hugo a écrit « Les Misérables », publié en 1862."
+        },
+        "AR": {
+          "text": "من كتب \"البؤساء\"؟",
+          "hint": "كان المؤلف من أبرز كتاب الرومانسية الفرنسية.",
+          "options": [
+            "فيكتور هوغو",
+            "ألكسندر دوما",
+            "إميل زولا",
+            "غوستاف فلوبير"
+          ],
+          "correctIndex": 0,
+          "explanation": "كتب فيكتور هوغو \"البؤساء\" الذي نُشر عام 1862."
+        }
+      }
+    },
+    {
+      "category": "LITERATURE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Who wrote \"The Old Man and the Sea\"?",
+          "hint": "The author won the Nobel Prize in Literature in 1954.",
+          "options": [
+            "Ernest Hemingway",
+            "F. Scott Fitzgerald",
+            "John Steinbeck",
+            "Mark Twain"
+          ],
+          "correctIndex": 0,
+          "explanation": "Ernest Hemingway wrote \"The Old Man and the Sea\", published in 1952."
+        },
+        "FR": {
+          "text": "Qui a écrit « Le Vieil Homme et la Mer » ?",
+          "hint": "L'auteur a reçu le prix Nobel de littérature en 1954.",
+          "options": [
+            "Ernest Hemingway",
+            "F. Scott Fitzgerald",
+            "John Steinbeck",
+            "Mark Twain"
+          ],
+          "correctIndex": 0,
+          "explanation": "Ernest Hemingway a écrit « Le Vieil Homme et la Mer », publié en 1952."
+        },
+        "AR": {
+          "text": "من كتب \"العجوز والبحر\"؟",
+          "hint": "فاز المؤلف بجائزة نوبل للآداب عام 1954.",
+          "options": [
+            "إرنست همنغواي",
+            "فرانسيس سكوت فيتزجيرالد",
+            "جون شتاينبك",
+            "مارك توين"
+          ],
+          "correctIndex": 0,
+          "explanation": "كتب إرنست همنغواي \"العجوز والبحر\" الذي نُشر عام 1952."
+        }
+      }
+    },
+    {
+      "category": "LITERATURE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which poet wrote \"The Prophet\"?",
+          "hint": "He was a Lebanese-American writer.",
+          "options": [
+            "Kahlil Gibran",
+            "Rumi",
+            "Nizar Qabbani",
+            "Mahmoud Darwish"
+          ],
+          "correctIndex": 0,
+          "explanation": "Kahlil Gibran wrote \"The Prophet\", published in 1923."
+        },
+        "FR": {
+          "text": "Quel poète a écrit « Le Prophète » ?",
+          "hint": "C'était un écrivain libano-américain.",
+          "options": [
+            "Khalil Gibran",
+            "Rumi",
+            "Nizar Qabbani",
+            "Mahmoud Darwish"
+          ],
+          "correctIndex": 0,
+          "explanation": "Khalil Gibran a écrit « Le Prophète », publié en 1923."
+        },
+        "AR": {
+          "text": "أي شاعر كتب \"النبي\"؟",
+          "hint": "كان كاتباً لبنانياً-أمريكياً.",
+          "options": [
+            "جبران خليل جبران",
+            "جلال الدين الرومي",
+            "نزار قباني",
+            "محمود درويش"
+          ],
+          "correctIndex": 0,
+          "explanation": "كتب جبران خليل جبران \"النبي\" الذي نُشر عام 1923."
+        }
+      }
+    },
+    {
+      "category": "LITERATURE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Who wrote \"Don Quixote\"?",
+          "hint": "The author was Spanish.",
+          "options": [
+            "Miguel de Cervantes",
+            "Federico García Lorca",
+            "Pablo Neruda",
+            "Jorge Luis Borges"
+          ],
+          "correctIndex": 0,
+          "explanation": "Miguel de Cervantes wrote \"Don Quixote\", published in two parts in 1605 and 1615."
+        },
+        "FR": {
+          "text": "Qui a écrit « Don Quichotte » ?",
+          "hint": "L'auteur était espagnol.",
+          "options": [
+            "Miguel de Cervantes",
+            "Federico García Lorca",
+            "Pablo Neruda",
+            "Jorge Luis Borges"
+          ],
+          "correctIndex": 0,
+          "explanation": "Miguel de Cervantes a écrit « Don Quichotte », publié en deux parties en 1605 et 1615."
+        },
+        "AR": {
+          "text": "من كتب \"دون كيخوتي\"؟",
+          "hint": "كان المؤلف إسبانياً.",
+          "options": [
+            "ميغيل دي ثيربانتس",
+            "فيديريكو غارثيا لوركا",
+            "بابلو نيرودا",
+            "خورخي لويس بورخيس"
+          ],
+          "correctIndex": 0,
+          "explanation": "كتب ميغيل دي ثيربانتس \"دون كيخوتي\" الذي نُشر في جزأين عامي 1605 و1615."
+        }
+      }
+    },
+    {
+      "category": "LITERATURE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "What is a haiku?",
+          "hint": "It has a strict syllable pattern.",
+          "options": [
+            "A Japanese poem with 5-7-5 syllables",
+            "A long epic poem",
+            "A rhyming couplet",
+            "A type of novel"
+          ],
+          "correctIndex": 0,
+          "explanation": "A haiku is a Japanese poem traditionally arranged in three lines of 5, 7 and 5 syllables."
+        },
+        "FR": {
+          "text": "Qu'est-ce qu'un haïku ?",
+          "hint": "Il suit un schéma syllabique strict.",
+          "options": [
+            "Un poème japonais de 5-7-5 syllabes",
+            "Un long poème épique",
+            "Un distique rimé",
+            "Un type de roman"
+          ],
+          "correctIndex": 0,
+          "explanation": "Un haïku est un poème japonais traditionnellement composé de trois vers de 5, 7 et 5 syllabes."
+        },
+        "AR": {
+          "text": "ما هو الهايكو؟",
+          "hint": "يتبع نمطاً صارماً للمقاطع.",
+          "options": [
+            "قصيدة يابانية من 5-7-5 مقاطع",
+            "قصيدة ملحمية طويلة",
+            "بيت شعر مقفى",
+            "نوع من الروايات"
+          ],
+          "correctIndex": 0,
+          "explanation": "الهايكو قصيدة يابانية تتكون تقليدياً من ثلاثة أسطر بمقاطع 5 و7 و5."
+        }
+      }
+    },
+    {
+      "category": "LITERATURE",
+      "difficulty": 3,
+      "translations": {
+        "EN": {
+          "text": "Which Egyptian writer won the Nobel Prize in Literature in 1988?",
+          "hint": "He wrote \"The Cairo Trilogy\".",
+          "options": [
+            "Naguib Mahfouz",
+            "Taha Hussein",
+            "Yusuf Idris",
+            "Ahmed Shawqi"
+          ],
+          "correctIndex": 0,
+          "explanation": "Naguib Mahfouz won the Nobel Prize in Literature in 1988."
+        },
+        "FR": {
+          "text": "Quel écrivain égyptien a reçu le prix Nobel de littérature en 1988 ?",
+          "hint": "Il a écrit « La Trilogie du Caire ».",
+          "options": [
+            "Naguib Mahfouz",
+            "Taha Hussein",
+            "Yusuf Idris",
+            "Ahmed Shawqi"
+          ],
+          "correctIndex": 0,
+          "explanation": "Naguib Mahfouz a reçu le prix Nobel de littérature en 1988."
+        },
+        "AR": {
+          "text": "أي كاتب مصري فاز بجائزة نوبل للآداب عام 1988؟",
+          "hint": "كتب \"ثلاثية القاهرة\".",
+          "options": [
+            "نجيب محفوظ",
+            "طه حسين",
+            "يوسف إدريس",
+            "أحمد شوقي"
+          ],
+          "correctIndex": 0,
+          "explanation": "فاز نجيب محفوظ بجائزة نوبل للآداب عام 1988."
+        }
+      }
+    },
+    {
+      "category": "LITERATURE",
+      "difficulty": 3,
+      "translations": {
+        "EN": {
+          "text": "Which Moroccan author wrote \"The Sand Child\"?",
+          "hint": "The novel was originally published in French.",
+          "options": [
+            "Tahar Ben Jelloun",
+            "Abdellatif Laâbi",
+            "Driss Chraïbi",
+            "Leila Abouzeid"
+          ],
+          "correctIndex": 0,
+          "explanation": "Tahar Ben Jelloun wrote \"The Sand Child\" (\"L'Enfant de sable\"), published in 1985."
+        },
+        "FR": {
+          "text": "Quel auteur marocain a écrit « L'Enfant de sable » ?",
+          "hint": "Le roman a été publié à l'origine en français.",
+          "options": [
+            "Tahar Ben Jelloun",
+            "Abdellatif Laâbi",
+            "Driss Chraïbi",
+            "Leila Abouzeid"
+          ],
+          "correctIndex": 0,
+          "explanation": "Tahar Ben Jelloun a écrit « L'Enfant de sable », publié en 1985."
+        },
+        "AR": {
+          "text": "أي كاتب مغربي كتب رواية \"الطفل الصابي\" (L'Enfant de sable)؟",
+          "hint": "نُشرت الرواية أصلاً بالفرنسية.",
+          "options": [
+            "الطاهر بن جلون",
+            "عبد اللطيف اللعبي",
+            "إدريس الشرايبي",
+            "ليلى أبو زيد"
+          ],
+          "correctIndex": 0,
+          "explanation": "كتب الطاهر بن جلون رواية \"الطفل الصابي\" (L'Enfant de sable) التي نُشرت عام 1985."
+        }
+      }
+    },
+    {
+      "category": "NATURE_AND_ANIMALS",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which is the largest land animal?",
+          "hint": "It has a long trunk.",
+          "options": [
+            "African elephant",
+            "White rhinoceros",
+            "Giraffe",
+            "Hippopotamus"
+          ],
+          "correctIndex": 0,
+          "explanation": "The African elephant is the largest living land animal."
+        },
+        "FR": {
+          "text": "Quel est le plus grand animal terrestre ?",
+          "hint": "Il possède une longue trompe.",
+          "options": [
+            "Éléphant d'Afrique",
+            "Rhinocéros blanc",
+            "Girafe",
+            "Hippopotame"
+          ],
+          "correctIndex": 0,
+          "explanation": "L'éléphant d'Afrique est le plus grand animal terrestre vivant."
+        },
+        "AR": {
+          "text": "ما هو أكبر حيوان بري؟",
+          "hint": "لديه خرطوم طويل.",
+          "options": [
+            "الفيل الأفريقي",
+            "وحيد القرن الأبيض",
+            "الزرافة",
+            "فرس النهر"
+          ],
+          "correctIndex": 0,
+          "explanation": "الفيل الأفريقي هو أكبر حيوان بري حي."
+        }
+      }
+    },
+    {
+      "category": "NATURE_AND_ANIMALS",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which animal is known as the \"ship of the desert\"?",
+          "hint": "It can store fat in its hump.",
+          "options": [
+            "Camel",
+            "Horse",
+            "Donkey",
+            "Llama"
+          ],
+          "correctIndex": 0,
+          "explanation": "The camel is called the \"ship of the desert\" because it can travel long distances in dry conditions."
+        },
+        "FR": {
+          "text": "Quel animal est appelé « navire du désert » ?",
+          "hint": "Il peut stocker de la graisse dans sa bosse.",
+          "options": [
+            "Chameau",
+            "Cheval",
+            "Âne",
+            "Lama"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le chameau est appelé « navire du désert » car il peut parcourir de longues distances dans des conditions arides."
+        },
+        "AR": {
+          "text": "أي حيوان يُعرف بـ\"سفينة الصحراء\"؟",
+          "hint": "يستطيع تخزين الدهون في سنامه.",
+          "options": [
+            "الجمل",
+            "الحصان",
+            "الحمار",
+            "اللاما"
+          ],
+          "correctIndex": 0,
+          "explanation": "يُسمى الجمل \"سفينة الصحراء\" لأنه يستطيع قطع مسافات طويلة في الظروف الجافة."
+        }
+      }
+    },
+    {
+      "category": "NATURE_AND_ANIMALS",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "What is the largest mammal on Earth?",
+          "hint": "It lives in the ocean.",
+          "options": [
+            "Blue whale",
+            "African elephant",
+            "Giraffe",
+            "Orca"
+          ],
+          "correctIndex": 0,
+          "explanation": "The blue whale is the largest mammal on Earth and can grow to about 30 metres long."
+        },
+        "FR": {
+          "text": "Quel est le plus grand mammifère de la Terre ?",
+          "hint": "Il vit dans l'océan.",
+          "options": [
+            "Baleine bleue",
+            "Éléphant d'Afrique",
+            "Girafe",
+            "Orque"
+          ],
+          "correctIndex": 0,
+          "explanation": "La baleine bleue est le plus grand mammifère de la Terre et peut atteindre environ 30 mètres de long."
+        },
+        "AR": {
+          "text": "ما هو أكبر ثديي على الأرض؟",
+          "hint": "يعيش في المحيط.",
+          "options": [
+            "الحوت الأزرق",
+            "الفيل الأفريقي",
+            "الزرافة",
+            "الأوركا"
+          ],
+          "correctIndex": 0,
+          "explanation": "الحوت الأزرق هو أكبر ثديي على الأرض ويمكن أن يبلغ طوله نحو 30 متراً."
+        }
+      }
+    },
+    {
+      "category": "NATURE_AND_ANIMALS",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which gas do plants absorb for photosynthesis?",
+          "hint": "They release oxygen in return.",
+          "options": [
+            "Carbon dioxide",
+            "Oxygen",
+            "Nitrogen",
+            "Hydrogen"
+          ],
+          "correctIndex": 0,
+          "explanation": "Plants absorb carbon dioxide and release oxygen during photosynthesis."
+        },
+        "FR": {
+          "text": "Quel gaz les plantes absorbent-elles pour la photosynthèse ?",
+          "hint": "Elles libèrent de l'oxygène en retour.",
+          "options": [
+            "Dioxyde de carbone",
+            "Oxygène",
+            "Azote",
+            "Hydrogène"
+          ],
+          "correctIndex": 0,
+          "explanation": "Les plantes absorbent le dioxyde de carbone et libèrent de l'oxygène pendant la photosynthèse."
+        },
+        "AR": {
+          "text": "أي غاز تمتصه النباتات لعملية التمثيل الضوئي؟",
+          "hint": "تطلق الأكسجين في المقابل.",
+          "options": [
+            "ثاني أكسيد الكربون",
+            "الأكسجين",
+            "النيتروجين",
+            "الهيدروجين"
+          ],
+          "correctIndex": 0,
+          "explanation": "تمتص النباتات ثاني أكسيد الكربون وتطلق الأكسجين أثناء التمثيل الضوئي."
+        }
+      }
+    },
+    {
+      "category": "NATURE_AND_ANIMALS",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "How many legs does a spider have?",
+          "hint": "Insects have fewer.",
+          "options": [
+            "8",
+            "6",
+            "10",
+            "4"
+          ],
+          "correctIndex": 0,
+          "explanation": "Spiders are arachnids and have eight legs."
+        },
+        "FR": {
+          "text": "Combien de pattes a une araignée ?",
+          "hint": "Les insectes en ont moins.",
+          "options": [
+            "8",
+            "6",
+            "10",
+            "4"
+          ],
+          "correctIndex": 0,
+          "explanation": "Les araignées sont des arachnides et possèdent huit pattes."
+        },
+        "AR": {
+          "text": "كم عدد أرجل العنكبوت؟",
+          "hint": "الحشرات لديها عدد أقل.",
+          "options": [
+            "8",
+            "6",
+            "10",
+            "4"
+          ],
+          "correctIndex": 0,
+          "explanation": "العناكب من العنكبوتيات ولديها ثماني أرجل."
+        }
+      }
+    },
+    {
+      "category": "NATURE_AND_ANIMALS",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which is the fastest land animal?",
+          "hint": "It is a big cat with a spotted coat.",
+          "options": [
+            "Cheetah",
+            "Lion",
+            "Horse",
+            "Greyhound"
+          ],
+          "correctIndex": 0,
+          "explanation": "The cheetah is the fastest land animal and can reach speeds of over 100 km/h."
+        },
+        "FR": {
+          "text": "Quel est l'animal terrestre le plus rapide ?",
+          "hint": "C'est un grand félin au pelage tacheté.",
+          "options": [
+            "Guépard",
+            "Lion",
+            "Cheval",
+            "Lévrier"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le guépard est l'animal terrestre le plus rapide et peut dépasser 100 km/h."
+        },
+        "AR": {
+          "text": "ما هو أسرع حيوان بري؟",
+          "hint": "إنه من القطط الكبيرة ذات الفراء المرقط.",
+          "options": [
+            "الفهد",
+            "الأسد",
+            "الحصان",
+            "الكلب السلوقي"
+          ],
+          "correctIndex": 0,
+          "explanation": "الفهد هو أسرع حيوان بري ويمكن أن تتجاوز سرعته 100 كم/س."
+        }
+      }
+    },
+    {
+      "category": "NATURE_AND_ANIMALS",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "What is a group of lions called?",
+          "hint": "The word also means self-respect.",
+          "options": [
+            "Pride",
+            "Pack",
+            "Herd",
+            "Flock"
+          ],
+          "correctIndex": 0,
+          "explanation": "A group of lions is called a pride."
+        },
+        "FR": {
+          "text": "Comment appelle-t-on un groupe de lions ?",
+          "hint": "Le mot évoque aussi la fierté.",
+          "options": [
+            "Une troupe",
+            "Une meute",
+            "Un troupeau",
+            "Un vol"
+          ],
+          "correctIndex": 0,
+          "explanation": "Un groupe de lions s'appelle une troupe (a pride en anglais)."
+        },
+        "AR": {
+          "text": "ماذا يسمى مجموعة الأسود؟",
+          "hint": "الكلمة تعني أيضاً الكبرياء.",
+          "options": [
+            "زمرة",
+            "سرب",
+            "قطيع",
+            "رف"
+          ],
+          "correctIndex": 0,
+          "explanation": "تُسمى مجموعة الأسود \"زمرة\" (pride)."
+        }
+      }
+    },
+    {
+      "category": "NATURE_AND_ANIMALS",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which is the largest living bird?",
+          "hint": "It cannot fly.",
+          "options": [
+            "Ostrich",
+            "Emu",
+            "Albatross",
+            "Eagle"
+          ],
+          "correctIndex": 0,
+          "explanation": "The ostrich is the largest living bird and cannot fly."
+        },
+        "FR": {
+          "text": "Quel est le plus grand oiseau vivant ?",
+          "hint": "Il ne peut pas voler.",
+          "options": [
+            "Autruche",
+            "Émeu",
+            "Albatros",
+            "Aigle"
+          ],
+          "correctIndex": 0,
+          "explanation": "L'autruche est le plus grand oiseau vivant et ne peut pas voler."
+        },
+        "AR": {
+          "text": "ما هو أكبر طائر حي؟",
+          "hint": "لا يستطيع الطيران.",
+          "options": [
+            "النعامة",
+            "الإيمو",
+            "القطرس",
+            "النسر"
+          ],
+          "correctIndex": 0,
+          "explanation": "النعامة هي أكبر طائر حي ولا تستطيع الطيران."
+        }
+      }
+    },
+    {
+      "category": "NATURE_AND_ANIMALS",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which is the only mammal capable of true flight?",
+          "hint": "It is active at night.",
+          "options": [
+            "Bat",
+            "Flying squirrel",
+            "Sugar glider",
+            "Lemur"
+          ],
+          "correctIndex": 0,
+          "explanation": "Bats are the only mammals capable of true flight; the others only glide."
+        },
+        "FR": {
+          "text": "Quel est le seul mammifère capable de voler véritablement ?",
+          "hint": "Il est actif la nuit.",
+          "options": [
+            "Chauve-souris",
+            "Écureuil volant",
+            "Phalanger volant",
+            "Lémurien"
+          ],
+          "correctIndex": 0,
+          "explanation": "Les chauves-souris sont les seuls mammifères capables de voler véritablement ; les autres ne font que planer."
+        },
+        "AR": {
+          "text": "ما هو الثديي الوحيد القادر على الطيران الحقيقي؟",
+          "hint": "ينشط ليلاً.",
+          "options": [
+            "الخفاش",
+            "السنجاب الطائر",
+            "الأبوسوم الطائر",
+            "الليمور"
+          ],
+          "correctIndex": 0,
+          "explanation": "الخفافيش هي الثدييات الوحيدة القادرة على الطيران الحقيقي، أما الأخرى فهي تنزلق فقط."
+        }
+      }
+    },
+    {
+      "category": "NATURE_AND_ANIMALS",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which animal is famous for changing color to blend in?",
+          "hint": "It is a reptile with a long tongue.",
+          "options": [
+            "Chameleon",
+            "Gecko",
+            "Iguana",
+            "Cobra"
+          ],
+          "correctIndex": 0,
+          "explanation": "Chameleons are famous for changing color, which helps with camouflage and communication."
+        },
+        "FR": {
+          "text": "Quel animal est célèbre pour changer de couleur afin de se camoufler ?",
+          "hint": "C'est un reptile à longue langue.",
+          "options": [
+            "Caméléon",
+            "Gecko",
+            "Iguane",
+            "Cobra"
+          ],
+          "correctIndex": 0,
+          "explanation": "Les caméléons sont célèbres pour changer de couleur, ce qui aide au camouflage et à la communication."
+        },
+        "AR": {
+          "text": "أي حيوان يشتهر بتغيير لونه للتمويه؟",
+          "hint": "إنه زاحف ذو لسان طويل.",
+          "options": [
+            "الحرباء",
+            "الوزغة",
+            "الإغوانا",
+            "الكوبرا"
+          ],
+          "correctIndex": 0,
+          "explanation": "تشتهر الحرباء بتغيير لونها، مما يساعد على التمويه والتواصل."
+        }
+      }
+    },
+    {
+      "category": "FOOD_AND_CUISINE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "What is the main ingredient of couscous?",
+          "hint": "It is a coarse grain product.",
+          "options": [
+            "Semolina",
+            "Rice",
+            "Wheat flour",
+            "Cornmeal"
+          ],
+          "correctIndex": 0,
+          "explanation": "Couscous is made mainly from semolina, which comes from durum wheat."
+        },
+        "FR": {
+          "text": "Quel est l'ingrédient principal du couscous ?",
+          "hint": "C'est un produit céréalier granuleux.",
+          "options": [
+            "Semoule",
+            "Riz",
+            "Farine de blé",
+            "Farine de maïs"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le couscous est principalement fabriqué à partir de semoule de blé dur."
+        },
+        "AR": {
+          "text": "ما هو المكوّن الرئيسي للكسكس؟",
+          "hint": "إنه منتج حبوب خشن.",
+          "options": [
+            "السميد",
+            "الأرز",
+            "دقيق القمح",
+            "دقيق الذرة"
+          ],
+          "correctIndex": 0,
+          "explanation": "يُصنع الكسكس أساساً من السميد المستخرج من القمح الصلب."
+        }
+      }
+    },
+    {
+      "category": "FOOD_AND_CUISINE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which Moroccan dish is cooked in a conical clay pot?",
+          "hint": "The pot shares its name with the dish.",
+          "options": [
+            "Tagine",
+            "Harira",
+            "Pastilla",
+            "Couscous"
+          ],
+          "correctIndex": 0,
+          "explanation": "A tagine is a Moroccan stew cooked in a conical clay pot of the same name."
+        },
+        "FR": {
+          "text": "Quel plat marocain est cuit dans un plat en terre cuite conique ?",
+          "hint": "Le plat porte le même nom que le mets.",
+          "options": [
+            "Tajine",
+            "Harira",
+            "Pastilla",
+            "Couscous"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le tajine est un ragoût marocain cuit dans un plat en terre cuite conique du même nom."
+        },
+        "AR": {
+          "text": "أي طبق مغربي يُطبخ في وعاء طيني مخروطي؟",
+          "hint": "يحمل الوعاء اسم الطبق نفسه.",
+          "options": [
+            "الطاجين",
+            "الحريرة",
+            "البسطيلة",
+            "الكسكس"
+          ],
+          "correctIndex": 0,
+          "explanation": "الطاجين طبق مغربي يُطبخ في وعاء طيني مخروطي يحمل الاسم نفسه."
+        }
+      }
+    },
+    {
+      "category": "FOOD_AND_CUISINE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which Moroccan spice blend contains many spices?",
+          "hint": "Its name means \"head of the shop\".",
+          "options": [
+            "Ras el hanout",
+            "Harissa",
+            "Za'atar",
+            "Sumac"
+          ],
+          "correctIndex": 0,
+          "explanation": "Ras el hanout is a Moroccan spice blend that can contain dozens of spices."
+        },
+        "FR": {
+          "text": "Quel mélange d'épices marocain contient de nombreuses épices ?",
+          "hint": "Son nom signifie « tête de l'épicerie ».",
+          "options": [
+            "Ras el hanout",
+            "Harissa",
+            "Za'atar",
+            "Sumac"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le ras el hanout est un mélange d'épices marocain qui peut contenir des dizaines d'épices."
+        },
+        "AR": {
+          "text": "أي مزيج توابل مغربي يحتوي على توابل كثيرة؟",
+          "hint": "اسمه يعني \"رأس الدكان\".",
+          "options": [
+            "رأس الحانوت",
+            "الهريسة",
+            "الزعتر",
+            "السماق"
+          ],
+          "correctIndex": 0,
+          "explanation": "رأس الحانوت مزيج توابل مغربي قد يحتوي على عشرات الأنواع."
+        }
+      }
+    },
+    {
+      "category": "FOOD_AND_CUISINE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which country is sushi originally from?",
+          "hint": "It is an island country in East Asia.",
+          "options": [
+            "Japan",
+            "China",
+            "Korea",
+            "Thailand"
+          ],
+          "correctIndex": 0,
+          "explanation": "Sushi originated in Japan, where it developed from preserved fish and rice."
+        },
+        "FR": {
+          "text": "De quel pays les sushis sont-ils originaires ?",
+          "hint": "C'est un pays insulaire d'Asie de l'Est.",
+          "options": [
+            "Japon",
+            "Chine",
+            "Corée",
+            "Thaïlande"
+          ],
+          "correctIndex": 0,
+          "explanation": "Les sushis sont originaires du Japon, où ils sont issus de techniques de conservation du poisson et du riz."
+        },
+        "AR": {
+          "text": "من أي بلد أصل السوشي؟",
+          "hint": "إنه بلد جزر في شرق آسيا.",
+          "options": [
+            "اليابان",
+            "الصين",
+            "كوريا",
+            "تايلاند"
+          ],
+          "correctIndex": 0,
+          "explanation": "نشأ السوشي في اليابان، حيث تطور من تقنيات حفظ السمك والأرز."
+        }
+      }
+    },
+    {
+      "category": "FOOD_AND_CUISINE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "What is the main ingredient of guacamole?",
+          "hint": "It is a green fruit.",
+          "options": [
+            "Avocado",
+            "Tomato",
+            "Cucumber",
+            "Pepper"
+          ],
+          "correctIndex": 0,
+          "explanation": "Guacamole is made mainly from mashed avocado."
+        },
+        "FR": {
+          "text": "Quel est l'ingrédient principal du guacamole ?",
+          "hint": "C'est un fruit vert.",
+          "options": [
+            "Avocat",
+            "Tomate",
+            "Concombre",
+            "Poivron"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le guacamole est principalement préparé à partir d'avocat écrasé."
+        },
+        "AR": {
+          "text": "ما هو المكوّن الرئيسي للغواكامولي؟",
+          "hint": "إنها فاكهة خضراء.",
+          "options": [
+            "الأفوكادو",
+            "الطماطم",
+            "الخيار",
+            "الفلفل"
+          ],
+          "correctIndex": 0,
+          "explanation": "يُحضّر الغواكامولي أساساً من الأفوكادو المهروس."
+        }
+      }
+    },
+    {
+      "category": "FOOD_AND_CUISINE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "What is the main ingredient of hummus?",
+          "hint": "It is a legume.",
+          "options": [
+            "Chickpeas",
+            "Lentils",
+            "White beans",
+            "Peas"
+          ],
+          "correctIndex": 0,
+          "explanation": "Hummus is made mainly from chickpeas, tahini, lemon and garlic."
+        },
+        "FR": {
+          "text": "Quel est l'ingrédient principal du houmous ?",
+          "hint": "C'est une légumineuse.",
+          "options": [
+            "Pois chiches",
+            "Lentilles",
+            "Haricots blancs",
+            "Petits pois"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le houmous est principalement préparé à partir de pois chiches, de tahini, de citron et d'ail."
+        },
+        "AR": {
+          "text": "ما هو المكوّن الرئيسي للحمص (هوموس)؟",
+          "hint": "إنه من البقوليات.",
+          "options": [
+            "الحمص",
+            "العدس",
+            "الفاصوليا البيضاء",
+            "البازلاء"
+          ],
+          "correctIndex": 0,
+          "explanation": "يُحضّر الحمص (هوموس) أساساً من الحمص والطحينة والليمون والثوم."
+        }
+      }
+    },
+    {
+      "category": "FOOD_AND_CUISINE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which Moroccan soup is traditionally served during Ramadan?",
+          "hint": "It is often served with dates.",
+          "options": [
+            "Harira",
+            "Bissara",
+            "Chorba",
+            "Lentil soup"
+          ],
+          "correctIndex": 0,
+          "explanation": "Harira is a traditional Moroccan soup commonly served to break the fast during Ramadan."
+        },
+        "FR": {
+          "text": "Quelle soupe marocaine est traditionnellement servie pendant le Ramadan ?",
+          "hint": "On la sert souvent avec des dattes.",
+          "options": [
+            "Harira",
+            "Bissara",
+            "Chorba",
+            "Soupe de lentilles"
+          ],
+          "correctIndex": 0,
+          "explanation": "La harira est une soupe marocaine traditionnelle souvent servie pour rompre le jeûne pendant le Ramadan."
+        },
+        "AR": {
+          "text": "أي حساء مغربي يُقدّم تقليدياً في رمضان؟",
+          "hint": "غالباً ما يُقدّم مع التمر.",
+          "options": [
+            "الحريرة",
+            "البصارة",
+            "الشوربة",
+            "حساء العدس"
+          ],
+          "correctIndex": 0,
+          "explanation": "الحريرة حساء مغربي تقليدي يُقدّم غالباً للإفطار في رمضان."
+        }
+      }
+    },
+    {
+      "category": "FOOD_AND_CUISINE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which fruit is known as the \"king of fruits\" in Southeast Asia?",
+          "hint": "It has a strong smell.",
+          "options": [
+            "Durian",
+            "Mango",
+            "Pineapple",
+            "Papaya"
+          ],
+          "correctIndex": 0,
+          "explanation": "Durian is often called the \"king of fruits\" in Southeast Asia, known for its strong smell."
+        },
+        "FR": {
+          "text": "Quel fruit est appelé « roi des fruits » en Asie du Sud-Est ?",
+          "hint": "Il a une odeur très forte.",
+          "options": [
+            "Durian",
+            "Mangue",
+            "Ananas",
+            "Papaye"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le durian est souvent appelé « roi des fruits » en Asie du Sud-Est, connu pour son odeur très forte."
+        },
+        "AR": {
+          "text": "أي فاكهة تُعرف بـ\"ملك الفواكه\" في جنوب شرق آسيا؟",
+          "hint": "لها رائحة قوية.",
+          "options": [
+            "الدوريان",
+            "المانجو",
+            "الأناناس",
+            "البابايا"
+          ],
+          "correctIndex": 0,
+          "explanation": "غالباً ما يُسمى الدوريان \"ملك الفواكه\" في جنوب شرق آسيا، ويشتهر برائحته القوية."
+        }
+      }
+    },
+    {
+      "category": "FOOD_AND_CUISINE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "What is the main ingredient of pesto?",
+          "hint": "It is a fragrant green herb.",
+          "options": [
+            "Basil",
+            "Parsley",
+            "Spinach",
+            "Mint"
+          ],
+          "correctIndex": 0,
+          "explanation": "Pesto is made mainly from basil, olive oil, garlic, pine nuts and cheese."
+        },
+        "FR": {
+          "text": "Quel est l'ingrédient principal du pesto ?",
+          "hint": "C'est une herbe aromatique verte.",
+          "options": [
+            "Basilic",
+            "Persil",
+            "Épinards",
+            "Menthe"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le pesto est principalement préparé à partir de basilic, d'huile d'olive, d'ail, de pignons et de fromage."
+        },
+        "AR": {
+          "text": "ما هو المكوّن الرئيسي للبيستو؟",
+          "hint": "إنه عشب أخضر عطري.",
+          "options": [
+            "الريحان",
+            "البقدونس",
+            "السبانخ",
+            "النعناع"
+          ],
+          "correctIndex": 0,
+          "explanation": "يُحضّر البيستو أساساً من الريحان وزيت الزيتون والثوم والصنوبر والجبن."
+        }
+      }
+    },
+    {
+      "category": "FOOD_AND_CUISINE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which type of pastry is used to make croissants?",
+          "hint": "It is layered with butter.",
+          "options": [
+            "Puff pastry",
+            "Shortcrust pastry",
+            "Choux pastry",
+            "Filo pastry"
+          ],
+          "correctIndex": 0,
+          "explanation": "Croissants are made with puff pastry, which is layered with butter to create flaky layers."
+        },
+        "FR": {
+          "text": "Quel type de pâte utilise-t-on pour faire les croissants ?",
+          "hint": "Elle est feuilletée avec du beurre.",
+          "options": [
+            "Pâte feuilletée",
+            "Pâte brisée",
+            "Pâte à choux",
+            "Pâte filo"
+          ],
+          "correctIndex": 0,
+          "explanation": "Les croissants sont faits avec de la pâte feuilletée, composée de couches de beurre qui donnent le feuilleté."
+        },
+        "AR": {
+          "text": "أي نوع من العجين يُستخدم لصنع الكرواسان؟",
+          "hint": "يتكون من طبقات مع الزبدة.",
+          "options": [
+            "عجين البف باستري",
+            "عجين السكر",
+            "عجين الشو",
+            "عجين الفيلو"
+          ],
+          "correctIndex": 0,
+          "explanation": "يُصنع الكرواسان من عجين البف باستري الذي يتكون من طبقات زبدة تمنحه القوام المتقشر."
+        }
+      }
+    },
+    {
+      "category": "HEALTH_AND_BODY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "How many bones does an adult human have?",
+          "hint": "Babies have more, but some fuse together.",
+          "options": [
+            "206",
+            "201",
+            "210",
+            "220"
+          ],
+          "correctIndex": 0,
+          "explanation": "An adult human skeleton has 206 bones."
+        },
+        "FR": {
+          "text": "Combien d'os compte le corps humain adulte ?",
+          "hint": "Les bébés en ont plus, mais certains fusionnent.",
+          "options": [
+            "206",
+            "201",
+            "210",
+            "220"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le squelette humain adulte compte 206 os."
+        },
+        "AR": {
+          "text": "كم عدد عظام الإنسان البالغ؟",
+          "hint": "يملك الأطفال عدداً أكبر، لكن بعضها يلتحم.",
+          "options": [
+            "206",
+            "201",
+            "210",
+            "220"
+          ],
+          "correctIndex": 0,
+          "explanation": "يتكون الهيكل العظمي للإنسان البالغ من 206 عظمة."
+        }
+      }
+    },
+    {
+      "category": "HEALTH_AND_BODY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which organ pumps blood around the body?",
+          "hint": "It beats about once a second.",
+          "options": [
+            "Heart",
+            "Liver",
+            "Lungs",
+            "Kidneys"
+          ],
+          "correctIndex": 0,
+          "explanation": "The heart pumps blood around the body through the circulatory system."
+        },
+        "FR": {
+          "text": "Quel organe pompe le sang dans le corps ?",
+          "hint": "Il bat environ une fois par seconde.",
+          "options": [
+            "Cœur",
+            "Foie",
+            "Poumons",
+            "Reins"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le cœur pompe le sang dans tout le corps par le système circulatoire."
+        },
+        "AR": {
+          "text": "أي عضو يضخ الدم في الجسم؟",
+          "hint": "ينبض نحو مرة كل ثانية.",
+          "options": [
+            "القلب",
+            "الكبد",
+            "الرئتان",
+            "الكليتان"
+          ],
+          "correctIndex": 0,
+          "explanation": "يضخ القلب الدم في الجسم عبر الجهاز الدوري."
+        }
+      }
+    },
+    {
+      "category": "HEALTH_AND_BODY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which vitamin is produced when skin is exposed to sunlight?",
+          "hint": "It helps the body absorb calcium.",
+          "options": [
+            "Vitamin D",
+            "Vitamin C",
+            "Vitamin A",
+            "Vitamin B12"
+          ],
+          "correctIndex": 0,
+          "explanation": "Skin produces vitamin D when exposed to sunlight, and it helps the body absorb calcium."
+        },
+        "FR": {
+          "text": "Quelle vitamine est produite lorsque la peau est exposée au soleil ?",
+          "hint": "Elle aide le corps à absorber le calcium.",
+          "options": [
+            "Vitamine D",
+            "Vitamine C",
+            "Vitamine A",
+            "Vitamine B12"
+          ],
+          "correctIndex": 0,
+          "explanation": "La peau produit de la vitamine D lorsqu'elle est exposée au soleil, et celle-ci aide à absorber le calcium."
+        },
+        "AR": {
+          "text": "أي فيتامين ينتجه الجسم عند تعرض الجلد لأشعة الشمس؟",
+          "hint": "يساعد الجسم على امتصاص الكالسيوم.",
+          "options": [
+            "فيتامين د",
+            "فيتامين ج",
+            "فيتامين أ",
+            "فيتامين ب12"
+          ],
+          "correctIndex": 0,
+          "explanation": "ينتج الجلد فيتامين د عند التعرض لأشعة الشمس، ويساعد على امتصاص الكالسيوم."
+        }
+      }
+    },
+    {
+      "category": "HEALTH_AND_BODY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which nutrient is the body's main source of energy?",
+          "hint": "Bread and rice are rich in it.",
+          "options": [
+            "Carbohydrates",
+            "Protein",
+            "Vitamins",
+            "Minerals"
+          ],
+          "correctIndex": 0,
+          "explanation": "Carbohydrates are the body's main source of energy."
+        },
+        "FR": {
+          "text": "Quel nutriment est la principale source d'énergie du corps ?",
+          "hint": "Le pain et le riz en sont riches.",
+          "options": [
+            "Glucides",
+            "Protéines",
+            "Vitamines",
+            "Minéraux"
+          ],
+          "correctIndex": 0,
+          "explanation": "Les glucides sont la principale source d'énergie du corps."
+        },
+        "AR": {
+          "text": "أي مغذٍّ هو المصدر الرئيسي لطاقة الجسم؟",
+          "hint": "الخبز والأرز غنيان به.",
+          "options": [
+            "الكربوهيدرات",
+            "البروتينات",
+            "الفيتامينات",
+            "المعادن"
+          ],
+          "correctIndex": 0,
+          "explanation": "الكربوهيدرات هي المصدر الرئيسي لطاقة الجسم."
+        }
+      }
+    },
+    {
+      "category": "HEALTH_AND_BODY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "How many teeth does an adult human typically have?",
+          "hint": "It includes wisdom teeth.",
+          "options": [
+            "32",
+            "28",
+            "30",
+            "36"
+          ],
+          "correctIndex": 0,
+          "explanation": "An adult human typically has 32 teeth, including wisdom teeth."
+        },
+        "FR": {
+          "text": "Combien de dents un adulte possède-t-il généralement ?",
+          "hint": "Cela inclut les dents de sagesse.",
+          "options": [
+            "32",
+            "28",
+            "30",
+            "36"
+          ],
+          "correctIndex": 0,
+          "explanation": "Un adulte possède généralement 32 dents, y compris les dents de sagesse."
+        },
+        "AR": {
+          "text": "كم عدد أسنان الإنسان البالغ عادةً؟",
+          "hint": "يشمل ذلك أضراس العقل.",
+          "options": [
+            "32",
+            "28",
+            "30",
+            "36"
+          ],
+          "correctIndex": 0,
+          "explanation": "يملك الإنسان البالغ عادةً 32 سناً، بما في ذلك أضراس العقل."
+        }
+      }
+    },
+    {
+      "category": "HEALTH_AND_BODY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which blood cells carry oxygen?",
+          "hint": "They contain haemoglobin.",
+          "options": [
+            "Red blood cells",
+            "White blood cells",
+            "Platelets",
+            "Plasma cells"
+          ],
+          "correctIndex": 0,
+          "explanation": "Red blood cells carry oxygen thanks to haemoglobin."
+        },
+        "FR": {
+          "text": "Quelles cellules sanguines transportent l'oxygène ?",
+          "hint": "Elles contiennent de l'hémoglobine.",
+          "options": [
+            "Globules rouges",
+            "Globules blancs",
+            "Plaquettes",
+            "Cellules plasmatiques"
+          ],
+          "correctIndex": 0,
+          "explanation": "Les globules rouges transportent l'oxygène grâce à l'hémoglobine."
+        },
+        "AR": {
+          "text": "أي خلايا الدم تحمل الأكسجين؟",
+          "hint": "تحتوي على الهيموغلوبين.",
+          "options": [
+            "خلايا الدم الحمراء",
+            "خلايا الدم البيضاء",
+            "الصفائح الدموية",
+            "خلايا البلازما"
+          ],
+          "correctIndex": 0,
+          "explanation": "تحمل خلايا الدم الحمراء الأكسجين بفضل الهيموغلوبين."
+        }
+      }
+    },
+    {
+      "category": "HEALTH_AND_BODY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which organs filter blood and produce urine?",
+          "hint": "There are two of them.",
+          "options": [
+            "Kidneys",
+            "Lungs",
+            "Liver",
+            "Stomach"
+          ],
+          "correctIndex": 0,
+          "explanation": "The kidneys filter blood and produce urine."
+        },
+        "FR": {
+          "text": "Quels organes filtrent le sang et produisent l'urine ?",
+          "hint": "Il y en a deux.",
+          "options": [
+            "Reins",
+            "Poumons",
+            "Foie",
+            "Estomac"
+          ],
+          "correctIndex": 0,
+          "explanation": "Les reins filtrent le sang et produisent l'urine."
+        },
+        "AR": {
+          "text": "أي أعضاء ترشح الدم وتنتج البول؟",
+          "hint": "يوجد اثنان منها.",
+          "options": [
+            "الكليتان",
+            "الرئتان",
+            "الكبد",
+            "المعدة"
+          ],
+          "correctIndex": 0,
+          "explanation": "ترشح الكليتان الدم وتنتجان البول."
+        }
+      }
+    },
+    {
+      "category": "HEALTH_AND_BODY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which vitamin is found in citrus fruits?",
+          "hint": "It supports the immune system.",
+          "options": [
+            "Vitamin C",
+            "Vitamin D",
+            "Vitamin K",
+            "Vitamin B12"
+          ],
+          "correctIndex": 0,
+          "explanation": "Citrus fruits are rich in vitamin C, which supports the immune system."
+        },
+        "FR": {
+          "text": "Quelle vitamine trouve-t-on dans les agrumes ?",
+          "hint": "Elle soutient le système immunitaire.",
+          "options": [
+            "Vitamine C",
+            "Vitamine D",
+            "Vitamine K",
+            "Vitamine B12"
+          ],
+          "correctIndex": 0,
+          "explanation": "Les agrumes sont riches en vitamine C, qui soutient le système immunitaire."
+        },
+        "AR": {
+          "text": "أي فيتامين يوجد في الحمضيات؟",
+          "hint": "يدعم جهاز المناعة.",
+          "options": [
+            "فيتامين ج",
+            "فيتامين د",
+            "فيتامين ك",
+            "فيتامين ب12"
+          ],
+          "correctIndex": 0,
+          "explanation": "الحمضيات غنية بفيتامين ج الذي يدعم جهاز المناعة."
+        }
+      }
+    },
+    {
+      "category": "HEALTH_AND_BODY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "What is the medical term for high blood pressure?",
+          "hint": "It is a major risk factor for heart disease.",
+          "options": [
+            "Hypertension",
+            "Hypotension",
+            "Hyperglycemia",
+            "Anemia"
+          ],
+          "correctIndex": 0,
+          "explanation": "Hypertension is the medical term for high blood pressure."
+        },
+        "FR": {
+          "text": "Quel est le terme médical pour une pression artérielle élevée ?",
+          "hint": "C'est un facteur de risque majeur de maladies cardiaques.",
+          "options": [
+            "Hypertension",
+            "Hypotension",
+            "Hyperglycémie",
+            "Anémie"
+          ],
+          "correctIndex": 0,
+          "explanation": "L'hypertension est le terme médical désignant une pression artérielle élevée."
+        },
+        "AR": {
+          "text": "ما المصطلح الطبي لارتفاع ضغط الدم؟",
+          "hint": "إنه عامل خطر رئيسي لأمراض القلب.",
+          "options": [
+            "فرط ضغط الدم",
+            "انخفاض ضغط الدم",
+            "فرط سكر الدم",
+            "فقر الدم"
+          ],
+          "correctIndex": 0,
+          "explanation": "فرط ضغط الدم هو المصطلح الطبي لارتفاع ضغط الدم."
+        }
+      }
+    },
+    {
+      "category": "HEALTH_AND_BODY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which organ produces insulin?",
+          "hint": "It also produces digestive enzymes.",
+          "options": [
+            "Pancreas",
+            "Liver",
+            "Kidney",
+            "Spleen"
+          ],
+          "correctIndex": 0,
+          "explanation": "The pancreas produces insulin, which regulates blood sugar."
+        },
+        "FR": {
+          "text": "Quel organe produit l'insuline ?",
+          "hint": "Il produit aussi des enzymes digestives.",
+          "options": [
+            "Pancréas",
+            "Foie",
+            "Rein",
+            "Rate"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le pancréas produit l'insuline, qui régule la glycémie."
+        },
+        "AR": {
+          "text": "أي عضو ينتج الأنسولين؟",
+          "hint": "ينتج أيضاً إنزيمات هضمية.",
+          "options": [
+            "البنكرياس",
+            "الكبد",
+            "الكلية",
+            "الطحال"
+          ],
+          "correctIndex": 0,
+          "explanation": "ينتج البنكرياس الأنسولين الذي ينظّم سكر الدم."
+        }
+      }
+    },
+    {
+      "category": "ART_AND_ARCHITECTURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Who painted the Mona Lisa?",
+          "hint": "The painting hangs in the Louvre.",
+          "options": [
+            "Leonardo da Vinci",
+            "Michelangelo",
+            "Raphael",
+            "Vincent van Gogh"
+          ],
+          "correctIndex": 0,
+          "explanation": "Leonardo da Vinci painted the Mona Lisa, which is displayed in the Louvre in Paris."
+        },
+        "FR": {
+          "text": "Qui a peint la Joconde ?",
+          "hint": "Le tableau est exposé au Louvre.",
+          "options": [
+            "Léonard de Vinci",
+            "Michel-Ange",
+            "Raphaël",
+            "Vincent van Gogh"
+          ],
+          "correctIndex": 0,
+          "explanation": "Léonard de Vinci a peint la Joconde, exposée au Louvre à Paris."
+        },
+        "AR": {
+          "text": "من رسم لوحة الموناليزا؟",
+          "hint": "اللوحة معروضة في متحف اللوفر.",
+          "options": [
+            "ليوناردو دافنشي",
+            "مايكل أنجلو",
+            "رافائيل",
+            "فينسنت فان غوخ"
+          ],
+          "correctIndex": 0,
+          "explanation": "رسم ليوناردو دافنشي لوحة الموناليزا المعروضة في متحف اللوفر بباريس."
+        }
+      }
+    },
+    {
+      "category": "ART_AND_ARCHITECTURE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which artist cut off part of his own ear?",
+          "hint": "He painted \"The Starry Night\".",
+          "options": [
+            "Vincent van Gogh",
+            "Claude Monet",
+            "Pablo Picasso",
+            "Salvador Dalí"
+          ],
+          "correctIndex": 0,
+          "explanation": "Vincent van Gogh cut off part of his own ear in 1888."
+        },
+        "FR": {
+          "text": "Quel artiste s'est coupé une partie de l'oreille ?",
+          "hint": "Il a peint « La Nuit étoilée ».",
+          "options": [
+            "Vincent van Gogh",
+            "Claude Monet",
+            "Pablo Picasso",
+            "Salvador Dalí"
+          ],
+          "correctIndex": 0,
+          "explanation": "Vincent van Gogh s'est coupé une partie de l'oreille en 1888."
+        },
+        "AR": {
+          "text": "أي فنان قطع جزءاً من أذنه؟",
+          "hint": "رسم لوحة \"ليلة النجوم\".",
+          "options": [
+            "فينسنت فان غوخ",
+            "كلود مونيه",
+            "بابلو بيكاسو",
+            "سلفادور دالي"
+          ],
+          "correctIndex": 0,
+          "explanation": "قطع فينسنت فان غوخ جزءاً من أذنه عام 1888."
+        }
+      }
+    },
+    {
+      "category": "ART_AND_ARCHITECTURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which Moroccan city is known as the \"Blue Pearl\"?",
+          "hint": "It is in the Rif mountains.",
+          "options": [
+            "Chefchaouen",
+            "Marrakech",
+            "Fez",
+            "Essaouira"
+          ],
+          "correctIndex": 0,
+          "explanation": "Chefchaouen, in the Rif mountains, is known as the \"Blue Pearl\" for its blue-painted streets."
+        },
+        "FR": {
+          "text": "Quelle ville marocaine est appelée la « perle bleue » ?",
+          "hint": "Elle se trouve dans le Rif.",
+          "options": [
+            "Chefchaouen",
+            "Marrakech",
+            "Fès",
+            "Essaouira"
+          ],
+          "correctIndex": 0,
+          "explanation": "Chefchaouen, dans le Rif, est appelée la « perle bleue » pour ses rues peintes en bleu."
+        },
+        "AR": {
+          "text": "أي مدينة مغربية تُلقب بـ\"اللؤلؤة الزرقاء\"؟",
+          "hint": "تقع في جبال الريف.",
+          "options": [
+            "شفشاون",
+            "مراكش",
+            "فاس",
+            "الصويرة"
+          ],
+          "correctIndex": 0,
+          "explanation": "تُلقب شفشاون الواقعة في جبال الريف بـ\"اللؤلؤة الزرقاء\" بسبب شوارعها المطلية بالأزرق."
+        }
+      }
+    },
+    {
+      "category": "ART_AND_ARCHITECTURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which famous iron tower stands in Paris?",
+          "hint": "It was built for the 1889 World's Fair.",
+          "options": [
+            "Eiffel Tower",
+            "Big Ben",
+            "Statue of Liberty",
+            "Leaning Tower of Pisa"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Eiffel Tower in Paris was completed in 1889 for the World's Fair."
+        },
+        "FR": {
+          "text": "Quelle célèbre tour de fer se trouve à Paris ?",
+          "hint": "Elle a été construite pour l'Exposition universelle de 1889.",
+          "options": [
+            "Tour Eiffel",
+            "Big Ben",
+            "Statue de la Liberté",
+            "Tour de Pise"
+          ],
+          "correctIndex": 0,
+          "explanation": "La tour Eiffel à Paris a été achevée en 1889 pour l'Exposition universelle."
+        },
+        "AR": {
+          "text": "أي برج حديدي شهير يقع في باريس؟",
+          "hint": "بُني لمعرض باريس العالمي عام 1889.",
+          "options": [
+            "برج إيفل",
+            "بيغ بن",
+            "تمثال الحرية",
+            "برج بيزا المائل"
+          ],
+          "correctIndex": 0,
+          "explanation": "اكتمل بناء برج إيفل في باريس عام 1889 لمعرض باريس العالمي."
+        }
+      }
+    },
+    {
+      "category": "ART_AND_ARCHITECTURE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which art movement is Salvador Dalí associated with?",
+          "hint": "It explores dreams and the unconscious.",
+          "options": [
+            "Surrealism",
+            "Cubism",
+            "Impressionism",
+            "Realism"
+          ],
+          "correctIndex": 0,
+          "explanation": "Salvador Dalí is associated with Surrealism, which explores dreams and the unconscious."
+        },
+        "FR": {
+          "text": "Quel mouvement artistique est associé à Salvador Dalí ?",
+          "hint": "Il explore les rêves et l'inconscient.",
+          "options": [
+            "Surréalisme",
+            "Cubisme",
+            "Impressionnisme",
+            "Réalisme"
+          ],
+          "correctIndex": 0,
+          "explanation": "Salvador Dalí est associé au surréalisme, qui explore les rêves et l'inconscient."
+        },
+        "AR": {
+          "text": "أي حركة فنية يرتبط بها سلفادور دالي؟",
+          "hint": "تستكشف الأحلام واللاوعي.",
+          "options": [
+            "السريالية",
+            "التكعيبية",
+            "الانطباعية",
+            "الواقعية"
+          ],
+          "correctIndex": 0,
+          "explanation": "يرتبط سلفادور دالي بالسريالية التي تستكشف الأحلام واللاوعي."
+        }
+      }
+    },
+    {
+      "category": "ART_AND_ARCHITECTURE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which Marrakech mosque is famous for its tall minaret?",
+          "hint": "It dates from the 12th century.",
+          "options": [
+            "Koutoubia Mosque",
+            "Hassan II Mosque",
+            "Al-Qarawiyyin",
+            "Tin Mal Mosque"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Koutoubia Mosque in Marrakech is famous for its 77-metre minaret."
+        },
+        "FR": {
+          "text": "Quelle mosquée de Marrakech est célèbre pour son haut minaret ?",
+          "hint": "Elle date du XIIe siècle.",
+          "options": [
+            "Mosquée Koutoubia",
+            "Mosquée Hassan II",
+            "Al-Quaraouiyine",
+            "Mosquée de Tinmel"
+          ],
+          "correctIndex": 0,
+          "explanation": "La mosquée Koutoubia de Marrakech est célèbre pour son minaret de 77 mètres."
+        },
+        "AR": {
+          "text": "أي مسجد في مراكش يشتهر بمئذنته العالية؟",
+          "hint": "يعود تاريخه إلى القرن الثاني عشر.",
+          "options": [
+            "مسجد الكتبية",
+            "مسجد الحسن الثاني",
+            "جامعة القرويين",
+            "مسجد تنمل"
+          ],
+          "correctIndex": 0,
+          "explanation": "يشتهر مسجد الكتبية في مراكش بمئذنته التي يبلغ ارتفاعها 77 متراً."
+        }
+      }
+    },
+    {
+      "category": "ART_AND_ARCHITECTURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Who painted the ceiling of the Sistine Chapel?",
+          "hint": "He also sculpted \"David\".",
+          "options": [
+            "Michelangelo",
+            "Leonardo da Vinci",
+            "Raphael",
+            "Donatello"
+          ],
+          "correctIndex": 0,
+          "explanation": "Michelangelo painted the ceiling of the Sistine Chapel between 1508 and 1512."
+        },
+        "FR": {
+          "text": "Qui a peint le plafond de la chapelle Sixtine ?",
+          "hint": "Il a aussi sculpté « David ».",
+          "options": [
+            "Michel-Ange",
+            "Léonard de Vinci",
+            "Raphaël",
+            "Donatello"
+          ],
+          "correctIndex": 0,
+          "explanation": "Michel-Ange a peint le plafond de la chapelle Sixtine entre 1508 et 1512."
+        },
+        "AR": {
+          "text": "من رسم سقف كنيسة سيستين؟",
+          "hint": "نحت أيضاً تمثال \"داوود\".",
+          "options": [
+            "مايكل أنجلو",
+            "ليوناردو دافنشي",
+            "رافائيل",
+            "دوناتيلو"
+          ],
+          "correctIndex": 0,
+          "explanation": "رسم مايكل أنجلو سقف كنيسة سيستين بين عامي 1508 و1512."
+        }
+      }
+    },
+    {
+      "category": "ART_AND_ARCHITECTURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which three colors are the primary colors in traditional painting?",
+          "hint": "They cannot be made by mixing other colors.",
+          "options": [
+            "Red, yellow and blue",
+            "Red, green and blue",
+            "Cyan, magenta and yellow",
+            "Black, white and grey"
+          ],
+          "correctIndex": 0,
+          "explanation": "The traditional primary colors in painting are red, yellow and blue."
+        },
+        "FR": {
+          "text": "Quelles sont les trois couleurs primaires en peinture traditionnelle ?",
+          "hint": "On ne peut pas les obtenir en mélangeant d'autres couleurs.",
+          "options": [
+            "Rouge, jaune et bleu",
+            "Rouge, vert et bleu",
+            "Cyan, magenta et jaune",
+            "Noir, blanc et gris"
+          ],
+          "correctIndex": 0,
+          "explanation": "Les couleurs primaires traditionnelles en peinture sont le rouge, le jaune et le bleu."
+        },
+        "AR": {
+          "text": "ما هي الألوان الأساسية الثلاثة في الرسم التقليدي؟",
+          "hint": "لا يمكن الحصول عليها بمزج ألوان أخرى.",
+          "options": [
+            "الأحمر والأصفر والأزرق",
+            "الأحمر والأخضر والأزرق",
+            "السماوي والأرجواني والأصفر",
+            "الأسود والأبيض والرمادي"
+          ],
+          "correctIndex": 0,
+          "explanation": "الألوان الأساسية التقليدية في الرسم هي الأحمر والأصفر والأزرق."
+        }
+      }
+    },
+    {
+      "category": "ART_AND_ARCHITECTURE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which architect designed the Guggenheim Museum in Bilbao?",
+          "hint": "The building has curved titanium panels.",
+          "options": [
+            "Frank Gehry",
+            "Le Corbusier",
+            "Zaha Hadid",
+            "I. M. Pei"
+          ],
+          "correctIndex": 0,
+          "explanation": "Frank Gehry designed the Guggenheim Museum in Bilbao, opened in 1997."
+        },
+        "FR": {
+          "text": "Quel architecte a conçu le musée Guggenheim de Bilbao ?",
+          "hint": "Le bâtiment est recouvert de panneaux de titane courbes.",
+          "options": [
+            "Frank Gehry",
+            "Le Corbusier",
+            "Zaha Hadid",
+            "I. M. Pei"
+          ],
+          "correctIndex": 0,
+          "explanation": "Frank Gehry a conçu le musée Guggenheim de Bilbao, ouvert en 1997."
+        },
+        "AR": {
+          "text": "أي مهندس صمم متحف غوغنهايم في بلباو؟",
+          "hint": "المبنى مغطى بألواح تيتانيوم منحنية.",
+          "options": [
+            "فرانك غيري",
+            "لو كوربوزييه",
+            "زها حديد",
+            "آي إم باي"
+          ],
+          "correctIndex": 0,
+          "explanation": "صمم فرانك غيري متحف غوغنهايم في بلباو الذي افتُتح عام 1997."
+        }
+      }
+    },
+    {
+      "category": "ART_AND_ARCHITECTURE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "What is the art of folding paper called?",
+          "hint": "It comes from Japan.",
+          "options": [
+            "Origami",
+            "Calligraphy",
+            "Collage",
+            "Mosaic"
+          ],
+          "correctIndex": 0,
+          "explanation": "Origami is the Japanese art of folding paper into shapes."
+        },
+        "FR": {
+          "text": "Comment appelle-t-on l'art de plier le papier ?",
+          "hint": "Il vient du Japon.",
+          "options": [
+            "Origami",
+            "Calligraphie",
+            "Collage",
+            "Mosaïque"
+          ],
+          "correctIndex": 0,
+          "explanation": "L'origami est l'art japonais de plier le papier pour créer des formes."
+        },
+        "AR": {
+          "text": "ماذا يسمى فن طي الورق؟",
+          "hint": "أصله من اليابان.",
+          "options": [
+            "الأوريغامي",
+            "الخط",
+            "الكولاج",
+            "الفسيفساء"
+          ],
+          "correctIndex": 0,
+          "explanation": "الأوريغامي هو الفن الياباني لطي الورق لصنع أشكال."
+        }
+      }
+    }
+  ]
+}

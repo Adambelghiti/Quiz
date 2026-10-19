@@ -38,6 +38,12 @@ public class DataLoader implements CommandLineRunner {
     public static final String ADMIN_USERNAME = "admin";
     public static final String ADMIN_PASSWORD = "admin123";
 
+    private static final List<String> QUESTION_BANK_RESOURCES = List.of(
+            "question-bank-expansion.json",
+            "question-bank-expansion-2.json",
+            "question-bank-expansion-3.json",
+            "question-bank-expansion-4.json");
+
     private final QuestionRepository repo;
     private final AuthUserRepository authUserRepository;
     private final PasswordEncoder passwordEncoder;
@@ -66,7 +72,7 @@ public class DataLoader implements CommandLineRunner {
      */
     private void seedQuestions() {
         List<Question> bank = new ArrayList<>(questionBank());
-        bank.addAll(expansionQuestionBank());
+        bank.addAll(expansionQuestionBanks());
         for (Question question : bank) {
             if (repo.findByTextAndLanguage(question.getText(), question.getLanguage()).isEmpty()) {
                 repo.save(question);
@@ -75,12 +81,20 @@ public class DataLoader implements CommandLineRunner {
     }
 
     /**
-     * Load the larger expansion bank from JSON. Keeping the bulk content in a
-     * resource makes it possible to review and extend translations without
-     * turning this class into a second database.
+     * Load every JSON expansion bank. Keeping the bulk content in resources
+     * makes it possible to review and extend translations without turning this
+     * class into a second database.
      */
-    private List<Question> expansionQuestionBank() {
-        try (InputStream input = new ClassPathResource("question-bank-expansion.json").getInputStream()) {
+    private List<Question> expansionQuestionBanks() {
+        List<Question> questions = new ArrayList<>();
+        for (String resource : QUESTION_BANK_RESOURCES) {
+            questions.addAll(loadExpansionBank(resource));
+        }
+        return questions;
+    }
+
+    private List<Question> loadExpansionBank(String resource) {
+        try (InputStream input = new ClassPathResource(resource).getInputStream()) {
             JsonNode root = objectMapper.readTree(input);
             List<Question> questions = new ArrayList<>();
 
@@ -125,7 +139,7 @@ public class DataLoader implements CommandLineRunner {
             }
             return questions;
         } catch (Exception ex) {
-            throw new IllegalStateException("Could not load question-bank-expansion.json", ex);
+            throw new IllegalStateException("Could not load " + resource, ex);
         }
     }
 

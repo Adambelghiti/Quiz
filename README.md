@@ -11,8 +11,9 @@ leaderboard, and an optional voice-reading mode for visually impaired players.
   effect on the leaderboard.
 - **Daily challenge**: one shared, deterministic five-question set per UTC day, one attempt per
   player, a 60-second limit per question and a separate daily leaderboard.
-- **Three question languages** (EN / FR / AR) and a bank that expands without overwriting
-  existing questions or administrator edits.
+- **Three question languages** (EN / FR / AR) across 17 categories, with at least ten
+  questions per category and language, and a bank that expands without overwriting existing
+  questions or administrator edits.
 - **Voice reading** using the browser's Web Speech API. It is off by default; players opt in
   from **Accessibility settings**. Questions, choices, feedback and explanations can be read
   aloud.
@@ -142,12 +143,27 @@ URLs, so serve it behind a reverse proxy that forwards those paths to the backen
 
 ### Question content
 
-- `Backend/src/main/resources/question-bank-expansion.json` is loaded by the development
-  seeder. It contains 40 questions × EN/FR/AR, each with an explanation.
-- `new_questions.json` is the editable source copy for the expansion bank, also used by
-  `Backend/tools/SeedNewQuestions.java`.
-- Seeding is additive: questions are matched by `(text, language)` and existing rows are never
-  overwritten.
+The development seeder loads four JSON banks:
+
+- `question-bank-expansion.json` — 40 questions across four categories.
+- `question-bank-expansion-2.json` — 60 questions across six categories: Technology,
+  Literature, Animals, Food, Health & Body, and Art & Architecture.
+- `question-bank-expansion-3.json` — 50 questions that top up Geography, Sports, Music,
+  Science and General Knowledge.
+- `question-bank-expansion-4.json` — 60 questions: Europe History, Scientists & Innovations,
+  and a second set for Moroccan History, Moroccan Culture, Arabic Culture and Islamic Culture.
+
+Every expansion question has EN/FR/AR translations and an explanation. Together the banks provide at
+least ten questions per category and language, and at least twenty per language for the four
+Moroccan, Arabic and Islamic culture categories. `new_questions.json`,
+`new_questions_round2.json`, `new_questions_round3.json` and `new_questions_round4.json` are
+the editable source copies. `Backend/tools/SeedNewQuestions.java` can load any of them by
+passing its path as the first argument.
+
+Seeding is additive: questions are matched by `(text, language)` and existing rows are never
+overwritten. The `dev` and `local` profiles automatically widen an existing H2 category enum
+when a new category is added. Production databases need the equivalent schema migration before
+deploying a build that introduces new `Category` values.
 
 ## Accessibility
 

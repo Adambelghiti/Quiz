@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminQuestion, QuestionAdminService } from './question-admin.service';
+import { categoryLabel } from './category-label';
 import { FocusHeadingDirective } from './focus-heading.directive';
 
 /** Fixed enums mirrored from the backend (see Category / Language). */
@@ -11,11 +12,19 @@ const CATEGORIES = [
   'MOROCCAN_CULTURE',
   'ARABIC_CULTURE',
   'ISLAMIC_CULTURE',
+  'EUROPEAN_HISTORY',
+  'SCIENTISTS_AND_INNOVATIONS',
+  'NATURE_AND_ANIMALS',
+  'FOOD_AND_CUISINE',
   'GEOGRAPHY',
   'SPORTS',
   'MUSIC',
   'SCIENCE',
   'GENERAL_KNOWLEDGE',
+  'TECHNOLOGY',
+  'LITERATURE',
+  'HEALTH_AND_BODY',
+  'ART_AND_ARCHITECTURE',
 ];
 const LANGUAGES = ['EN', 'FR', 'AR'];
 
@@ -30,6 +39,7 @@ export class AdminComponent implements OnInit {
   questions: AdminQuestion[] = [];
   categories = CATEGORIES;
   languages = LANGUAGES;
+  readonly formatCategory = categoryLabel;
 
   loading = true;
   saving = false;

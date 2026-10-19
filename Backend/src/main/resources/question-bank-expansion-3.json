@@ -1,0 +1,2117 @@
+{
+  "description": "Round 3 content expansion: 50 questions that top up five existing categories to at least ten questions per language, each with EN/FR/AR translations and explanations.",
+  "categories": [
+    "GEOGRAPHY",
+    "SPORTS",
+    "MUSIC",
+    "SCIENCE",
+    "GENERAL_KNOWLEDGE"
+  ],
+  "languages": [
+    "EN",
+    "FR",
+    "AR"
+  ],
+  "questions": [
+    {
+      "category": "GEOGRAPHY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which is the largest continent by area?",
+          "hint": "It contains China and India.",
+          "options": [
+            "Asia",
+            "Africa",
+            "North America",
+            "Europe"
+          ],
+          "correctIndex": 0,
+          "explanation": "Asia is the largest continent by area and population."
+        },
+        "FR": {
+          "text": "Quel est le plus grand continent par superficie ?",
+          "hint": "Il comprend la Chine et l'Inde.",
+          "options": [
+            "Asie",
+            "Afrique",
+            "Amérique du Nord",
+            "Europe"
+          ],
+          "correctIndex": 0,
+          "explanation": "L'Asie est le plus grand continent par superficie et par population."
+        },
+        "AR": {
+          "text": "ما هي أكبر قارة من حيث المساحة؟",
+          "hint": "تضم الصين والهند.",
+          "options": [
+            "آسيا",
+            "أفريقيا",
+            "أمريكا الشمالية",
+            "أوروبا"
+          ],
+          "correctIndex": 0,
+          "explanation": "آسيا هي أكبر قارة من حيث المساحة وعدد السكان."
+        }
+      }
+    },
+    {
+      "category": "GEOGRAPHY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which country has the largest land area?",
+          "hint": "It spans eastern Europe and northern Asia.",
+          "options": [
+            "Russia",
+            "Canada",
+            "China",
+            "United States"
+          ],
+          "correctIndex": 0,
+          "explanation": "Russia is the largest country in the world by land area."
+        },
+        "FR": {
+          "text": "Quel pays a la plus grande superficie ?",
+          "hint": "Il s'étend de l'Europe de l'Est au nord de l'Asie.",
+          "options": [
+            "Russie",
+            "Canada",
+            "Chine",
+            "États-Unis"
+          ],
+          "correctIndex": 0,
+          "explanation": "La Russie est le plus grand pays du monde par sa superficie."
+        },
+        "AR": {
+          "text": "أي دولة لديها أكبر مساحة أرضية؟",
+          "hint": "تمتد من شرق أوروبا إلى شمال آسيا.",
+          "options": [
+            "روسيا",
+            "كندا",
+            "الصين",
+            "الولايات المتحدة"
+          ],
+          "correctIndex": 0,
+          "explanation": "روسيا هي أكبر دولة في العالم من حيث المساحة الأرضية."
+        }
+      }
+    },
+    {
+      "category": "GEOGRAPHY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which river flows through Cairo?",
+          "hint": "It is the longest river in Africa.",
+          "options": [
+            "Nile",
+            "Amazon",
+            "Danube",
+            "Euphrates"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Nile flows through Cairo and is the longest river in Africa."
+        },
+        "FR": {
+          "text": "Quel fleuve traverse Le Caire ?",
+          "hint": "C'est le plus long fleuve d'Afrique.",
+          "options": [
+            "Nil",
+            "Amazone",
+            "Danube",
+            "Euphrate"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le Nil traverse Le Caire et est le plus long fleuve d'Afrique."
+        },
+        "AR": {
+          "text": "أي نهر يمر عبر القاهرة؟",
+          "hint": "إنه أطول نهر في أفريقيا.",
+          "options": [
+            "النيل",
+            "الأمازون",
+            "الدانوب",
+            "الفرات"
+          ],
+          "correctIndex": 0,
+          "explanation": "يمر النيل عبر القاهرة وهو أطول نهر في أفريقيا."
+        }
+      }
+    },
+    {
+      "category": "GEOGRAPHY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which mountain range separates Europe and Asia?",
+          "hint": "It runs north to south through Russia.",
+          "options": [
+            "Ural Mountains",
+            "Alps",
+            "Himalayas",
+            "Andes"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Ural Mountains are conventionally considered the boundary between Europe and Asia."
+        },
+        "FR": {
+          "text": "Quelle chaîne de montagnes sépare l'Europe de l'Asie ?",
+          "hint": "Elle traverse la Russie du nord au sud.",
+          "options": [
+            "Monts Oural",
+            "Alpes",
+            "Himalaya",
+            "Andes"
+          ],
+          "correctIndex": 0,
+          "explanation": "Les monts Oural sont traditionnellement considérés comme la frontière entre l'Europe et l'Asie."
+        },
+        "AR": {
+          "text": "أي سلسلة جبال تفصل أوروبا عن آسيا؟",
+          "hint": "تمتد من الشمال إلى الجنوب عبر روسيا.",
+          "options": [
+            "جبال الأورال",
+            "جبال الألب",
+            "الهيمالايا",
+            "الأنديز"
+          ],
+          "correctIndex": 0,
+          "explanation": "تُعتبر جبال الأورال تقليدياً الحد الفاصل بين أوروبا وآسيا."
+        }
+      }
+    },
+    {
+      "category": "GEOGRAPHY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which is the smallest country in the world by area?",
+          "hint": "It is surrounded by Rome.",
+          "options": [
+            "Vatican City",
+            "Monaco",
+            "Malta",
+            "San Marino"
+          ],
+          "correctIndex": 0,
+          "explanation": "Vatican City is the smallest country in the world by area."
+        },
+        "FR": {
+          "text": "Quel est le plus petit pays du monde par superficie ?",
+          "hint": "Il est entouré par Rome.",
+          "options": [
+            "Vatican",
+            "Monaco",
+            "Malte",
+            "Saint-Marin"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le Vatican est le plus petit pays du monde par superficie."
+        },
+        "AR": {
+          "text": "ما هي أصغر دولة في العالم من حيث المساحة؟",
+          "hint": "تحيط بها مدينة روما.",
+          "options": [
+            "الفاتيكان",
+            "موناكو",
+            "مالطا",
+            "سان مارينو"
+          ],
+          "correctIndex": 0,
+          "explanation": "الفاتيكان هي أصغر دولة في العالم من حيث المساحة."
+        }
+      }
+    },
+    {
+      "category": "GEOGRAPHY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which is the largest hot desert in the world?",
+          "hint": "It covers much of North Africa.",
+          "options": [
+            "Sahara",
+            "Gobi",
+            "Kalahari",
+            "Arabian Desert"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Sahara is the largest hot desert in the world."
+        },
+        "FR": {
+          "text": "Quel est le plus grand désert chaud du monde ?",
+          "hint": "Il couvre une grande partie de l'Afrique du Nord.",
+          "options": [
+            "Sahara",
+            "Gobi",
+            "Kalahari",
+            "Désert d'Arabie"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le Sahara est le plus grand désert chaud du monde."
+        },
+        "AR": {
+          "text": "ما هي أكبر صحراء حارة في العالم؟",
+          "hint": "تغطي جزءاً كبيراً من شمال أفريقيا.",
+          "options": [
+            "الصحراء الكبرى",
+            "صحراء غوبي",
+            "كالاهاري",
+            "الصحراء العربية"
+          ],
+          "correctIndex": 0,
+          "explanation": "الصحراء الكبرى هي أكبر صحراء حارة في العالم."
+        }
+      }
+    },
+    {
+      "category": "GEOGRAPHY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which country is home to the Great Barrier Reef?",
+          "hint": "It is both a country and a continent.",
+          "options": [
+            "Australia",
+            "Brazil",
+            "Indonesia",
+            "Mexico"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Great Barrier Reef lies off the coast of Australia."
+        },
+        "FR": {
+          "text": "Quel pays abrite la Grande Barrière de corail ?",
+          "hint": "C'est à la fois un pays et un continent.",
+          "options": [
+            "Australie",
+            "Brésil",
+            "Indonésie",
+            "Mexique"
+          ],
+          "correctIndex": 0,
+          "explanation": "La Grande Barrière de corail se trouve au large de l'Australie."
+        },
+        "AR": {
+          "text": "أي دولة تضم الحاجز المرجاني العظيم؟",
+          "hint": "إنها دولة وقارة في الوقت نفسه.",
+          "options": [
+            "أستراليا",
+            "البرازيل",
+            "إندونيسيا",
+            "المكسيك"
+          ],
+          "correctIndex": 0,
+          "explanation": "يقع الحاجز المرجاني العظيم قبالة سواحل أستراليا."
+        }
+      }
+    },
+    {
+      "category": "GEOGRAPHY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "What is the capital of Japan?",
+          "hint": "It hosted the 2020 Summer Olympics.",
+          "options": [
+            "Tokyo",
+            "Kyoto",
+            "Osaka",
+            "Nagoya"
+          ],
+          "correctIndex": 0,
+          "explanation": "Tokyo is the capital of Japan."
+        },
+        "FR": {
+          "text": "Quelle est la capitale du Japon ?",
+          "hint": "Elle a accueilli les Jeux olympiques d'été de 2020.",
+          "options": [
+            "Tokyo",
+            "Kyoto",
+            "Osaka",
+            "Nagoya"
+          ],
+          "correctIndex": 0,
+          "explanation": "Tokyo est la capitale du Japon."
+        },
+        "AR": {
+          "text": "ما هي عاصمة اليابان؟",
+          "hint": "استضافت الألعاب الأولمبية الصيفية 2020.",
+          "options": [
+            "طوكيو",
+            "كيوتو",
+            "أوساكا",
+            "ناغويا"
+          ],
+          "correctIndex": 0,
+          "explanation": "طوكيو هي عاصمة اليابان."
+        }
+      }
+    },
+    {
+      "category": "GEOGRAPHY",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which sea is the saltiest large body of water?",
+          "hint": "It is bordered by Jordan and Israel.",
+          "options": [
+            "Dead Sea",
+            "Red Sea",
+            "Black Sea",
+            "Caspian Sea"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Dead Sea is the saltiest large body of water, with a salinity of about 34%."
+        },
+        "FR": {
+          "text": "Quelle mer est la plus salée ?",
+          "hint": "Elle est bordée par la Jordanie et Israël.",
+          "options": [
+            "Mer Morte",
+            "Mer Rouge",
+            "Mer Noire",
+            "Mer Caspienne"
+          ],
+          "correctIndex": 0,
+          "explanation": "La mer Morte est la plus salée des grandes étendues d'eau, avec une salinité d'environ 34 %."
+        },
+        "AR": {
+          "text": "أي بحر هو الأكثر ملوحة؟",
+          "hint": "تحده الأردن وإسرائيل.",
+          "options": [
+            "البحر الميت",
+            "البحر الأحمر",
+            "البحر الأسود",
+            "بحر قزوين"
+          ],
+          "correctIndex": 0,
+          "explanation": "البحر الميت هو أكثر المسطحات المائية الكبيرة ملوحة، إذ تبلغ ملوحته نحو 34%."
+        }
+      }
+    },
+    {
+      "category": "GEOGRAPHY",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "On which continent is the Amazon rainforest mainly located?",
+          "hint": "It is home to the Amazon River.",
+          "options": [
+            "South America",
+            "Africa",
+            "Asia",
+            "Australia"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Amazon rainforest is mainly located in South America, mostly in Brazil."
+        },
+        "FR": {
+          "text": "Sur quel continent se trouve principalement la forêt amazonienne ?",
+          "hint": "Elle abrite le fleuve Amazone.",
+          "options": [
+            "Amérique du Sud",
+            "Afrique",
+            "Asie",
+            "Australie"
+          ],
+          "correctIndex": 0,
+          "explanation": "La forêt amazonienne se trouve principalement en Amérique du Sud, surtout au Brésil."
+        },
+        "AR": {
+          "text": "في أي قارة تقع غابة الأمازون بشكل رئيسي؟",
+          "hint": "تضم نهر الأمازون.",
+          "options": [
+            "أمريكا الجنوبية",
+            "أفريقيا",
+            "آسيا",
+            "أستراليا"
+          ],
+          "correctIndex": 0,
+          "explanation": "تقع غابة الأمازون بشكل رئيسي في أمريكا الجنوبية، ومعظمها في البرازيل."
+        }
+      }
+    },
+    {
+      "category": "SPORTS",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "How many players from one team are on the field in a football (soccer) match?",
+          "hint": "It includes the goalkeeper.",
+          "options": [
+            "11",
+            "10",
+            "12",
+            "9"
+          ],
+          "correctIndex": 0,
+          "explanation": "A football team has 11 players on the field, including the goalkeeper."
+        },
+        "FR": {
+          "text": "Combien de joueurs d'une équipe sont sur le terrain lors d'un match de football ?",
+          "hint": "Cela inclut le gardien de but.",
+          "options": [
+            "11",
+            "10",
+            "12",
+            "9"
+          ],
+          "correctIndex": 0,
+          "explanation": "Une équipe de football compte 11 joueurs sur le terrain, gardien de but compris."
+        },
+        "AR": {
+          "text": "كم عدد لاعبي الفريق الواحد على الملعب في مباراة كرة القدم؟",
+          "hint": "يشمل ذلك حارس المرمى.",
+          "options": [
+            "11",
+            "10",
+            "12",
+            "9"
+          ],
+          "correctIndex": 0,
+          "explanation": "يضم فريق كرة القدم 11 لاعباً على الملعب، بما في ذلك حارس المرمى."
+        }
+      }
+    },
+    {
+      "category": "SPORTS",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "How often are the Summer Olympic Games normally held?",
+          "hint": "It is the same interval as the leap year cycle.",
+          "options": [
+            "Every 4 years",
+            "Every 2 years",
+            "Every 3 years",
+            "Every 5 years"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Summer Olympic Games are normally held every four years."
+        },
+        "FR": {
+          "text": "Tous les combien de temps ont lieu les Jeux olympiques d'été ?",
+          "hint": "C'est le même intervalle que le cycle des années bissextiles.",
+          "options": [
+            "Tous les 4 ans",
+            "Tous les 2 ans",
+            "Tous les 3 ans",
+            "Tous les 5 ans"
+          ],
+          "correctIndex": 0,
+          "explanation": "Les Jeux olympiques d'été ont normalement lieu tous les quatre ans."
+        },
+        "AR": {
+          "text": "كل كم سنة تُقام الألعاب الأولمبية الصيفية عادةً؟",
+          "hint": "إنها الفترة نفسها لدورة السنة الكبيسة.",
+          "options": [
+            "كل 4 سنوات",
+            "كل سنتين",
+            "كل 3 سنوات",
+            "كل 5 سنوات"
+          ],
+          "correctIndex": 0,
+          "explanation": "تُقام الألعاب الأولمبية الصيفية عادةً كل أربع سنوات."
+        }
+      }
+    },
+    {
+      "category": "SPORTS",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which sport uses a shuttlecock?",
+          "hint": "It is played with a racket and a net.",
+          "options": [
+            "Badminton",
+            "Tennis",
+            "Squash",
+            "Table tennis"
+          ],
+          "correctIndex": 0,
+          "explanation": "Badminton uses a shuttlecock, a racket and a net."
+        },
+        "FR": {
+          "text": "Quel sport utilise un volant ?",
+          "hint": "Il se joue avec une raquette et un filet.",
+          "options": [
+            "Badminton",
+            "Tennis",
+            "Squash",
+            "Tennis de table"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le badminton utilise un volant, une raquette et un filet."
+        },
+        "AR": {
+          "text": "أي رياضة تستخدم الريشة؟",
+          "hint": "تُلعب بمضرب وشبكة.",
+          "options": [
+            "تنس الريشة",
+            "التنس",
+            "الإسكواش",
+            "كرة الطاولة"
+          ],
+          "correctIndex": 0,
+          "explanation": "تستخدم رياضة تنس الريشة الريشة والمضرب والشبكة."
+        }
+      }
+    },
+    {
+      "category": "SPORTS",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "How many points is a touchdown worth in American football?",
+          "hint": "A field goal is worth three.",
+          "options": [
+            "6",
+            "3",
+            "7",
+            "2"
+          ],
+          "correctIndex": 0,
+          "explanation": "A touchdown is worth 6 points in American football."
+        },
+        "FR": {
+          "text": "Combien de points vaut un touchdown au football américain ?",
+          "hint": "Un field goal vaut trois points.",
+          "options": [
+            "6",
+            "3",
+            "7",
+            "2"
+          ],
+          "correctIndex": 0,
+          "explanation": "Un touchdown vaut 6 points au football américain."
+        },
+        "AR": {
+          "text": "كم نقطة يساوي الـ\"تاتش داون\" في كرة القدم الأمريكية؟",
+          "hint": "الهدف الميداني يساوي ثلاث نقاط.",
+          "options": [
+            "6",
+            "3",
+            "7",
+            "2"
+          ],
+          "correctIndex": 0,
+          "explanation": "يساوي الـ\"تاتش داون\" 6 نقاط في كرة القدم الأمريكية."
+        }
+      }
+    },
+    {
+      "category": "SPORTS",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "In which sport would you perform a slam dunk?",
+          "hint": "The basket is 3.05 metres high.",
+          "options": [
+            "Basketball",
+            "Volleyball",
+            "Handball",
+            "Tennis"
+          ],
+          "correctIndex": 0,
+          "explanation": "A slam dunk is a basketball move in which a player jumps and forces the ball through the basket."
+        },
+        "FR": {
+          "text": "Dans quel sport fait-on un slam dunk ?",
+          "hint": "Le panier est à 3,05 mètres de haut.",
+          "options": [
+            "Basketball",
+            "Volley-ball",
+            "Handball",
+            "Tennis"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le slam dunk est un geste de basketball où le joueur saute et enfonce le ballon dans le panier."
+        },
+        "AR": {
+          "text": "في أي رياضة تؤدى حركة السلام دانك؟",
+          "hint": "ارتفاع السلة 3.05 متر.",
+          "options": [
+            "كرة السلة",
+            "الكرة الطائرة",
+            "كرة اليد",
+            "التنس"
+          ],
+          "correctIndex": 0,
+          "explanation": "السلام دانك حركة في كرة السلة يقفز فيها اللاعب ويدفع الكرة بقوة عبر السلة."
+        }
+      }
+    },
+    {
+      "category": "SPORTS",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which country won the 2018 FIFA World Cup?",
+          "hint": "It beat Croatia in the final.",
+          "options": [
+            "France",
+            "Croatia",
+            "Germany",
+            "Brazil"
+          ],
+          "correctIndex": 0,
+          "explanation": "France won the 2018 FIFA World Cup, beating Croatia 4-2 in the final."
+        },
+        "FR": {
+          "text": "Quel pays a remporté la Coupe du monde de football 2018 ?",
+          "hint": "Il a battu la Croatie en finale.",
+          "options": [
+            "France",
+            "Croatie",
+            "Allemagne",
+            "Brésil"
+          ],
+          "correctIndex": 0,
+          "explanation": "La France a remporté la Coupe du monde 2018 en battant la Croatie 4-2 en finale."
+        },
+        "AR": {
+          "text": "أي دولة فازت بكأس العالم لكرة القدم 2018؟",
+          "hint": "فازت على كرواتيا في النهائي.",
+          "options": [
+            "فرنسا",
+            "كرواتيا",
+            "ألمانيا",
+            "البرازيل"
+          ],
+          "correctIndex": 0,
+          "explanation": "فازت فرنسا بكأس العالم 2018 بعد تغلبها على كرواتيا 4-2 في النهائي."
+        }
+      }
+    },
+    {
+      "category": "SPORTS",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "How many rings are on the Olympic flag?",
+          "hint": "They represent the inhabited continents.",
+          "options": [
+            "5",
+            "4",
+            "6",
+            "7"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Olympic flag has five interlocking rings."
+        },
+        "FR": {
+          "text": "Combien d'anneaux figurent sur le drapeau olympique ?",
+          "hint": "Ils représentent les continents habités.",
+          "options": [
+            "5",
+            "4",
+            "6",
+            "7"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le drapeau olympique porte cinq anneaux entrelacés."
+        },
+        "AR": {
+          "text": "كم عدد الحلقات على العلم الأولمبي؟",
+          "hint": "تمثل القارات المأهولة.",
+          "options": [
+            "5",
+            "4",
+            "6",
+            "7"
+          ],
+          "correctIndex": 0,
+          "explanation": "يحتوي العلم الأولمبي على خمس حلقات متشابكة."
+        }
+      }
+    },
+    {
+      "category": "SPORTS",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "How many players per team are on the court in basketball?",
+          "hint": "It is fewer than a football team.",
+          "options": [
+            "5",
+            "6",
+            "7",
+            "4"
+          ],
+          "correctIndex": 0,
+          "explanation": "Each basketball team has five players on the court."
+        },
+        "FR": {
+          "text": "Combien de joueurs par équipe sont sur le terrain au basketball ?",
+          "hint": "C'est moins qu'une équipe de football.",
+          "options": [
+            "5",
+            "6",
+            "7",
+            "4"
+          ],
+          "correctIndex": 0,
+          "explanation": "Chaque équipe de basketball compte cinq joueurs sur le terrain."
+        },
+        "AR": {
+          "text": "كم عدد لاعبي كل فريق على أرض الملعب في كرة السلة؟",
+          "hint": "أقل من فريق كرة القدم.",
+          "options": [
+            "5",
+            "6",
+            "7",
+            "4"
+          ],
+          "correctIndex": 0,
+          "explanation": "يضم كل فريق في كرة السلة خمسة لاعبين على الملعب."
+        }
+      }
+    },
+    {
+      "category": "SPORTS",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which sport is played at Wimbledon?",
+          "hint": "It is played on grass.",
+          "options": [
+            "Tennis",
+            "Golf",
+            "Cricket",
+            "Rugby"
+          ],
+          "correctIndex": 0,
+          "explanation": "Wimbledon is the oldest tennis tournament in the world."
+        },
+        "FR": {
+          "text": "Quel sport pratique-t-on à Wimbledon ?",
+          "hint": "Il se joue sur gazon.",
+          "options": [
+            "Tennis",
+            "Golf",
+            "Cricket",
+            "Rugby"
+          ],
+          "correctIndex": 0,
+          "explanation": "Wimbledon est le plus ancien tournoi de tennis du monde."
+        },
+        "AR": {
+          "text": "أي رياضة تُلعب في ويمبلدون؟",
+          "hint": "تُلعب على العشب.",
+          "options": [
+            "التنس",
+            "الغولف",
+            "الكريكيت",
+            "الرغبي"
+          ],
+          "correctIndex": 0,
+          "explanation": "ويمبلدون هي أقدم بطولة تنس في العالم."
+        }
+      }
+    },
+    {
+      "category": "SPORTS",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "In which sport is the Tour de France held?",
+          "hint": "It covers thousands of kilometres by bicycle.",
+          "options": [
+            "Cycling",
+            "Running",
+            "Swimming",
+            "Rowing"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Tour de France is a famous professional cycling race."
+        },
+        "FR": {
+          "text": "Dans quel sport se déroule le Tour de France ?",
+          "hint": "Il parcourt des milliers de kilomètres à vélo.",
+          "options": [
+            "Cyclisme",
+            "Course à pied",
+            "Natation",
+            "Aviron"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le Tour de France est une célèbre course cycliste professionnelle."
+        },
+        "AR": {
+          "text": "في أي رياضة يُقام سباق طواف فرنسا؟",
+          "hint": "يقطع آلاف الكيلومترات بالدراجة.",
+          "options": [
+            "ركوب الدراجات",
+            "الجري",
+            "السباحة",
+            "التجديف"
+          ],
+          "correctIndex": 0,
+          "explanation": "طواف فرنسا سباق شهير لركوب الدراجات الاحترافية."
+        }
+      }
+    },
+    {
+      "category": "MUSIC",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which instrument has 88 keys?",
+          "hint": "It is a keyboard instrument.",
+          "options": [
+            "Piano",
+            "Organ",
+            "Accordion",
+            "Harpsichord"
+          ],
+          "correctIndex": 0,
+          "explanation": "A standard modern piano has 88 keys."
+        },
+        "FR": {
+          "text": "Quel instrument possède 88 touches ?",
+          "hint": "C'est un instrument à clavier.",
+          "options": [
+            "Piano",
+            "Orgue",
+            "Accordéon",
+            "Clavecin"
+          ],
+          "correctIndex": 0,
+          "explanation": "Un piano moderne standard possède 88 touches."
+        },
+        "AR": {
+          "text": "أي آلة موسيقية تحتوي على 88 مفتاحاً؟",
+          "hint": "إنها آلة ذات لوحة مفاتيح.",
+          "options": [
+            "البيانو",
+            "الأرغن",
+            "الأكورديون",
+            "الهاربسيكورد"
+          ],
+          "correctIndex": 0,
+          "explanation": "يحتوي البيانو الحديث القياسي على 88 مفتاحاً."
+        }
+      }
+    },
+    {
+      "category": "MUSIC",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Who composed \"The Four Seasons\"?",
+          "hint": "He was an Italian Baroque composer.",
+          "options": [
+            "Antonio Vivaldi",
+            "Johann Sebastian Bach",
+            "Wolfgang Amadeus Mozart",
+            "Ludwig van Beethoven"
+          ],
+          "correctIndex": 0,
+          "explanation": "Antonio Vivaldi composed \"The Four Seasons\", a set of violin concertos."
+        },
+        "FR": {
+          "text": "Qui a composé « Les Quatre Saisons » ?",
+          "hint": "C'était un compositeur baroque italien.",
+          "options": [
+            "Antonio Vivaldi",
+            "Johann Sebastian Bach",
+            "Wolfgang Amadeus Mozart",
+            "Ludwig van Beethoven"
+          ],
+          "correctIndex": 0,
+          "explanation": "Antonio Vivaldi a composé « Les Quatre Saisons », un ensemble de concertos pour violon."
+        },
+        "AR": {
+          "text": "من ألّف \"الفصول الأربعة\"؟",
+          "hint": "كان مؤلفاً إيطالياً من عصر الباروك.",
+          "options": [
+            "أنطونيو فيفالدي",
+            "يوهان سباستيان باخ",
+            "فولفغانغ أماديوس موزارت",
+            "لودفيغ فان بيتهوفن"
+          ],
+          "correctIndex": 0,
+          "explanation": "ألّف أنطونيو فيفالدي \"الفصول الأربعة\"، وهي مجموعة من كونشرتات الكمان."
+        }
+      }
+    },
+    {
+      "category": "MUSIC",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which Moroccan musical tradition uses the guembri?",
+          "hint": "It has roots in West African music.",
+          "options": [
+            "Gnawa",
+            "Rai",
+            "Chaabi",
+            "Malhun"
+          ],
+          "correctIndex": 0,
+          "explanation": "Gnawa music uses the guembri, a three-stringed bass lute."
+        },
+        "FR": {
+          "text": "Quelle tradition musicale marocaine utilise le guembri ?",
+          "hint": "Elle a des racines dans la musique d'Afrique de l'Ouest.",
+          "options": [
+            "Gnawa",
+            "Raï",
+            "Chaâbi",
+            "Malhoun"
+          ],
+          "correctIndex": 0,
+          "explanation": "La musique gnawa utilise le guembri, un luth-basse à trois cordes."
+        },
+        "AR": {
+          "text": "أي تقليد موسيقي مغربي يستخدم آلة الكمبري؟",
+          "hint": "لها جذور في موسيقى غرب أفريقيا.",
+          "options": [
+            "الغناوة",
+            "الراي",
+            "الشعبي",
+            "الملحون"
+          ],
+          "correctIndex": 0,
+          "explanation": "تستخدم موسيقى الغناوة آلة الكمبري، وهي عود جهير بثلاثة أوتار."
+        }
+      }
+    },
+    {
+      "category": "MUSIC",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which instrument is played with a bow?",
+          "hint": "It has four strings.",
+          "options": [
+            "Violin",
+            "Flute",
+            "Trumpet",
+            "Drum"
+          ],
+          "correctIndex": 0,
+          "explanation": "The violin is played with a bow drawn across its strings."
+        },
+        "FR": {
+          "text": "Quel instrument se joue avec un archet ?",
+          "hint": "Il possède quatre cordes.",
+          "options": [
+            "Violon",
+            "Flûte",
+            "Trompette",
+            "Tambour"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le violon se joue avec un archet frotté sur ses cordes."
+        },
+        "AR": {
+          "text": "أي آلة تُعزف بالقوس؟",
+          "hint": "لديها أربعة أوتار.",
+          "options": [
+            "الكمان",
+            "الناي",
+            "البوق",
+            "الطبل"
+          ],
+          "correctIndex": 0,
+          "explanation": "تُعزف آلة الكمان بالقوس الذي يُمرر على أوتارها."
+        }
+      }
+    },
+    {
+      "category": "MUSIC",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Who is known as the \"King of Pop\"?",
+          "hint": "He released \"Thriller\".",
+          "options": [
+            "Michael Jackson",
+            "Elvis Presley",
+            "Prince",
+            "Stevie Wonder"
+          ],
+          "correctIndex": 0,
+          "explanation": "Michael Jackson is widely known as the \"King of Pop\"."
+        },
+        "FR": {
+          "text": "Qui est surnommé le « roi de la pop » ?",
+          "hint": "Il a sorti « Thriller ».",
+          "options": [
+            "Michael Jackson",
+            "Elvis Presley",
+            "Prince",
+            "Stevie Wonder"
+          ],
+          "correctIndex": 0,
+          "explanation": "Michael Jackson est largement surnommé le « roi de la pop »."
+        },
+        "AR": {
+          "text": "من يُلقب بـ\"ملك البوب\"؟",
+          "hint": "أصدر ألبوم \"Thriller\".",
+          "options": [
+            "مايكل جاكسون",
+            "إلفيس بريسلي",
+            "برينس",
+            "ستيفي وندر"
+          ],
+          "correctIndex": 0,
+          "explanation": "يُعرف مايكل جاكسون على نطاق واسع بـ\"ملك البوب\"."
+        }
+      }
+    },
+    {
+      "category": "MUSIC",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "How many strings does a standard violin have?",
+          "hint": "It has more strings than a viola.",
+          "options": [
+            "4",
+            "5",
+            "6",
+            "3"
+          ],
+          "correctIndex": 0,
+          "explanation": "A standard violin has four strings: G, D, A and E."
+        },
+        "FR": {
+          "text": "Combien de cordes possède un violon standard ?",
+          "hint": "C'est une de plus qu'un violon à trois cordes.",
+          "options": [
+            "4",
+            "5",
+            "6",
+            "3"
+          ],
+          "correctIndex": 0,
+          "explanation": "Un violon standard possède quatre cordes : sol, ré, la et mi."
+        },
+        "AR": {
+          "text": "كم عدد أوتار الكمان القياسي؟",
+          "hint": "أكثر بواحد من آلة بثلاثة أوتار.",
+          "options": [
+            "4",
+            "5",
+            "6",
+            "3"
+          ],
+          "correctIndex": 0,
+          "explanation": "للكمان القياسي أربعة أوتار: صول، ري، لا، مي."
+        }
+      }
+    },
+    {
+      "category": "MUSIC",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which music genre originated in Jamaica?",
+          "hint": "It is associated with Bob Marley.",
+          "options": [
+            "Reggae",
+            "Jazz",
+            "Blues",
+            "Salsa"
+          ],
+          "correctIndex": 0,
+          "explanation": "Reggae originated in Jamaica in the late 1960s."
+        },
+        "FR": {
+          "text": "Quel genre musical est originaire de Jamaïque ?",
+          "hint": "Il est associé à Bob Marley.",
+          "options": [
+            "Reggae",
+            "Jazz",
+            "Blues",
+            "Salsa"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le reggae est originaire de Jamaïque à la fin des années 1960."
+        },
+        "AR": {
+          "text": "أي نوع موسيقي نشأ في جامايكا؟",
+          "hint": "يرتبط ببوب مارلي.",
+          "options": [
+            "الريغي",
+            "الجاز",
+            "البلوز",
+            "السالسا"
+          ],
+          "correctIndex": 0,
+          "explanation": "نشأ الريغي في جامايكا في أواخر الستينيات."
+        }
+      }
+    },
+    {
+      "category": "MUSIC",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Who composed \"The Magic Flute\"?",
+          "hint": "He also composed \"The Marriage of Figaro\".",
+          "options": [
+            "Wolfgang Amadeus Mozart",
+            "Ludwig van Beethoven",
+            "Franz Schubert",
+            "Johannes Brahms"
+          ],
+          "correctIndex": 0,
+          "explanation": "Wolfgang Amadeus Mozart composed \"The Magic Flute\", first performed in 1791."
+        },
+        "FR": {
+          "text": "Qui a composé « La Flûte enchantée » ?",
+          "hint": "Il a aussi composé « Les Noces de Figaro ».",
+          "options": [
+            "Wolfgang Amadeus Mozart",
+            "Ludwig van Beethoven",
+            "Franz Schubert",
+            "Johannes Brahms"
+          ],
+          "correctIndex": 0,
+          "explanation": "Wolfgang Amadeus Mozart a composé « La Flûte enchantée », créée en 1791."
+        },
+        "AR": {
+          "text": "من ألّف \"الناي السحري\"؟",
+          "hint": "ألّف أيضاً \"زواج فيغارو\".",
+          "options": [
+            "فولفغانغ أماديوس موزارت",
+            "لودفيغ فان بيتهوفن",
+            "فرانز شوبرت",
+            "يوهانس برامز"
+          ],
+          "correctIndex": 0,
+          "explanation": "ألّف فولفغانغ أماديوس موزارت \"الناي السحري\" الذي عُرض أول مرة عام 1791."
+        }
+      }
+    },
+    {
+      "category": "MUSIC",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "What is the term for the speed of a piece of music?",
+          "hint": "It is often written above the staff.",
+          "options": [
+            "Tempo",
+            "Pitch",
+            "Harmony",
+            "Rhythm"
+          ],
+          "correctIndex": 0,
+          "explanation": "Tempo is the term for the speed at which a piece of music is played."
+        },
+        "FR": {
+          "text": "Comment appelle-t-on la vitesse d'un morceau de musique ?",
+          "hint": "Il est souvent indiqué au-dessus de la portée.",
+          "options": [
+            "Tempo",
+            "Hauteur",
+            "Harmonie",
+            "Rythme"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le tempo désigne la vitesse à laquelle un morceau de musique est joué."
+        },
+        "AR": {
+          "text": "ماذا يسمى سرعة المقطوعة الموسيقية؟",
+          "hint": "غالباً ما يُكتب فوق المدرج الموسيقي.",
+          "options": [
+            "السرعة (تيمبو)",
+            "الطبقة",
+            "الانسجام",
+            "الوزن"
+          ],
+          "correctIndex": 0,
+          "explanation": "التيمبو هو مصطلح سرعة أداء المقطوعة الموسيقية."
+        }
+      }
+    },
+    {
+      "category": "MUSIC",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which Moroccan festival is famous for world music in Essaouira?",
+          "hint": "It is named after a musical tradition.",
+          "options": [
+            "Gnaoua World Music Festival",
+            "Mawazine",
+            "Jazzablanca",
+            "Timitar"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Gnaoua World Music Festival is held every year in Essaouira."
+        },
+        "FR": {
+          "text": "Quel festival marocain de musique mondiale est célèbre à Essaouira ?",
+          "hint": "Il porte le nom d'une tradition musicale.",
+          "options": [
+            "Festival Gnaoua",
+            "Mawazine",
+            "Jazzablanca",
+            "Timitar"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le Festival Gnaoua de musique mondiale se tient chaque année à Essaouira."
+        },
+        "AR": {
+          "text": "أي مهرجان مغربي للموسيقى العالمية يشتهر في الصويرة؟",
+          "hint": "يحمل اسم تقليد موسيقي.",
+          "options": [
+            "مهرجان كناوة",
+            "مهرجان موازين",
+            "جازابلانكا",
+            "تيميتار"
+          ],
+          "correctIndex": 0,
+          "explanation": "يُقام مهرجان كناوة للموسيقى العالمية كل سنة في الصويرة."
+        }
+      }
+    },
+    {
+      "category": "SCIENCE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "What is the chemical symbol for water?",
+          "hint": "It contains two hydrogen atoms.",
+          "options": [
+            "H2O",
+            "CO2",
+            "O2",
+            "NaCl"
+          ],
+          "correctIndex": 0,
+          "explanation": "Water has the chemical formula H2O: two hydrogen atoms and one oxygen atom."
+        },
+        "FR": {
+          "text": "Quel est le symbole chimique de l'eau ?",
+          "hint": "Elle contient deux atomes d'hydrogène.",
+          "options": [
+            "H2O",
+            "CO2",
+            "O2",
+            "NaCl"
+          ],
+          "correctIndex": 0,
+          "explanation": "L'eau a pour formule chimique H2O : deux atomes d'hydrogène et un atome d'oxygène."
+        },
+        "AR": {
+          "text": "ما هو الرمز الكيميائي للماء؟",
+          "hint": "يحتوي على ذرتي هيدروجين.",
+          "options": [
+            "H2O",
+            "CO2",
+            "O2",
+            "NaCl"
+          ],
+          "correctIndex": 0,
+          "explanation": "الصيغة الكيميائية للماء هي H2O: ذرتا هيدروجين وذرة أكسجين واحدة."
+        }
+      }
+    },
+    {
+      "category": "SCIENCE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which planet is closest to the Sun?",
+          "hint": "It is the smallest planet in the solar system.",
+          "options": [
+            "Mercury",
+            "Venus",
+            "Earth",
+            "Mars"
+          ],
+          "correctIndex": 0,
+          "explanation": "Mercury is the closest planet to the Sun."
+        },
+        "FR": {
+          "text": "Quelle planète est la plus proche du Soleil dans notre système solaire ?",
+          "hint": "C'est la plus petite planète du système solaire.",
+          "options": [
+            "Mercure",
+            "Vénus",
+            "Terre",
+            "Mars"
+          ],
+          "correctIndex": 0,
+          "explanation": "Mercure est la planète la plus proche du Soleil."
+        },
+        "AR": {
+          "text": "ما هو أقرب كوكب إلى الشمس في مجموعتنا الشمسية؟",
+          "hint": "إنه أصغر كوكب في المجموعة الشمسية.",
+          "options": [
+            "عطارد",
+            "الزهرة",
+            "الأرض",
+            "المريخ"
+          ],
+          "correctIndex": 0,
+          "explanation": "عطارد هو أقرب كوكب إلى الشمس."
+        }
+      }
+    },
+    {
+      "category": "SCIENCE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "What force keeps planets in orbit around the Sun?",
+          "hint": "It also makes objects fall to the ground.",
+          "options": [
+            "Gravity",
+            "Magnetism",
+            "Friction",
+            "Electricity"
+          ],
+          "correctIndex": 0,
+          "explanation": "Gravity keeps the planets in orbit around the Sun."
+        },
+        "FR": {
+          "text": "Quelle force maintient les planètes en orbite autour du Soleil ?",
+          "hint": "Elle fait aussi tomber les objets vers le sol.",
+          "options": [
+            "Gravité",
+            "Magnétisme",
+            "Frottement",
+            "Électricité"
+          ],
+          "correctIndex": 0,
+          "explanation": "La gravité maintient les planètes en orbite autour du Soleil."
+        },
+        "AR": {
+          "text": "أي قوة تبقي الكواكب في مدارها حول الشمس؟",
+          "hint": "تجعل الأجسام أيضاً تسقط نحو الأرض.",
+          "options": [
+            "الجاذبية",
+            "المغناطيسية",
+            "الاحتكاك",
+            "الكهرباء"
+          ],
+          "correctIndex": 0,
+          "explanation": "تُبقي الجاذبية الكواكب في مدارها حول الشمس."
+        }
+      }
+    },
+    {
+      "category": "SCIENCE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which organelle is called the powerhouse of the cell?",
+          "hint": "It produces most of the cell's energy.",
+          "options": [
+            "Mitochondria",
+            "Nucleus",
+            "Ribosome",
+            "Cell membrane"
+          ],
+          "correctIndex": 0,
+          "explanation": "Mitochondria are called the powerhouse of the cell because they produce most of its energy."
+        },
+        "FR": {
+          "text": "Quel organite est appelé la centrale énergétique de la cellule ?",
+          "hint": "Il produit la majeure partie de l'énergie de la cellule.",
+          "options": [
+            "Mitochondrie",
+            "Noyau",
+            "Ribosome",
+            "Membrane cellulaire"
+          ],
+          "correctIndex": 0,
+          "explanation": "Les mitochondries sont appelées la centrale énergétique de la cellule car elles produisent la majeure partie de son énergie."
+        },
+        "AR": {
+          "text": "أي عضية تُسمى مركز الطاقة في الخلية؟",
+          "hint": "تنتج معظم طاقة الخلية.",
+          "options": [
+            "الميتوكوندريا",
+            "النواة",
+            "الريبوسوم",
+            "غشاء الخلية"
+          ],
+          "correctIndex": 0,
+          "explanation": "تُسمى الميتوكوندريا مركز الطاقة في الخلية لأنها تنتج معظم طاقتها."
+        }
+      }
+    },
+    {
+      "category": "SCIENCE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which gas makes up most of Earth's atmosphere?",
+          "hint": "It is about 78% of the air.",
+          "options": [
+            "Nitrogen",
+            "Oxygen",
+            "Carbon dioxide",
+            "Argon"
+          ],
+          "correctIndex": 0,
+          "explanation": "Nitrogen makes up about 78% of Earth's atmosphere."
+        },
+        "FR": {
+          "text": "Quel gaz compose la majeure partie de l'atmosphère terrestre ?",
+          "hint": "Il représente environ 78 % de l'air.",
+          "options": [
+            "Azote",
+            "Oxygène",
+            "Dioxyde de carbone",
+            "Argon"
+          ],
+          "correctIndex": 0,
+          "explanation": "L'azote compose environ 78 % de l'atmosphère terrestre."
+        },
+        "AR": {
+          "text": "أي غاز يشكل معظم الغلاف الجوي للأرض؟",
+          "hint": "يشكل نحو 78% من الهواء.",
+          "options": [
+            "النيتروجين",
+            "الأكسجين",
+            "ثاني أكسيد الكربون",
+            "الأرجون"
+          ],
+          "correctIndex": 0,
+          "explanation": "يشكل النيتروجين نحو 78% من الغلاف الجوي للأرض."
+        }
+      }
+    },
+    {
+      "category": "SCIENCE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "What is the chemical symbol for sodium?",
+          "hint": "It comes from the Latin word \"natrium\".",
+          "options": [
+            "Na",
+            "So",
+            "Sd",
+            "N"
+          ],
+          "correctIndex": 0,
+          "explanation": "The chemical symbol for sodium is Na, from the Latin \"natrium\"."
+        },
+        "FR": {
+          "text": "Quel est le symbole chimique du sodium ?",
+          "hint": "Il vient du latin « natrium ».",
+          "options": [
+            "Na",
+            "So",
+            "Sd",
+            "N"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le symbole chimique du sodium est Na, du latin « natrium »."
+        },
+        "AR": {
+          "text": "ما هو الرمز الكيميائي للصوديوم؟",
+          "hint": "يأتي من الكلمة اللاتينية \"natrium\".",
+          "options": [
+            "Na",
+            "So",
+            "Sd",
+            "N"
+          ],
+          "correctIndex": 0,
+          "explanation": "الرمز الكيميائي للصوديوم هو Na، مأخوذ من الكلمة اللاتينية \"natrium\"."
+        }
+      }
+    },
+    {
+      "category": "SCIENCE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "How many chambers does the human heart have?",
+          "hint": "Two atria and two ventricles.",
+          "options": [
+            "4",
+            "2",
+            "3",
+            "5"
+          ],
+          "correctIndex": 0,
+          "explanation": "The human heart has four chambers: two atria and two ventricles."
+        },
+        "FR": {
+          "text": "Combien de cavités possède le cœur humain ?",
+          "hint": "Deux oreillettes et deux ventricules.",
+          "options": [
+            "4",
+            "2",
+            "3",
+            "5"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le cœur humain possède quatre cavités : deux oreillettes et deux ventricules."
+        },
+        "AR": {
+          "text": "كم عدد حجرات القلب البشري؟",
+          "hint": "أذينان وبطينان.",
+          "options": [
+            "4",
+            "2",
+            "3",
+            "5"
+          ],
+          "correctIndex": 0,
+          "explanation": "للقلب البشري أربع حجرات: أذينان وبطينان."
+        }
+      }
+    },
+    {
+      "category": "SCIENCE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "What is the process by which plants make food using sunlight?",
+          "hint": "It releases oxygen.",
+          "options": [
+            "Photosynthesis",
+            "Respiration",
+            "Digestion",
+            "Fermentation"
+          ],
+          "correctIndex": 0,
+          "explanation": "Plants make food through photosynthesis, using sunlight, water and carbon dioxide."
+        },
+        "FR": {
+          "text": "Quel processus permet aux plantes de fabriquer leur nourriture grâce à la lumière du soleil ?",
+          "hint": "Il libère de l'oxygène.",
+          "options": [
+            "Photosynthèse",
+            "Respiration",
+            "Digestion",
+            "Fermentation"
+          ],
+          "correctIndex": 0,
+          "explanation": "Les plantes fabriquent leur nourriture par photosynthèse, en utilisant la lumière, l'eau et le dioxyde de carbone."
+        },
+        "AR": {
+          "text": "ما العملية التي تصنع بها النباتات غذاءها بضوء الشمس؟",
+          "hint": "تطلق الأكسجين.",
+          "options": [
+            "التمثيل الضوئي",
+            "التنفس",
+            "الهضم",
+            "التخمر"
+          ],
+          "correctIndex": 0,
+          "explanation": "تصنع النباتات غذاءها عبر التمثيل الضوئي باستخدام ضوء الشمس والماء وثاني أكسيد الكربون."
+        }
+      }
+    },
+    {
+      "category": "SCIENCE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "What is the SI unit of force?",
+          "hint": "It is named after an English physicist.",
+          "options": [
+            "Newton",
+            "Joule",
+            "Watt",
+            "Pascal"
+          ],
+          "correctIndex": 0,
+          "explanation": "The SI unit of force is the newton (N), named after Isaac Newton."
+        },
+        "FR": {
+          "text": "Quelle est l'unité SI de force ?",
+          "hint": "Elle porte le nom d'un physicien anglais.",
+          "options": [
+            "Newton",
+            "Joule",
+            "Watt",
+            "Pascal"
+          ],
+          "correctIndex": 0,
+          "explanation": "L'unité SI de force est le newton (N), nommé d'après Isaac Newton."
+        },
+        "AR": {
+          "text": "ما هي وحدة القوة في النظام الدولي؟",
+          "hint": "سُميت على اسم فيزيائي إنجليزي.",
+          "options": [
+            "نيوتن",
+            "جول",
+            "واط",
+            "باسكال"
+          ],
+          "correctIndex": 0,
+          "explanation": "وحدة القوة في النظام الدولي هي النيوتن (N)، نسبة إلى إسحاق نيوتن."
+        }
+      }
+    },
+    {
+      "category": "SCIENCE",
+      "difficulty": 3,
+      "translations": {
+        "EN": {
+          "text": "Which blood type is known as the universal donor?",
+          "hint": "It has no A, B or Rh antigens.",
+          "options": [
+            "O negative",
+            "AB positive",
+            "A positive",
+            "B negative"
+          ],
+          "correctIndex": 0,
+          "explanation": "O negative blood is known as the universal donor type for red blood cell transfusions."
+        },
+        "FR": {
+          "text": "Quel groupe sanguin est connu comme le donneur universel ?",
+          "hint": "Il ne possède ni antigène A, ni B, ni Rh.",
+          "options": [
+            "O négatif",
+            "AB positif",
+            "A positif",
+            "B négatif"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le groupe O négatif est connu comme le donneur universel pour les transfusions de globules rouges."
+        },
+        "AR": {
+          "text": "أي فصيلة دم تُعرف بالمتبرع العام؟",
+          "hint": "لا تحتوي على مستضدات A أو B أو Rh.",
+          "options": [
+            "O سالب",
+            "AB موجب",
+            "A موجب",
+            "B سالب"
+          ],
+          "correctIndex": 0,
+          "explanation": "تُعرف فصيلة O سالب بأنها فصيلة المتبرع العام لعمليات نقل خلايا الدم الحمراء."
+        }
+      }
+    },
+    {
+      "category": "GENERAL_KNOWLEDGE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "What is the capital of France?",
+          "hint": "It is home to the Eiffel Tower.",
+          "options": [
+            "Paris",
+            "Lyon",
+            "Marseille",
+            "Nice"
+          ],
+          "correctIndex": 0,
+          "explanation": "Paris is the capital of France."
+        },
+        "FR": {
+          "text": "Quelle est la capitale de la France ?",
+          "hint": "Elle abrite la tour Eiffel.",
+          "options": [
+            "Paris",
+            "Lyon",
+            "Marseille",
+            "Nice"
+          ],
+          "correctIndex": 0,
+          "explanation": "Paris est la capitale de la France."
+        },
+        "AR": {
+          "text": "ما هي عاصمة فرنسا؟",
+          "hint": "تضم برج إيفل.",
+          "options": [
+            "باريس",
+            "ليون",
+            "مرسيليا",
+            "نيس"
+          ],
+          "correctIndex": 0,
+          "explanation": "باريس هي عاصمة فرنسا."
+        }
+      }
+    },
+    {
+      "category": "GENERAL_KNOWLEDGE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "How many days are in a leap year?",
+          "hint": "February has an extra day.",
+          "options": [
+            "366",
+            "365",
+            "364",
+            "367"
+          ],
+          "correctIndex": 0,
+          "explanation": "A leap year has 366 days, with an extra day in February."
+        },
+        "FR": {
+          "text": "Combien de jours compte une année bissextile ?",
+          "hint": "Février a un jour de plus.",
+          "options": [
+            "366",
+            "365",
+            "364",
+            "367"
+          ],
+          "correctIndex": 0,
+          "explanation": "Une année bissextile compte 366 jours, avec un jour supplémentaire en février."
+        },
+        "AR": {
+          "text": "كم عدد أيام السنة الكبيسة؟",
+          "hint": "يشهد فبراير يوماً إضافياً.",
+          "options": [
+            "366",
+            "365",
+            "364",
+            "367"
+          ],
+          "correctIndex": 0,
+          "explanation": "تضم السنة الكبيسة 366 يوماً، مع يوم إضافي في فبراير."
+        }
+      }
+    },
+    {
+      "category": "GENERAL_KNOWLEDGE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which color is made by mixing blue and yellow?",
+          "hint": "It is the color of grass.",
+          "options": [
+            "Green",
+            "Orange",
+            "Purple",
+            "Brown"
+          ],
+          "correctIndex": 0,
+          "explanation": "Mixing blue and yellow paint produces green."
+        },
+        "FR": {
+          "text": "Quelle couleur obtient-on en mélangeant du bleu et du jaune ?",
+          "hint": "C'est la couleur de l'herbe.",
+          "options": [
+            "Vert",
+            "Orange",
+            "Violet",
+            "Marron"
+          ],
+          "correctIndex": 0,
+          "explanation": "Mélanger du bleu et du jaune donne du vert."
+        },
+        "AR": {
+          "text": "أي لون ينتج عن مزج الأزرق والأصفر؟",
+          "hint": "إنه لون العشب.",
+          "options": [
+            "الأخضر",
+            "البرتقالي",
+            "البنفسجي",
+            "البني"
+          ],
+          "correctIndex": 0,
+          "explanation": "ينتج عن مزج الأزرق والأصفر اللون الأخضر."
+        }
+      }
+    },
+    {
+      "category": "GENERAL_KNOWLEDGE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "What is the largest planet in the solar system?",
+          "hint": "It has a famous Great Red Spot.",
+          "options": [
+            "Jupiter",
+            "Saturn",
+            "Earth",
+            "Neptune"
+          ],
+          "correctIndex": 0,
+          "explanation": "Jupiter is the largest planet in the solar system."
+        },
+        "FR": {
+          "text": "Quelle est la plus grande planète du système solaire ?",
+          "hint": "Elle possède une célèbre Grande Tache rouge.",
+          "options": [
+            "Jupiter",
+            "Saturne",
+            "Terre",
+            "Neptune"
+          ],
+          "correctIndex": 0,
+          "explanation": "Jupiter est la plus grande planète du système solaire."
+        },
+        "AR": {
+          "text": "ما هو أكبر كوكب في المجموعة الشمسية؟",
+          "hint": "لديه بقعة حمراء عظيمة شهيرة.",
+          "options": [
+            "المشتري",
+            "زحل",
+            "الأرض",
+            "نبتون"
+          ],
+          "correctIndex": 0,
+          "explanation": "المشتري هو أكبر كوكب في المجموعة الشمسية."
+        }
+      }
+    },
+    {
+      "category": "GENERAL_KNOWLEDGE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Who was the first person to walk on the Moon?",
+          "hint": "The mission was Apollo 11.",
+          "options": [
+            "Neil Armstrong",
+            "Buzz Aldrin",
+            "Yuri Gagarin",
+            "Michael Collins"
+          ],
+          "correctIndex": 0,
+          "explanation": "Neil Armstrong was the first person to walk on the Moon, during Apollo 11 in 1969."
+        },
+        "FR": {
+          "text": "Qui a été le premier homme à marcher sur la Lune ?",
+          "hint": "La mission était Apollo 11.",
+          "options": [
+            "Neil Armstrong",
+            "Buzz Aldrin",
+            "Youri Gagarine",
+            "Michael Collins"
+          ],
+          "correctIndex": 0,
+          "explanation": "Neil Armstrong a été le premier homme à marcher sur la Lune, lors d'Apollo 11 en 1969."
+        },
+        "AR": {
+          "text": "من أول شخص مشى على القمر؟",
+          "hint": "كانت المهمة أبولو 11.",
+          "options": [
+            "نيل أرمسترونغ",
+            "باز ألدرين",
+            "يوري غاغارين",
+            "مايكل كولينز"
+          ],
+          "correctIndex": 0,
+          "explanation": "كان نيل أرمسترونغ أول شخص يمشي على القمر خلال مهمة أبولو 11 عام 1969."
+        }
+      }
+    },
+    {
+      "category": "GENERAL_KNOWLEDGE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which is the currency of Japan?",
+          "hint": "Its name means \"round object\".",
+          "options": [
+            "Yen",
+            "Won",
+            "Yuan",
+            "Ringgit"
+          ],
+          "correctIndex": 0,
+          "explanation": "The yen is the currency of Japan."
+        },
+        "FR": {
+          "text": "Quelle est la monnaie du Japon ?",
+          "hint": "Son nom signifie « objet rond ».",
+          "options": [
+            "Yen",
+            "Won",
+            "Yuan",
+            "Ringgit"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le yen est la monnaie du Japon."
+        },
+        "AR": {
+          "text": "ما هي عملة اليابان؟",
+          "hint": "اسمها يعني \"جسم مستدير\".",
+          "options": [
+            "الين",
+            "الوون",
+            "اليوان",
+            "الرينغيت"
+          ],
+          "correctIndex": 0,
+          "explanation": "الين هو عملة اليابان."
+        }
+      }
+    },
+    {
+      "category": "GENERAL_KNOWLEDGE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "How many sides does a hexagon have?",
+          "hint": "A honeycomb cell has this shape.",
+          "options": [
+            "6",
+            "5",
+            "7",
+            "8"
+          ],
+          "correctIndex": 0,
+          "explanation": "A hexagon has six sides."
+        },
+        "FR": {
+          "text": "Combien de côtés a un hexagone ?",
+          "hint": "Une alvéole de ruche a cette forme.",
+          "options": [
+            "6",
+            "5",
+            "7",
+            "8"
+          ],
+          "correctIndex": 0,
+          "explanation": "Un hexagone a six côtés."
+        },
+        "AR": {
+          "text": "كم عدد أضلاع الشكل السداسي؟",
+          "hint": "خلية النحل لها هذا الشكل.",
+          "options": [
+            "6",
+            "5",
+            "7",
+            "8"
+          ],
+          "correctIndex": 0,
+          "explanation": "للشكل السداسي ستة أضلاع."
+        }
+      }
+    },
+    {
+      "category": "GENERAL_KNOWLEDGE",
+      "difficulty": 2,
+      "translations": {
+        "EN": {
+          "text": "Which international organization was founded in 1945 to promote peace?",
+          "hint": "Its headquarters are in New York.",
+          "options": [
+            "United Nations",
+            "NATO",
+            "European Union",
+            "Red Cross"
+          ],
+          "correctIndex": 0,
+          "explanation": "The United Nations was founded in 1945 to promote international peace and cooperation."
+        },
+        "FR": {
+          "text": "Quelle organisation internationale a été fondée en 1945 pour promouvoir la paix ?",
+          "hint": "Son siège est à New York.",
+          "options": [
+            "Organisation des Nations unies",
+            "OTAN",
+            "Union européenne",
+            "Croix-Rouge"
+          ],
+          "correctIndex": 0,
+          "explanation": "L'Organisation des Nations unies a été fondée en 1945 pour promouvoir la paix et la coopération internationales."
+        },
+        "AR": {
+          "text": "أي منظمة دولية تأسست عام 1945 لتعزيز السلام؟",
+          "hint": "يقع مقرها في نيويورك.",
+          "options": [
+            "الأمم المتحدة",
+            "الناتو",
+            "الاتحاد الأوروبي",
+            "الصليب الأحمر"
+          ],
+          "correctIndex": 0,
+          "explanation": "تأسست الأمم المتحدة عام 1945 لتعزيز السلام والتعاون الدوليين."
+        }
+      }
+    },
+    {
+      "category": "GENERAL_KNOWLEDGE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "What is the main language spoken in Brazil?",
+          "hint": "It is also spoken in Portugal.",
+          "options": [
+            "Portuguese",
+            "Spanish",
+            "English",
+            "French"
+          ],
+          "correctIndex": 0,
+          "explanation": "Portuguese is the main language spoken in Brazil."
+        },
+        "FR": {
+          "text": "Quelle est la langue principale parlée au Brésil ?",
+          "hint": "Elle est aussi parlée au Portugal.",
+          "options": [
+            "Portugais",
+            "Espagnol",
+            "Anglais",
+            "Français"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le portugais est la langue principale parlée au Brésil."
+        },
+        "AR": {
+          "text": "ما هي اللغة الرئيسية في البرازيل؟",
+          "hint": "تُتحدث أيضاً في البرتغال.",
+          "options": [
+            "البرتغالية",
+            "الإسبانية",
+            "الإنجليزية",
+            "الفرنسية"
+          ],
+          "correctIndex": 0,
+          "explanation": "البرتغالية هي اللغة الرئيسية في البرازيل."
+        }
+      }
+    },
+    {
+      "category": "GENERAL_KNOWLEDGE",
+      "difficulty": 1,
+      "translations": {
+        "EN": {
+          "text": "Which is the longest wall in the world?",
+          "hint": "It is in China.",
+          "options": [
+            "Great Wall of China",
+            "Berlin Wall",
+            "Hadrian's Wall",
+            "Walls of Babylon"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Great Wall of China is the longest wall in the world."
+        },
+        "FR": {
+          "text": "Quel est le plus long mur du monde ?",
+          "hint": "Il se trouve en Chine.",
+          "options": [
+            "Grande Muraille de Chine",
+            "Mur de Berlin",
+            "Mur d'Hadrien",
+            "Murs de Babylone"
+          ],
+          "correctIndex": 0,
+          "explanation": "La Grande Muraille de Chine est le plus long mur du monde."
+        },
+        "AR": {
+          "text": "ما هو أطول جدار في العالم؟",
+          "hint": "يقع في الصين.",
+          "options": [
+            "سور الصين العظيم",
+            "جدار برلين",
+            "سور هادريان",
+            "أسوار بابل"
+          ],
+          "correctIndex": 0,
+          "explanation": "سور الصين العظيم هو أطول جدار في العالم."
+        }
+      }
+    }
+  ]
+}
