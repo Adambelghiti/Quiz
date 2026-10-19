@@ -40,6 +40,9 @@ export class GameSetupComponent implements OnInit {
   difficulty: number | null = null;
   language: string | null = null;
   rounds = 5;
+  roundSeconds = 30;
+
+  readonly roundTimeOptions = [15, 30, 45, 60, 90, 120];
 
   loading = false;
   errorMsg: string | null = null;
@@ -140,6 +143,7 @@ export class GameSetupComponent implements OnInit {
       difficulty: this.difficulty,
       language: this.language,
       rounds: Number(this.rounds) || 5,
+      roundTimeoutSeconds: Number(this.roundSeconds) || 30,
     };
   }
 

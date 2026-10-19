@@ -1,5 +1,8 @@
 package com.march.backend.model;
 
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+
 /**
  * Payload for starting a new game.
  * <p>
@@ -15,6 +18,14 @@ public class GameStartRequest {
 
     /** How many questions the game should contain (capped at the available pool). */
     private Integer rounds;
+
+    /**
+     * Seconds allowed per round. Bounded so a host cannot create a game that is
+     * impossible to play or that never advances.
+     */
+    @Min(value = 10, message = "Round time must be between 10 and 300 seconds")
+    @Max(value = 300, message = "Round time must be between 10 and 300 seconds")
+    private Integer roundTimeoutSeconds;
 
     /** Existing player id. When absent/unusable a new player is created. */
     private Long playerId;
@@ -55,6 +66,14 @@ public class GameStartRequest {
 
     public void setRounds(Integer rounds) {
         this.rounds = rounds;
+    }
+
+    public Integer getRoundTimeoutSeconds() {
+        return roundTimeoutSeconds;
+    }
+
+    public void setRoundTimeoutSeconds(Integer roundTimeoutSeconds) {
+        this.roundTimeoutSeconds = roundTimeoutSeconds;
     }
 
     public Long getPlayerId() {

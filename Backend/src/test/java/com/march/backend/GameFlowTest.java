@@ -120,9 +120,29 @@ class GameFlowTest {
                 round.getGameId(), player.getId(), question.getId(), question.getCorrectAnswer());
 
         assertTrue(result.isCorrect(), "the submitted answer is still the correct one");
+        assertTrue(result.isLate(), "the client must be told the answer missed the deadline");
         assertEquals(0, result.getScoreDelta(), "a late answer must not award points");
         assertEquals(0, result.getTotalScore(), "a late answer must not change the total score");
         assertEquals(0, result.getCorrectAnswers(), "a late answer must not count as correct");
+    }
+
+    @Test
+    void aGameKeepsTheHostsChosenRoundTime() {
+        Player player = newPlayer("round-time-host");
+
+        GameStartRequest request = new GameStartRequest();
+        request.setPlayerId(player.getId());
+        request.setDifficulty(1);
+        request.setRounds(1);
+        request.setRoundTimeoutSeconds(45);
+
+        RoundResponse round = gameService.startGame(request);
+
+        assertEquals(45, round.getRoundTimeoutSeconds(),
+                "the round length chosen by the host should be used");
+        assertEquals(45, gameRepository.findById(round.getGameId()).orElseThrow()
+                        .getRoundTimeoutSeconds(),
+                "the round length should also be stored with the game");
     }
 
     @Test

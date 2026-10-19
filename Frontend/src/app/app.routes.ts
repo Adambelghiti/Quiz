@@ -8,12 +8,15 @@ import { WaitingRoomComponent } from './waiting-room.component';
 import { AdminComponent } from './admin.component';
 import { ProfileComponent } from './profile.component';
 import { LeaderboardComponent } from './leaderboard.component';
+import { SettingsComponent } from './settings.component';
 import { AuthGuard } from './auth.guard';
 import { AdminGuard } from './admin.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
+  // Public: players can turn on voice reading before they sign in.
+  { path: 'settings', component: SettingsComponent },
   { path: 'lobby', component: LobbyComponent, canActivate: [AuthGuard] },
   { path: 'setup', component: GameSetupComponent, canActivate: [AuthGuard] },
   { path: 'room/:id', component: WaitingRoomComponent, canActivate: [AuthGuard] },

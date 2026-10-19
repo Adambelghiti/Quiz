@@ -23,6 +23,17 @@
     <label for="rounds">Number of rounds</label>
     <input id="rounds" name="rounds" type="number" min="1" max="20" [(ngModel)]="rounds" />
 
+    <label for="roundSeconds">Time per question</label>
+    <select id="roundSeconds" name="roundSeconds" [(ngModel)]="roundSeconds">
+      <option *ngFor="let seconds of roundTimeOptions" [ngValue]="seconds">
+        {{ seconds }} seconds
+      </option>
+    </select>
+    <p class="field-hint">
+      More time helps players who use voice reading or a screen reader. The timer is enforced by
+      the server.
+    </p>
+
     <div class="form-actions">
       <button type="submit" class="primary-button" [disabled]="loading">
         {{ loading ? 'Creating…' : 'Create Multiplayer Room' }}

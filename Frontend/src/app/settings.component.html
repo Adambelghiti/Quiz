@@ -1,0 +1,75 @@
+<main class="container settings-page">
+  <div class="settings-header">
+    <div>
+      <h1>Accessibility settings</h1>
+      <p class="subtitle">Choose how QuizGame helps you read the questions.</p>
+    </div>
+    <button type="button" class="secondary-button" (click)="back()">Back to lobby</button>
+  </div>
+
+  <div *ngIf="!supported" class="notice" role="status">
+    This browser does not support voice reading. Try a recent version of Chrome, Edge, Safari, or
+    Firefox on a device with a voice installed.
+  </div>
+
+  <fieldset class="settings-group" [disabled]="!supported">
+    <legend>Voice reading</legend>
+
+    <label class="setting" for="speech-enabled">
+      <input
+        id="speech-enabled"
+        type="checkbox"
+        [checked]="speechEnabled"
+        (change)="onSpeechToggle($event)"
+        aria-describedby="speech-enabled-help"
+      />
+      <span class="setting-copy">
+        <strong>Read questions and answer choices aloud</strong>
+        <small id="speech-enabled-help">
+          Uses a voice installed on this device. Off by default, and only this browser remembers the
+          choice.
+        </small>
+      </span>
+    </label>
+
+    <label class="setting" for="auto-read">
+      <input
+        id="auto-read"
+        type="checkbox"
+        [checked]="autoReadQuestion"
+        (change)="onAutoReadToggle($event)"
+        aria-describedby="auto-read-help"
+      />
+      <span class="setting-copy">
+        <strong>Start reading each new question automatically</strong>
+        <small id="auto-read-help">
+          Reads the question, then every answer choice in order.
+        </small>
+      </span>
+    </label>
+
+    <label class="setting" for="read-option">
+      <input
+        id="read-option"
+        type="checkbox"
+        [checked]="readSelectedOption"
+        (change)="onReadOptionToggle($event)"
+        aria-describedby="read-option-help"
+      />
+      <span class="setting-copy">
+        <strong>Read an answer choice when I select it</strong>
+        <small id="read-option-help">Useful when the choices are long or the text is small.</small>
+      </span>
+    </label>
+  </fieldset>
+
+  <div class="settings-actions">
+    <button type="button" class="primary-button" (click)="testVoice()" [disabled]="!supported">
+      Test voice
+    </button>
+    <p class="note">
+      If you already use a screen reader, you may prefer to leave voice reading off to avoid hearing
+      everything twice.
+    </p>
+  </div>
+</main>

@@ -1,10 +1,17 @@
-<div class="quiz-container">
+<main class="quiz-container" [attr.aria-busy]="loading">
   <div class="quiz-header">
     <h1>Quiz Game</h1>
     <div class="quiz-meta" *ngIf="round">
       <span class="badge">Round {{ round.round }} / {{ round.totalRounds }}</span>
       <span class="badge">Score: {{ myScore }}</span>
-      <span class="badge timer" [class.low]="!result && timeLeft <= 5" *ngIf="round.question">
+      <span
+        class="badge timer"
+        role="timer"
+        aria-live="off"
+        [attr.aria-label]="'Time remaining: ' + timeLeft + ' seconds'"
+        [class.low]="!result && timeLeft <= 5"
+        *ngIf="round.question"
+      >
         ⏱ {{ timeLeft }}s
       </span>
       <span class="badge live" *ngIf="iAmHost">host</span>
@@ -13,6 +20,7 @@
         class="sound-toggle"
         (click)="effects.toggleMuted()"
         [attr.aria-pressed]="effects.muted"
+        [attr.aria-label]="effects.muted ? 'Unmute sound effects' : 'Mute sound effects'"
         [title]="effects.muted ? 'Unmute sounds' : 'Mute sounds'"
       >
         {{ effects.muted ? '🔇' : '🔊' }}
@@ -21,11 +29,13 @@
     </div>
   </div>
 
-  <div *ngIf="loading" class="loading">
+  <p class="sr-only" aria-live="polite">{{ liveMessage }}</p>
+
+  <div *ngIf="loading" class="loading" aria-live="polite">
     <p>Loading question…</p>
   </div>
 
-  <div *ngIf="error" class="error-message">{{ error }}</div>
+  <div *ngIf="error" class="error-message" role="alert">{{ error }}</div>
 
   <ng-container *ngIf="round as r">
     <div class="scoreboard" *ngIf="r.players.length > 1">
@@ -44,24 +54,45 @@
       [attr.dir]="questionDirection"
       [attr.lang]="questionLang"
     >
-      <p class="question-text">{{ q.text }}</p>
+      <p
+        id="question-text"
+        #questionText
+        class="question-text"
+        tabindex="-1"
+        [attr.aria-describedby]="q.hint && !result ? 'question-hint' : null"
+      >
+        {{ q.text }}
+      </p>
 
-      <div class="options-container">
+      <button
+        *ngIf="speechEnabled"
+        type="button"
+        class="secondary-button read-aloud"
+        (click)="readQuestionAloud()"
+        aria-label="Read the question and answer choices aloud"
+      >
+        🔊 Read aloud
+      </button>
+
+      <div class="options-container" role="group" aria-labelledby="question-text">
         <button
           type="button"
-          *ngFor="let option of q.options"
+          *ngFor="let option of q.options; let i = index"
           class="option"
           [class.selected]="selectedAnswer === option"
           [class.correct]="result && option === result.correctAnswer"
           [class.incorrect]="result && selectedAnswer === option && !result.correct"
           [disabled]="!!result || timeExpired"
+          [attr.aria-pressed]="selectedAnswer === option"
+          [attr.aria-label]="'Answer ' + (i + 1) + ': ' + option"
           (click)="selectAnswer(option)"
         >
-          {{ option }}
+          <span class="option-number" aria-hidden="true">{{ i + 1 }}</span>
+          <span class="option-text">{{ option }}</span>
         </button>
       </div>
 
-      <div *ngIf="q.hint && !result" class="hint">
+      <div *ngIf="q.hint && !result" id="question-hint" class="hint">
         <small>HINT: {{ q.hint }}</small>
       </div>
     </div>
@@ -69,12 +100,14 @@
     <div
       *ngIf="result as res"
       class="feedback"
-      [class.correct]="res.correct"
-      [class.incorrect]="!res.correct"
+      role="status"
+      aria-live="polite"
+      [class.correct]="res.correct && !res.late"
+      [class.incorrect]="!res.correct || res.late"
     >
-      <strong>{{ res.correct ? 'Correct!' : 'Not quite.' }}</strong>
-      <span *ngIf="res.correct"> +{{ res.scoreDelta }} points.</span>
-      <span *ngIf="!res.correct">
+      <strong>{{ res.late ? 'Time ran out.' : (res.correct ? 'Correct!' : 'Not quite.') }}</strong>
+      <span *ngIf="res.correct && !res.late"> +{{ res.scoreDelta }} points.</span>
+      <span *ngIf="!res.correct || res.late">
         The answer was “<span dir="auto">{{ res.correctAnswer }}</span>”.</span>
     </div>
 
@@ -114,4 +147,4 @@
       </p>
     </div>
   </ng-container>
-</div>
+</main>

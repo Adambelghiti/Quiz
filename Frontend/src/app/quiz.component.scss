@@ -55,9 +55,18 @@
   gap: 0.6rem;
 }
 
+.read-aloud {
+  margin: 0 0 0.75rem;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+}
+
 .option {
   /* Logical alignment so Arabic options follow the card's right-to-left
      direction instead of staying pinned to the physical left edge. */
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
   text-align: start;
   padding: 0.75rem 0.9rem;
   border: 1px solid #d1d5db;
@@ -96,6 +105,32 @@
     color: #b91c1c;
     font-weight: 600;
   }
+
+  &.correct .option-number {
+    background: #dcfce7;
+    color: #15803d;
+  }
+
+  &.incorrect .option-number {
+    background: #fee2e2;
+    color: #b91c1c;
+  }
+}
+
+.option-number {
+  flex: 0 0 1.5rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #4338ca;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  text-align: center;
+}
+
+.option-text {
+  flex: 1 1 auto;
 }
 
 .hint {

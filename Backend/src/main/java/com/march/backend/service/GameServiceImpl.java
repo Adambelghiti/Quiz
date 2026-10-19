@@ -43,6 +43,12 @@ public class GameServiceImpl implements GameService {
 
     private static final int DEFAULT_ROUNDS = 5;
 
+    private static final int DEFAULT_ROUND_TIMEOUT_SECONDS = 30;
+
+    private static final int MIN_ROUND_TIMEOUT_SECONDS = 10;
+
+    private static final int MAX_ROUND_TIMEOUT_SECONDS = 300;
+
     /** Waiting rooms with no activity for this long are cleaned up. */
     private static final long WAITING_ROOM_TTL_MS = 30L * 60L * 1000L;
 
@@ -264,6 +270,7 @@ public class GameServiceImpl implements GameService {
         result.setRound(game.getCurrentRound());
         result.setTotalRounds(game.getTotalRounds());
         result.setRoundComplete(game.getAnsweredPlayerIds().containsAll(playerIds(game)));
+        result.setLate(late);
         return result;
     }
 
@@ -392,6 +399,13 @@ public class GameServiceImpl implements GameService {
         game.setLanguage(language);
         int requestedRounds = request.getRounds() != null ? request.getRounds() : DEFAULT_ROUNDS;
         game.setTotalRounds(Math.max(1, Math.min(requestedRounds, pool.size())));
+        int requestedTimeout = request.getRoundTimeoutSeconds() != null
+                ? request.getRoundTimeoutSeconds()
+                : DEFAULT_ROUND_TIMEOUT_SECONDS;
+        // Bean Validation rejects bad values at the API boundary; clamp again for
+        // callers that use the service directly.
+        game.setRoundTimeoutSeconds(
+                Math.max(MIN_ROUND_TIMEOUT_SECONDS, Math.min(requestedTimeout, MAX_ROUND_TIMEOUT_SECONDS)));
         game.setHostPlayerId(player.getId());
         game.getPlayers().add(player);
         return game;

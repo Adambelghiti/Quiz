@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import {
@@ -10,6 +10,8 @@ import {
 import { CurrentGameService } from './current-game.service';
 import { EffectsService } from './effects.service';
 import { PlayerService } from './player.service';
+import { PreferencesService } from './preferences.service';
+import { SpeechService } from './speech.service';
 import { WebSocketService } from './websocket.service';
 
 @Component({
@@ -32,6 +34,11 @@ export class QuizComponent implements OnInit, OnDestroy {
   /** Seconds left in the current round, derived from the server clock. */
   timeLeft = 0;
 
+  /** Announced politely to assistive technology when the round changes. */
+  liveMessage = '';
+
+  @ViewChild('questionText') private questionText?: ElementRef<HTMLElement>;
+
   private gameId: number | null = null;
   private playerId: number | null = null;
   private unsubscribe?: () => void;
@@ -46,7 +53,9 @@ export class QuizComponent implements OnInit, OnDestroy {
     private currentGame: CurrentGameService,
     private playerService: PlayerService,
     private ws: WebSocketService,
-    public effects: EffectsService
+    public effects: EffectsService,
+    public speech: SpeechService,
+    public preferences: PreferencesService
   ) {}
 
   ngOnInit(): void {
@@ -69,6 +78,7 @@ export class QuizComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.unsubscribe?.();
     this.clearTimer();
+    this.speech.stop();
   }
 
   get question(): QuestionView | null {
@@ -101,6 +111,11 @@ export class QuizComponent implements OnInit, OnDestroy {
     return (this.question?.language ?? 'EN').toLowerCase();
   }
 
+  /** True when the player opted in and this browser can actually speak. */
+  get speechEnabled(): boolean {
+    return this.preferences.speech.enabled && this.speech.supported;
+  }
+
   get iAmHost(): boolean {
     return this.playerId !== null && this.round?.hostPlayerId === this.playerId;
   }
@@ -125,6 +140,17 @@ export class QuizComponent implements OnInit, OnDestroy {
   selectAnswer(option: string): void {
     if (!this.result && !this.timeExpired) {
       this.selectedAnswer = option;
+      if (this.speechEnabled && this.preferences.speech.readSelectedOption) {
+        const index = this.question?.options.indexOf(option) ?? 0;
+        this.speech.readOption(option, Math.max(0, index), this.question?.language);
+      }
+    }
+  }
+
+  /** Re-read the current question and its choices on demand. */
+  readQuestionAloud(): void {
+    if (this.question && this.speechEnabled) {
+      this.speech.readQuestion(this.question);
     }
   }
 
@@ -153,10 +179,13 @@ export class QuizComponent implements OnInit, OnDestroy {
           this.submitting = false;
           this.markSelfAnswered();
           this.refreshScores();
-          if (result.correct) {
+          if (result.correct && !result.late) {
             this.effects.answerCorrect();
           } else {
             this.effects.answerWrong();
+          }
+          if (this.speechEnabled) {
+            this.speech.readFeedback(result, this.question?.language);
           }
         },
         error: (err) => {
@@ -315,6 +344,24 @@ export class QuizComponent implements OnInit, OnDestroy {
     this.selectedAnswer = '';
     this.error = null;
     this.startTimer();
+    this.announceNewQuestion();
+  }
+
+  /**
+   * Move keyboard focus to the new question, announce the round, and optionally
+   * read the question and choices aloud. Browsers may block the first automatic
+   * utterance until the player has interacted; the Listen button always works.
+   */
+  private announceNewQuestion(): void {
+    if (!this.round) {
+      return;
+    }
+    this.liveMessage = `Round ${this.round.round} of ${this.round.totalRounds}.`;
+    window.setTimeout(() => this.questionText?.nativeElement.focus(), 0);
+
+    if (this.speechEnabled && this.preferences.speech.autoReadQuestion) {
+      this.readQuestionAloud();
+    }
   }
 
   /** Start the per-round countdown using the server-provided start time. */
@@ -355,6 +402,10 @@ export class QuizComponent implements OnInit, OnDestroy {
   private onTimeUp(): void {
     if (this.result) {
       return;
+    }
+    this.liveMessage = "Time's up.";
+    if (this.speechEnabled && !this.selectedAnswer) {
+      this.speech.speak("Time's up.", this.question?.language);
     }
     if (this.selectedAnswer) {
       // Auto-submit whatever the player had selected before time ran out.

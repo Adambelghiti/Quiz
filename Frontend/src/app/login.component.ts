@@ -32,6 +32,10 @@ export class LoginComponent {
     this.error = null;
   }
 
+  openSettings(): void {
+    this.router.navigate(['/settings']);
+  }
+
   submit(): void {
     if (this.loading) {
       return;

@@ -58,6 +58,8 @@ export interface AnswerResult {
   round: number;
   totalRounds: number;
   roundComplete: boolean;
+  /** True when the answer arrived after the round deadline; it scores no points. */
+  late?: boolean;
 }
 
 /** Final standings of a game. */
@@ -86,6 +88,8 @@ export interface StartGameRequest {
   difficulty?: number | null;
   language?: string | null;
   rounds?: number;
+  /** Seconds allowed per question; the server defaults to 30. */
+  roundTimeoutSeconds?: number;
   playerId?: number | null;
   playerName?: string;
 }

@@ -22,4 +22,7 @@ public class AnswerResult {
 
     /** True once every player in the game has answered the current round. */
     private boolean roundComplete;
+
+    /** True when the answer arrived after the deadline and therefore scored nothing. */
+    private boolean late;
 }

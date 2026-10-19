@@ -68,6 +68,20 @@ class GameStartFilterTest {
                 .andExpect(status().isOk());
     }
 
+    @Test
+    void aRoundTimeBelowTenSecondsIsRejected() throws Exception {
+        mvc.perform(start("filter-short-round", "{\"rounds\":1,\"roundTimeoutSeconds\":5}"))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.message").value(containsString("10")));
+    }
+
+    @Test
+    void aRoundTimeAboveFiveMinutesIsRejected() throws Exception {
+        mvc.perform(start("filter-long-round", "{\"rounds\":1,\"roundTimeoutSeconds\":600}"))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.message").value(containsString("300")));
+    }
+
     /* ------------------------------------------------------------------ */
 
     private org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder start(String username,

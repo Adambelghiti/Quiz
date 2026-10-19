@@ -66,14 +66,14 @@ public class GameController {
 
     /** Create a configured solo game and start the first round immediately. */
     @PostMapping("/start")
-    public RoundResponse startGame(@RequestBody GameStartRequest request, Authentication authentication) {
+    public RoundResponse startGame(@Valid @RequestBody GameStartRequest request, Authentication authentication) {
         applyCurrentPlayer(request, authentication);
         return gameService.startGame(request);
     }
 
     /** Create a multiplayer room; it waits until the host starts it. */
     @PostMapping("/create")
-    public RoundResponse createRoom(@RequestBody GameStartRequest request, Authentication authentication) {
+    public RoundResponse createRoom(@Valid @RequestBody GameStartRequest request, Authentication authentication) {
         applyCurrentPlayer(request, authentication);
         return gameService.createRoom(request);
     }
