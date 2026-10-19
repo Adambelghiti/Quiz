@@ -54,12 +54,23 @@ public class JwtService {
         this.expirationMs = expirationMs;
     }
 
-    /** True when one of the development profiles is active. */
+    /**
+     * True when one of the development profiles is active.
+     * <p>
+     * When no profile is explicitly activated, Spring applies the configured
+     * default profile ({@code dev} in {@code application.properties}). The
+     * defaults must not keep production in development mode, though: if the
+     * operator activates {@code prod}, only the active profiles decide.
+     */
     private boolean isDevelopment(Environment environment) {
         if (environment == null) {
             return false;
         }
-        return Arrays.stream(environment.getActiveProfiles())
+        String[] activeProfiles = environment.getActiveProfiles();
+        String[] profiles = activeProfiles.length > 0
+                ? activeProfiles
+                : environment.getDefaultProfiles();
+        return Arrays.stream(profiles)
                 .anyMatch(DEVELOPMENT_PROFILES::contains);
     }
 

@@ -33,6 +33,23 @@ class JwtServiceTest {
     }
 
     @Test
+    void theDefaultDevelopmentProfileAllowsThePlaceholder() {
+        MockEnvironment environment = new MockEnvironment();
+        environment.setDefaultProfiles("dev");
+
+        assertDoesNotThrow(() -> new JwtService(JwtService.DEFAULT_SECRET, 1000, environment));
+    }
+
+    @Test
+    void anExplicitProductionProfileOverridesTheDefaultDevelopmentProfile() {
+        MockEnvironment environment = profiles("prod");
+        environment.setDefaultProfiles("dev");
+
+        assertThrows(IllegalStateException.class,
+                () -> new JwtService(JwtService.DEFAULT_SECRET, 1000, environment));
+    }
+
+    @Test
     void aCustomSecretIsAllowedEverywhere() {
         assertDoesNotThrow(() -> new JwtService(CUSTOM_SECRET, 1000, profiles("prod")));
     }

@@ -1,6 +1,7 @@
 package com.march.backend.loader;
 
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import com.march.backend.model.*;
@@ -22,6 +23,7 @@ import java.util.List;
  * application never creates duplicates.
  */
 @Component
+@Profile({"dev", "test", "local"})
 public class DataLoader implements CommandLineRunner {
 
     /** Convenience player account created on first run. */

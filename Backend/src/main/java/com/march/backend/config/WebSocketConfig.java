@@ -1,6 +1,7 @@
 package com.march.backend.config;
 
 import com.march.backend.security.StompAuthChannelInterceptor;
+import com.march.backend.security.StompGameBroadcastInterceptor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.ChannelRegistration;
@@ -32,11 +33,14 @@ import java.util.Arrays;
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     private final StompAuthChannelInterceptor stompAuthChannelInterceptor;
+    private final StompGameBroadcastInterceptor stompGameBroadcastInterceptor;
     private final String[] allowedOrigins;
 
     public WebSocketConfig(StompAuthChannelInterceptor stompAuthChannelInterceptor,
+                           StompGameBroadcastInterceptor stompGameBroadcastInterceptor,
                            @Value("${app.cors.allowed-origins:http://localhost:4200,http://localhost:4300}") String allowedOrigins) {
         this.stompAuthChannelInterceptor = stompAuthChannelInterceptor;
+        this.stompGameBroadcastInterceptor = stompGameBroadcastInterceptor;
         this.allowedOrigins = parseAllowedOrigins(allowedOrigins);
     }
 
@@ -65,5 +69,10 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void configureClientInboundChannel(ChannelRegistration registration) {
         registration.interceptors(stompAuthChannelInterceptor);
+    }
+
+    @Override
+    public void configureClientOutboundChannel(ChannelRegistration registration) {
+        registration.interceptors(stompGameBroadcastInterceptor);
     }
 }

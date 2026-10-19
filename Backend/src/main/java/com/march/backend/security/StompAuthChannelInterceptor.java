@@ -34,13 +34,16 @@ public class StompAuthChannelInterceptor implements ChannelInterceptor {
     private final JwtService jwtService;
     private final PlayerService playerService;
     private final GameRepository gameRepository;
+    private final StompSessionRegistry sessionRegistry;
 
     public StompAuthChannelInterceptor(JwtService jwtService,
                                        PlayerService playerService,
-                                       GameRepository gameRepository) {
+                                       GameRepository gameRepository,
+                                       StompSessionRegistry sessionRegistry) {
         this.jwtService = jwtService;
         this.playerService = playerService;
         this.gameRepository = gameRepository;
+        this.sessionRegistry = sessionRegistry;
     }
 
     @Override
@@ -55,9 +58,15 @@ public class StompAuthChannelInterceptor implements ChannelInterceptor {
             String username = authenticate(accessor);
             if (username != null) {
                 accessor.setUser(new UsernamePasswordAuthenticationToken(username, null, List.of()));
+                sessionRegistry.register(accessor.getSessionId(), username);
             }
         } else if (StompCommand.SUBSCRIBE.equals(accessor.getCommand())) {
             authorizeSubscription(accessor);
+            if (accessor.getUser() != null) {
+                sessionRegistry.register(accessor.getSessionId(), accessor.getUser().getName());
+            }
+        } else if (StompCommand.DISCONNECT.equals(accessor.getCommand())) {
+            sessionRegistry.unregister(accessor.getSessionId());
         }
         return message;
     }
