@@ -13,6 +13,7 @@ export interface AdminQuestion {
   correctAnswer: string;
   options: string[];
   hint?: string;
+  explanation?: string;
 }
 
 /** Admin CRUD for the question bank. */

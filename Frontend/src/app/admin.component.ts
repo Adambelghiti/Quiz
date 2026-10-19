@@ -161,6 +161,7 @@ export class AdminComponent implements OnInit {
       correctAnswer: '',
       options: ['', '', '', ''],
       hint: '',
+      explanation: '',
     };
   }
 }

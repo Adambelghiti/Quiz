@@ -32,6 +32,7 @@ export interface ReadableFeedback {
   readonly correctAnswer: string;
   readonly scoreDelta: number;
   readonly late?: boolean;
+  readonly explanation?: string | null;
 }
 
 const LANGUAGE_TAGS: Record<string, string> = {
@@ -92,6 +93,10 @@ export class SpeechService {
       text = `Correct! You earned ${result.scoreDelta} points.`;
     } else {
       text = `Not quite. The correct answer was ${result.correctAnswer}.`;
+    }
+    const explanation = result.explanation?.trim();
+    if (explanation) {
+      text += ` ${explanation}`;
     }
     this.speak(text, language);
   }

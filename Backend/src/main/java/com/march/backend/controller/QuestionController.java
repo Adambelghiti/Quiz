@@ -113,6 +113,7 @@ public class QuestionController {
         existing.setCorrectAnswer(question.getCorrectAnswer());
         existing.setOptions(question.getOptions());
         existing.setHint(question.getHint());
+        existing.setExplanation(question.getExplanation());
         return ResponseEntity.ok(questionService.createQuestion(existing));
     }
 

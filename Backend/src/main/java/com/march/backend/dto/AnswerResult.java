@@ -25,4 +25,10 @@ public class AnswerResult {
 
     /** True when the answer arrived after the deadline and therefore scored nothing. */
     private boolean late;
+
+    /**
+     * Optional explanation of the correct answer, shown and read aloud after the
+     * player has answered.
+     */
+    private String explanation;
 }

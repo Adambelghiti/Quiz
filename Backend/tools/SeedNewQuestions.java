@@ -69,6 +69,7 @@ public class SeedNewQuestions {
 
                     String text = translation.path("text").asText();
                     String hint = translation.path("hint").asText(null);
+                    String explanation = translation.path("explanation").asText(null);
                     List<String> options = new ArrayList<>();
                     translation.path("options").forEach(option -> options.add(option.asText()));
                     int correctIndex = translation.path("correctIndex").asInt(-1);
@@ -85,7 +86,8 @@ public class SeedNewQuestions {
                     }
 
                     String correctAnswer = options.get(correctIndex);
-                    long id = insertQuestion(connection, text, category, difficulty, language, correctAnswer, hint);
+                    long id = insertQuestion(connection, text, category, difficulty, language, correctAnswer,
+                            hint, explanation);
                     insertOptions(connection, id, options);
                     inserted++;
                 }
@@ -120,16 +122,18 @@ public class SeedNewQuestions {
     }
 
     private static long insertQuestion(Connection connection, String text, String category, int difficulty,
-                                       String language, String correctAnswer, String hint) throws Exception {
+                                       String language, String correctAnswer, String hint,
+                                       String explanation) throws Exception {
         try (PreparedStatement ps = connection.prepareStatement(
-                "INSERT INTO questions (text, category, difficulty, language, correct_answer, hint) "
-                        + "VALUES (?, ?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS)) {
+                "INSERT INTO questions (text, category, difficulty, language, correct_answer, hint, explanation) "
+                        + "VALUES (?, ?, ?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS)) {
             ps.setString(1, text);
             ps.setString(2, category);
             ps.setInt(3, difficulty);
             ps.setString(4, language);
             ps.setString(5, correctAnswer);
             ps.setString(6, hint);
+            ps.setString(7, explanation);
             ps.executeUpdate();
             try (ResultSet keys = ps.getGeneratedKeys()) {
                 keys.next();

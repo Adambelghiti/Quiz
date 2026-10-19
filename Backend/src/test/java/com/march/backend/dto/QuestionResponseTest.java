@@ -4,10 +4,12 @@ import com.march.backend.model.Category;
 import com.march.backend.model.Language;
 import com.march.backend.model.Question;
 import org.junit.jupiter.api.Test;
+import tools.jackson.databind.ObjectMapper;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 /**
  * The element collection has no persisted position, so the database may return
@@ -29,6 +31,19 @@ class QuestionResponseTest {
         QuestionResponse response = QuestionResponse.from(question);
 
         assertEquals(List.of("Apple", "Mango", "Zebra fruit"), response.getOptions());
+    }
+
+    @Test
+    void theExplanationIsNotSentBeforeThePlayerAnswers() {
+        Question question = new Question();
+        question.setText("Pick a fruit?");
+        question.setExplanation("This text would give the answer away.");
+        question.setOptions(List.of("Apple", "Banana"));
+
+        String json = new ObjectMapper().writeValueAsString(QuestionResponse.from(question));
+
+        assertFalse(json.contains("explanation"), "the explanation must only arrive with the answer result");
+        assertFalse(json.contains("give the answer away"), "the explanation text must not leak with the question");
     }
 
     @Test

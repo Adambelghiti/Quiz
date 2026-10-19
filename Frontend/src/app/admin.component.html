@@ -64,6 +64,14 @@
       </div>
     </div>
 
+    <label for="explanation">Explanation (optional, shown after answering)</label>
+    <textarea
+      id="explanation"
+      name="explanation"
+      rows="2"
+      [(ngModel)]="draft.explanation"
+    ></textarea>
+
     <div class="form-actions">
       <button type="submit" class="primary-button" [disabled]="saving">
         {{ saving ? 'Saving…' : editingId != null ? 'Update Question' : 'Create Question' }}

@@ -109,6 +109,14 @@
       <span *ngIf="res.correct && !res.late"> +{{ res.scoreDelta }} points.</span>
       <span *ngIf="!res.correct || res.late">
         The answer was “<span dir="auto">{{ res.correctAnswer }}</span>”.</span>
+      <p
+        *ngIf="res.explanation"
+        class="explanation"
+        [attr.lang]="questionLang"
+        [attr.dir]="questionDirection"
+      >
+        {{ res.explanation }}
+      </p>
     </div>
 
     <div class="actions">

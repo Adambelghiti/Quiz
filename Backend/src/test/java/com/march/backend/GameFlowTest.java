@@ -127,6 +127,26 @@ class GameFlowTest {
     }
 
     @Test
+    void anAnswerResultCarriesTheExplanationOnlyAfterAnswering() {
+        Player player = newPlayer("explanation-tester");
+
+        GameStartRequest request = new GameStartRequest();
+        request.setPlayerId(player.getId());
+        request.setDifficulty(1);
+        request.setRounds(1);
+
+        RoundResponse round = gameService.startGame(request);
+        Question question = questionRepository.findById(round.getQuestion().getId()).orElseThrow();
+        question.setExplanation("Because the question bank says so.");
+        questionRepository.saveAndFlush(question);
+
+        AnswerResult result = gameService.submitAnswer(
+                round.getGameId(), player.getId(), question.getId(), question.getCorrectAnswer());
+
+        assertEquals("Because the question bank says so.", result.getExplanation());
+    }
+
+    @Test
     void aGameKeepsTheHostsChosenRoundTime() {
         Player player = newPlayer("round-time-host");
 

@@ -60,6 +60,8 @@ export interface AnswerResult {
   roundComplete: boolean;
   /** True when the answer arrived after the round deadline; it scores no points. */
   late?: boolean;
+  /** Optional explanation of the correct answer, sent only after answering. */
+  explanation?: string;
 }
 
 /** Final standings of a game. */

@@ -75,4 +75,13 @@ public class Question {
     private List<String> options;
 
     private String hint; // optional
+
+    /**
+     * Optional explanation shown (and read aloud) after the player answers.
+     * It is deliberately not part of {@code QuestionResponse}: the text often
+     * gives the answer away, so it is only sent with the answer result.
+     */
+    @Size(max = 1000, message = "Explanation must be at most 1000 characters")
+    @Column(length = 1000)
+    private String explanation;
 }

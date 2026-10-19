@@ -2,12 +2,16 @@ package com.march.backend.loader;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Profile;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import com.march.backend.model.*;
 import com.march.backend.repository.AuthUserRepository;
 import com.march.backend.repository.QuestionRepository;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.ObjectMapper;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,13 +41,16 @@ public class DataLoader implements CommandLineRunner {
     private final QuestionRepository repo;
     private final AuthUserRepository authUserRepository;
     private final PasswordEncoder passwordEncoder;
+    private final ObjectMapper objectMapper;
 
     public DataLoader(QuestionRepository repo,
                       AuthUserRepository authUserRepository,
-                      PasswordEncoder passwordEncoder) {
+                      PasswordEncoder passwordEncoder,
+                      ObjectMapper objectMapper) {
         this.repo = repo;
         this.authUserRepository = authUserRepository;
         this.passwordEncoder = passwordEncoder;
+        this.objectMapper = objectMapper;
     }
 
     @Override
@@ -58,10 +65,67 @@ public class DataLoader implements CommandLineRunner {
      * questions are skipped, never modified.
      */
     private void seedQuestions() {
-        for (Question question : questionBank()) {
+        List<Question> bank = new ArrayList<>(questionBank());
+        bank.addAll(expansionQuestionBank());
+        for (Question question : bank) {
             if (repo.findByTextAndLanguage(question.getText(), question.getLanguage()).isEmpty()) {
                 repo.save(question);
             }
+        }
+    }
+
+    /**
+     * Load the larger expansion bank from JSON. Keeping the bulk content in a
+     * resource makes it possible to review and extend translations without
+     * turning this class into a second database.
+     */
+    private List<Question> expansionQuestionBank() {
+        try (InputStream input = new ClassPathResource("question-bank-expansion.json").getInputStream()) {
+            JsonNode root = objectMapper.readTree(input);
+            List<Question> questions = new ArrayList<>();
+
+            for (JsonNode entry : root.path("questions")) {
+                Category category = Category.valueOf(entry.path("category").asText());
+                int difficulty = entry.path("difficulty").asInt();
+                JsonNode translations = entry.path("translations");
+
+                for (Language language : Language.values()) {
+                    JsonNode translation = translations.path(language.name());
+                    if (translation.isMissingNode() || translation.isNull()) {
+                        continue;
+                    }
+
+                    List<String> options = new ArrayList<>();
+                    JsonNode optionNodes = translation.path("options");
+                    for (int i = 0; i < optionNodes.size(); i++) {
+                        options.add(optionNodes.get(i).asText());
+                    }
+
+                    int correctIndex = translation.path("correctIndex").asInt();
+                    if (correctIndex < 0 || correctIndex >= options.size()) {
+                        throw new IllegalStateException("Invalid correctIndex for question: "
+                                + translation.path("text").asText());
+                    }
+
+                    Question question = new Question();
+                    question.setText(translation.path("text").asText());
+                    question.setHint(translation.hasNonNull("hint")
+                            ? translation.get("hint").asText()
+                            : null);
+                    question.setExplanation(translation.hasNonNull("explanation")
+                            ? translation.get("explanation").asText()
+                            : null);
+                    question.setCategory(category);
+                    question.setDifficulty(difficulty);
+                    question.setLanguage(language);
+                    question.setOptions(options);
+                    question.setCorrectAnswer(options.get(correctIndex));
+                    questions.add(question);
+                }
+            }
+            return questions;
+        } catch (Exception ex) {
+            throw new IllegalStateException("Could not load question-bank-expansion.json", ex);
         }
     }
 

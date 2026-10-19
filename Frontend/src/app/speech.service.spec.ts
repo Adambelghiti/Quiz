@@ -117,6 +117,26 @@ describe('SpeechService', () => {
     expect(synth.spoken[0].text).toContain('75 points');
   });
 
+  it('reads the explanation after the answer feedback', () => {
+    const synth = new FakeSynthesis();
+    const service = serviceWith(synth);
+
+    service.readFeedback(
+      {
+        correct: false,
+        correctAnswer: 'Paris',
+        scoreDelta: 0,
+        explanation: 'Paris is the capital and largest city of France.',
+      },
+      'EN'
+    );
+
+    expect(synth.spoken[0].text).toContain('Paris is the capital');
+    expect(synth.spoken[0].text.indexOf('Not quite')).toBeLessThan(
+      synth.spoken[0].text.indexOf('Paris is the capital')
+    );
+  });
+
   it('stops any speech when asked', () => {
     const synth = new FakeSynthesis();
     const service = serviceWith(synth);

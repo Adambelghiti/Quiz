@@ -1,7 +1,16 @@
 {
   "description": "Phase 4 question-bank expansion: 40 new questions across four categories, each with EN/FR/AR translations. Upserted additively by (text, language); existing rows are never modified or deleted.",
-  "categories": ["MOROCCAN_HISTORY", "MOROCCAN_CULTURE", "ARABIC_CULTURE", "ISLAMIC_CULTURE"],
-  "languages": ["EN", "FR", "AR"],
+  "categories": [
+    "MOROCCAN_HISTORY",
+    "MOROCCAN_CULTURE",
+    "ARABIC_CULTURE",
+    "ISLAMIC_CULTURE"
+  ],
+  "languages": [
+    "EN",
+    "FR",
+    "AR"
+  ],
   "questions": [
     {
       "category": "MOROCCAN_HISTORY",
@@ -10,20 +19,38 @@
         "EN": {
           "text": "Which Berber dynasty founded the city of Marrakech in 1070?",
           "hint": "They made it the capital of their empire.",
-          "options": ["Almoravids", "Almohads", "Saadians", "Alaouites"],
-          "correctIndex": 0
+          "options": [
+            "Almoravids",
+            "Almohads",
+            "Saadians",
+            "Alaouites"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Almoravids founded Marrakech in 1070 and made it the capital of their empire."
         },
         "FR": {
           "text": "Quelle dynastie berbère a fondé la ville de Marrakech en 1070 ?",
           "hint": "Elle en a fait la capitale de son empire.",
-          "options": ["Almoravides", "Almohades", "Saadiens", "Alaouites"],
-          "correctIndex": 0
+          "options": [
+            "Almoravides",
+            "Almohades",
+            "Saadiens",
+            "Alaouites"
+          ],
+          "correctIndex": 0,
+          "explanation": "Les Almoravides ont fondé Marrakech en 1070 et en ont fait la capitale de leur empire."
         },
         "AR": {
           "text": "أي دولة أمازيغية أسست مدينة مراكش عام 1070؟",
           "hint": "اتخذتها عاصمةً لدولتها.",
-          "options": ["المرابطون", "الموحدون", "السعديون", "العلويون"],
-          "correctIndex": 0
+          "options": [
+            "المرابطون",
+            "الموحدون",
+            "السعديون",
+            "العلويون"
+          ],
+          "correctIndex": 0,
+          "explanation": "أسس المرابطون مدينة مراكش عام 1070 واتخذوها عاصمة لدولتهم."
         }
       }
     },
@@ -34,20 +61,38 @@
         "EN": {
           "text": "In which year did the Treaty of Fes establish the French protectorate over Morocco?",
           "hint": "It was signed a few years before the First World War.",
-          "options": ["1904", "1912", "1919", "1930"],
-          "correctIndex": 1
+          "options": [
+            "1904",
+            "1912",
+            "1919",
+            "1930"
+          ],
+          "correctIndex": 1,
+          "explanation": "The Treaty of Fes was signed in 1912 and established the French protectorate over Morocco."
         },
         "FR": {
           "text": "En quelle année le traité de Fès a-t-il établi le protectorat français sur le Maroc ?",
           "hint": "Il a été signé quelques années avant la Première Guerre mondiale.",
-          "options": ["1904", "1912", "1919", "1930"],
-          "correctIndex": 1
+          "options": [
+            "1904",
+            "1912",
+            "1919",
+            "1930"
+          ],
+          "correctIndex": 1,
+          "explanation": "Le traité de Fès, signé en 1912, a instauré le protectorat français sur le Maroc."
         },
         "AR": {
           "text": "في أي عام أرسى معاهدة فاس الحماية الفرنسية على المغرب؟",
           "hint": "وُقّعت قبل سنوات قليلة من الحرب العالمية الأولى.",
-          "options": ["1904", "1912", "1919", "1930"],
-          "correctIndex": 1
+          "options": [
+            "1904",
+            "1912",
+            "1919",
+            "1930"
+          ],
+          "correctIndex": 1,
+          "explanation": "وُقّعت معاهدة فاس عام 1912 وأرسّت الحماية الفرنسية على المغرب."
         }
       }
     },
@@ -58,20 +103,38 @@
         "EN": {
           "text": "In which year did Sultan Mohammed V return to Morocco from exile?",
           "hint": "It was one year before independence.",
-          "options": ["1953", "1955", "1956", "1961"],
-          "correctIndex": 1
+          "options": [
+            "1953",
+            "1955",
+            "1956",
+            "1961"
+          ],
+          "correctIndex": 1,
+          "explanation": "Mohammed V returned from exile in 1955, one year before Morocco gained independence in 1956."
         },
         "FR": {
           "text": "En quelle année le sultan Mohammed V est-il revenu d'exil au Maroc ?",
           "hint": "Un an avant l'indépendance.",
-          "options": ["1953", "1955", "1956", "1961"],
-          "correctIndex": 1
+          "options": [
+            "1953",
+            "1955",
+            "1956",
+            "1961"
+          ],
+          "correctIndex": 1,
+          "explanation": "Mohammed V est revenu d’exil en 1955, un an avant l’indépendance du Maroc en 1956."
         },
         "AR": {
           "text": "في أي عام عاد السلطان محمد الخامس إلى المغرب من المنفى؟",
           "hint": "كان ذلك قبل الاستقلال بعام واحد.",
-          "options": ["1953", "1955", "1956", "1961"],
-          "correctIndex": 1
+          "options": [
+            "1953",
+            "1955",
+            "1956",
+            "1961"
+          ],
+          "correctIndex": 1,
+          "explanation": "عاد محمد الخامس من المنفى عام 1955، أي قبل استقلال المغرب عام 1956 بعام واحد."
         }
       }
     },
@@ -82,20 +145,38 @@
         "EN": {
           "text": "Which 1578 battle, also called the Battle of the Three Kings, ended in a Portuguese defeat?",
           "hint": "It was fought near Ksar el-Kebir.",
-          "options": ["Battle of Badr", "Battle of the Three Kings", "Battle of Isly", "Battle of Anfa"],
-          "correctIndex": 1
+          "options": [
+            "Battle of Badr",
+            "Battle of the Three Kings",
+            "Battle of Isly",
+            "Battle of Anfa"
+          ],
+          "correctIndex": 1,
+          "explanation": "The Battle of the Three Kings was fought at Ksar el-Kebir in 1578 and ended in a Portuguese defeat."
         },
         "FR": {
           "text": "Quelle bataille de 1578, aussi appelée bataille des Trois Rois, s'est soldée par une défaite portugaise ?",
           "hint": "Elle s'est déroulée près de Ksar el-Kébir.",
-          "options": ["Bataille de Badr", "Bataille des Trois Rois", "Bataille d'Isly", "Bataille d'Anfa"],
-          "correctIndex": 1
+          "options": [
+            "Bataille de Badr",
+            "Bataille des Trois Rois",
+            "Bataille d'Isly",
+            "Bataille d'Anfa"
+          ],
+          "correctIndex": 1,
+          "explanation": "La bataille des Trois Rois eut lieu à Ksar el-Kébir en 1578 et se solda par une défaite portugaise."
         },
         "AR": {
           "text": "أي معركة عام 1578، وتُسمى أيضاً معركة الملوك الثلاثة، انتهت بهزيمة البرتغال؟",
           "hint": "جرت قرب القصر الكبير.",
-          "options": ["معركة بدر", "معركة الملوك الثلاثة", "معركة إيسلي", "معركة أنفا"],
-          "correctIndex": 1
+          "options": [
+            "معركة بدر",
+            "معركة الملوك الثلاثة",
+            "معركة إيسلي",
+            "معركة أنفا"
+          ],
+          "correctIndex": 1,
+          "explanation": "وقعت معركة الملوك الثلاثة في القصر الكبير عام 1578 وانتهت بهزيمة البرتغال."
         }
       }
     },
@@ -106,20 +187,38 @@
         "EN": {
           "text": "Who was the founder of the Almohad dynasty?",
           "hint": "He proclaimed himself caliph in 1147.",
-          "options": ["Ibn Tumart", "Abd al-Mu'min", "Yusuf ibn Tashfin", "Idris I"],
-          "correctIndex": 1
+          "options": [
+            "Ibn Tumart",
+            "Abd al-Mu'min",
+            "Yusuf ibn Tashfin",
+            "Idris I"
+          ],
+          "correctIndex": 1,
+          "explanation": "Abd al-Mu’min founded the Almohad dynasty and proclaimed himself caliph in 1147."
         },
         "FR": {
           "text": "Qui était le fondateur de la dynastie almohade ?",
           "hint": "Il s'est proclamé calife en 1147.",
-          "options": ["Ibn Toumart", "Abd al-Mu'min", "Youssef ibn Tachfine", "Idriss Ier"],
-          "correctIndex": 1
+          "options": [
+            "Ibn Toumart",
+            "Abd al-Mu'min",
+            "Youssef ibn Tachfine",
+            "Idriss Ier"
+          ],
+          "correctIndex": 1,
+          "explanation": "Abd al-Mu’min a fondé la dynastie almohade et s’est proclamé calife en 1147."
         },
         "AR": {
           "text": "من هو مؤسس دولة الموحدين؟",
           "hint": "أعلن نفسه خليفة عام 1147.",
-          "options": ["ابن تومرت", "عبد المؤمن", "يوسف بن تاشفين", "إدريس الأول"],
-          "correctIndex": 1
+          "options": [
+            "ابن تومرت",
+            "عبد المؤمن",
+            "يوسف بن تاشفين",
+            "إدريس الأول"
+          ],
+          "correctIndex": 1,
+          "explanation": "أسس عبد المؤمن الدولة الموحدية وأعلن نفسه خليفة عام 1147."
         }
       }
     },
@@ -130,20 +229,38 @@
         "EN": {
           "text": "Which city was the first capital of Morocco under the Idrisid dynasty?",
           "hint": "It is home to the Qarawiyyin mosque.",
-          "options": ["Fez", "Marrakech", "Rabat", "Meknes"],
-          "correctIndex": 0
+          "options": [
+            "Fez",
+            "Marrakech",
+            "Rabat",
+            "Meknes"
+          ],
+          "correctIndex": 0,
+          "explanation": "Fez was the first capital of the Idrisid dynasty and is home to the Qarawiyyin mosque."
         },
         "FR": {
           "text": "Quelle ville fut la première capitale du Maroc sous la dynastie idrisside ?",
           "hint": "Elle abrite la mosquée al-Quaraouiyine.",
-          "options": ["Fès", "Marrakech", "Rabat", "Meknès"],
-          "correctIndex": 0
+          "options": [
+            "Fès",
+            "Marrakech",
+            "Rabat",
+            "Meknès"
+          ],
+          "correctIndex": 0,
+          "explanation": "Fès fut la première capitale de la dynastie idrisside et abrite la mosquée Qarawiyyin."
         },
         "AR": {
           "text": "أي مدينة كانت أول عاصمة للمغرب في عهد الدولة الإدريسية؟",
           "hint": "توجد بها جامع القرويين.",
-          "options": ["فاس", "مراكش", "الرباط", "مكناس"],
-          "correctIndex": 0
+          "options": [
+            "فاس",
+            "مراكش",
+            "الرباط",
+            "مكناس"
+          ],
+          "correctIndex": 0,
+          "explanation": "كانت فاس أول عاصمة للدولة الإدريسية وفيها جامع القرويين."
         }
       }
     },
@@ -154,20 +271,38 @@
         "EN": {
           "text": "Which Moroccan city was an international zone from 1923 until 1956?",
           "hint": "It faces Spain across the Strait of Gibraltar.",
-          "options": ["Tangier", "Ceuta", "Agadir", "Essaouira"],
-          "correctIndex": 0
+          "options": [
+            "Tangier",
+            "Ceuta",
+            "Agadir",
+            "Essaouira"
+          ],
+          "correctIndex": 0,
+          "explanation": "Tangier was an international zone from 1923 until Morocco’s independence in 1956."
         },
         "FR": {
           "text": "Quelle ville marocaine fut une zone internationale de 1923 à 1956 ?",
           "hint": "Elle fait face à l'Espagne, de l'autre côté du détroit de Gibraltar.",
-          "options": ["Tanger", "Ceuta", "Agadir", "Essaouira"],
-          "correctIndex": 0
+          "options": [
+            "Tanger",
+            "Ceuta",
+            "Agadir",
+            "Essaouira"
+          ],
+          "correctIndex": 0,
+          "explanation": "Tanger fut une zone internationale de 1923 jusqu’à l’indépendance du Maroc en 1956."
         },
         "AR": {
           "text": "أي مدينة مغربية كانت منطقة دولية من 1923 إلى 1956؟",
           "hint": "تقع مقابل إسبانيا عبر مضيق جبل طارق.",
-          "options": ["طنجة", "سبتة", "أكادير", "الصويرة"],
-          "correctIndex": 0
+          "options": [
+            "طنجة",
+            "سبتة",
+            "أكادير",
+            "الصويرة"
+          ],
+          "correctIndex": 0,
+          "explanation": "كانت طنجة منطقة دولية من عام 1923 حتى استقلال المغرب عام 1956."
         }
       }
     },
@@ -178,20 +313,38 @@
         "EN": {
           "text": "Who led the Rif War against Spanish and French forces in the 1920s?",
           "hint": "He is also known as Abd el-Krim.",
-          "options": ["Muhammad ibn Abd al-Karim al-Khattabi", "Moulay Ismail", "Ahmad al-Mansur", "Moulay Ali Cherif"],
-          "correctIndex": 0
+          "options": [
+            "Muhammad ibn Abd al-Karim al-Khattabi",
+            "Moulay Ismail",
+            "Ahmad al-Mansur",
+            "Moulay Ali Cherif"
+          ],
+          "correctIndex": 0,
+          "explanation": "Muhammad ibn Abd al-Karim al-Khattabi, known as Abd el-Krim, led the Rif War in the 1920s."
         },
         "FR": {
           "text": "Qui a dirigé la guerre du Rif contre les forces espagnoles et françaises dans les années 1920 ?",
           "hint": "Il est aussi connu sous le nom d'Abd el-Krim.",
-          "options": ["Mohammed ben Abdelkrim el-Khattabi", "Moulay Ismail", "Ahmed al-Mansour", "Moulay Ali Cherif"],
-          "correctIndex": 0
+          "options": [
+            "Mohammed ben Abdelkrim el-Khattabi",
+            "Moulay Ismail",
+            "Ahmed al-Mansour",
+            "Moulay Ali Cherif"
+          ],
+          "correctIndex": 0,
+          "explanation": "Muhammad ibn Abd al-Karim al-Khattabi, dit Abd el-Krim, a dirigé la guerre du Rif dans les années 1920."
         },
         "AR": {
           "text": "من قاد حرب الريف ضد القوات الإسبانية والفرنسية في عشرينيات القرن الماضي؟",
           "hint": "يُعرف أيضاً بعبد الكريم الخطابي.",
-          "options": ["محمد بن عبد الكريم الخطابي", "مولاي إسماعيل", "أحمد المنصور", "مولاي علي الشريف"],
-          "correctIndex": 0
+          "options": [
+            "محمد بن عبد الكريم الخطابي",
+            "مولاي إسماعيل",
+            "أحمد المنصور",
+            "مولاي علي الشريف"
+          ],
+          "correctIndex": 0,
+          "explanation": "قاد محمد بن عبد الكريم الخطابي، المعروف بعبد الكريم، حرب الريف في عشرينيات القرن العشرين."
         }
       }
     },
@@ -202,20 +355,38 @@
         "EN": {
           "text": "Which sultan made Meknes his imperial capital?",
           "hint": "He built the huge Heri es-Swani granary.",
-          "options": ["Moulay Ismail", "Mohammed III", "Hassan I", "Moulay al-Rashid"],
-          "correctIndex": 0
+          "options": [
+            "Moulay Ismail",
+            "Mohammed III",
+            "Hassan I",
+            "Moulay al-Rashid"
+          ],
+          "correctIndex": 0,
+          "explanation": "Moulay Ismail made Meknes his imperial capital and built the Heri es-Swani granary there."
         },
         "FR": {
           "text": "Quel sultan a fait de Meknès sa capitale impériale ?",
           "hint": "Il a fait construire l'immense grenier Heri es-Souani.",
-          "options": ["Moulay Ismail", "Mohammed III", "Hassan Ier", "Moulay Rachid"],
-          "correctIndex": 0
+          "options": [
+            "Moulay Ismail",
+            "Mohammed III",
+            "Hassan Ier",
+            "Moulay Rachid"
+          ],
+          "correctIndex": 0,
+          "explanation": "Moulay Ismaïl fit de Meknès sa capitale impériale et y fit construire le grenier Heri es-Swani."
         },
         "AR": {
           "text": "أي سلطان اتخذ من مكناس عاصمةً إمبراطورية؟",
           "hint": "بنى هري السواني الضخم.",
-          "options": ["مولاي إسماعيل", "محمد الثالث", "الحسن الأول", "مولاي الرشيد"],
-          "correctIndex": 0
+          "options": [
+            "مولاي إسماعيل",
+            "محمد الثالث",
+            "الحسن الأول",
+            "مولاي الرشيد"
+          ],
+          "correctIndex": 0,
+          "explanation": "اتخذ مولاي إسماعيل مكناس عاصمة إمبراطورية وبنى فيها هري السواني."
         }
       }
     },
@@ -226,20 +397,38 @@
         "EN": {
           "text": "In which year did Morocco become a member of the United Nations?",
           "hint": "The same year it gained independence.",
-          "options": ["1955", "1956", "1957", "1961"],
-          "correctIndex": 1
+          "options": [
+            "1955",
+            "1956",
+            "1957",
+            "1961"
+          ],
+          "correctIndex": 1,
+          "explanation": "Morocco joined the United Nations in 1956, the same year it gained independence."
         },
         "FR": {
           "text": "En quelle année le Maroc est-il devenu membre des Nations unies ?",
           "hint": "La même année que l'indépendance.",
-          "options": ["1955", "1956", "1957", "1961"],
-          "correctIndex": 1
+          "options": [
+            "1955",
+            "1956",
+            "1957",
+            "1961"
+          ],
+          "correctIndex": 1,
+          "explanation": "Le Maroc est devenu membre des Nations unies en 1956, l’année de son indépendance."
         },
         "AR": {
           "text": "في أي عام أصبح المغرب عضواً في الأمم المتحدة؟",
           "hint": "في نفس عام الاستقلال.",
-          "options": ["1955", "1956", "1957", "1961"],
-          "correctIndex": 1
+          "options": [
+            "1955",
+            "1956",
+            "1957",
+            "1961"
+          ],
+          "correctIndex": 1,
+          "explanation": "انضم المغرب إلى الأمم المتحدة عام 1956، وهو عام استقلاله."
         }
       }
     },
@@ -250,20 +439,38 @@
         "EN": {
           "text": "Which traditional Moroccan soup is eaten to break the fast during Ramadan?",
           "hint": "It is tomato-based and contains lentils and chickpeas.",
-          "options": ["Harira", "Tajine", "Couscous", "Bissara"],
-          "correctIndex": 0
+          "options": [
+            "Harira",
+            "Tajine",
+            "Couscous",
+            "Bissara"
+          ],
+          "correctIndex": 0,
+          "explanation": "Harira is a tomato-based soup with lentils and chickpeas, traditionally eaten to break the Ramadan fast."
         },
         "FR": {
           "text": "Quelle soupe marocaine traditionnelle est consommée pour rompre le jeûne du Ramadan ?",
           "hint": "À base de tomate, de lentilles et de pois chiches.",
-          "options": ["Harira", "Tajine", "Couscous", "Bissara"],
-          "correctIndex": 0
+          "options": [
+            "Harira",
+            "Tajine",
+            "Couscous",
+            "Bissara"
+          ],
+          "correctIndex": 0,
+          "explanation": "La harira est une soupe à la tomate, aux lentilles et aux pois chiches, traditionnellement servie à la rupture du jeûne."
         },
         "AR": {
           "text": "أي حساء مغربي تقليدي يُتناول للإفطار في رمضان؟",
           "hint": "يُحضّر بالطماطم والعدس والحمص.",
-          "options": ["الحريرة", "الطاجين", "الكسكس", "البصارة"],
-          "correctIndex": 0
+          "options": [
+            "الحريرة",
+            "الطاجين",
+            "الكسكس",
+            "البصارة"
+          ],
+          "correctIndex": 0,
+          "explanation": "الحريرة حساء بالطماطم والعدس والحمص، يُتناول تقليدياً عند الإفطار في رمضان."
         }
       }
     },
@@ -274,20 +481,38 @@
         "EN": {
           "text": "Which Moroccan city is famous for its blue-painted streets?",
           "hint": "It lies in the Rif mountains.",
-          "options": ["Chefchaouen", "Asilah", "Tetouan", "Essaouira"],
-          "correctIndex": 0
+          "options": [
+            "Chefchaouen",
+            "Asilah",
+            "Tetouan",
+            "Essaouira"
+          ],
+          "correctIndex": 0,
+          "explanation": "Chefchaouen, in the Rif mountains, is famous for its blue-painted streets."
         },
         "FR": {
           "text": "Quelle ville marocaine est célèbre pour ses ruelles peintes en bleu ?",
           "hint": "Elle se trouve dans les montagnes du Rif.",
-          "options": ["Chefchaouen", "Asilah", "Tétouan", "Essaouira"],
-          "correctIndex": 0
+          "options": [
+            "Chefchaouen",
+            "Asilah",
+            "Tétouan",
+            "Essaouira"
+          ],
+          "correctIndex": 0,
+          "explanation": "Chefchaouen, dans les montagnes du Rif, est célèbre pour ses ruelles peintes en bleu."
         },
         "AR": {
           "text": "أي مدينة مغربية تشتهر بأزقتها المطلية بالأزرق؟",
           "hint": "تقع في جبال الريف.",
-          "options": ["شفشاون", "أصيلة", "تطوان", "الصويرة"],
-          "correctIndex": 0
+          "options": [
+            "شفشاون",
+            "أصيلة",
+            "تطوان",
+            "الصويرة"
+          ],
+          "correctIndex": 0,
+          "explanation": "تشتهر شفشاون في جبال الريف بأزقتها المطلية بالأزرق."
         }
       }
     },
@@ -298,20 +523,38 @@
         "EN": {
           "text": "What is the traditional Moroccan savoury-sweet pie, often made with pigeon, called?",
           "hint": "It is wrapped in very thin warqa pastry.",
-          "options": ["Pastilla", "Briouat", "Msemen", "Baghrir"],
-          "correctIndex": 0
+          "options": [
+            "Pastilla",
+            "Briouat",
+            "Msemen",
+            "Baghrir"
+          ],
+          "correctIndex": 0,
+          "explanation": "Pastilla is a savoury-sweet pie wrapped in warqa pastry, often filled with pigeon."
         },
         "FR": {
           "text": "Comment appelle-t-on la tourte marocaine salée-sucrée, souvent au pigeon ?",
           "hint": "Elle est enveloppée d'une fine pâte warqa.",
-          "options": ["Pastilla", "Briouat", "Msemen", "Baghrir"],
-          "correctIndex": 0
+          "options": [
+            "Pastilla",
+            "Briouat",
+            "Msemen",
+            "Baghrir"
+          ],
+          "correctIndex": 0,
+          "explanation": "La pastilla est une tourte sucrée-salée en pâte warqa, souvent garnie de pigeon."
         },
         "AR": {
           "text": "ما اسم الفطيرة المغربية المالحة الحلوة التي تُحضّر غالباً بالحمام؟",
           "hint": "تُغلّف بورقة البسطيلة الرقيقة.",
-          "options": ["البسطيلة", "البريوات", "المسمن", "البغرير"],
-          "correctIndex": 0
+          "options": [
+            "البسطيلة",
+            "البريوات",
+            "المسمن",
+            "البغرير"
+          ],
+          "correctIndex": 0,
+          "explanation": "البسطيلة فطيرة حلوة ومالحة بعجين الورقة، وغالباً تُحشى بالحمام."
         }
       }
     },
@@ -322,20 +565,38 @@
         "EN": {
           "text": "What is the Amazigh (Berber) New Year celebration called?",
           "hint": "It falls in mid-January.",
-          "options": ["Yennayer", "Mawlid", "Achoura", "Eid al-Adha"],
-          "correctIndex": 0
+          "options": [
+            "Yennayer",
+            "Mawlid",
+            "Achoura",
+            "Eid al-Adha"
+          ],
+          "correctIndex": 0,
+          "explanation": "Yennayer is the Amazigh New Year, celebrated in mid-January."
         },
         "FR": {
           "text": "Comment s'appelle le Nouvel An amazigh (berbère) ?",
           "hint": "Il tombe à la mi-janvier.",
-          "options": ["Yennayer", "Mawlid", "Achoura", "Aïd al-Adha"],
-          "correctIndex": 0
+          "options": [
+            "Yennayer",
+            "Mawlid",
+            "Achoura",
+            "Aïd al-Adha"
+          ],
+          "correctIndex": 0,
+          "explanation": "Yennayer est le Nouvel An amazigh, célébré à la mi-janvier."
         },
         "AR": {
           "text": "ما اسم رأس السنة الأمازيغية؟",
           "hint": "يوافق منتصف شهر يناير.",
-          "options": ["يَنّاير", "المولد", "عاشوراء", "عيد الأضحى"],
-          "correctIndex": 0
+          "options": [
+            "يَنّاير",
+            "المولد",
+            "عاشوراء",
+            "عيد الأضحى"
+          ],
+          "correctIndex": 0,
+          "explanation": "ينّاير هو رأس السنة الأمازيغية ويُحتفل به في منتصف يناير."
         }
       }
     },
@@ -346,20 +607,38 @@
         "EN": {
           "text": "Which Moroccan city hosts a well-known international film festival every year?",
           "hint": "Its main square is Jemaa el-Fnaa.",
-          "options": ["Marrakech", "Casablanca", "Rabat", "Tangier"],
-          "correctIndex": 0
+          "options": [
+            "Marrakech",
+            "Casablanca",
+            "Rabat",
+            "Tangier"
+          ],
+          "correctIndex": 0,
+          "explanation": "Marrakech hosts a well-known international film festival and is centred on Jemaa el-Fnaa square."
         },
         "FR": {
           "text": "Quelle ville marocaine accueille chaque année un célèbre festival international du film ?",
           "hint": "Sa grande place est Jemaa el-Fna.",
-          "options": ["Marrakech", "Casablanca", "Rabat", "Tanger"],
-          "correctIndex": 0
+          "options": [
+            "Marrakech",
+            "Casablanca",
+            "Rabat",
+            "Tanger"
+          ],
+          "correctIndex": 0,
+          "explanation": "Marrakech accueille un festival international du film réputé et s’organise autour de la place Jemaa el-Fna."
         },
         "AR": {
           "text": "أي مدينة مغربية تستضيف سنوياً مهرجاناً دولياً شهيراً للفيلم؟",
           "hint": "ساحتها الكبرى هي جامع الفنا.",
-          "options": ["مراكش", "الدار البيضاء", "الرباط", "طنجة"],
-          "correctIndex": 0
+          "options": [
+            "مراكش",
+            "الدار البيضاء",
+            "الرباط",
+            "طنجة"
+          ],
+          "correctIndex": 0,
+          "explanation": "تستضيف مراكش مهرجاناً دولياً معروفاً للفيلم، ومركزها ساحة جامع الفنا."
         }
       }
     },
@@ -370,20 +649,38 @@
         "EN": {
           "text": "What is the long hooded robe traditionally worn by Moroccan men called?",
           "hint": "It is commonly worn with babouche slippers.",
-          "options": ["Djellaba", "Kaftan", "Burnous", "Sarouel"],
-          "correctIndex": 0
+          "options": [
+            "Djellaba",
+            "Kaftan",
+            "Burnous",
+            "Sarouel"
+          ],
+          "correctIndex": 0,
+          "explanation": "The djellaba is a long hooded robe traditionally worn by Moroccan men, usually with babouche slippers."
         },
         "FR": {
           "text": "Comment appelle-t-on la longue robe à capuche portée traditionnellement par les hommes marocains ?",
           "hint": "On la porte souvent avec des babouches.",
-          "options": ["Djellaba", "Caftan", "Burnous", "Sarouel"],
-          "correctIndex": 0
+          "options": [
+            "Djellaba",
+            "Caftan",
+            "Burnous",
+            "Sarouel"
+          ],
+          "correctIndex": 0,
+          "explanation": "La djellaba est une longue robe à capuche traditionnellement portée par les hommes marocains, souvent avec des babouches."
         },
         "AR": {
           "text": "ما اسم الجلباب الطويل ذي القلنسوة الذي يلبسه الرجال في المغرب تقليدياً؟",
           "hint": "يُلبس عادة مع البلغة.",
-          "options": ["الجلابة", "القفطان", "البرنس", "السروال"],
-          "correctIndex": 0
+          "options": [
+            "الجلابة",
+            "القفطان",
+            "البرنس",
+            "السروال"
+          ],
+          "correctIndex": 0,
+          "explanation": "الجلابة رداء طويل بقلنسوة يلبسه الرجال المغاربة تقليدياً، وغالباً مع البلغة."
         }
       }
     },
@@ -394,20 +691,38 @@
         "EN": {
           "text": "Which Moroccan city is especially known for its blue-and-white pottery?",
           "hint": "It is also famous for its tanneries.",
-          "options": ["Fez", "Agadir", "Oujda", "Safi"],
-          "correctIndex": 0
+          "options": [
+            "Fez",
+            "Agadir",
+            "Oujda",
+            "Safi"
+          ],
+          "correctIndex": 0,
+          "explanation": "Fez is especially known for its blue-and-white pottery, as well as its historic tanneries."
         },
         "FR": {
           "text": "Quelle ville marocaine est particulièrement connue pour sa poterie bleue et blanche ?",
           "hint": "Elle est aussi célèbre pour ses tanneries.",
-          "options": ["Fès", "Agadir", "Oujda", "Safi"],
-          "correctIndex": 0
+          "options": [
+            "Fès",
+            "Agadir",
+            "Oujda",
+            "Safi"
+          ],
+          "correctIndex": 0,
+          "explanation": "Fès est particulièrement réputée pour sa poterie bleue et blanche, ainsi que pour ses tanneries historiques."
         },
         "AR": {
           "text": "أي مدينة مغربية تشتهر بشكل خاص بالفخار الأزرق والأبيض؟",
           "hint": "تشتهر أيضاً بالدباغة.",
-          "options": ["فاس", "أكادير", "وجدة", "آسفي"],
-          "correctIndex": 0
+          "options": [
+            "فاس",
+            "أكادير",
+            "وجدة",
+            "آسفي"
+          ],
+          "correctIndex": 0,
+          "explanation": "تشتهر فاس بالفخار الأزرق والأبيض، فضلاً عن دباغتها التاريخية."
         }
       }
     },
@@ -418,20 +733,38 @@
         "EN": {
           "text": "Gnawa is a Moroccan tradition primarily expressed through which art?",
           "hint": "It uses the guembri and metal castanets.",
-          "options": ["Music", "Painting", "Weaving", "Cuisine"],
-          "correctIndex": 0
+          "options": [
+            "Music",
+            "Painting",
+            "Weaving",
+            "Cuisine"
+          ],
+          "correctIndex": 0,
+          "explanation": "Gnawa is a Moroccan spiritual and musical tradition, expressed through music, the guembri and qraqeb."
         },
         "FR": {
           "text": "La gnawa est une tradition marocaine qui s'exprime principalement par quel art ?",
           "hint": "Elle utilise le guembri et des crotales.",
-          "options": ["La musique", "La peinture", "Le tissage", "La cuisine"],
-          "correctIndex": 0
+          "options": [
+            "La musique",
+            "La peinture",
+            "Le tissage",
+            "La cuisine"
+          ],
+          "correctIndex": 0,
+          "explanation": "La tradition gnawa est une tradition spirituelle et musicale marocaine, exprimée par la musique, le guembri et les qraqeb."
         },
         "AR": {
           "text": "فن كناوة المغربي يُعبّر عنه أساساً بأي فن؟",
           "hint": "يستخدم الكمبري والقراقب.",
-          "options": ["الموسيقى", "الرسم", "النسيج", "الطبخ"],
-          "correctIndex": 0
+          "options": [
+            "الموسيقى",
+            "الرسم",
+            "النسيج",
+            "الطبخ"
+          ],
+          "correctIndex": 0,
+          "explanation": "الثقافة الغناوية تقليد روحاني وموسيقي مغربي، يُعبّر عنه بالموسيقى وآلة الكمبري والقراقب."
         }
       }
     },
@@ -442,20 +775,38 @@
         "EN": {
           "text": "The Almond Blossom Festival is held in which southern Moroccan town?",
           "hint": "It is in the Anti-Atlas mountains.",
-          "options": ["Tafraout", "Ifrane", "Ouarzazate", "Dakhla"],
-          "correctIndex": 0
+          "options": [
+            "Tafraout",
+            "Ifrane",
+            "Ouarzazate",
+            "Dakhla"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Almond Blossom Festival is held in Tafraout, in the Anti-Atlas mountains."
         },
         "FR": {
           "text": "Dans quelle ville du sud marocain se tient la Fête des amandiers ?",
           "hint": "Elle se trouve dans l'Anti-Atlas.",
-          "options": ["Tafraout", "Ifrane", "Ouarzazate", "Dakhla"],
-          "correctIndex": 0
+          "options": [
+            "Tafraout",
+            "Ifrane",
+            "Ouarzazate",
+            "Dakhla"
+          ],
+          "correctIndex": 0,
+          "explanation": "La fête des amandiers en fleurs se tient à Tafraout, dans l’Anti-Atlas."
         },
         "AR": {
           "text": "في أي مدينة في جنوب المغرب يُقام مهرجان اللوز؟",
           "hint": "تقع في جبال الأطلس الصغير.",
-          "options": ["تافراوت", "إفران", "ورزازات", "الداخلة"],
-          "correctIndex": 0
+          "options": [
+            "تافراوت",
+            "إفران",
+            "ورزازات",
+            "الداخلة"
+          ],
+          "correctIndex": 0,
+          "explanation": "يُقام مهرجان زهر اللوز في تافراوت بجبال الأطلس الصغير."
         }
       }
     },
@@ -466,20 +817,38 @@
         "EN": {
           "text": "In Morocco, what does the word 'medina' refer to?",
           "hint": "It is usually surrounded by old walls.",
-          "options": ["The old walled quarter of a city", "A desert camp", "A coastal fortress", "A train station"],
-          "correctIndex": 0
+          "options": [
+            "The old walled quarter of a city",
+            "A desert camp",
+            "A coastal fortress",
+            "A train station"
+          ],
+          "correctIndex": 0,
+          "explanation": "A medina is the old, usually walled, quarter of a North African city."
         },
         "FR": {
           "text": "Au Maroc, à quoi le mot « médina » fait-il référence ?",
           "hint": "Elle est souvent entourée de vieilles murailles.",
-          "options": ["La vieille ville fortifiée", "Un campement du désert", "Une forteresse côtière", "Une gare"],
-          "correctIndex": 0
+          "options": [
+            "La vieille ville fortifiée",
+            "Un campement du désert",
+            "Une forteresse côtière",
+            "Une gare"
+          ],
+          "correctIndex": 0,
+          "explanation": "La médina est le quartier ancien, généralement entouré de remparts, d’une ville d’Afrique du Nord."
         },
         "AR": {
           "text": "في المغرب، إلى ماذا تشير كلمة «المدينة العتيقة»؟",
           "hint": "غالباً ما تحيط بها أسوار قديمة.",
-          "options": ["الحي العتيق المسوَّر", "مخيم صحراوي", "حصن ساحلي", "محطة قطار"],
-          "correctIndex": 0
+          "options": [
+            "الحي العتيق المسوَّر",
+            "مخيم صحراوي",
+            "حصن ساحلي",
+            "محطة قطار"
+          ],
+          "correctIndex": 0,
+          "explanation": "المدينة العتيقة هي الحي القديم، المحاط عادة بالأسوار، في مدن شمال أفريقيا."
         }
       }
     },
@@ -490,20 +859,38 @@
         "EN": {
           "text": "Which Arab country has the largest population?",
           "hint": "Its capital is Cairo.",
-          "options": ["Egypt", "Algeria", "Saudi Arabia", "Iraq"],
-          "correctIndex": 0
+          "options": [
+            "Egypt",
+            "Algeria",
+            "Saudi Arabia",
+            "Iraq"
+          ],
+          "correctIndex": 0,
+          "explanation": "Egypt has the largest population of any Arab country."
         },
         "FR": {
           "text": "Quel pays arabe a la plus grande population ?",
           "hint": "Sa capitale est Le Caire.",
-          "options": ["L'Égypte", "L'Algérie", "L'Arabie saoudite", "L'Irak"],
-          "correctIndex": 0
+          "options": [
+            "L'Égypte",
+            "L'Algérie",
+            "L'Arabie saoudite",
+            "L'Irak"
+          ],
+          "correctIndex": 0,
+          "explanation": "L’Égypte est le pays arabe le plus peuplé."
         },
         "AR": {
           "text": "أي دولة عربية تضم أكبر عدد من السكان؟",
           "hint": "عاصمتها القاهرة.",
-          "options": ["مصر", "الجزائر", "السعودية", "العراق"],
-          "correctIndex": 0
+          "options": [
+            "مصر",
+            "الجزائر",
+            "السعودية",
+            "العراق"
+          ],
+          "correctIndex": 0,
+          "explanation": "مصر هي أكبر دولة عربية من حيث عدد السكان."
         }
       }
     },
@@ -514,20 +901,38 @@
         "EN": {
           "text": "What is the traditional Arabic coffee pot called?",
           "hint": "It has a long curved spout.",
-          "options": ["Dallah", "Finjan", "Mabkhara", "Shisha"],
-          "correctIndex": 0
+          "options": [
+            "Dallah",
+            "Finjan",
+            "Mabkhara",
+            "Shisha"
+          ],
+          "correctIndex": 0,
+          "explanation": "The dallah is the traditional Arabic coffee pot, recognisable by its long curved spout."
         },
         "FR": {
           "text": "Comment appelle-t-on la cafetière arabe traditionnelle ?",
           "hint": "Elle a un long bec recourbé.",
-          "options": ["Dallah", "Finjan", "Mabkhara", "Chicha"],
-          "correctIndex": 0
+          "options": [
+            "Dallah",
+            "Finjan",
+            "Mabkhara",
+            "Chicha"
+          ],
+          "correctIndex": 0,
+          "explanation": "La dallah est la cafetière arabe traditionnelle, reconnaissable à son long bec courbé."
         },
         "AR": {
           "text": "ما اسم إبريق القهوة العربي التقليدي؟",
           "hint": "له فوهة طويلة منحنية.",
-          "options": ["الدلة", "الفنجان", "المبخرة", "الشيشة"],
-          "correctIndex": 0
+          "options": [
+            "الدلة",
+            "الفنجان",
+            "المبخرة",
+            "الشيشة"
+          ],
+          "correctIndex": 0,
+          "explanation": "الدلة إبريق القهوة العربي التقليدي، ويتميز بصنبوره الطويل المنحني."
         }
       }
     },
@@ -538,20 +943,38 @@
         "EN": {
           "text": "The Rub' al Khali (Empty Quarter) lies mainly in which country?",
           "hint": "Its capital is Riyadh.",
-          "options": ["Saudi Arabia", "Oman", "United Arab Emirates", "Yemen"],
-          "correctIndex": 0
+          "options": [
+            "Saudi Arabia",
+            "Oman",
+            "United Arab Emirates",
+            "Yemen"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Rub’ al Khali, or Empty Quarter, lies mainly in Saudi Arabia."
         },
         "FR": {
           "text": "Le Rub al-Khali (Quart Vide) se trouve principalement dans quel pays ?",
           "hint": "Sa capitale est Riyad.",
-          "options": ["L'Arabie saoudite", "Oman", "Les Émirats arabes unis", "Le Yémen"],
-          "correctIndex": 0
+          "options": [
+            "L'Arabie saoudite",
+            "Oman",
+            "Les Émirats arabes unis",
+            "Le Yémen"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le Rub al-Khali, ou Quart Vide, se trouve principalement en Arabie saoudite."
         },
         "AR": {
           "text": "تقع صحراء الربع الخالي بشكل رئيسي في أي دولة؟",
           "hint": "عاصمتها الرياض.",
-          "options": ["السعودية", "عُمان", "الإمارات", "اليمن"],
-          "correctIndex": 0
+          "options": [
+            "السعودية",
+            "عُمان",
+            "الإمارات",
+            "اليمن"
+          ],
+          "correctIndex": 0,
+          "explanation": "يقع الربع الخالي بشكل أساسي في المملكة العربية السعودية."
         }
       }
     },
@@ -562,20 +985,38 @@
         "EN": {
           "text": "Which Arab city is nicknamed 'the City of a Thousand Minarets'?",
           "hint": "The river Nile runs through it.",
-          "options": ["Cairo", "Damascus", "Baghdad", "Amman"],
-          "correctIndex": 0
+          "options": [
+            "Cairo",
+            "Damascus",
+            "Baghdad",
+            "Amman"
+          ],
+          "correctIndex": 0,
+          "explanation": "Cairo is nicknamed the City of a Thousand Minarets."
         },
         "FR": {
           "text": "Quelle ville arabe est surnommée « la ville aux mille minarets » ?",
           "hint": "Le Nil la traverse.",
-          "options": ["Le Caire", "Damas", "Bagdad", "Amman"],
-          "correctIndex": 0
+          "options": [
+            "Le Caire",
+            "Damas",
+            "Bagdad",
+            "Amman"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le Caire est surnommée la ville aux mille minarets."
         },
         "AR": {
           "text": "أي مدينة عربية تُلقّب بـ«مدينة الألف مئذنة»؟",
           "hint": "يمر بها نهر النيل.",
-          "options": ["القاهرة", "دمشق", "بغداد", "عمّان"],
-          "correctIndex": 0
+          "options": [
+            "القاهرة",
+            "دمشق",
+            "بغداد",
+            "عمّان"
+          ],
+          "correctIndex": 0,
+          "explanation": "تُلقّب القاهرة بمدينة الألف مئذنة."
         }
       }
     },
@@ -586,20 +1027,38 @@
         "EN": {
           "text": "In which direction is the Arabic script written?",
           "hint": "It is the same direction as Hebrew.",
-          "options": ["Right to left", "Left to right", "Top to bottom", "Bottom to top"],
-          "correctIndex": 0
+          "options": [
+            "Right to left",
+            "Left to right",
+            "Top to bottom",
+            "Bottom to top"
+          ],
+          "correctIndex": 0,
+          "explanation": "Arabic script is written from right to left."
         },
         "FR": {
           "text": "Dans quel sens s'écrit l'alphabet arabe ?",
           "hint": "Comme l'alphabet hébreu.",
-          "options": ["De droite à gauche", "De gauche à droite", "De haut en bas", "De bas en haut"],
-          "correctIndex": 0
+          "options": [
+            "De droite à gauche",
+            "De gauche à droite",
+            "De haut en bas",
+            "De bas en haut"
+          ],
+          "correctIndex": 0,
+          "explanation": "L’écriture arabe s’écrit de droite à gauche."
         },
         "AR": {
           "text": "في أي اتجاه يُكتب الخط العربي؟",
           "hint": "مثل الخط العبري.",
-          "options": ["من اليمين إلى اليسار", "من اليسار إلى اليمين", "من الأعلى إلى الأسفل", "من الأسفل إلى الأعلى"],
-          "correctIndex": 0
+          "options": [
+            "من اليمين إلى اليسار",
+            "من اليسار إلى اليمين",
+            "من الأعلى إلى الأسفل",
+            "من الأسفل إلى الأعلى"
+          ],
+          "correctIndex": 0,
+          "explanation": "تُكتب الحروف العربية من اليمين إلى اليسار."
         }
       }
     },
@@ -610,20 +1069,38 @@
         "EN": {
           "text": "Which stringed instrument is central to Arabic classical music?",
           "hint": "It is the ancestor of the European lute.",
-          "options": ["Oud", "Sitar", "Banjo", "Harp"],
-          "correctIndex": 0
+          "options": [
+            "Oud",
+            "Sitar",
+            "Banjo",
+            "Harp"
+          ],
+          "correctIndex": 0,
+          "explanation": "The oud is central to Arabic classical music and is an ancestor of the European lute."
         },
         "FR": {
           "text": "Quel instrument à cordes est central dans la musique arabe classique ?",
           "hint": "C'est l'ancêtre du luth européen.",
-          "options": ["Le oud", "Le sitar", "Le banjo", "La harpe"],
-          "correctIndex": 0
+          "options": [
+            "Le oud",
+            "Le sitar",
+            "Le banjo",
+            "La harpe"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le oud est central dans la musique classique arabe et est l’ancêtre du luth européen."
         },
         "AR": {
           "text": "أي آلة وترية تُعد محور الموسيقى العربية الكلاسيكية؟",
           "hint": "هي أصل العود الأوروبي.",
-          "options": ["العود", "السيتار", "البانجو", "القيثارة"],
-          "correctIndex": 0
+          "options": [
+            "العود",
+            "السيتار",
+            "البانجو",
+            "القيثارة"
+          ],
+          "correctIndex": 0,
+          "explanation": "العود آلة محورية في الموسيقى العربية الكلاسيكية وسلف اللوت الأوروبي."
         }
       }
     },
@@ -634,20 +1111,38 @@
         "EN": {
           "text": "In which Spanish city is the Alhambra palace located?",
           "hint": "It sits beneath the Sierra Nevada.",
-          "options": ["Granada", "Seville", "Cordoba", "Madrid"],
-          "correctIndex": 0
+          "options": [
+            "Granada",
+            "Seville",
+            "Cordoba",
+            "Madrid"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Alhambra palace is located in Granada, in southern Spain."
         },
         "FR": {
           "text": "Dans quelle ville espagnole se trouve le palais de l'Alhambra ?",
           "hint": "Il se dresse au pied de la Sierra Nevada.",
-          "options": ["Grenade", "Séville", "Cordoue", "Madrid"],
-          "correctIndex": 0
+          "options": [
+            "Grenade",
+            "Séville",
+            "Cordoue",
+            "Madrid"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le palais de l’Alhambra se trouve à Grenade, dans le sud de l’Espagne."
         },
         "AR": {
           "text": "في أي مدينة إسبانية يقع قصر الحمراء؟",
           "hint": "يقع عند سفح جبال سييرا نيفادا.",
-          "options": ["غرناطة", "إشبيلية", "قرطبة", "مدريد"],
-          "correctIndex": 0
+          "options": [
+            "غرناطة",
+            "إشبيلية",
+            "قرطبة",
+            "مدريد"
+          ],
+          "correctIndex": 0,
+          "explanation": "يقع قصر الحمراء في غرناطة جنوب إسبانيا."
         }
       }
     },
@@ -658,20 +1153,38 @@
         "EN": {
           "text": "What does the Arabic word 'Maghreb' literally mean?",
           "hint": "It describes the region of the setting sun.",
-          "options": ["The place of sunset / the West", "The place of sunrise / the East", "The fertile land", "The two seas"],
-          "correctIndex": 0
+          "options": [
+            "The place of sunset / the West",
+            "The place of sunrise / the East",
+            "The fertile land",
+            "The two seas"
+          ],
+          "correctIndex": 0,
+          "explanation": "Maghreb literally means the place of sunset, or the West."
         },
         "FR": {
           "text": "Que signifie littéralement le mot arabe « Maghreb » ?",
           "hint": "Il désigne la région du soleil couchant.",
-          "options": ["Le lieu du coucher du soleil / l'Ouest", "Le lieu du lever du soleil / l'Est", "La terre fertile", "Les deux mers"],
-          "correctIndex": 0
+          "options": [
+            "Le lieu du coucher du soleil / l'Ouest",
+            "Le lieu du lever du soleil / l'Est",
+            "La terre fertile",
+            "Les deux mers"
+          ],
+          "correctIndex": 0,
+          "explanation": "Maghreb signifie littéralement le lieu du coucher du soleil, ou l’Occident."
         },
         "AR": {
           "text": "ماذا تعني كلمة «المغرب» حرفياً بالعربية؟",
           "hint": "تصف منطقة غروب الشمس.",
-          "options": ["مكان غروب الشمس / الغرب", "مكان شروق الشمس / الشرق", "الأرض الخصبة", "البحران"],
-          "correctIndex": 0
+          "options": [
+            "مكان غروب الشمس / الغرب",
+            "مكان شروق الشمس / الشرق",
+            "الأرض الخصبة",
+            "البحران"
+          ],
+          "correctIndex": 0,
+          "explanation": "كلمة المغرب تعني حرفياً مكان غروب الشمس أو الغرب."
         }
       }
     },
@@ -682,20 +1195,38 @@
         "EN": {
           "text": "Which Arab country is the largest in Africa by area?",
           "hint": "After South Sudan's independence it took the top spot.",
-          "options": ["Algeria", "Sudan", "Libya", "Egypt"],
-          "correctIndex": 0
+          "options": [
+            "Algeria",
+            "Sudan",
+            "Libya",
+            "Egypt"
+          ],
+          "correctIndex": 0,
+          "explanation": "Since South Sudan’s independence, Algeria has been the largest Arab country in Africa by area."
         },
         "FR": {
           "text": "Quel pays arabe est le plus vaste d'Afrique par sa superficie ?",
           "hint": "Depuis l'indépendance du Soudan du Sud, il occupe la première place.",
-          "options": ["L'Algérie", "Le Soudan", "La Libye", "L'Égypte"],
-          "correctIndex": 0
+          "options": [
+            "L'Algérie",
+            "Le Soudan",
+            "La Libye",
+            "L'Égypte"
+          ],
+          "correctIndex": 0,
+          "explanation": "Depuis l’indépendance du Soudan du Sud, l’Algérie est le plus grand pays arabe d’Afrique par sa superficie."
         },
         "AR": {
           "text": "أي دولة عربية هي الأكبر مساحةً في إفريقيا؟",
           "hint": "بعد انفصال جنوب السودان أصبحت الأولى.",
-          "options": ["الجزائر", "السودان", "ليبيا", "مصر"],
-          "correctIndex": 0
+          "options": [
+            "الجزائر",
+            "السودان",
+            "ليبيا",
+            "مصر"
+          ],
+          "correctIndex": 0,
+          "explanation": "منذ استقلال جنوب السودان، أصبحت الجزائر أكبر دولة عربية في أفريقيا مساحةً."
         }
       }
     },
@@ -706,20 +1237,38 @@
         "EN": {
           "text": "In the Arab world, what is a 'souk'?",
           "hint": "You can haggle for goods there.",
-          "options": ["A market", "A mosque", "A palace", "A school"],
-          "correctIndex": 0
+          "options": [
+            "A market",
+            "A mosque",
+            "A palace",
+            "A school"
+          ],
+          "correctIndex": 0,
+          "explanation": "A souk is a market, where goods are bought and sold and bargaining is common."
         },
         "FR": {
           "text": "Dans le monde arabe, qu'est-ce qu'un « souk » ?",
           "hint": "On y marchande des marchandises.",
-          "options": ["Un marché", "Une mosquée", "Un palais", "Une école"],
-          "correctIndex": 0
+          "options": [
+            "Un marché",
+            "Une mosquée",
+            "Un palais",
+            "Une école"
+          ],
+          "correctIndex": 0,
+          "explanation": "Un souk est un marché où l’on achète et vend des marchandises et où le marchandage est courant."
         },
         "AR": {
           "text": "ما هو «السوق» في العالم العربي؟",
           "hint": "يمكنك المساومة على البضائع فيه.",
-          "options": ["مكان للتجارة", "مسجد", "قصر", "مدرسة"],
-          "correctIndex": 0
+          "options": [
+            "مكان للتجارة",
+            "مسجد",
+            "قصر",
+            "مدرسة"
+          ],
+          "correctIndex": 0,
+          "explanation": "السوق مكان لبيع وشراء السلع، وفيه يُتوقع المساومة."
         }
       }
     },
@@ -730,20 +1279,38 @@
         "EN": {
           "text": "Which month is the Islamic month of fasting?",
           "hint": "It is the ninth month of the Islamic calendar.",
-          "options": ["Ramadan", "Shawwal", "Rajab", "Muharram"],
-          "correctIndex": 0
+          "options": [
+            "Ramadan",
+            "Shawwal",
+            "Rajab",
+            "Muharram"
+          ],
+          "correctIndex": 0,
+          "explanation": "Ramadan is the ninth month of the Islamic calendar and the month of fasting."
         },
         "FR": {
           "text": "Quel est le mois islamique du jeûne ?",
           "hint": "C'est le neuvième mois du calendrier hégirien.",
-          "options": ["Ramadan", "Chawwal", "Rajab", "Mouharram"],
-          "correctIndex": 0
+          "options": [
+            "Ramadan",
+            "Chawwal",
+            "Rajab",
+            "Mouharram"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le Ramadan est le neuvième mois du calendrier islamique et le mois du jeûne."
         },
         "AR": {
           "text": "ما هو شهر الصيام في الإسلام؟",
           "hint": "هو الشهر التاسع في التقويم الهجري.",
-          "options": ["رمضان", "شوال", "رجب", "محرّم"],
-          "correctIndex": 0
+          "options": [
+            "رمضان",
+            "شوال",
+            "رجب",
+            "محرّم"
+          ],
+          "correctIndex": 0,
+          "explanation": "رمضان هو الشهر التاسع في التقويم الإسلامي وشهر الصيام."
         }
       }
     },
@@ -754,20 +1321,38 @@
         "EN": {
           "text": "What is the Islamic pilgrimage to Mecca called?",
           "hint": "It is one of the five pillars.",
-          "options": ["Hajj", "Umrah", "Zakat", "Sawm"],
-          "correctIndex": 0
+          "options": [
+            "Hajj",
+            "Umrah",
+            "Zakat",
+            "Sawm"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Hajj is the pilgrimage to Mecca and one of the five pillars of Islam."
         },
         "FR": {
           "text": "Comment appelle-t-on le pèlerinage islamique à La Mecque ?",
           "hint": "C'est l'un des cinq piliers.",
-          "options": ["Le hajj", "La omra", "La zakât", "Le saoum"],
-          "correctIndex": 0
+          "options": [
+            "Le hajj",
+            "La omra",
+            "La zakât",
+            "Le saoum"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le hajj est le pèlerinage à La Mecque et l’un des cinq piliers de l’islam."
         },
         "AR": {
           "text": "ما اسم الحج إلى مكة في الإسلام؟",
           "hint": "هو أحد أركان الإسلام الخمسة.",
-          "options": ["الحج", "العمرة", "الزكاة", "الصوم"],
-          "correctIndex": 0
+          "options": [
+            "الحج",
+            "العمرة",
+            "الزكاة",
+            "الصوم"
+          ],
+          "correctIndex": 0,
+          "explanation": "الحج هو الرحلة إلى مكة، وهو أحد أركان الإسلام الخمسة."
         }
       }
     },
@@ -778,20 +1363,38 @@
         "EN": {
           "text": "What is the obligatory annual charity in Islam called?",
           "hint": "It is a fixed share of one's wealth.",
-          "options": ["Zakat", "Sadaqah", "Khums", "Jizya"],
-          "correctIndex": 0
+          "options": [
+            "Zakat",
+            "Sadaqah",
+            "Khums",
+            "Jizya"
+          ],
+          "correctIndex": 0,
+          "explanation": "Zakat is the obligatory annual charity, a fixed share of a Muslim’s wealth."
         },
         "FR": {
           "text": "Comment appelle-t-on l'aumône obligatoire annuelle en islam ?",
           "hint": "C'est une part fixe des biens.",
-          "options": ["La zakât", "La sadaqa", "Le khoums", "La jizya"],
-          "correctIndex": 0
+          "options": [
+            "La zakât",
+            "La sadaqa",
+            "Le khoums",
+            "La jizya"
+          ],
+          "correctIndex": 0,
+          "explanation": "La zakat est l’aumône annuelle obligatoire, une part fixe des biens d’un musulman."
         },
         "AR": {
           "text": "ما اسم الزكاة الواجبة سنوياً في الإسلام؟",
           "hint": "هي نصيب محدد من المال.",
-          "options": ["الزكاة", "الصدقة", "الخُمس", "الجزية"],
-          "correctIndex": 0
+          "options": [
+            "الزكاة",
+            "الصدقة",
+            "الخُمس",
+            "الجزية"
+          ],
+          "correctIndex": 0,
+          "explanation": "الزكاة صدقة سنوية واجبة، وهي نسبة محددة من مال المسلم."
         }
       }
     },
@@ -802,20 +1405,38 @@
         "EN": {
           "text": "Which battle in 624 CE was the first major victory for the Muslims?",
           "hint": "It took place near Medina.",
-          "options": ["Battle of Badr", "Battle of Uhud", "Battle of the Trench", "Battle of Yarmouk"],
-          "correctIndex": 0
+          "options": [
+            "Battle of Badr",
+            "Battle of Uhud",
+            "Battle of the Trench",
+            "Battle of Yarmouk"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Battle of Badr in 624 CE was the first major victory for the Muslims."
         },
         "FR": {
           "text": "Quelle bataille de 624 fut la première grande victoire des musulmans ?",
           "hint": "Elle eut lieu près de Médine.",
-          "options": ["La bataille de Badr", "La bataille de Uhud", "La bataille du Fossé", "La bataille du Yarmouk"],
-          "correctIndex": 0
+          "options": [
+            "La bataille de Badr",
+            "La bataille de Uhud",
+            "La bataille du Fossé",
+            "La bataille du Yarmouk"
+          ],
+          "correctIndex": 0,
+          "explanation": "La bataille de Badr, en 624, fut la première grande victoire des musulmans."
         },
         "AR": {
           "text": "أي معركة عام 624م كانت أول انتصار كبير للمسلمين؟",
           "hint": "وقعت قرب المدينة المنورة.",
-          "options": ["غزوة بدر", "غزوة أُحد", "غزوة الخندق", "معركة اليرموك"],
-          "correctIndex": 0
+          "options": [
+            "غزوة بدر",
+            "غزوة أُحد",
+            "غزوة الخندق",
+            "معركة اليرموك"
+          ],
+          "correctIndex": 0,
+          "explanation": "كانت غزوة بدر عام 624 أول انتصار كبير للمسلمين."
         }
       }
     },
@@ -826,20 +1447,38 @@
         "EN": {
           "text": "Who was the first caliph after the Prophet Muhammad?",
           "hint": "He was the father of the Prophet's wife Aisha.",
-          "options": ["Abu Bakr", "Umar ibn al-Khattab", "Uthman ibn Affan", "Ali ibn Abi Talib"],
-          "correctIndex": 0
+          "options": [
+            "Abu Bakr",
+            "Umar ibn al-Khattab",
+            "Uthman ibn Affan",
+            "Ali ibn Abi Talib"
+          ],
+          "correctIndex": 0,
+          "explanation": "Abu Bakr was the first caliph after the Prophet Muhammad."
         },
         "FR": {
           "text": "Qui fut le premier calife après le prophète Muhammad ?",
           "hint": "Il était le père d'Aïcha, épouse du Prophète.",
-          "options": ["Abou Bakr", "Omar ibn al-Khattab", "Othman ibn Affan", "Ali ibn Abi Talib"],
-          "correctIndex": 0
+          "options": [
+            "Abou Bakr",
+            "Omar ibn al-Khattab",
+            "Othman ibn Affan",
+            "Ali ibn Abi Talib"
+          ],
+          "correctIndex": 0,
+          "explanation": "Abou Bakr fut le premier calife après le prophète Mahomet."
         },
         "AR": {
           "text": "من كان أول خليفة بعد النبي محمد؟",
           "hint": "كان والد عائشة زوجة النبي.",
-          "options": ["أبو بكر", "عمر بن الخطاب", "عثمان بن عفان", "علي بن أبي طالب"],
-          "correctIndex": 0
+          "options": [
+            "أبو بكر",
+            "عمر بن الخطاب",
+            "عثمان بن عفان",
+            "علي بن أبي طالب"
+          ],
+          "correctIndex": 0,
+          "explanation": "أبو بكر هو أول خليفة بعد النبي محمد."
         }
       }
     },
@@ -850,20 +1489,38 @@
         "EN": {
           "text": "What is the Islamic declaration of faith called?",
           "hint": "It states that there is no god but God.",
-          "options": ["Shahada", "Salat", "Zakat", "Hajj"],
-          "correctIndex": 0
+          "options": [
+            "Shahada",
+            "Salat",
+            "Zakat",
+            "Hajj"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Shahada is the Islamic declaration of faith."
         },
         "FR": {
           "text": "Comment appelle-t-on la profession de foi islamique ?",
           "hint": "Elle affirme qu'il n'y a de dieu que Dieu.",
-          "options": ["La chahada", "La salat", "La zakât", "Le hajj"],
-          "correctIndex": 0
+          "options": [
+            "La chahada",
+            "La salat",
+            "La zakât",
+            "Le hajj"
+          ],
+          "correctIndex": 0,
+          "explanation": "La chahada est la profession de foi islamique."
         },
         "AR": {
           "text": "ما اسم شهادة التوحيد في الإسلام؟",
           "hint": "تنص على أنه لا إله إلا الله.",
-          "options": ["الشهادة", "الصلاة", "الزكاة", "الحج"],
-          "correctIndex": 0
+          "options": [
+            "الشهادة",
+            "الصلاة",
+            "الزكاة",
+            "الحج"
+          ],
+          "correctIndex": 0,
+          "explanation": "الشهادة هي إعلان الإيمان في الإسلام."
         }
       }
     },
@@ -874,20 +1531,38 @@
         "EN": {
           "text": "Which city was the capital of the Umayyad Caliphate?",
           "hint": "It is in present-day Syria.",
-          "options": ["Damascus", "Baghdad", "Cairo", "Kufa"],
-          "correctIndex": 0
+          "options": [
+            "Damascus",
+            "Baghdad",
+            "Cairo",
+            "Kufa"
+          ],
+          "correctIndex": 0,
+          "explanation": "Damascus was the capital of the Umayyad Caliphate."
         },
         "FR": {
           "text": "Quelle ville était la capitale du califat omeyyade ?",
           "hint": "Elle se trouve dans la Syrie actuelle.",
-          "options": ["Damas", "Bagdad", "Le Caire", "Koufa"],
-          "correctIndex": 0
+          "options": [
+            "Damas",
+            "Bagdad",
+            "Le Caire",
+            "Koufa"
+          ],
+          "correctIndex": 0,
+          "explanation": "Damas fut la capitale du califat omeyyade."
         },
         "AR": {
           "text": "أي مدينة كانت عاصمة الدولة الأموية؟",
           "hint": "تقع في سوريا الحالية.",
-          "options": ["دمشق", "بغداد", "القاهرة", "الكوفة"],
-          "correctIndex": 0
+          "options": [
+            "دمشق",
+            "بغداد",
+            "القاهرة",
+            "الكوفة"
+          ],
+          "correctIndex": 0,
+          "explanation": "كانت دمشق عاصمة الخلافة الأموية."
         }
       }
     },
@@ -898,20 +1573,38 @@
         "EN": {
           "text": "Which city was founded as the capital of the Abbasid Caliphate?",
           "hint": "It sits on the river Tigris.",
-          "options": ["Baghdad", "Damascus", "Cairo", "Cordoba"],
-          "correctIndex": 0
+          "options": [
+            "Baghdad",
+            "Damascus",
+            "Cairo",
+            "Cordoba"
+          ],
+          "correctIndex": 0,
+          "explanation": "Baghdad was founded as the capital of the Abbasid Caliphate."
         },
         "FR": {
           "text": "Quelle ville fut fondée comme capitale du califat abbasside ?",
           "hint": "Elle se trouve sur le Tigre.",
-          "options": ["Bagdad", "Damas", "Le Caire", "Cordoue"],
-          "correctIndex": 0
+          "options": [
+            "Bagdad",
+            "Damas",
+            "Le Caire",
+            "Cordoue"
+          ],
+          "correctIndex": 0,
+          "explanation": "Bagdad fut fondée comme capitale du califat abbasside."
         },
         "AR": {
           "text": "أي مدينة أُسست عاصمةً للدولة العباسية؟",
           "hint": "تقع على نهر دجلة.",
-          "options": ["بغداد", "دمشق", "القاهرة", "قرطبة"],
-          "correctIndex": 0
+          "options": [
+            "بغداد",
+            "دمشق",
+            "القاهرة",
+            "قرطبة"
+          ],
+          "correctIndex": 0,
+          "explanation": "أُسست بغداد عاصمةً للخلافة العباسية."
         }
       }
     },
@@ -922,20 +1615,38 @@
         "EN": {
           "text": "What is the direction that Muslims face during prayer called?",
           "hint": "It points towards the Kaaba.",
-          "options": ["Qibla", "Minbar", "Mihrab", "Minaret"],
-          "correctIndex": 0
+          "options": [
+            "Qibla",
+            "Minbar",
+            "Mihrab",
+            "Minaret"
+          ],
+          "correctIndex": 0,
+          "explanation": "The qibla is the direction of prayer, pointing towards the Kaaba in Mecca."
         },
         "FR": {
           "text": "Comment appelle-t-on la direction vers laquelle les musulmans prient ?",
           "hint": "Elle indique la Kaaba.",
-          "options": ["La qibla", "Le minbar", "Le mihrab", "Le minaret"],
-          "correctIndex": 0
+          "options": [
+            "La qibla",
+            "Le minbar",
+            "Le mihrab",
+            "Le minaret"
+          ],
+          "correctIndex": 0,
+          "explanation": "La qibla est la direction de la prière, tournée vers la Kaaba à La Mecque."
         },
         "AR": {
           "text": "ما اسم الاتجاه الذي يستقبله المسلمون في الصلاة؟",
           "hint": "يشير نحو الكعبة.",
-          "options": ["القبلة", "المنبر", "المحراب", "المئذنة"],
-          "correctIndex": 0
+          "options": [
+            "القبلة",
+            "المنبر",
+            "المحراب",
+            "المئذنة"
+          ],
+          "correctIndex": 0,
+          "explanation": "القبلة هي اتجاه الصلاة نحو الكعبة في مكة."
         }
       }
     },
@@ -946,20 +1657,38 @@
         "EN": {
           "text": "How many chapters (surahs) are there in the Qur'an?",
           "hint": "It is more than one hundred.",
-          "options": ["114", "100", "120", "99"],
-          "correctIndex": 0
+          "options": [
+            "114",
+            "100",
+            "120",
+            "99"
+          ],
+          "correctIndex": 0,
+          "explanation": "The Qur’an contains 114 surahs, or chapters."
         },
         "FR": {
           "text": "Combien de sourates compte le Coran ?",
           "hint": "Il y en a plus de cent.",
-          "options": ["114", "100", "120", "99"],
-          "correctIndex": 0
+          "options": [
+            "114",
+            "100",
+            "120",
+            "99"
+          ],
+          "correctIndex": 0,
+          "explanation": "Le Coran compte 114 sourates, ou chapitres."
         },
         "AR": {
           "text": "كم عدد سور القرآن الكريم؟",
           "hint": "أكثر من مئة.",
-          "options": ["114", "100", "120", "99"],
-          "correctIndex": 0
+          "options": [
+            "114",
+            "100",
+            "120",
+            "99"
+          ],
+          "correctIndex": 0,
+          "explanation": "يحتوي القرآن على 114 سورة."
         }
       }
     }

@@ -271,6 +271,7 @@ public class GameServiceImpl implements GameService {
         result.setTotalRounds(game.getTotalRounds());
         result.setRoundComplete(game.getAnsweredPlayerIds().containsAll(playerIds(game)));
         result.setLate(late);
+        result.setExplanation(question.getExplanation());
         return result;
     }
 
