@@ -27,5 +27,5 @@ export const routes: Routes = [
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'leaderboard', component: LeaderboardComponent, canActivate: [AuthGuard] },
   { path: 'admin', component: AdminComponent, canActivate: [AdminGuard] },
-  { path: '**', redirectTo: '/lobby' }
+  { path: '**', redirectTo: '/lobby' },
 ];

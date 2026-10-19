@@ -10,7 +10,14 @@ body {
 }
 
 body {
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   background: #f4f6fb;
   color: #1f2937;
 }
@@ -69,7 +76,9 @@ main:focus-visible {
   border-radius: 8px;
   padding: 0.65rem 1.1rem;
   font-weight: 600;
-  transition: background 0.15s ease, transform 0.05s ease;
+  transition:
+    background 0.15s ease,
+    transform 0.05s ease;
 
   &:hover {
     background: #4338ca;

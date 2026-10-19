@@ -103,12 +103,15 @@ Frontend:
 
 ```powershell
 cd Frontend
+npm run format:check
 npm run test:ci
 npm run build
 ```
 
-`karma.conf.js` detects a locally installed Chrome or Edge automatically. If your browser is
-somewhere else, set `CHROME_BIN` to its executable before running the tests.
+`npm run format` rewrites the frontend with Prettier; `npm run format:check` verifies it
+without changing files. `karma.conf.js` detects a locally installed Chrome or Edge
+automatically. If your browser is somewhere else, set `CHROME_BIN` to its executable before
+running the tests.
 
 ## Configuration
 
@@ -160,5 +163,5 @@ keyboard-only navigation and announces round changes, time-outs and results to s
 
 ## Continuous integration
 
-`.github/workflows/ci.yml` runs the backend tests and the frontend tests plus a production
-build on every push and pull request.
+`.github/workflows/ci.yml` runs the backend tests and the frontend format check, frontend
+tests, and production build on every push and pull request.

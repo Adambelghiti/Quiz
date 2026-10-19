@@ -17,7 +17,10 @@ export class ProfileComponent implements OnInit {
   loading = true;
   error: string | null = null;
 
-  constructor(private player: PlayerService, private router: Router) {}
+  constructor(
+    private player: PlayerService,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
     this.player.getStats().subscribe({

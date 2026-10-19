@@ -19,7 +19,7 @@ function buildComponent(questionLanguage?: string, options: string[] = []): Test
   const speech = jasmine.createSpyObj<SpeechService>(
     'SpeechService',
     ['readQuestion', 'readOption', 'readFeedback', 'speak', 'stop'],
-    { supported: true }
+    { supported: true },
   );
   const component = new QuizComponent(
     null!,
@@ -30,7 +30,7 @@ function buildComponent(questionLanguage?: string, options: string[] = []): Test
     null!,
     null!,
     speech,
-    preferences
+    preferences,
   );
   component.round = {
     gameId: 1,

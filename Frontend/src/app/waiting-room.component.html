@@ -39,7 +39,9 @@
           {{ copied ? 'Copied!' : 'Copy link' }}
         </button>
       </div>
-      <p class="sr-only" aria-live="polite">{{ copied ? 'Invite link copied to the clipboard.' : '' }}</p>
+      <p class="sr-only" aria-live="polite">
+        {{ copied ? 'Invite link copied to the clipboard.' : '' }}
+      </p>
       <div class="qr-wrapper">
         <qrcode
           [qrdata]="inviteUrl"

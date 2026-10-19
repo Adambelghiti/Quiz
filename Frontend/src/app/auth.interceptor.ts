@@ -12,7 +12,10 @@ import { AuthService } from './auth.service';
 
 @Injectable({ providedIn: 'root' })
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+  ) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token = this.auth.getToken();
@@ -31,7 +34,7 @@ export class AuthInterceptor implements HttpInterceptor {
           this.router.navigate(['/login']);
         }
         return throwError(() => error);
-      })
+      }),
     );
   }
 }

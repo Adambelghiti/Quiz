@@ -19,7 +19,7 @@ const browserCandidates = [
 ];
 
 const detectedBrowser = browserCandidates.find(
-  (candidate) => candidate && fs.existsSync(candidate)
+  (candidate) => candidate && fs.existsSync(candidate),
 );
 if (detectedBrowser) {
   process.env.CHROME_BIN = detectedBrowser;

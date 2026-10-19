@@ -74,7 +74,9 @@
   background: #ffffff;
   color: #1f2937;
   font-size: 0.95rem;
-  transition: border-color 0.15s ease, background 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
 
   &:hover:not(:disabled) {
     border-color: #6366f1;

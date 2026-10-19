@@ -32,7 +32,7 @@ export class LobbyComponent implements OnInit, OnDestroy {
     private router: Router,
     private currentGame: CurrentGameService,
     private auth: AuthService,
-    private ws: WebSocketService
+    private ws: WebSocketService,
   ) {
     this.username = this.auth.getUser()?.username ?? '';
     this.isAdmin = this.auth.isAdmin();

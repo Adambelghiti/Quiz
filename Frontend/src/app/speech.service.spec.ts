@@ -33,7 +33,7 @@ class FakeSynthesis {
 function serviceWith(synth: FakeSynthesis): SpeechService {
   return new SpeechService(
     synth as unknown as SpeechSynthesis,
-    FakeUtterance as unknown as typeof SpeechSynthesisUtterance
+    FakeUtterance as unknown as typeof SpeechSynthesisUtterance,
   );
 }
 
@@ -92,7 +92,7 @@ describe('SpeechService', () => {
         scoreDelta: 0,
         late: true,
       },
-      'EN'
+      'EN',
     );
 
     expect(synth.spoken[0].text).toContain('Time ran out');
@@ -110,7 +110,7 @@ describe('SpeechService', () => {
         correctAnswer: 'Paris',
         scoreDelta: 75,
       },
-      'EN'
+      'EN',
     );
 
     expect(synth.spoken[0].text).toContain('Correct');
@@ -128,12 +128,12 @@ describe('SpeechService', () => {
         scoreDelta: 0,
         explanation: 'Paris is the capital and largest city of France.',
       },
-      'EN'
+      'EN',
     );
 
     expect(synth.spoken[0].text).toContain('Paris is the capital');
     expect(synth.spoken[0].text.indexOf('Not quite')).toBeLessThan(
-      synth.spoken[0].text.indexOf('Paris is the capital')
+      synth.spoken[0].text.indexOf('Paris is the capital'),
     );
   });
 

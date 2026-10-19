@@ -32,7 +32,14 @@ describe('PlayerService', () => {
   it('fetches history and stats for the current user', () => {
     service.getHistory().subscribe((history) => expect(history.length).toBe(1));
     http.expectOne(`${environment.apiBaseUrl}/players/me/history`).flush([
-      { gameId: 1, finalScore: 320, rank: 1, correctAnswers: 4, totalRounds: 5, playedAt: '2026-01-01T10:00:00' },
+      {
+        gameId: 1,
+        finalScore: 320,
+        rank: 1,
+        correctAnswers: 4,
+        totalRounds: 5,
+        playedAt: '2026-01-01T10:00:00',
+      },
     ]);
 
     service.getStats().subscribe((stats) => expect(stats.wins).toBe(1));

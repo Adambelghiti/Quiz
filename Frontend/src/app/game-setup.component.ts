@@ -68,7 +68,7 @@ export class GameSetupComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private quiz: QuizService,
-    private playerService: PlayerService
+    private playerService: PlayerService,
   ) {}
 
   ngOnInit(): void {

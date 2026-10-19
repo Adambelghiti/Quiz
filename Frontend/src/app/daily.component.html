@@ -4,9 +4,7 @@
       <h2 appFocusOnInit tabindex="-1">Daily Challenge</h2>
       <p class="daily-date" *ngIf="status">{{ dateLabel }}</p>
     </div>
-    <button type="button" class="secondary-button" (click)="backToLobby()">
-      Back to Lobby
-    </button>
+    <button type="button" class="secondary-button" (click)="backToLobby()">Back to Lobby</button>
   </div>
 
   <div *ngIf="loading" aria-live="polite">Loading today’s challenge…</div>
@@ -26,7 +24,10 @@
       <p *ngIf="s.completed" class="daily-result" role="status">
         You finished with <strong>{{ s.score ?? 0 }} points</strong> and
         <strong>{{ s.correctAnswers ?? 0 }} / {{ s.totalRounds }}</strong> correct.
-        <span *ngIf="s.rank">Today’s rank: <strong>#{{ s.rank }}</strong>.</span>
+        <span *ngIf="s.rank"
+          >Today’s rank: <strong>#{{ s.rank }}</strong
+          >.</span
+        >
       </p>
       <p *ngIf="s.completed" class="daily-hint">
         A new challenge is ready tomorrow (UTC). Your attempt cannot be replayed.
@@ -46,7 +47,12 @@
     <section aria-labelledby="daily-leaderboard">
       <h3 id="daily-leaderboard">Today’s leaderboard</h3>
       <table class="daily-table">
-        <caption class="sr-only">Daily challenge leaderboard for {{ dateLabel }}</caption>
+        <caption class="sr-only">
+          Daily challenge leaderboard for
+          {{
+            dateLabel
+          }}
+        </caption>
         <thead>
           <tr>
             <th scope="col">#</th>

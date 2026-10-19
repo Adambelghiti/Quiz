@@ -1,12 +1,7 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import {
-  AnswerResult,
-  LobbyService,
-  QuestionView,
-  RoundResponse,
-} from './lobby.service';
+import { AnswerResult, LobbyService, QuestionView, RoundResponse } from './lobby.service';
 import { CurrentGameService } from './current-game.service';
 import { EffectsService } from './effects.service';
 import { PlayerService } from './player.service';
@@ -55,7 +50,7 @@ export class QuizComponent implements OnInit, OnDestroy {
     private ws: WebSocketService,
     public effects: EffectsService,
     public speech: SpeechService,
-    public preferences: PreferencesService
+    public preferences: PreferencesService,
   ) {}
 
   ngOnInit(): void {
@@ -270,9 +265,8 @@ export class QuizComponent implements OnInit, OnDestroy {
 
     // All game state (new rounds, incoming answers, scores, finish) arrives here.
     this.unsubscribe?.();
-    this.unsubscribe = this.ws.watch<RoundResponse>(
-      `/topic/game/${gameId}`,
-      (state) => this.applyServerState(state)
+    this.unsubscribe = this.ws.watch<RoundResponse>(`/topic/game/${gameId}`, (state) =>
+      this.applyServerState(state),
     );
 
     this.loadRound();

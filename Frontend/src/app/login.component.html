@@ -33,7 +33,7 @@
       />
 
       <button type="submit" class="primary-button" [disabled]="loading">
-        {{ loading ? 'Please wait…' : (isRegister ? 'Create account' : 'Sign in') }}
+        {{ loading ? 'Please wait…' : isRegister ? 'Create account' : 'Sign in' }}
       </button>
     </form>
 

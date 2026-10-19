@@ -79,24 +79,30 @@ function concat(...parts) {
 }
 
 // Bright rising pair for a correct answer.
-writeWav('correct.wav', concat(
-  tone(587.33, 95, { gain: 0.45 }),
-  tone(880.0, 170, { gain: 0.5, decay: 6 }),
-));
+writeWav(
+  'correct.wav',
+  concat(tone(587.33, 95, { gain: 0.45 }), tone(880.0, 170, { gain: 0.5, decay: 6 })),
+);
 
 // Low descending buzz for a wrong answer.
-writeWav('wrong.wav', concat(
-  tone(233.08, 120, { gain: 0.4, harmonics: [1, 0.35] }),
-  tone(174.61, 220, { gain: 0.45, decay: 4, harmonics: [1, 0.35] }),
-));
+writeWav(
+  'wrong.wav',
+  concat(
+    tone(233.08, 120, { gain: 0.4, harmonics: [1, 0.35] }),
+    tone(174.61, 220, { gain: 0.45, decay: 4, harmonics: [1, 0.35] }),
+  ),
+);
 
 // A short click for the last-five-seconds countdown.
 writeWav('tick.wav', tone(1200, 55, { gain: 0.35, attackMs: 1, decay: 14 }));
 
 // A small fanfare when the game is won.
-writeWav('win.wav', concat(
-  tone(523.25, 110, { gain: 0.4 }),
-  tone(659.25, 110, { gain: 0.42 }),
-  tone(783.99, 110, { gain: 0.45 }),
-  tone(1046.5, 320, { gain: 0.5, decay: 3 }),
-));
+writeWav(
+  'win.wav',
+  concat(
+    tone(523.25, 110, { gain: 0.4 }),
+    tone(659.25, 110, { gain: 0.42 }),
+    tone(783.99, 110, { gain: 0.45 }),
+    tone(1046.5, 320, { gain: 0.5, decay: 3 }),
+  ),
+);

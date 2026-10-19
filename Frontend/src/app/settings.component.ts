@@ -20,7 +20,7 @@ export class SettingsComponent {
   constructor(
     public preferences: PreferencesService,
     public speech: SpeechService,
-    private router: Router
+    private router: Router,
   ) {}
 
   get supported(): boolean {
@@ -59,7 +59,7 @@ export class SettingsComponent {
   testVoice(): void {
     this.speech.speak(
       'Voice reading is on. Questions and answer choices will be read aloud.',
-      'EN'
+      'EN',
     );
   }
 

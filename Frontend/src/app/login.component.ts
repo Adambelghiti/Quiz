@@ -22,7 +22,11 @@ export class LoginComponent {
   error: string | null = null;
   loading = false;
 
-  constructor(private auth: AuthService, private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private route: ActivatedRoute,
+  ) {}
 
   get isRegister(): boolean {
     return this.mode === 'register';

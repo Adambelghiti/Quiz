@@ -38,7 +38,7 @@ export class WaitingRoomComponent implements OnInit, OnDestroy {
     private lobby: LobbyService,
     private playerService: PlayerService,
     private currentGame: CurrentGameService,
-    private ws: WebSocketService
+    private ws: WebSocketService,
   ) {}
 
   ngOnInit(): void {
@@ -76,7 +76,7 @@ export class WaitingRoomComponent implements OnInit, OnDestroy {
   private enterRoom(id: number): void {
     // Live player list while we wait for the host to start.
     this.unsubscribe = this.ws.watch<RoundResponse>(`/topic/game/${id}`, (state) =>
-      this.apply(state)
+      this.apply(state),
     );
 
     this.lobby.getRound(id, this.playerId ?? undefined).subscribe({

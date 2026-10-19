@@ -23,7 +23,7 @@ export class DailyChallengeComponent implements OnInit {
     private daily: DailyChallengeService,
     private currentGame: CurrentGameService,
     private playerService: PlayerService,
-    private router: Router
+    private router: Router,
   ) {}
 
   ngOnInit(): void {

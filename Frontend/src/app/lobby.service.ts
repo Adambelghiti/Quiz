@@ -182,7 +182,7 @@ export class LobbyService {
     gameId: number,
     playerId: number,
     questionId: number,
-    answer: string
+    answer: string,
   ): Observable<AnswerResult> {
     return this.http.post<AnswerResult>(`${this.apiUrl}/${gameId}/answer`, {
       playerId,

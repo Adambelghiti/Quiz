@@ -40,7 +40,10 @@ export class AdminComponent implements OnInit {
   draft: AdminQuestion = this.blankQuestion();
   editingId: number | null = null;
 
-  constructor(private admin: QuestionAdminService, private router: Router) {}
+  constructor(
+    private admin: QuestionAdminService,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
     this.load();

@@ -56,7 +56,12 @@
     <div class="row">
       <div>
         <label for="correctAnswer">Correct answer (must match an option)</label>
-        <input id="correctAnswer" name="correctAnswer" type="text" [(ngModel)]="draft.correctAnswer" />
+        <input
+          id="correctAnswer"
+          name="correctAnswer"
+          type="text"
+          [(ngModel)]="draft.correctAnswer"
+        />
       </div>
       <div>
         <label for="hint">Hint (optional)</label>
@@ -84,7 +89,9 @@
   <div *ngIf="loading" aria-live="polite">Loading questions…</div>
 
   <table class="question-table" *ngIf="!loading">
-    <caption class="sr-only">Question bank</caption>
+    <caption class="sr-only">
+      Question bank
+    </caption>
     <thead>
       <tr>
         <th scope="col">#</th>

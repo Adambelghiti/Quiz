@@ -16,7 +16,7 @@ export const SPEECH_UTTERANCE = new InjectionToken<typeof SpeechSynthesisUtteran
     providedIn: 'root',
     factory: () =>
       typeof SpeechSynthesisUtterance !== 'undefined' ? SpeechSynthesisUtterance : null,
-  }
+  },
 );
 
 /** The subset of a question that can be read aloud. */
@@ -51,7 +51,7 @@ const LANGUAGE_TAGS: Record<string, string> = {
 export class SpeechService {
   constructor(
     @Inject(SPEECH_SYNTHESIS) private readonly synth: SpeechSynthesis | null,
-    @Inject(SPEECH_UTTERANCE) private readonly Utterance: typeof SpeechSynthesisUtterance | null
+    @Inject(SPEECH_UTTERANCE) private readonly Utterance: typeof SpeechSynthesisUtterance | null,
   ) {}
 
   get supported(): boolean {

@@ -16,7 +16,9 @@
       >
         ⏱ {{ timeLeft }}s
       </span>
-      <span class="badge live" *ngIf="iAmHost && !round.practice && !round.dailyChallenge">host</span>
+      <span class="badge live" *ngIf="iAmHost && !round.practice && !round.dailyChallenge"
+        >host</span
+      >
       <button
         type="button"
         class="sound-toggle"
@@ -107,10 +109,12 @@
       [class.correct]="res.correct && !res.late"
       [class.incorrect]="!res.correct || res.late"
     >
-      <strong>{{ res.late ? 'Time ran out.' : (res.correct ? 'Correct!' : 'Not quite.') }}</strong>
+      <strong>{{ res.late ? 'Time ran out.' : res.correct ? 'Correct!' : 'Not quite.' }}</strong>
       <span *ngIf="res.correct && !res.late"> +{{ res.scoreDelta }} points.</span>
       <span *ngIf="!res.correct || res.late">
-        The answer was “<span dir="auto">{{ res.correctAnswer }}</span>”.</span>
+        The answer was “<span dir="auto">{{ res.correctAnswer }}</span
+        >”.</span
+      >
       <p
         *ngIf="res.explanation"
         class="explanation"
@@ -139,7 +143,7 @@
         [disabled]="advancing"
         (click)="next()"
       >
-        {{ advancing ? 'Loading…' : (isLastRound ? 'See Results' : 'Next Question') }}
+        {{ advancing ? 'Loading…' : isLastRound ? 'See Results' : 'Next Question' }}
       </button>
 
       <button

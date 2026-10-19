@@ -18,7 +18,10 @@ export class LeaderboardComponent implements OnInit {
   loading = true;
   error: string | null = null;
 
-  constructor(private lobby: LobbyService, private router: Router) {}
+  constructor(
+    private lobby: LobbyService,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
     this.load();

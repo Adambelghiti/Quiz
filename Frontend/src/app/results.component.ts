@@ -32,7 +32,7 @@ export class ResultsComponent implements OnInit, OnDestroy {
     private currentGame: CurrentGameService,
     private ws: WebSocketService,
     private playerService: PlayerService,
-    public effects: EffectsService
+    public effects: EffectsService,
   ) {}
 
   ngOnInit(): void {
@@ -49,7 +49,7 @@ export class ResultsComponent implements OnInit, OnDestroy {
     // Follow the room so every player moves together when someone starts a
     // rematch (the same game id is reused).
     this.unsubscribe = this.ws.watch<RoundResponse>(`/topic/game/${gameId}`, (state) =>
-      this.onRoomState(state)
+      this.onRoomState(state),
     );
   }
 
