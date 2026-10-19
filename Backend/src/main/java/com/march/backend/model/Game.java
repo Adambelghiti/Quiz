@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -97,4 +98,37 @@ public class Game {
 
     /** Player that created the room; only the host may start the game. */
     private Long hostPlayerId;
+
+    /** Set for the single daily-challenge attempt made by a player. */
+    @Column(name = "daily_challenge_date")
+    private LocalDate dailyChallengeDate;
+
+    /**
+     * Unique key of the form {@code date:playerId}. The database constraint is
+     * the final guard against a double-click creating two attempts.
+     */
+    @Column(name = "daily_challenge_key", unique = true)
+    private String dailyChallengeKey;
+
+    /**
+     * Fixed question order for a daily challenge. Normal and practice games
+     * leave this empty and select a random unused question instead.
+     */
+    @ElementCollection
+    @CollectionTable(name = "game_question_sequence", joinColumns = @JoinColumn(name = "game_id"))
+    @OrderColumn(name = "position")
+    @Column(name = "question_id")
+    private List<Long> questionSequence = new ArrayList<>();
+
+    /**
+     * Practice is an untimed single-player game. A timeout of zero is the
+     * persisted marker, so existing databases need no extra boolean column.
+     */
+    public boolean isPractice() {
+        return dailyChallengeDate == null && roundTimeoutSeconds == 0;
+    }
+
+    public boolean isDailyChallenge() {
+        return dailyChallengeDate != null;
+    }
 }

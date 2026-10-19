@@ -85,6 +85,27 @@ describe('QuizComponent question direction', () => {
   });
 });
 
+describe('QuizComponent practice timing', () => {
+  it('never expires an untimed practice question', () => {
+    const { component } = buildComponent('EN', ['Paris', 'Rome']);
+    component.round!.practice = true;
+    component.round!.roundTimeoutSeconds = 0;
+    component.timeLeft = 0;
+
+    expect(component.untimed).toBeTrue();
+    expect(component.timeExpired).toBeFalse();
+  });
+
+  it('still expires a timed round when the clock reaches zero', () => {
+    const { component } = buildComponent('EN', ['Paris', 'Rome']);
+    component.round!.roundTimeoutSeconds = 30;
+    component.timeLeft = 0;
+
+    expect(component.untimed).toBeFalse();
+    expect(component.timeExpired).toBeTrue();
+  });
+});
+
 describe('QuizComponent voice reading', () => {
   it('does not read an answer choice unless voice reading is enabled', () => {
     const { component, speech } = buildComponent('EN', ['Paris', 'Rome']);

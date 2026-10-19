@@ -15,6 +15,8 @@
 
   <div class="lobby-actions">
     <button (click)="newGame()" class="primary-button">Create New Game</button>
+    <button (click)="openDaily()" class="secondary-button">Daily Challenge</button>
+    <button (click)="openPractice()" class="secondary-button">Practice</button>
     <button (click)="refresh()" class="secondary-button">Refresh</button>
     <span class="live-indicator" [class.online]="live" role="status">
       {{ live ? 'Live updates on' : 'Live updates offline' }}

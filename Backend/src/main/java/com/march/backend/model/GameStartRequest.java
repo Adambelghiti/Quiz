@@ -27,6 +27,12 @@ public class GameStartRequest {
     @Max(value = 300, message = "Round time must be between 10 and 300 seconds")
     private Integer roundTimeoutSeconds;
 
+    /**
+     * When true the game is a single-player, untimed practice session. Practice
+     * games are never listed in the lobby and never write competitive history.
+     */
+    private Boolean practice;
+
     /** Existing player id. When absent/unusable a new player is created. */
     private Long playerId;
 
@@ -74,6 +80,14 @@ public class GameStartRequest {
 
     public void setRoundTimeoutSeconds(Integer roundTimeoutSeconds) {
         this.roundTimeoutSeconds = roundTimeoutSeconds;
+    }
+
+    public Boolean getPractice() {
+        return practice;
+    }
+
+    public void setPractice(Boolean practice) {
+        this.practice = practice;
     }
 
     public Long getPlayerId() {

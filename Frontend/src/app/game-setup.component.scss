@@ -31,6 +31,17 @@ input[type='number'] {
   }
 }
 
+.practice-intro {
+  margin: 0 0 0.5rem;
+  padding: 0.75rem 0.9rem;
+  border-left: 4px solid #6366f1;
+  border-radius: 6px;
+  background: #eef2ff;
+  color: #3730a3;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 .field-hint {
   margin: 0.15rem 0 0;
   color: #6b7280;

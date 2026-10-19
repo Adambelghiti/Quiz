@@ -46,6 +46,12 @@ export interface RoundResponse {
   roundStartedAt?: number;
   /** Seconds allowed for the current round before it auto-advances. */
   roundTimeoutSeconds?: number;
+  /** True for an untimed single-player practice session. */
+  practice?: boolean;
+  /** True for the player's single daily-challenge attempt. */
+  dailyChallenge?: boolean;
+  /** ISO date of the daily challenge, when this is one. */
+  dailyChallengeDate?: string;
 }
 
 /** Outcome of a single answer. */
@@ -72,6 +78,12 @@ export interface GameResults {
   winnerName?: string | null;
   totalRounds: number;
   scores: PlayerScore[];
+  /** True for an untimed single-player practice session. */
+  practice?: boolean;
+  /** True for the player's daily-challenge attempt. */
+  dailyChallenge?: boolean;
+  /** ISO date of the daily challenge, when this is one. */
+  dailyChallengeDate?: string;
 }
 
 export interface LeaderboardEntry {
@@ -92,6 +104,8 @@ export interface StartGameRequest {
   rounds?: number;
   /** Seconds allowed per question; the server defaults to 30. */
   roundTimeoutSeconds?: number;
+  /** Single-player, untimed practice. Practice never affects leaderboards. */
+  practice?: boolean;
   playerId?: number | null;
   playerName?: string;
 }

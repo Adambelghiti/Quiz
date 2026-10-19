@@ -7,6 +7,10 @@ leaderboard, and an optional voice-reading mode for visually impaired players.
 
 - **Live multiplayer rooms** over STOMP/WebSocket, with host controls, rematches and kicks.
 - **Solo games** with category, difficulty, language, round count and round-time filters.
+- **Practice mode**: single-player and untimed, with immediate feedback, explanations and no
+  effect on the leaderboard.
+- **Daily challenge**: one shared, deterministic five-question set per UTC day, one attempt per
+  player, a 60-second limit per question and a separate daily leaderboard.
 - **Three question languages** (EN / FR / AR) and a bank that expands without overwriting
   existing questions or administrator edits.
 - **Voice reading** using the browser's Web Speech API. It is off by default; players opt in
@@ -69,6 +73,22 @@ npm start
 
 Open `http://localhost:4200`. The development API/WebSocket URLs are configured in
 `Frontend/src/environments/environment.ts`.
+
+## Game modes
+
+- **Multiplayer room** – the host chooses the filters and starts the room when enough players
+  have joined.
+- **Solo** – the same configuration, played immediately with a server-enforced round timer.
+- **Practice** – untimed and single-player. Choose the filters from the lobby's **Practice**
+  button; answers and explanations appear immediately. Practice games are never listed as open
+  rooms and never write competitive history.
+- **Daily challenge** – start it from the lobby. The question set is fixed for the UTC day, so
+  every player answers the same questions; it is created once and reused. Each account gets one
+  attempt, which can be resumed until it finishes. Leaving mid-challenge consumes the attempt.
+  Daily results are stored separately from all-time game history, so the normal leaderboard is
+  unaffected.
+
+All modes support the optional voice-reading settings described below.
 
 ## Tests and build
 

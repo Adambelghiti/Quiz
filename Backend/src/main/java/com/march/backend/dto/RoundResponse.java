@@ -41,4 +41,13 @@ public class RoundResponse {
     private List<PlayerScore> players = new ArrayList<>();
 
     private boolean finished;
+
+    /** True for an untimed single-player practice session. */
+    private boolean practice;
+
+    /** True for the player's single daily-challenge attempt. */
+    private boolean dailyChallenge;
+
+    /** ISO date of the daily challenge, when this is one. */
+    private String dailyChallengeDate;
 }

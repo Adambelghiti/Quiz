@@ -1,20 +1,22 @@
 <main id="main-content" class="quiz-container" tabindex="-1" [attr.aria-busy]="loading">
   <div class="quiz-header">
-    <h1>Quiz Game</h1>
+    <h1>{{ modeTitle }}</h1>
     <div class="quiz-meta" *ngIf="round">
       <span class="badge">Round {{ round.round }} / {{ round.totalRounds }}</span>
       <span class="badge">Score: {{ myScore }}</span>
+      <span class="badge" *ngIf="round.practice">practice · untimed</span>
+      <span class="badge" *ngIf="round.dailyChallenge">daily challenge</span>
       <span
         class="badge timer"
         role="timer"
         aria-live="off"
         [attr.aria-label]="'Time remaining: ' + timeLeft + ' seconds'"
         [class.low]="!result && timeLeft <= 5"
-        *ngIf="round.question"
+        *ngIf="round.question && !untimed"
       >
         ⏱ {{ timeLeft }}s
       </span>
-      <span class="badge live" *ngIf="iAmHost">host</span>
+      <span class="badge live" *ngIf="iAmHost && !round.practice && !round.dailyChallenge">host</span>
       <button
         type="button"
         class="sound-toggle"

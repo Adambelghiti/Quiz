@@ -7,6 +7,8 @@ import com.march.backend.dto.PlayerScore;
 import com.march.backend.dto.QuestionResponse;
 import com.march.backend.dto.RoundResponse;
 import com.march.backend.model.Category;
+import com.march.backend.model.DailyChallenge;
+import com.march.backend.model.DailyChallengeResult;
 import com.march.backend.model.Game;
 import com.march.backend.model.GameHistory;
 import com.march.backend.model.GameStartRequest;
@@ -14,6 +16,8 @@ import com.march.backend.model.GameStatus;
 import com.march.backend.model.Language;
 import com.march.backend.model.Player;
 import com.march.backend.model.Question;
+import com.march.backend.repository.DailyChallengeRepository;
+import com.march.backend.repository.DailyChallengeResultRepository;
 import com.march.backend.repository.GameHistoryRepository;
 import com.march.backend.repository.GameRepository;
 import com.march.backend.repository.PlayerRepository;
@@ -23,8 +27,11 @@ import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.Clock;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -49,6 +56,10 @@ public class GameServiceImpl implements GameService {
 
     private static final int MAX_ROUND_TIMEOUT_SECONDS = 300;
 
+    private static final int DAILY_CHALLENGE_ROUNDS = 5;
+    /** One minute leaves room for voice reading without removing the time pressure. */
+    private static final int DAILY_CHALLENGE_ROUND_TIMEOUT_SECONDS = 60;
+
     /** Waiting rooms with no activity for this long are cleaned up. */
     private static final long WAITING_ROOM_TTL_MS = 30L * 60L * 1000L;
 
@@ -56,22 +67,32 @@ public class GameServiceImpl implements GameService {
     private final PlayerRepository playerRepo;
     private final QuestionRepository questionRepo;
     private final GameHistoryRepository gameHistoryRepo;
+    private final DailyChallengeRepository dailyChallengeRepo;
+    private final DailyChallengeResultRepository dailyResultRepo;
     private final ScoringService scoringService;
     private final GameEventPublisher publisher;
+    private final Clock clock;
     private final Random random = new Random();
+    private final Object dailyCreationLock = new Object();
 
     public GameServiceImpl(GameRepository gameRepo,
                            PlayerRepository playerRepo,
                            QuestionRepository questionRepo,
                            GameHistoryRepository gameHistoryRepo,
+                           DailyChallengeRepository dailyChallengeRepo,
+                           DailyChallengeResultRepository dailyResultRepo,
                            ScoringService scoringService,
-                           GameEventPublisher publisher) {
+                           GameEventPublisher publisher,
+                           Clock clock) {
         this.gameRepo = gameRepo;
         this.playerRepo = playerRepo;
         this.questionRepo = questionRepo;
         this.gameHistoryRepo = gameHistoryRepo;
+        this.dailyChallengeRepo = dailyChallengeRepo;
+        this.dailyResultRepo = dailyResultRepo;
         this.scoringService = scoringService;
         this.publisher = publisher;
+        this.clock = clock;
     }
 
     @Override
@@ -96,7 +117,52 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
+    public RoundResponse startDailyChallenge(Long playerId) {
+        if (playerId == null) {
+            throw new IllegalArgumentException("A player is required");
+        }
+        LocalDate date = LocalDate.now(clock);
+        String key = date + ":" + playerId;
+        Optional<Game> existing = gameRepo.findByDailyChallengeKey(key);
+        if (existing.isPresent()) {
+            Game game = existing.get();
+            if (game.getStatus() == GameStatus.FINISHED) {
+                throw new IllegalStateException("You have already completed today's daily challenge");
+            }
+            return buildRound(game, playerId);
+        }
+
+        Player player = playerRepo.findById(playerId)
+                .orElseThrow(() -> new EntityNotFoundException("Player not found: " + playerId));
+        DailyChallenge challenge = getOrCreateDailyChallenge(date);
+
+        Game game = new Game();
+        game.setCreatedAt(System.currentTimeMillis());
+        game.setStatus(GameStatus.IN_PROGRESS);
+        game.setDailyChallengeDate(date);
+        game.setDailyChallengeKey(key);
+        game.setLanguage(challenge.getLanguage());
+        game.setTotalRounds(challenge.getTotalRounds());
+        game.setRoundTimeoutSeconds(challenge.getRoundTimeoutSeconds());
+        game.setQuestionSequence(new ArrayList<>(challenge.getQuestionIds()));
+        game.setHostPlayerId(playerId);
+        game.getPlayers().add(player);
+        gameRepo.save(game);
+
+        if (startRound(game) == null) {
+            finishGameInternal(game);
+        } else {
+            gameRepo.save(game);
+        }
+        broadcast(game);
+        return buildRound(game, playerId);
+    }
+
+    @Override
     public RoundResponse createRoom(GameStartRequest request) {
+        if (Boolean.TRUE.equals(request.getPractice())) {
+            throw new IllegalStateException("Practice games are single-player");
+        }
         Player player = resolvePlayer(request.getPlayerId(), request.getPlayerName());
         Game game = newGame(request, player);
         game.setStatus(GameStatus.WAITING);
@@ -129,6 +195,9 @@ public class GameServiceImpl implements GameService {
         if (game.getStatus() == GameStatus.FINISHED) {
             throw new IllegalStateException("Cannot join a game that has already finished");
         }
+        if (game.isPractice() || game.isDailyChallenge()) {
+            throw new IllegalStateException("This is a private single-player game");
+        }
         Player player = playerRepo.findById(playerId)
                 .orElseThrow(() -> new EntityNotFoundException("Player not found: " + playerId));
         boolean alreadyIn = game.getPlayers().stream()
@@ -147,6 +216,9 @@ public class GameServiceImpl implements GameService {
         Game game = getForUpdate(gameId);
         requireParticipant(game, playerId);
 
+        if (game.isDailyChallenge()) {
+            throw new IllegalStateException("Daily challenges cannot be replayed");
+        }
         if (game.getStatus() == GameStatus.IN_PROGRESS) {
             throw new IllegalStateException("Finish the current game before starting a rematch");
         }
@@ -170,6 +242,17 @@ public class GameServiceImpl implements GameService {
     public RoundResponse leaveGame(Long gameId, Long playerId) {
         Game game = getForUpdate(gameId);
         requirePlayer(game, playerId);
+
+        if (game.isDailyChallenge()) {
+            // Leaving consumes the attempt. The current score is recorded so the
+            // player cannot restart later with an empty board.
+            if (game.getStatus() != GameStatus.FINISHED) {
+                finishGameInternal(game);
+            }
+            gameRepo.save(game);
+            broadcast(game);
+            return buildRound(game, playerId);
+        }
 
         removePlayer(game, playerId);
 
@@ -311,6 +394,7 @@ public class GameServiceImpl implements GameService {
     public List<GameSummary> lobbyGames() {
         return gameRepo.findAll().stream()
                 .filter(game -> game.getStatus() != GameStatus.FINISHED)
+                .filter(game -> !game.isPractice() && !game.isDailyChallenge())
                 .map(GameSummary::from)
                 .toList();
     }
@@ -404,9 +488,12 @@ public class GameServiceImpl implements GameService {
                 ? request.getRoundTimeoutSeconds()
                 : DEFAULT_ROUND_TIMEOUT_SECONDS;
         // Bean Validation rejects bad values at the API boundary; clamp again for
-        // callers that use the service directly.
-        game.setRoundTimeoutSeconds(
-                Math.max(MIN_ROUND_TIMEOUT_SECONDS, Math.min(requestedTimeout, MAX_ROUND_TIMEOUT_SECONDS)));
+        // callers that use the service directly. A zero timeout is the stored
+        // marker for an untimed practice game.
+        game.setRoundTimeoutSeconds(Boolean.TRUE.equals(request.getPractice())
+                ? 0
+                : Math.max(MIN_ROUND_TIMEOUT_SECONDS,
+                        Math.min(requestedTimeout, MAX_ROUND_TIMEOUT_SECONDS)));
         game.setHostPlayerId(player.getId());
         game.getPlayers().add(player);
         return game;
@@ -419,21 +506,75 @@ public class GameServiceImpl implements GameService {
     }
 
     /**
+     * Load today's shared question set or create it deterministically. A
+     * per-day seed makes the selection stable for every player; persisting the
+     * IDs keeps it stable even if the question bank changes during the day.
+     */
+    private DailyChallenge getOrCreateDailyChallenge(LocalDate date) {
+        synchronized (dailyCreationLock) {
+            Optional<DailyChallenge> existing = dailyChallengeRepo.findById(date);
+            if (existing.isPresent()) {
+                return existing.get();
+            }
+
+            List<Question> pool = questionRepo.findAll().stream()
+                    .filter(q -> q.getLanguage() == Language.EN)
+                    .sorted(Comparator.comparing(Question::getId))
+                    .toList();
+            if (pool.isEmpty()) {
+                throw new IllegalStateException("No English questions are available for today's challenge");
+            }
+
+            List<Question> shuffled = new ArrayList<>(pool);
+            Collections.shuffle(shuffled, new Random(date.toEpochDay()));
+            int count = Math.min(DAILY_CHALLENGE_ROUNDS, shuffled.size());
+
+            DailyChallenge challenge = new DailyChallenge();
+            challenge.setChallengeDate(date);
+            challenge.setLanguage(Language.EN);
+            challenge.setTotalRounds(count);
+            challenge.setRoundTimeoutSeconds(DAILY_CHALLENGE_ROUND_TIMEOUT_SECONDS);
+            challenge.setQuestionIds(new ArrayList<>(shuffled.stream()
+                    .limit(count)
+                    .map(Question::getId)
+                    .toList()));
+            return dailyChallengeRepo.save(challenge);
+        }
+    }
+
+    /**
      * Pick an unused question matching the game filters and move to the next
      * round. Returns the selected question, or {@code null} when the pool is
      * exhausted (meaning the game should end).
      */
     private Question startRound(Game game) {
-        Set<Long> used = new HashSet<>(game.getUsedQuestionIds());
-        List<Question> candidates = questionPool(game.getCategory(), game.getDifficulty(), game.getLanguage())
-                .stream()
-                .filter(q -> !used.contains(q.getId()))
-                .toList();
-        if (candidates.isEmpty()) {
-            return null;
+        Question selected;
+        if (!game.getQuestionSequence().isEmpty()) {
+            // Daily challenges use the shared, persisted question order.
+            selected = null;
+            int index = game.getCurrentRound();
+            while (index < game.getQuestionSequence().size()) {
+                selected = questionRepo.findById(game.getQuestionSequence().get(index)).orElse(null);
+                if (selected != null) {
+                    break;
+                }
+                index++;
+            }
+            if (selected == null) {
+                return null;
+            }
+        } else {
+            Set<Long> used = new HashSet<>(game.getUsedQuestionIds());
+            List<Question> candidates = questionPool(game.getCategory(), game.getDifficulty(), game.getLanguage())
+                    .stream()
+                    .filter(q -> !used.contains(q.getId()))
+                    .toList();
+            if (candidates.isEmpty()) {
+                return null;
+            }
+            selected = candidates.get(random.nextInt(candidates.size()));
         }
 
-        Question selected = candidates.get(random.nextInt(candidates.size()));
         game.setCurrentRound(game.getCurrentRound() + 1);
         game.setCurrentQuestionId(selected.getId());
         game.getUsedQuestionIds().add(selected.getId());
@@ -454,20 +595,44 @@ public class GameServiceImpl implements GameService {
 
         Long winnerId = ranking.isEmpty() ? null : ranking.get(0).getId();
         game.setWinnerId(winnerId);
-        gameRepo.save(game);
 
-        int rank = 1;
-        for (Player player : ranking) {
-            GameHistory history = new GameHistory();
-            history.setGameId(game.getId());
-            history.setPlayerId(player.getId());
-            history.setFinalScore(game.getScores().getOrDefault(player.getId(), 0));
-            history.setRank(rank++);
-            history.setCorrectAnswers(game.getCorrectAnswers().getOrDefault(player.getId(), 0));
-            history.setTotalRounds(game.getTotalRounds());
-            history.setPlayedAt(LocalDateTime.now());
-            gameHistoryRepo.save(history);
+        if (game.isDailyChallenge()) {
+            saveDailyResult(game);
+        } else if (!game.isPractice()) {
+            int rank = 1;
+            for (Player player : ranking) {
+                GameHistory history = new GameHistory();
+                history.setGameId(game.getId());
+                history.setPlayerId(player.getId());
+                history.setFinalScore(game.getScores().getOrDefault(player.getId(), 0));
+                history.setRank(rank++);
+                history.setCorrectAnswers(game.getCorrectAnswers().getOrDefault(player.getId(), 0));
+                history.setTotalRounds(game.getTotalRounds());
+                history.setPlayedAt(LocalDateTime.now());
+                gameHistoryRepo.save(history);
+            }
         }
+
+        gameRepo.save(game);
+    }
+
+    /** Record the one daily result for this player, updating it if it exists. */
+    private void saveDailyResult(Game game) {
+        if (game.getPlayers().isEmpty()) {
+            return;
+        }
+        Player player = game.getPlayers().get(0);
+        DailyChallengeResult result = dailyResultRepo
+                .findByChallengeDateAndPlayerId(game.getDailyChallengeDate(), player.getId())
+                .orElseGet(DailyChallengeResult::new);
+        result.setChallengeDate(game.getDailyChallengeDate());
+        result.setPlayerId(player.getId());
+        result.setGameId(game.getId());
+        result.setScore(game.getScores().getOrDefault(player.getId(), 0));
+        result.setCorrectAnswers(game.getCorrectAnswers().getOrDefault(player.getId(), 0));
+        result.setTotalRounds(game.getTotalRounds());
+        result.setCompletedAt(LocalDateTime.now(clock));
+        dailyResultRepo.save(result);
     }
 
     /** Remove a player and all of their per-round state from the game. */
@@ -510,6 +675,11 @@ public class GameServiceImpl implements GameService {
         response.setFinished(game.getStatus() == GameStatus.FINISHED);
         response.setRoundStartedAt(game.getRoundStartedAt());
         response.setRoundTimeoutSeconds(game.getRoundTimeoutSeconds());
+        response.setPractice(game.isPractice());
+        response.setDailyChallenge(game.isDailyChallenge());
+        response.setDailyChallengeDate(game.getDailyChallengeDate() != null
+                ? game.getDailyChallengeDate().toString()
+                : null);
 
         if (!response.isFinished() && game.getCurrentQuestionId() != null) {
             questionRepo.findById(game.getCurrentQuestionId())
@@ -524,6 +694,11 @@ public class GameServiceImpl implements GameService {
         results.setStatus(game.getStatus().name());
         results.setTotalRounds(game.getTotalRounds());
         results.setScores(roster(game));
+        results.setPractice(game.isPractice());
+        results.setDailyChallenge(game.isDailyChallenge());
+        results.setDailyChallengeDate(game.getDailyChallengeDate() != null
+                ? game.getDailyChallengeDate().toString()
+                : null);
         results.setWinnerId(game.getWinnerId());
         if (game.getWinnerId() != null) {
             playerRepo.findById(game.getWinnerId()).ifPresent(p -> results.setWinnerName(p.getName()));
@@ -583,20 +758,21 @@ public class GameServiceImpl implements GameService {
         return game.getPlayers().stream().map(Player::getId).toList();
     }
 
-    /** Whether the current round has run past its timeout. */
+    /** Whether the current round has run past its timeout. Zero means untimed. */
     private boolean roundExpired(Game game, long now) {
-        return game.getRoundStartedAt() > 0
+        return game.getRoundTimeoutSeconds() > 0
+                && game.getRoundStartedAt() > 0
                 && now - game.getRoundStartedAt() >= game.getRoundTimeoutSeconds() * 1000L;
     }
 
     /** Server-measured elapsed time for the current round, capped at the timeout. */
     private long serverElapsedMs(Game game) {
-        if (game.getRoundStartedAt() <= 0) {
+        if (game.getRoundStartedAt() <= 0 || game.getRoundTimeoutSeconds() <= 0) {
             return 0L;
         }
         long elapsed = System.currentTimeMillis() - game.getRoundStartedAt();
         long cap = game.getRoundTimeoutSeconds() * 1000L;
-        return cap > 0 ? Math.min(elapsed, cap) : elapsed;
+        return Math.min(elapsed, cap);
     }
 
     /** Load a game and lock it for the duration of the transaction. */

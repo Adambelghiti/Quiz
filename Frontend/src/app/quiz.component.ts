@@ -120,9 +120,25 @@ export class QuizComponent implements OnInit, OnDestroy {
     return this.playerId !== null && this.round?.hostPlayerId === this.playerId;
   }
 
+  /** Practice has no countdown and accepts answers at any pace. */
+  get untimed(): boolean {
+    return this.round?.practice === true || this.round?.roundTimeoutSeconds === 0;
+  }
+
+  get isDailyChallenge(): boolean {
+    return this.round?.dailyChallenge === true;
+  }
+
+  get modeTitle(): string {
+    if (this.isDailyChallenge) {
+      return 'Daily Challenge';
+    }
+    return this.round?.practice ? 'Practice' : 'Quiz Game';
+  }
+
   /** True once the round's time is up on the server clock. */
   get timeExpired(): boolean {
-    return this.timeLeft <= 0;
+    return !this.untimed && this.timeLeft <= 0;
   }
 
   /** True once every player has answered the current round. */
@@ -218,18 +234,28 @@ export class QuizComponent implements OnInit, OnDestroy {
     });
   }
 
-  /** Leave the game and return to the lobby. */
+  /** Leave the game and return to the lobby (daily attempts go to results). */
   quit(): void {
     if (this.gameId === null) {
       this.router.navigate(['/lobby']);
       return;
     }
-    if (!confirm('Leave the game? Other players will keep playing.')) {
+    const daily = this.isDailyChallenge;
+    const prompt = daily
+      ? "Finish today's challenge? You only get one attempt for the day."
+      : 'Leave the game? Other players will keep playing.';
+    if (!confirm(prompt)) {
       return;
     }
     this.clearTimer();
     this.lobby.leaveGame(this.gameId).subscribe({
-      next: () => this.router.navigate(['/lobby']),
+      next: () => {
+        if (daily) {
+          this.router.navigate(['/results'], { queryParams: { gameId: this.gameId } });
+        } else {
+          this.router.navigate(['/lobby']);
+        }
+      },
       error: () => this.router.navigate(['/lobby']),
     });
   }
@@ -356,7 +382,12 @@ export class QuizComponent implements OnInit, OnDestroy {
     if (!this.round) {
       return;
     }
-    this.liveMessage = `Round ${this.round.round} of ${this.round.totalRounds}.`;
+    const mode = this.round.dailyChallenge
+      ? 'Daily Challenge. '
+      : this.round.practice
+        ? 'Practice. '
+        : '';
+    this.liveMessage = `${mode}Round ${this.round.round} of ${this.round.totalRounds}.`;
     window.setTimeout(() => this.questionText?.nativeElement.focus(), 0);
 
     if (this.speechEnabled && this.preferences.speech.autoReadQuestion) {
@@ -369,13 +400,17 @@ export class QuizComponent implements OnInit, OnDestroy {
     this.clearTimer();
     this.lastTick = 0;
     this.lastTickSound = -1;
+    if (this.untimed) {
+      this.timeLeft = 0;
+      return;
+    }
     this.tick();
     this.timer = setInterval(() => this.tick(), 250);
   }
 
   private tick(): void {
     const round = this.round;
-    if (!round || !round.roundStartedAt || !round.roundTimeoutSeconds) {
+    if (!round || this.untimed || !round.roundStartedAt || !round.roundTimeoutSeconds) {
       this.timeLeft = 0;
       return;
     }

@@ -1,0 +1,75 @@
+<main id="main-content" class="container" tabindex="-1">
+  <div class="daily-header">
+    <div>
+      <h2 appFocusOnInit tabindex="-1">Daily Challenge</h2>
+      <p class="daily-date" *ngIf="status">{{ dateLabel }}</p>
+    </div>
+    <button type="button" class="secondary-button" (click)="backToLobby()">
+      Back to Lobby
+    </button>
+  </div>
+
+  <div *ngIf="loading" aria-live="polite">Loading today’s challenge…</div>
+  <div *ngIf="error" class="error-message" role="alert">{{ error }}</div>
+
+  <ng-container *ngIf="status as s">
+    <section class="daily-card" aria-labelledby="daily-about">
+      <h3 id="daily-about">One shared quiz. One attempt.</h3>
+      <p class="daily-meta">
+        {{ s.totalRounds }} questions · {{ s.roundTimeoutSeconds }} seconds each ·
+        {{ languageLabel }}
+      </p>
+
+      <p *ngIf="s.inProgress" role="status">
+        You have an unfinished attempt. Resume it to keep your score.
+      </p>
+      <p *ngIf="s.completed" class="daily-result" role="status">
+        You finished with <strong>{{ s.score ?? 0 }} points</strong> and
+        <strong>{{ s.correctAnswers ?? 0 }} / {{ s.totalRounds }}</strong> correct.
+        <span *ngIf="s.rank">Today’s rank: <strong>#{{ s.rank }}</strong>.</span>
+      </p>
+      <p *ngIf="s.completed" class="daily-hint">
+        A new challenge is ready tomorrow (UTC). Your attempt cannot be replayed.
+      </p>
+
+      <button
+        *ngIf="!s.completed"
+        type="button"
+        class="primary-button"
+        [disabled]="starting"
+        (click)="play()"
+      >
+        {{ starting ? 'Starting…' : s.inProgress ? 'Resume Challenge' : 'Start Daily Challenge' }}
+      </button>
+    </section>
+
+    <section aria-labelledby="daily-leaderboard">
+      <h3 id="daily-leaderboard">Today’s leaderboard</h3>
+      <table class="daily-table">
+        <caption class="sr-only">Daily challenge leaderboard for {{ dateLabel }}</caption>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Player</th>
+            <th scope="col">Correct</th>
+            <th scope="col">Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let entry of s.leaderboard" [class.me]="isMe(entry)">
+            <td>{{ entry.rank }}</td>
+            <td>
+              {{ entry.name }}
+              <span *ngIf="isMe(entry)" class="you">(you)</span>
+            </td>
+            <td>{{ entry.correctAnswers }} / {{ entry.totalRounds }}</td>
+            <td>{{ entry.score }}</td>
+          </tr>
+          <tr *ngIf="s.leaderboard.length === 0">
+            <td colspan="4" class="empty">No one has finished today’s challenge yet.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </ng-container>
+</main>

@@ -54,6 +54,14 @@ export class LobbyComponent implements OnInit, OnDestroy {
     this.router.navigate(['/settings']);
   }
 
+  openDaily(): void {
+    this.router.navigate(['/daily']);
+  }
+
+  openPractice(): void {
+    this.router.navigate(['/setup'], { queryParams: { mode: 'practice' } });
+  }
+
   ngOnInit(): void {
     this.loadGames();
     this.loadLeaderboard();

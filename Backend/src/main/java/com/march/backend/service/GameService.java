@@ -17,6 +17,12 @@ public interface GameService {
     /** Create and immediately start a solo game, returning its first round. */
     RoundResponse startGame(GameStartRequest request);
 
+    /**
+     * Start or resume the caller's one attempt at today's shared daily
+     * challenge. A finished attempt cannot be replayed.
+     */
+    RoundResponse startDailyChallenge(Long playerId);
+
     /** Create a multiplayer room in the {@code WAITING} state; the host starts it later. */
     RoundResponse createRoom(GameStartRequest request);
 

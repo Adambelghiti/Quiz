@@ -22,6 +22,9 @@ public interface GameRepository extends JpaRepository<Game, Long> {
     @Query("select g from Game g where g.id = :id")
     Optional<Game> findByIdForUpdate(@Param("id") Long id);
 
+    /** The single attempt a player has for one daily challenge. */
+    Optional<Game> findByDailyChallengeKey(String dailyChallengeKey);
+
     /**
      * Number of times the given player appears in the given game.
      * <p>

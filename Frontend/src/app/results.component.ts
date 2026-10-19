@@ -70,6 +70,10 @@ export class ResultsComponent implements OnInit, OnDestroy {
     if (this.gameId === null || this.rematching || this.leaving) {
       return;
     }
+    if (this.results?.dailyChallenge) {
+      this.error = 'Daily challenges cannot be replayed today.';
+      return;
+    }
     this.rematching = true;
     this.error = null;
     this.lobby.rematch(this.gameId).subscribe({
@@ -90,6 +94,10 @@ export class ResultsComponent implements OnInit, OnDestroy {
     this.router.navigate(['/lobby']);
   }
 
+  backToDaily(): void {
+    this.router.navigate(['/daily']);
+  }
+
   private loadResults(gameId: number): void {
     this.lobby.getResults(gameId).subscribe({
       next: (results) => {
@@ -106,7 +114,7 @@ export class ResultsComponent implements OnInit, OnDestroy {
 
   /** Confetti for the winner, with an extra fanfare when the local player won. */
   private celebrate(results: GameResults): void {
-    if (results.winnerId == null) {
+    if (results.winnerId == null || results.practice) {
       return;
     }
     const me = this.playerService.getPlayerId();

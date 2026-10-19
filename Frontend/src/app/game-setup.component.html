@@ -1,9 +1,14 @@
 <main id="main-content" class="container" tabindex="-1">
-  <h2 appFocusOnInit tabindex="-1">New Game</h2>
+  <h2 appFocusOnInit tabindex="-1">{{ practiceMode ? 'Practice' : 'New Game' }}</h2>
+
+  <p *ngIf="practiceMode" class="practice-intro">
+    Practice is a single-player, untimed session. Answers and explanations are shown immediately,
+    and practice never changes the leaderboard.
+  </p>
 
   <div *ngIf="errorMsg" class="error-message" role="alert">{{ errorMsg }}</div>
 
-  <form (ngSubmit)="createRoom()" [attr.aria-busy]="loading">
+  <form (ngSubmit)="onSubmit()" [attr.aria-busy]="loading">
     <label for="category">Category</label>
     <select id="category" name="category" [(ngModel)]="category">
       <option [ngValue]="null">Any category</option>
@@ -23,28 +28,54 @@
     <label for="rounds">Number of rounds</label>
     <input id="rounds" name="rounds" type="number" min="1" max="20" [(ngModel)]="rounds" />
 
-    <label for="roundSeconds">Time per question</label>
-    <select
-      id="roundSeconds"
-      name="roundSeconds"
-      [(ngModel)]="roundSeconds"
-      aria-describedby="roundSeconds-hint"
-    >
-      <option *ngFor="let seconds of roundTimeOptions" [ngValue]="seconds">
-        {{ seconds }} seconds
-      </option>
-    </select>
-    <p class="field-hint" id="roundSeconds-hint">
-      More time helps players who use voice reading or a screen reader. The timer is enforced by
-      the server.
-    </p>
+    <ng-container *ngIf="!practiceMode">
+      <label for="roundSeconds">Time per question</label>
+      <select
+        id="roundSeconds"
+        name="roundSeconds"
+        [(ngModel)]="roundSeconds"
+        aria-describedby="roundSeconds-hint"
+      >
+        <option *ngFor="let seconds of roundTimeOptions" [ngValue]="seconds">
+          {{ seconds }} seconds
+        </option>
+      </select>
+      <p class="field-hint" id="roundSeconds-hint">
+        More time helps players who use voice reading or a screen reader. The timer is enforced by
+        the server.
+      </p>
+    </ng-container>
 
     <div class="form-actions">
-      <button type="submit" class="primary-button" [disabled]="loading">
+      <button *ngIf="!practiceMode" type="submit" class="primary-button" [disabled]="loading">
         {{ loading ? 'Creating…' : 'Create Multiplayer Room' }}
       </button>
-      <button type="button" class="secondary-button" [disabled]="loading" (click)="playSolo()">
+      <button
+        *ngIf="!practiceMode"
+        type="button"
+        class="secondary-button"
+        [disabled]="loading"
+        (click)="playSolo()"
+      >
         Play Solo
+      </button>
+      <button
+        *ngIf="!practiceMode"
+        type="button"
+        class="secondary-button"
+        [disabled]="loading"
+        (click)="playPractice()"
+      >
+        Practice (untimed)
+      </button>
+      <button
+        *ngIf="practiceMode"
+        type="button"
+        class="primary-button"
+        [disabled]="loading"
+        (click)="playPractice()"
+      >
+        {{ loading ? 'Starting…' : 'Start Practice' }}
       </button>
       <button type="button" class="link-button" (click)="cancel()">Back to lobby</button>
     </div>

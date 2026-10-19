@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LobbyService, StartGameRequest } from './lobby.service';
 import { CurrentGameService } from './current-game.service';
 import { PlayerService } from './player.service';
@@ -47,6 +47,8 @@ export class GameSetupComponent implements OnInit {
 
   loading = false;
   errorMsg: string | null = null;
+  /** Opened from the lobby's Practice button. */
+  practiceMode = false;
 
   private static readonly difficultyLabels: Record<number, string> = {
     1: 'Easy',
@@ -64,11 +66,13 @@ export class GameSetupComponent implements OnInit {
     private lobby: LobbyService,
     private currentGame: CurrentGameService,
     private router: Router,
+    private route: ActivatedRoute,
     private quiz: QuizService,
     private playerService: PlayerService
   ) {}
 
   ngOnInit(): void {
+    this.practiceMode = this.route.snapshot.queryParamMap.get('mode') === 'practice';
     this.quiz.getFacets().subscribe({
       next: (facets) => {
         this.categories = Array.from(new Set(facets.categories ?? []));
@@ -115,13 +119,35 @@ export class GameSetupComponent implements OnInit {
 
   /** Start a game immediately with just this player. */
   playSolo(): void {
+    this.startSolo(false);
+  }
+
+  /** Start an untimed practice session with the selected filters. */
+  playPractice(): void {
+    this.startSolo(true);
+  }
+
+  /** Enter submits the active mode: room creation or practice. */
+  onSubmit(): void {
+    if (this.practiceMode) {
+      this.playPractice();
+    } else {
+      this.createRoom();
+    }
+  }
+
+  cancel(): void {
+    this.router.navigate(['/lobby']);
+  }
+
+  private startSolo(practice: boolean): void {
     if (this.loading) {
       return;
     }
     this.loading = true;
     this.errorMsg = null;
 
-    this.lobby.startGame(this.request()).subscribe({
+    this.lobby.startGame({ ...this.request(), practice }).subscribe({
       next: (round) => {
         this.currentGame.set(round.gameId);
         if (round.playerId != null) {
@@ -131,10 +157,6 @@ export class GameSetupComponent implements OnInit {
       },
       error: (err) => this.fail(err),
     });
-  }
-
-  cancel(): void {
-    this.router.navigate(['/lobby']);
   }
 
   private request(): StartGameRequest {

@@ -21,4 +21,13 @@ public class GameResults {
     private String winnerName;
     private int totalRounds;
     private List<PlayerScore> scores = new ArrayList<>();
+
+    /** True for an untimed single-player practice session. */
+    private boolean practice;
+
+    /** True for the player's daily-challenge attempt. */
+    private boolean dailyChallenge;
+
+    /** ISO date of the daily challenge, when this is one. */
+    private String dailyChallengeDate;
 }

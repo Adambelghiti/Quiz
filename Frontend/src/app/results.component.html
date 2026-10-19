@@ -1,6 +1,14 @@
 <main id="main-content" class="results-container" tabindex="-1">
   <div class="results-header">
-    <h1 appFocusOnInit tabindex="-1">Quiz Results</h1>
+    <h1 appFocusOnInit tabindex="-1">
+      {{
+        results?.dailyChallenge
+          ? 'Daily Challenge Results'
+          : results?.practice
+            ? 'Practice Results'
+            : 'Quiz Results'
+      }}
+    </h1>
     <button
       type="button"
       class="sound-toggle"
@@ -20,12 +28,22 @@
   <div *ngIf="error" class="error-message" role="alert">{{ error }}</div>
 
   <ng-container *ngIf="results as r">
-    <div class="winner-banner" role="status" *ngIf="r.winnerName; else noWinner">
-      🏆 <strong>{{ r.winnerName }}</strong> wins!
+    <div class="winner-banner" role="status" *ngIf="r.dailyChallenge">
+      📅 Daily Challenge complete —
+      <strong>{{ r.scores.length ? r.scores[0].score : 0 }} points</strong>.
     </div>
-    <ng-template #noWinner>
-      <div class="winner-banner" role="status">No winner this time – nobody scored.</div>
-    </ng-template>
+    <div class="winner-banner" role="status" *ngIf="r.practice && !r.dailyChallenge">
+      📚 Practice complete —
+      <strong>{{ r.scores.length ? r.scores[0].score : 0 }} points</strong>.
+    </div>
+    <ng-container *ngIf="!r.dailyChallenge && !r.practice">
+      <div class="winner-banner" role="status" *ngIf="r.winnerName; else noWinner">
+        🏆 <strong>{{ r.winnerName }}</strong> wins!
+      </div>
+      <ng-template #noWinner>
+        <div class="winner-banner" role="status">No winner this time – nobody scored.</div>
+      </ng-template>
+    </ng-container>
 
     <table class="score-table">
       <caption class="sr-only">Final scores</caption>
@@ -48,14 +66,31 @@
     </table>
 
     <div class="actions-container">
-      <button (click)="rematch()" class="primary-button" [disabled]="rematching">
-        {{ rematching ? 'Starting…' : 'Rematch' }}
+      <button
+        *ngIf="!r.dailyChallenge"
+        (click)="rematch()"
+        class="primary-button"
+        [disabled]="rematching"
+      >
+        {{ rematching ? 'Starting…' : r.practice ? 'Practice Again' : 'Rematch' }}
       </button>
-      <button (click)="newGame()" class="secondary-button">New Game</button>
+      <button *ngIf="!r.dailyChallenge" (click)="newGame()" class="secondary-button">
+        New Game
+      </button>
+      <button *ngIf="r.dailyChallenge" (click)="backToDaily()" class="primary-button">
+        Back to Daily Challenge
+      </button>
       <button (click)="backToLobby()" class="secondary-button">Back to Lobby</button>
     </div>
 
-    <p class="rematch-hint">
+    <p class="rematch-hint" *ngIf="r.dailyChallenge">
+      A new shared challenge is ready tomorrow (UTC). Today’s attempt cannot be replayed.
+    </p>
+    <p class="rematch-hint" *ngIf="r.practice">
+      Practice is untimed and does not affect the leaderboard. Practice Again uses the same
+      settings.
+    </p>
+    <p class="rematch-hint" *ngIf="!r.dailyChallenge && !r.practice">
       Rematch keeps the same players in the same room – the host starts the next game.
     </p>
   </ng-container>
