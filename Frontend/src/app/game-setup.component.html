@@ -1,9 +1,9 @@
-<div class="container">
-  <h2>New Game</h2>
+<main id="main-content" class="container" tabindex="-1">
+  <h2 appFocusOnInit tabindex="-1">New Game</h2>
 
-  <div *ngIf="errorMsg" class="error-message">{{ errorMsg }}</div>
+  <div *ngIf="errorMsg" class="error-message" role="alert">{{ errorMsg }}</div>
 
-  <form (ngSubmit)="createRoom()">
+  <form (ngSubmit)="createRoom()" [attr.aria-busy]="loading">
     <label for="category">Category</label>
     <select id="category" name="category" [(ngModel)]="category">
       <option [ngValue]="null">Any category</option>
@@ -24,12 +24,17 @@
     <input id="rounds" name="rounds" type="number" min="1" max="20" [(ngModel)]="rounds" />
 
     <label for="roundSeconds">Time per question</label>
-    <select id="roundSeconds" name="roundSeconds" [(ngModel)]="roundSeconds">
+    <select
+      id="roundSeconds"
+      name="roundSeconds"
+      [(ngModel)]="roundSeconds"
+      aria-describedby="roundSeconds-hint"
+    >
       <option *ngFor="let seconds of roundTimeOptions" [ngValue]="seconds">
         {{ seconds }} seconds
       </option>
     </select>
-    <p class="field-hint">
+    <p class="field-hint" id="roundSeconds-hint">
       More time helps players who use voice reading or a screen reader. The timer is enforced by
       the server.
     </p>
@@ -44,4 +49,4 @@
       <button type="button" class="link-button" (click)="cancel()">Back to lobby</button>
     </div>
   </form>
-</div>
+</main>

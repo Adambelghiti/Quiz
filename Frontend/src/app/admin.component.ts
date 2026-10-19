@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminQuestion, QuestionAdminService } from './question-admin.service';
+import { FocusHeadingDirective } from './focus-heading.directive';
 
 /** Fixed enums mirrored from the backend (see Category / Language). */
 const CATEGORIES = [
@@ -22,7 +23,7 @@ const LANGUAGES = ['EN', 'FR', 'AR'];
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss'],
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, FocusHeadingDirective],
   standalone: true,
 })
 export class AdminComponent implements OnInit {

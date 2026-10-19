@@ -1,6 +1,6 @@
-<div class="container">
+<main id="main-content" class="container" tabindex="-1">
   <div class="leaderboard-header">
-    <h2>Leaderboard</h2>
+    <h2 appFocusOnInit tabindex="-1">Leaderboard</h2>
     <div class="header-actions">
       <label for="limit">Show</label>
       <select id="limit" name="limit" [(ngModel)]="limit" (ngModelChange)="load()">
@@ -12,18 +12,19 @@
     </div>
   </div>
 
-  <div *ngIf="loading">Loading leaderboard…</div>
-  <div *ngIf="error" class="error-message">{{ error }}</div>
+  <div *ngIf="loading" aria-live="polite">Loading leaderboard…</div>
+  <div *ngIf="error" class="error-message" role="alert">{{ error }}</div>
 
   <table class="leaderboard-table" *ngIf="!loading && !error">
+    <caption class="sr-only">Player leaderboard</caption>
     <thead>
       <tr>
-        <th>#</th>
-        <th>Player</th>
-        <th>Games</th>
-        <th>Wins</th>
-        <th>Accuracy</th>
-        <th>Total score</th>
+        <th scope="col">#</th>
+        <th scope="col">Player</th>
+        <th scope="col">Games</th>
+        <th scope="col">Wins</th>
+        <th scope="col">Accuracy</th>
+        <th scope="col">Total score</th>
       </tr>
     </thead>
     <tbody>
@@ -40,4 +41,4 @@
       </tr>
     </tbody>
   </table>
-</div>
+</main>

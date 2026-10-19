@@ -6,12 +6,13 @@ import { LobbyService, RoundResponse } from './lobby.service';
 import { PlayerService } from './player.service';
 import { CurrentGameService } from './current-game.service';
 import { WebSocketService } from './websocket.service';
+import { FocusHeadingDirective } from './focus-heading.directive';
 
 @Component({
   selector: 'app-waiting-room',
   templateUrl: './waiting-room.component.html',
   styleUrls: ['./waiting-room.component.scss'],
-  imports: [CommonModule, QRCodeModule],
+  imports: [CommonModule, QRCodeModule, FocusHeadingDirective],
   standalone: true,
 })
 export class WaitingRoomComponent implements OnInit, OnDestroy {

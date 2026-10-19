@@ -1,14 +1,14 @@
-<div class="container">
+<main id="main-content" class="container" tabindex="-1">
   <div class="profile-header">
-    <h2>{{ stats?.name || 'Your Profile' }}</h2>
+    <h2 appFocusOnInit tabindex="-1">{{ stats?.name || 'Your Profile' }}</h2>
     <button type="button" class="secondary-button" (click)="backToLobby()">Back to Lobby</button>
   </div>
 
-  <div *ngIf="loading">Loading…</div>
-  <div *ngIf="error" class="error-message">{{ error }}</div>
+  <div *ngIf="loading" aria-live="polite">Loading…</div>
+  <div *ngIf="error" class="error-message" role="alert">{{ error }}</div>
 
   <ng-container *ngIf="!loading && stats as s">
-    <div class="stat-grid">
+    <div class="stat-grid" role="group" aria-label="Player statistics">
       <div class="stat-card">
         <span class="stat-value">{{ s.gamesPlayed }}</span>
         <span class="stat-label">Games played</span>
@@ -33,13 +33,14 @@
 
     <h3>Match history</h3>
     <table class="history-table" *ngIf="history.length > 0; else noHistory">
+      <caption class="sr-only">Your match history</caption>
       <thead>
         <tr>
-          <th>Game</th>
-          <th>Played</th>
-          <th>Rank</th>
-          <th>Correct</th>
-          <th>Score</th>
+          <th scope="col">Game</th>
+          <th scope="col">Played</th>
+          <th scope="col">Rank</th>
+          <th scope="col">Correct</th>
+          <th scope="col">Score</th>
         </tr>
       </thead>
       <tbody>
@@ -56,4 +57,4 @@
       <p class="empty">No games played yet — jump into a quiz!</p>
     </ng-template>
   </ng-container>
-</div>
+</main>

@@ -1,16 +1,16 @@
-<div class="container">
+<main id="main-content" class="container" tabindex="-1">
   <div class="admin-header">
-    <h2>Question Admin</h2>
+    <h2 appFocusOnInit tabindex="-1">Question Admin</h2>
     <div class="admin-actions">
       <button type="button" class="secondary-button" (click)="newQuestion()">New Question</button>
       <button type="button" class="secondary-button" (click)="backToLobby()">Back to Lobby</button>
     </div>
   </div>
 
-  <div *ngIf="notice" class="notice">{{ notice }}</div>
-  <div *ngIf="error" class="error-message">{{ error }}</div>
+  <div *ngIf="notice" class="notice" role="status">{{ notice }}</div>
+  <div *ngIf="error" class="error-message" role="alert">{{ error }}</div>
 
-  <form class="question-form" (ngSubmit)="save()">
+  <form class="question-form" (ngSubmit)="save()" [attr.aria-busy]="saving">
     <h3>{{ editingId != null ? 'Edit question #' + editingId : 'New question' }}</h3>
 
     <label for="text">Question</label>
@@ -39,16 +39,19 @@
       </div>
     </div>
 
-    <label>Options</label>
-    <div class="options-grid">
-      <input
-        *ngFor="let option of draft.options; let i = index; trackBy: trackOption"
-        [name]="'option' + i"
-        type="text"
-        [placeholder]="'Option ' + (i + 1)"
-        [(ngModel)]="draft.options[i]"
-      />
-    </div>
+    <fieldset class="options-fieldset">
+      <legend>Options</legend>
+      <div class="options-grid">
+        <input
+          *ngFor="let option of draft.options; let i = index; trackBy: trackOption"
+          [name]="'option' + i"
+          type="text"
+          [attr.aria-label]="'Option ' + (i + 1)"
+          [placeholder]="'Option ' + (i + 1)"
+          [(ngModel)]="draft.options[i]"
+        />
+      </div>
+    </fieldset>
 
     <div class="row">
       <div>
@@ -70,18 +73,19 @@
   </form>
 
   <h3>Question bank ({{ questions.length }})</h3>
-  <div *ngIf="loading">Loading questions…</div>
+  <div *ngIf="loading" aria-live="polite">Loading questions…</div>
 
   <table class="question-table" *ngIf="!loading">
+    <caption class="sr-only">Question bank</caption>
     <thead>
       <tr>
-        <th>#</th>
-        <th>Question</th>
-        <th>Category</th>
-        <th>Diff.</th>
-        <th>Lang.</th>
-        <th>Answer</th>
-        <th></th>
+        <th scope="col">#</th>
+        <th scope="col">Question</th>
+        <th scope="col">Category</th>
+        <th scope="col">Diff.</th>
+        <th scope="col">Lang.</th>
+        <th scope="col">Answer</th>
+        <th scope="col"><span class="sr-only">Actions</span></th>
       </tr>
     </thead>
     <tbody>
@@ -93,8 +97,22 @@
         <td>{{ q.language }}</td>
         <td dir="auto">{{ q.correctAnswer }}</td>
         <td class="row-actions">
-          <button type="button" class="link-button" (click)="edit(q)">Edit</button>
-          <button type="button" class="link-button danger" (click)="remove(q)">Delete</button>
+          <button
+            type="button"
+            class="link-button"
+            (click)="edit(q)"
+            [attr.aria-label]="'Edit question ' + q.id"
+          >
+            Edit
+          </button>
+          <button
+            type="button"
+            class="link-button danger"
+            (click)="remove(q)"
+            [attr.aria-label]="'Delete question ' + q.id"
+          >
+            Delete
+          </button>
         </td>
       </tr>
       <tr *ngIf="questions.length === 0">
@@ -102,4 +120,4 @@
       </tr>
     </tbody>
   </table>
-</div>
+</main>

@@ -1,14 +1,16 @@
-<div class="auth-page">
+<main id="main-content" class="auth-page" tabindex="-1">
   <div class="auth-card">
     <h1 class="brand">QuizGame</h1>
-    <h2 class="title">{{ isRegister ? 'Create your account' : 'Welcome back' }}</h2>
+    <h2 appFocusOnInit tabindex="-1" class="title">
+      {{ isRegister ? 'Create your account' : 'Welcome back' }}
+    </h2>
     <p class="subtitle">
       {{ isRegister ? 'Sign up to start playing.' : 'Sign in to continue.' }}
     </p>
 
-    <div *ngIf="error" class="error-message">{{ error }}</div>
+    <div *ngIf="error" class="error-message" role="alert">{{ error }}</div>
 
-    <form (ngSubmit)="submit()">
+    <form (ngSubmit)="submit()" [attr.aria-busy]="loading">
       <label for="username">Username</label>
       <input
         id="username"
@@ -53,4 +55,4 @@
       </button>
     </p>
   </div>
-</div>
+</main>

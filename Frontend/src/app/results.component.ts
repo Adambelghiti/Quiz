@@ -6,12 +6,13 @@ import { CurrentGameService } from './current-game.service';
 import { EffectsService } from './effects.service';
 import { PlayerService } from './player.service';
 import { WebSocketService } from './websocket.service';
+import { FocusHeadingDirective } from './focus-heading.directive';
 
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.scss'],
-  imports: [CommonModule],
+  imports: [CommonModule, FocusHeadingDirective],
   standalone: true,
 })
 export class ResultsComponent implements OnInit, OnDestroy {

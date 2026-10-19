@@ -6,6 +6,7 @@ import { LobbyService, StartGameRequest } from './lobby.service';
 import { CurrentGameService } from './current-game.service';
 import { PlayerService } from './player.service';
 import { QuizService } from './quiz.service';
+import { FocusHeadingDirective } from './focus-heading.directive';
 
 interface DifficultyOption {
   value: number | null;
@@ -28,7 +29,7 @@ const ANY_LANGUAGE_LABEL = 'Any language (questions may mix languages)';
   selector: 'app-game-setup',
   templateUrl: './game-setup.component.html',
   styleUrls: ['./game-setup.component.scss'],
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, FocusHeadingDirective],
   standalone: true,
 })
 export class GameSetupComponent implements OnInit {

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from './auth.service';
+import { FocusHeadingDirective } from './focus-heading.directive';
 
 type AuthMode = 'login' | 'register';
 
@@ -11,7 +12,7 @@ type AuthMode = 'login' | 'register';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, FocusHeadingDirective],
   standalone: true,
 })
 export class LoginComponent {

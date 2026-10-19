@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { GameHistoryEntry, PlayerService, PlayerStats } from './player.service';
+import { FocusHeadingDirective } from './focus-heading.directive';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
-  imports: [CommonModule],
+  imports: [CommonModule, FocusHeadingDirective],
   standalone: true,
 })
 export class ProfileComponent implements OnInit {

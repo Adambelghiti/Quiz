@@ -1,11 +1,11 @@
-<div class="container">
+<main id="main-content" class="container" tabindex="-1">
   <div class="room-header">
-    <h2>Waiting Room</h2>
+    <h2 appFocusOnInit tabindex="-1">Waiting Room</h2>
     <button (click)="leave()" class="secondary-button">Leave</button>
   </div>
 
-  <div *ngIf="loading">Loading room…</div>
-  <div *ngIf="error" class="error-message">{{ error }}</div>
+  <div *ngIf="loading" aria-live="polite">Loading room…</div>
+  <div *ngIf="error" class="error-message" role="alert">{{ error }}</div>
 
   <ng-container *ngIf="!loading && room as r">
     <p class="room-meta">
@@ -13,7 +13,7 @@
       {{ r.players.length }} player(s)
     </p>
 
-    <ul class="player-list">
+    <ul class="player-list" aria-label="Players in this room">
       <li *ngFor="let p of r.players">
         <span class="avatar">{{ p.name.charAt(0).toUpperCase() }}</span>
         <span class="name">{{ p.name }}</span>
@@ -35,10 +35,11 @@
           aria-label="Invite link"
           (focus)="selectInvite($event)"
         />
-        <button class="secondary-button" (click)="copyInvite()">
+        <button type="button" class="secondary-button" (click)="copyInvite()">
           {{ copied ? 'Copied!' : 'Copy link' }}
         </button>
       </div>
+      <p class="sr-only" aria-live="polite">{{ copied ? 'Invite link copied to the clipboard.' : '' }}</p>
       <div class="qr-wrapper">
         <qrcode
           [qrdata]="inviteUrl"
@@ -57,7 +58,7 @@
         {{ starting ? 'Starting…' : 'Start Game' }}
       </button>
       <button *ngIf="isHost" class="secondary-button" (click)="cancel()">Cancel Room</button>
-      <p *ngIf="!isHost" class="waiting-text">Waiting for the host to start…</p>
+      <p *ngIf="!isHost" class="waiting-text" role="status">Waiting for the host to start…</p>
     </div>
   </ng-container>
-</div>
+</main>

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { PreferencesService } from './preferences.service';
 import { SpeechService } from './speech.service';
+import { FocusHeadingDirective } from './focus-heading.directive';
 
 /**
  * Opt-in accessibility settings. Voice reading is off by default; players who
@@ -12,7 +13,7 @@ import { SpeechService } from './speech.service';
   selector: 'app-settings',
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss'],
-  imports: [CommonModule],
+  imports: [CommonModule, FocusHeadingDirective],
   standalone: true,
 })
 export class SettingsComponent {

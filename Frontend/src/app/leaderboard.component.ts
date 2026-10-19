@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LeaderboardEntry, LobbyService } from './lobby.service';
+import { FocusHeadingDirective } from './focus-heading.directive';
 
 @Component({
   selector: 'app-leaderboard',
   templateUrl: './leaderboard.component.html',
   styleUrls: ['./leaderboard.component.scss'],
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, FocusHeadingDirective],
   standalone: true,
 })
 export class LeaderboardComponent implements OnInit {

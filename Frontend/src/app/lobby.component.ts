@@ -6,12 +6,13 @@ import { GameSummary, LeaderboardEntry, LobbyService } from './lobby.service';
 import { CurrentGameService } from './current-game.service';
 import { AuthService } from './auth.service';
 import { WebSocketService } from './websocket.service';
+import { FocusHeadingDirective } from './focus-heading.directive';
 
 @Component({
   selector: 'app-lobby',
   templateUrl: './lobby.component.html',
   styleUrls: ['./lobby.component.scss'],
-  imports: [CommonModule],
+  imports: [CommonModule, FocusHeadingDirective],
   standalone: true,
 })
 export class LobbyComponent implements OnInit, OnDestroy {
