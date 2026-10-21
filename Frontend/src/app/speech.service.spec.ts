@@ -67,6 +67,64 @@ describe('SpeechService', () => {
     expect(synth.spoken[0].lang).toBe('en-US');
   });
 
+  it('uses French answer labels for a French question', () => {
+    const synth = new FakeSynthesis();
+    const service = serviceWith(synth);
+
+    service.readQuestion({
+      text: 'Quelle est la capitale de la France ?',
+      options: ['Paris', 'Rome', 'Madrid'],
+      language: 'FR',
+    });
+
+    expect(synth.spoken[0].text).toContain('3 choix');
+    expect(synth.spoken[0].text).toContain('Réponse 1 : Paris');
+    expect(synth.spoken[0].text).toContain('Réponse 2 : Rome');
+    expect(synth.spoken[0].text).not.toContain('Answer');
+  });
+
+  it('uses Arabic answer labels for an Arabic question', () => {
+    const synth = new FakeSynthesis();
+    const service = serviceWith(synth);
+
+    service.readQuestion({
+      text: 'ما هي عاصمة فرنسا؟',
+      options: ['باريس', 'روما', 'مدريد'],
+      language: 'AR',
+    });
+
+    expect(synth.spoken[0].text).toContain('ما هي عاصمة فرنسا؟');
+    expect(synth.spoken[0].text).toContain('الإجابة الأولى');
+    expect(synth.spoken[0].text).toContain('الإجابة الثانية');
+    expect(synth.spoken[0].text).not.toContain('Answer');
+  });
+
+  it('uses a localized label when reading one answer choice', () => {
+    const synth = new FakeSynthesis();
+    const service = serviceWith(synth);
+
+    service.readOption('Rome', 1, 'FR');
+    service.readOption('الرياض', 1, 'AR');
+
+    expect(synth.spoken[0].text).toContain('Réponse 2 : Rome');
+    expect(synth.spoken[1].text).toContain('الإجابة الثانية');
+  });
+
+  it('localizes feedback for French and Arabic questions', () => {
+    const synth = new FakeSynthesis();
+    const service = serviceWith(synth);
+
+    service.readFeedback({ correct: false, correctAnswer: 'Paris', scoreDelta: 0 }, 'FR');
+    service.readFeedback({ correct: true, correctAnswer: 'باريس', scoreDelta: 75 }, 'AR');
+
+    expect(synth.spoken[0].text).toContain('Pas tout à fait');
+    expect(synth.spoken[0].text).toContain('La bonne réponse était Paris');
+    expect(synth.spoken[0].text).not.toContain('Not quite');
+    expect(synth.spoken[1].text).toContain('صحيح');
+    expect(synth.spoken[1].text).toContain('75');
+    expect(synth.spoken[1].text).not.toContain('Correct');
+  });
+
   it('uses a matching installed voice when one is available', () => {
     const synth = new FakeSynthesis();
     synth.voices = [
@@ -79,6 +137,46 @@ describe('SpeechService', () => {
 
     expect(synth.spoken[0].lang).toBe('fr-FR');
     expect(synth.spoken[0].voice?.name).toBe('French');
+  });
+
+  it('falls back to the default voice instead of staying silent', () => {
+    const synth = new FakeSynthesis();
+    synth.voices = [{ lang: 'en-US', name: 'English', default: true } as SpeechSynthesisVoice];
+    const service = serviceWith(synth);
+
+    service.speak('مرحبا', 'AR');
+
+    expect(synth.spoken[0].lang).toBe('ar-SA');
+    expect(synth.spoken[0].voice?.name).toBe('English');
+  });
+
+  it('matches a voice tagged with only the language code', () => {
+    const synth = new FakeSynthesis();
+    synth.voices = [
+      { lang: 'en-US', name: 'English', default: true } as SpeechSynthesisVoice,
+      { lang: 'ar', name: 'Arabic' } as SpeechSynthesisVoice,
+    ];
+    const service = serviceWith(synth);
+
+    service.speak('مرحبا', 'AR');
+
+    expect(synth.spoken[0].voice?.name).toBe('Arabic');
+  });
+
+  it('reports whether a matching voice is installed', () => {
+    const synth = new FakeSynthesis();
+    synth.voices = [{ lang: 'en-US', name: 'English' } as SpeechSynthesisVoice];
+    const service = serviceWith(synth);
+
+    expect(service.hasVoiceFor('EN')).toBeTrue();
+    expect(service.hasVoiceFor('FR')).toBeFalse();
+    expect(service.hasVoiceFor('AR')).toBeFalse();
+  });
+
+  it('does not report a missing voice before the browser has listed them', () => {
+    const service = serviceWith(new FakeSynthesis());
+
+    expect(service.hasVoiceFor('AR')).toBeTrue();
   });
 
   it('explains a late answer without awarding points', () => {

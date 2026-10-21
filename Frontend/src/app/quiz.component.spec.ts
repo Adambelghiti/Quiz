@@ -18,9 +18,10 @@ function buildComponent(questionLanguage?: string, options: string[] = []): Test
   const preferences = new PreferencesService();
   const speech = jasmine.createSpyObj<SpeechService>(
     'SpeechService',
-    ['readQuestion', 'readOption', 'readFeedback', 'speak', 'stop'],
+    ['readQuestion', 'readOption', 'readFeedback', 'speak', 'stop', 'hasVoiceFor'],
     { supported: true },
   );
+  speech.hasVoiceFor.and.returnValue(true);
   const component = new QuizComponent(
     null!,
     null!,
@@ -107,6 +108,34 @@ describe('QuizComponent practice timing', () => {
 });
 
 describe('QuizComponent voice reading', () => {
+  it('labels answer choices in the question language for assistive technology', () => {
+    const { component } = buildComponent('FR', ['Paris', 'Rome']);
+
+    expect(component.optionAriaLabel(0, 'Paris')).toBe('Réponse 1 : Paris');
+    expect(component.optionAriaLabel(1, 'Rome')).toBe('Réponse 2 : Rome');
+  });
+
+  it('labels Arabic answer choices with Arabic ordinals', () => {
+    const { component } = buildComponent('AR', ['القاهرة', 'الرياض']);
+
+    expect(component.optionAriaLabel(0, 'القاهرة')).toBe('الإجابة الأولى: القاهرة');
+  });
+
+  it('warns when voice reading is on but no voice matches the question language', () => {
+    const { component, preferences, speech } = buildComponent('AR', ['القاهرة']);
+    preferences.setSpeechEnabled(true);
+    speech.hasVoiceFor.and.returnValue(false);
+
+    expect(component.voiceMissingForQuestion).toBeTrue();
+  });
+
+  it('does not warn when a matching voice is installed', () => {
+    const { component, preferences } = buildComponent('FR', ['Paris']);
+    preferences.setSpeechEnabled(true);
+
+    expect(component.voiceMissingForQuestion).toBeFalse();
+  });
+
   it('does not read an answer choice unless voice reading is enabled', () => {
     const { component, speech } = buildComponent('EN', ['Paris', 'Rome']);
     component.timeLeft = 30;

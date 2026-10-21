@@ -173,9 +173,11 @@ Open **Accessibility** from the login screen or lobby (`/settings`) to:
 - choose whether new questions and selected choices are read automatically;
 - test the installed voice.
 
-Voice synthesis runs on the device. If the browser or a voice pack does not support the
-selected language, the controls remain usable without audio. The application also supports
-keyboard-only navigation and announces round changes, time-outs and results to screen readers.
+Voice synthesis runs on the device. Questions, answer labels and feedback are spoken in the
+question's language (for example, "Réponse 1" in French and "الإجابة الأولى" in Arabic). If no
+matching voice is installed, the app falls back to the device's default voice and shows a warning;
+install the language voice for correct pronunciation. The application also supports keyboard-only
+navigation and announces round changes, time-outs and results to screen readers.
 
 ## Continuous integration
 

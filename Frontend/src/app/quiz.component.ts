@@ -7,6 +7,7 @@ import { EffectsService } from './effects.service';
 import { PlayerService } from './player.service';
 import { PreferencesService } from './preferences.service';
 import { SpeechService } from './speech.service';
+import { answerChoicePrefix, timeUpFeedback } from './speech-labels';
 import { WebSocketService } from './websocket.service';
 
 @Component({
@@ -111,6 +112,13 @@ export class QuizComponent implements OnInit, OnDestroy {
     return this.preferences.speech.enabled && this.speech.supported;
   }
 
+  /** True when voice reading is on but the question's language has no installed voice. */
+  get voiceMissingForQuestion(): boolean {
+    return (
+      this.speechEnabled && !!this.question && !this.speech.hasVoiceFor(this.question.language)
+    );
+  }
+
   get iAmHost(): boolean {
     return this.playerId !== null && this.round?.hostPlayerId === this.playerId;
   }
@@ -163,6 +171,11 @@ export class QuizComponent implements OnInit, OnDestroy {
     if (this.question && this.speechEnabled) {
       this.speech.readQuestion(this.question);
     }
+  }
+
+  /** Accessible label for an answer choice, in the question's language. */
+  optionAriaLabel(index: number, option: string): string {
+    return `${answerChoicePrefix(index, this.question?.language)} ${option}`;
   }
 
   submit(): void {
@@ -434,7 +447,7 @@ export class QuizComponent implements OnInit, OnDestroy {
     }
     this.liveMessage = "Time's up.";
     if (this.speechEnabled && !this.selectedAnswer) {
-      this.speech.speak("Time's up.", this.question?.language);
+      this.speech.speak(timeUpFeedback(this.question?.language), this.question?.language);
     }
     if (this.selectedAnswer) {
       // Auto-submit whatever the player had selected before time ran out.

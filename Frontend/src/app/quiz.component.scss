@@ -61,6 +61,16 @@
   font-size: 0.85rem;
 }
 
+.voice-warning {
+  margin: 0 0 0.75rem;
+  padding: 0.55rem 0.7rem;
+  border-radius: 8px;
+  background: #fff7ed;
+  color: #9a3412;
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
 .option {
   /* Logical alignment so Arabic options follow the card's right-to-left
      direction instead of staying pinned to the physical left edge. */

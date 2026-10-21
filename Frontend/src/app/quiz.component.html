@@ -78,6 +78,12 @@
         🔊 Read aloud
       </button>
 
+      <p *ngIf="voiceMissingForQuestion" class="voice-warning" role="status">
+        No installed voice matches this question's language. Voice reading will use the default
+        voice; install the matching language voice in your browser or operating system for correct
+        pronunciation.
+      </p>
+
       <div class="options-container" role="group" aria-labelledby="question-text">
         <button
           type="button"
@@ -88,7 +94,7 @@
           [class.incorrect]="result && selectedAnswer === option && !result.correct"
           [disabled]="!!result || timeExpired"
           [attr.aria-pressed]="selectedAnswer === option"
-          [attr.aria-label]="'Answer ' + (i + 1) + ': ' + option"
+          [attr.aria-label]="optionAriaLabel(i, option)"
           (click)="selectAnswer(option)"
         >
           <span class="option-number" aria-hidden="true">{{ i + 1 }}</span>

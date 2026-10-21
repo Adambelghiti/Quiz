@@ -1,4 +1,12 @@
 import { Inject, Injectable, InjectionToken } from '@angular/core';
+import {
+  answerChoicePrefix,
+  choiceCountLabel,
+  correctFeedback,
+  incorrectFeedback,
+  lateFeedback,
+  speechLanguage,
+} from './speech-labels';
 
 /**
  * Wrappers around the browser's Web Speech API. Injecting the engine and the
@@ -58,10 +66,28 @@ export class SpeechService {
     return this.synth !== null && this.Utterance !== null;
   }
 
+  /**
+   * Whether an installed voice matches the language. Before the browser has
+   * listed its voices, return true so the UI does not show a false warning.
+   */
+  hasVoiceFor(language?: string | null): boolean {
+    if (!this.synth) {
+      return false;
+    }
+    const voices = this.synth.getVoices?.() ?? [];
+    if (voices.length === 0) {
+      return true;
+    }
+    const primary = this.languageTag(language).split('-')[0].toLowerCase();
+    return voices.some((voice) => {
+      const tag = voice.lang.toLowerCase();
+      return tag === primary || tag.startsWith(`${primary}-`);
+    });
+  }
+
   /** BCP-47 tag used by the speech engine, derived from the question language. */
   languageTag(language?: string | null): string {
-    const key = (language ?? 'EN').trim().toUpperCase();
-    return LANGUAGE_TAGS[key] ?? LANGUAGE_TAGS['EN'];
+    return LANGUAGE_TAGS[speechLanguage(language)];
   }
 
   /** Read a question followed by every answer choice, numbered in display order. */
@@ -70,9 +96,9 @@ export class SpeechService {
     const options = question.options ?? [];
 
     if (options.length > 0) {
-      parts.push(`${options.length} answer ${options.length === 1 ? 'choice' : 'choices'}.`);
+      parts.push(choiceCountLabel(options.length, question.language));
       options.forEach((option, index) => {
-        parts.push(`Answer ${index + 1}: ${option.trim()}.`);
+        parts.push(`${answerChoicePrefix(index, question.language)} ${option.trim()}.`);
       });
     }
 
@@ -81,18 +107,18 @@ export class SpeechService {
 
   /** Read one answer choice, using the same numbering as the question. */
   readOption(option: string, index: number, language?: string | null): void {
-    this.speak(`Answer ${index + 1}: ${option.trim()}.`, language);
+    this.speak(`${answerChoicePrefix(index, language)} ${option.trim()}.`, language);
   }
 
   /** Read the outcome of an answer, including the no-points late case. */
   readFeedback(result: ReadableFeedback, language?: string | null): void {
     let text: string;
     if (result.late) {
-      text = `Time ran out. The correct answer was ${result.correctAnswer}. No points this round.`;
+      text = lateFeedback(result.correctAnswer, language);
     } else if (result.correct) {
-      text = `Correct! You earned ${result.scoreDelta} points.`;
+      text = correctFeedback(result.scoreDelta, language);
     } else {
-      text = `Not quite. The correct answer was ${result.correctAnswer}.`;
+      text = incorrectFeedback(result.correctAnswer, language);
     }
     const explanation = result.explanation?.trim();
     if (explanation) {
@@ -147,7 +173,10 @@ export class SpeechService {
     const primary = wanted.split('-')[0];
     return (
       voices.find((voice) => voice.lang.toLowerCase() === wanted) ??
+      voices.find((voice) => voice.lang.toLowerCase() === primary) ??
       voices.find((voice) => voice.lang.toLowerCase().startsWith(`${primary}-`)) ??
+      voices.find((voice) => voice.default) ??
+      voices[0] ??
       null
     );
   }
