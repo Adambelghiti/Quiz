@@ -1,185 +1,170 @@
-# QuizGame
+# Quiz Game: Multiplayer Trivia Challenge
 
-A multiplayer quiz game with live rooms, a question bank in English, French and Arabic, a
-leaderboard, and an optional voice-reading mode for visually impaired players.
+A full-stack multiplayer quiz game built with Angular, Spring Boot, and WebSocket real-time communication.
 
 ## Features
 
-- **Live multiplayer rooms** over STOMP/WebSocket, with host controls, rematches and kicks.
-- **Solo games** with category, difficulty, language, round count and round-time filters.
-- **Practice mode**: single-player and untimed, with immediate feedback, explanations and no
-  effect on the leaderboard.
-- **Daily challenge**: one shared, deterministic five-question set per UTC day, one attempt per
-  player, a 60-second limit per question and a separate daily leaderboard.
-- **Three question languages** (EN / FR / AR) across 17 categories, with at least ten
-  questions per category and language, and a bank that expands without overwriting existing
-  questions or administrator edits.
-- **Voice reading** using the browser's Web Speech API. It is off by default; players opt in
-  from **Accessibility settings**. Questions, choices, feedback and explanations can be read
-  aloud.
-- **Post-answer explanations** shown after the answer is submitted and read aloud with the
-  feedback. Explanations are never sent with the question itself.
-- **Accessibility**: skip link, landmarks, focus management on route changes, labelled
-  controls, table captions, live regions and a visible keyboard focus ring.
-- **Leaderboard, player profile and match history**.
-- **Question admin** for adding, editing and deleting questions and explanations.
+- **Multiplayer**: Host and join real-time quiz rooms
+- **Three Languages**: Questions in English, French, and Arabic
+- **Accessibility**: Voice reading support with Web Speech API
+- **Admin Panel**: Manage questions and settings
+- **Real-time Updates**: Instant feedback and scoring via WebSocket
+- **Responsive Design**: Works on desktop and mobile
 
-## Tech stack
+## Setup
 
-| Layer | Technology |
-| --- | --- |
-| Frontend | Angular 16, TypeScript, SCSS, STOMP.js |
-| Backend | Spring Boot 4, Spring Security, Spring Data JPA, WebSocket/STOMP |
-| Database | H2 file database (development/tests) |
-| Tests | JUnit 5 / Spring Boot Test, Karma + Jasmine |
+### Prerequisites
 
-## Prerequisites
+- Java 17+
+- Node.js 20+
+- npm
+- Chrome or Edge (for frontend tests)
 
-- Java 17 or newer
-- Node.js 20 or newer and npm
-- Chrome or Edge for the frontend tests
+### Development Setup
 
-## Run locally
+1. **Clone the repository**:
+   ```bash
+   git clone <repository-url>
+   cd Quizgame
+   ```
 
-### Backend
+2. **Start the Backend**:
+   ```bash
+   cd Backend
+   .\mvnw.cmd spring-boot:run
+   ```
+   On macOS/Linux:
+   ```bash
+   cd Backend
+   ./mvnw spring-boot:run
+   ```
+   The backend runs on `http://localhost:8080`
 
-```powershell
-cd Backend
-.\mvnw.cmd spring-boot:run
-```
+3. **Start the Frontend**:
+   ```bash
+   cd ../Frontend
+   npm install
+   npm start
+   ```
+   The frontend runs on `http://localhost:4200`
 
-On macOS/Linux:
+4. **Access the Application**:
+   Open `http://localhost:4200` in your browser
+
+### Login Credentials
+
+- **Player**: `demo` / `demo123`
+- **Administrator**: `admin` / `admin123`
+
+## Question Management
+
+### Question Banks
+
+- `new_questions.json`: Main question bank
+- `new_questions_round2.json`: Additional questions
+- `question-bank-expansion-3.json`: Expanded question bank (50 questions across 5 categories)
+
+### Adding New Questions
+
+1. Create a new JSON file with the following structure:
+   ```json
+   {
+     "description": "Round 3 content expansion: 50 questions...",
+     "categories": ["GEOGRAPHY", "SPORTS", "MUSIC", "SCIENCE", "GENERAL_KNOWLEDGE"],
+     "languages": ["EN", "FR", "AR"],
+     "questions": [
+       {
+         "category": "GEOGRAPHY",
+         "difficulty": 1,
+         "translations": {
+           "EN": {
+             "text": "Which is the largest continent by area?",
+             "hint": "It contains China and India.",
+             "options": ["Asia", "Africa", "North America", "Europe"],
+             "correctIndex": 0,
+             "explanation": "Asia is the largest continent by area and population."
+           },
+           "FR": {
+             "text": "Quel est le plus grand continent par superficie ?",
+             "hint": "Il comprend la Chine et l'Inde.",
+             "options": ["Asie", "Afrique", "Amérique du Nord", "Europe"],
+             "correctIndex": 0,
+             "explanation": "L'Asie est le plus grand continent par superficie et par population."
+           },
+           "AR": {
+             "text": "ما هي أكبر قارة من حيث المساحة؟",
+             "hint": "تضم الصين والهند.",
+             "options": ["آسيا", "أفريقيا", "أمريكا الشمالية", "أوروبا"],
+             "correctIndex": 0,
+             "explanation": "آسيا هي أكبر قارة من حيث المساحة وعدد السكان."
+           }
+         }
+       }
+     ]
+   }
+   ```
+
+2. Add the new file to `SeedNewQuestions.java` in the `Backend` directory
+
+3. Run the seed command:
+   ```bash
+   cd Backend
+   .\mvnw.cmd compile
+   .\mvnw.cmd exec:java -Dexec.mainClass="com.example.quiz.SeedNewQuestions"
+   ```
+
+## Audio & Voice Features
+
+### Text-to-Speech Support
+
+- **Languages**: English, French, Arabic
+- **Voice Support**: Browser's Web Speech API
+- **Accessibility**: All UI components include accessible labels
+
+### Voice Features
+
+- **Question Reading**: Automatically reads questions and answer choices
+- **Feedback**: Reads correct/incorrect feedback with explanations
+- **Timer Alerts**: Announces when time is up
+- **Language Detection**: Automatically detects question language
+
+### Customizing Voice Settings
+
+1. In `SpeechService.ts`, modify the `languageTag` method to change BCP-47 language tags
+2. Adjust speech parameters in the `speak` method:
+   - `rate`: 0.95 (slightly slower than default)
+   - `pitch`: 1 (normal pitch)
+
+## Deployment
+
+### Production Build
 
 ```bash
-cd Backend
-./mvnw spring-boot:run
-```
-
-The API starts on `http://localhost:8080`. With no explicit profile the application uses the
-`dev` default profile: it creates `Backend/data/quizdb.mv.db`, seeds the question bank, and
-creates two local accounts:
-
-| Account | Username | Password |
-| --- | --- | --- |
-| Player | `demo` | `demo123` |
-| Administrator | `admin` | `admin123` |
-
-### Frontend
-
-```powershell
+# Build the frontend
 cd Frontend
-npm install
-npm start
-```
-
-Open `http://localhost:4200`. The development API/WebSocket URLs are configured in
-`Frontend/src/environments/environment.ts`.
-
-## Game modes
-
-- **Multiplayer room** – the host chooses the filters and starts the room when enough players
-  have joined.
-- **Solo** – the same configuration, played immediately with a server-enforced round timer.
-- **Practice** – untimed and single-player. Choose the filters from the lobby's **Practice**
-  button; answers and explanations appear immediately. Practice games are never listed as open
-  rooms and never write competitive history.
-- **Daily challenge** – start it from the lobby. The question set is fixed for the UTC day, so
-  every player answers the same questions; it is created once and reused. Each account gets one
-  attempt, which can be resumed until it finishes. Leaving mid-challenge consumes the attempt.
-  Daily results are stored separately from all-time game history, so the normal leaderboard is
-  unaffected.
-
-All modes support the optional voice-reading settings described below.
-
-## Tests and build
-
-Backend:
-
-```powershell
-cd Backend
-.\mvnw.cmd test
-```
-
-Frontend:
-
-```powershell
-cd Frontend
-npm run format:check
-npm run test:ci
 npm run build
+
+# Build the backend
+cd ../Backend
+.\mvnw.cmd package
 ```
 
-`npm run format` rewrites the frontend with Prettier; `npm run format:check` verifies it
-without changing files. `karma.conf.js` detects a locally installed Chrome or Edge
-automatically. If your browser is somewhere else, set `CHROME_BIN` to its executable before
-running the tests.
+### Deployment Options
 
-## Configuration
+1. **Docker**: Use the provided Dockerfile
+2. **Cloud**: Deploy to AWS, Azure, or Google Cloud
+3. **On-Premise**: Run on a local server
 
-### Backend
+## Contributing
 
-The main settings are in `Backend/src/main/resources/application.properties`:
+We welcome contributions! Please follow these guidelines:
 
-- `app.cors.allowed-origins` — origins allowed to call the API and open the WebSocket.
-- `app.jwt.secret` — HMAC key. The shipped value is development-only and is rejected outside
-  the `dev`, `local` and `test` profiles.
-- `app.auth.login.*` — login rate-limit window and lockout.
+1. Fork the repository
+2. Create a new branch for your feature
+3. Commit your changes with clear messages
+4. Run tests to ensure everything works
+5. Submit a pull request
 
-### Production
+## License
 
-Build the backend jar, then start it with an explicit profile and a real JWT secret:
-
-```bash
-cd Backend
-./mvnw package
-SPRING_PROFILES_ACTIVE=prod \
-APP_JWT_SECRET='replace-with-a-random-secret-of-at-least-32-characters' \
-java -jar target/QuizGame-0.0.1-SNAPSHOT.jar
-```
-
-The `prod` profile disables demo-account/question seeding. Build the frontend with
-`npm run build` (output in `Frontend/dist/front-end`). It uses same-origin `/api` and `/ws`
-URLs, so serve it behind a reverse proxy that forwards those paths to the backend.
-
-### Question content
-
-The development seeder loads four JSON banks:
-
-- `question-bank-expansion.json` — 40 questions across four categories.
-- `question-bank-expansion-2.json` — 60 questions across six categories: Technology,
-  Literature, Animals, Food, Health & Body, and Art & Architecture.
-- `question-bank-expansion-3.json` — 50 questions that top up Geography, Sports, Music,
-  Science and General Knowledge.
-- `question-bank-expansion-4.json` — 60 questions: Europe History, Scientists & Innovations,
-  and a second set for Moroccan History, Moroccan Culture, Arabic Culture and Islamic Culture.
-
-Every expansion question has EN/FR/AR translations and an explanation. Together the banks provide at
-least ten questions per category and language, and at least twenty per language for the four
-Moroccan, Arabic and Islamic culture categories. `new_questions.json`,
-`new_questions_round2.json`, `new_questions_round3.json` and `new_questions_round4.json` are
-the editable source copies. `Backend/tools/SeedNewQuestions.java` can load any of them by
-passing its path as the first argument.
-
-Seeding is additive: questions are matched by `(text, language)` and existing rows are never
-overwritten. The `dev` and `local` profiles automatically widen an existing H2 category enum
-when a new category is added. Production databases need the equivalent schema migration before
-deploying a build that introduces new `Category` values.
-
-## Accessibility
-
-Open **Accessibility** from the login screen or lobby (`/settings`) to:
-
-- enable or disable voice reading;
-- choose whether new questions and selected choices are read automatically;
-- test the installed voice.
-
-Voice synthesis runs on the device. Questions, answer labels and feedback are spoken in the
-question's language (for example, "Réponse 1" in French and "الإجابة الأولى" in Arabic). If no
-matching voice is installed, the app falls back to the device's default voice and shows a warning;
-install the language voice for correct pronunciation. The application also supports keyboard-only
-navigation and announces round changes, time-outs and results to screen readers.
-
-## Continuous integration
-
-`.github/workflows/ci.yml` runs the backend tests and the frontend format check, frontend
-tests, and production build on every push and pull request.
+This project is licensed under the MIT License - see the LICENSE file for details.

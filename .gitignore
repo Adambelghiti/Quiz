@@ -26,3 +26,21 @@ Backend/*.tar.gz
 *.iml
 .DS_Store
 Thumbs.db
+
+# Audio files
+Frontend/src/assets/sounds/*.mp3
+
+# Production build artifacts
+Frontend/dist/
+Frontend/build/
+
+# IDE files
+*.iml
+*.ipr
+*.iws
+
+# Local configuration
+Frontend/local.properties
+Frontend/app/build/intermediates/
+Frontend/app/build/outputs/
+Frontend/app/build/generated/
